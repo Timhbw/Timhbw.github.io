@@ -87,15 +87,15 @@
 
 
 
-<meta name="description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。">
+<meta name="description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。#网站描述">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tim博客">
-<meta property="og:url" content="http://timhbw.github.io/page/4/index.html">
+<meta property="og:url" content="https://github.huangbowei.com/page/4/index.html">
 <meta property="og:site_name" content="Tim博客">
-<meta property="og:description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。">
+<meta property="og:description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。#网站描述">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tim博客">
-<meta name="twitter:description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。">
+<meta name="twitter:description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。#网站描述">
 
 
 
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://timhbw.github.io/page/4/"/>
+  <link rel="canonical" href="https://github.huangbowei.com/page/4/"/>
 
 
 
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/14/82/">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/24/34/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Timhbw">
@@ -272,8 +272,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/14/82/" itemprop="url">
-                  苹果iOS10全新官方壁纸下载
+                <a class="post-title-link" href="/2016/03/24/34/" itemprop="url">
+                  自用图片压缩工具推荐（优化博客加载速度）
                 </a>
               
             
@@ -289,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-14T08:11:15Z">
-                2016-06-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-23T18:22:30Z">
+                2016-03-23
               </time>
             
 
@@ -312,8 +312,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
+                  <a href="/categories/建站/" itemprop="url" rel="index">
+                    <span itemprop="name">建站</span>
                   </a>
                 </span>
 
@@ -349,8 +349,24 @@
       
         
           
-            <p>苹果今天在WWDC2016大会上发布了最新的<a href="http://ios.ithome.com/" target="_blank" rel="external">iOS10</a>系统，新的系统除了一大波功能更新之外，还带来了一张全新的壁纸。</p>
-<div id="con"><br><div id="wrapper"><br><div class="content fl"><br><div id="paragraph" class="post_content"><br><br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/ios10wallpaperpre.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/ios10wallpaperpre.png" alt=""></a><br><br>&nbsp;<br><br>这张新壁纸展示了巨大的海浪，整体风格跟此前iOS9(<a href="http://dl.huangbowei.com/Tim博客IOS9原版壁纸下载.rar" target="_blank" rel="external">点击这里</a>下载ios9自带壁纸)的自带壁纸相一致.<br><br>iOS10的一些主要更新包括锁屏界面重新设计、删除预装应用、Siri向开发者开放SDK、相册应用新增场景识别、苹果地图升级等。<br><br><strong>iOS10壁纸下载：[reply][file][/reply]</strong><br><br></div><br></div><br></div><br></div>
+            <p>之前wordpress写博客时文章里面的图片都是上传到服务器中，以前以为这样省事，都是原图上传，发现到后面弊端就出来啦。图片越来越多，服务器容量不够用不说，前端加载速度慢，影响读者阅读，导致读者流失。</p>
+<p>毕竟那时候刚开始接触博客，随着后来知识面拓展，阅读量增加，发现这种做法效率太低。说下我现在的做法：</p>
+<ol>
+<li>图片本地压缩</li>
+<li>上传到空间上。例如七牛，腾讯云，利用CDN加速。<br>下面详细讲解下：</li>
+</ol>
+<h3 id="1-图片本地压缩"><a href="#1-图片本地压缩" class="headerlink" title="1.图片本地压缩"></a>1.图片本地压缩</h3><p>有时候博客或者网页里面需要插入图片，毕竟图文并茂对于读者来说更加有吸引力，更容易理解。图片利用压缩软件压缩，一般可以压缩50%以上，大大节省服务器空间和网页加载速度。<br>这里提供我用的软件，这个软件好处就是图片拖进去，不用处理，原图片直接覆盖，其他的软件一般是输出到另一个文件夹，文件名也会改变，不方便。这个软件免费版一次只能处理10张图片，等于你要处理10张以后关闭，再打开，付费版没有限制。<br>PP鸭下载链接：[file]</p>
+<h3 id="图片上传空间加速"><a href="#图片上传空间加速" class="headerlink" title="图片上传空间加速"></a>图片上传空间加速</h3><p>用得最多的恐怕就是七牛吧。大概的工作原理我通俗的解释下：</p>
+<ol>
+<li>首先是图片存储在你自己服务器上：读者访问你的文章，直接从本地服务器加载图片。（用的是自己的流量，自己的服务器处理，没有额外加速buff）<br>点击测试：<a href="http://www.huangbowei.com/favicon.ico" target="_blank" rel="external">我存在自己服务器上的图片</a></li>
+<li>如果存储在七牛等上：读者访问你的文章，直接从七牛服务器加载图片。（用的是七牛的流量，七牛的服务器，根据服务商不同，可能会提供加速服务，减轻服务器压力，提高页面加载速度，有额外buff）<br>点击测试：<a href="http://huangboweicom-10023220.file.myqcloud.com/images/favicon.ico" target="_blank" rel="external">我存在腾讯cos上的图片</a></li>
+</ol>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>我说下感想：</p>
+<ol>
+<li>毕竟自己用的是腾讯云的主机，发现用腾讯的存储空间还是挺方便的。七牛作为使用人数和接受度比较高的厂商，在前几年用的人多（可能现在还是比较多），因为免费还不需要备案就可以使用，对于服务器流量，性能不够的用户还是灰常不错的，一开始我也尝试用过七牛，但是不太方便，速度不太理想，图片还没有我放在本地加载快，而且想要使用CDN加速好像得充值10元验证你的账户。腾讯云就不一样，服务和价格都在那里，而且速度好，结合自己用的也是腾讯云的主机，事半功倍，图片也提供CDN加速。</li>
+<li>我的网站所有图片都是放在腾讯的cos（对象存储服务）上的，图片提供CDN加速，网站也用了百度和腾讯云的CDN（内容分发网络），所以在网页加载速度上还是比较好滴。<br>&nbsp;</li>
+</ol>
+
           
         
       
@@ -390,7 +406,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/14/81/">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/22/33/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Timhbw">
@@ -412,8 +428,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/14/81/" itemprop="url">
-                  苹果iOS10开发者预览版Beta1固件下载大全
+                <a class="post-title-link" href="/2016/03/22/33/" itemprop="url">
+                  就在今天，Swift 2.2 发布了！（iphone SE等也是）
                 </a>
               
             
@@ -429,8 +445,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-14T07:52:30Z">
-                2016-06-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-22T13:12:57Z">
+                2016-03-22
               </time>
             
 
@@ -452,8 +468,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
+                  <a href="/categories/swift/" itemprop="url" rel="index">
+                    <span itemprop="name">swift</span>
                   </a>
                 </span>
 
@@ -489,34 +505,36 @@
       
         
           
-            <p>可惜我身边没有ios设备，不然必须肯定的得刷一波高贵ios10，因为在WWDC 2016上，苹果将几乎三分之二的时间留给了iOS10，iOS10也不负众望，带来了10项重大革新，而且其中很多新功能几乎是为中国用户量身打造，可以说iOS10是史上最接中国地气的国外研发操作系统。现在为大家带来了iOS10开发者预览版Beta1的IPSW格式固件下载大全。</p>
-<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdcdl.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdcdl.jpg" alt=""></a></p>
-<p>值得注意的是，今年的iOS10固件明显进行了合并，不再像此前一样每款设备都有自己的单独固件，看上去简洁清爽不少。除了官方提到的十项提升外， 网友们还陆续在iOS10中发现了部分系统应用可卸载、App Store支持免费试用付费APP等最新特性，如果你在体验的过程中发现了一些新特性，也不妨通过投稿功能与IT之家的网友们一起分享。</p>
-<p>需要特别提醒的是，iOS10首个开发者预览版必然会存在不少的Bug以及兼容性问题，因此<span style="color: #ff0000;"><strong>大家尽量不要在自己的主力设备上进行尝试，如果非要更新体验，请务必提前用iCloud或iTunes做好备份，以防万一</strong>。</span></p>
-<h4 id="1、固件下载："><a href="#1、固件下载：" class="headerlink" title="1、固件下载："></a>1、固件下载：</h4><p><strong>苹果iOS10开发者预览版Beta1固件下载大全（国外镜像网站下载地址，官方地址稍后更新）：</strong></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPhone_4.0_32bit_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPhone5/iPhone5c</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPhone_4.0_64bit_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPhone5s</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPhoneSE_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPhone SE</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPhone_4.7_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPhone6/6s</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPhone_5.5_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPhone6 Plus/6s Plus</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPad_32bit_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPad 4</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPad_64bit_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPad Air/iPad mini 2</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPad_64bit_TouchID_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPad mini 4/iPad Air 2/iPad mini 3</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPadPro_9.7_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPad Pro 9.7</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iPadPro_12.9_10.0_14A5261v_Restore.ipsw" target="_blank" rel="external">iPad Pro 12.9</a></p>
-<p>• iPod Touch 6（暂无）</p>
-<p>• Apple TV tvOS：<a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/AppleTV53_10.0_14T5253s_Restore.ipsw" target="_blank" rel="external">点此下载</a></p>
-<p><strong>OTA更新描述文件：</strong></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/iOS_10_beta_Configuration_Profile.mobileconfig" target="_blank" rel="external">iOS</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/watchOS_3_beta_Configuration_Profile.mobileconfig" target="_blank" rel="external">watchOS</a></p>
-<p>• <a href="http://miroir1.trackr.fr/miroirs.php?file=http://miroir.trackr.fr/iOS%2010beta1/tvOS_10_beta_Configuration_Profile.mobileconfig" target="_blank" rel="external">tvOS</a></p>
-<h4 id="2、兼容设备列表"><a href="#2、兼容设备列表" class="headerlink" title="2、兼容设备列表"></a>2、兼容设备列表</h4><p>iOS10 支持的iPhone将从iPhone5起跳，包括iPhone5c、iPhone5s、iPhone SE、iPhone6/Plus、iPhone6s/Plus；而iPad方面，iPad 2和iPad 3（The New iPad）惨被抛弃，仅支持iPad 4、iPad Air、iPad Air 2、iPad Pro（9.7/12.9）、iPad mini 2、iPad mini 3、iPad mini 4，iPod方面仅有iPod Touch 6一款设备。<strong>
-</strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdcdl2.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdcdl2.jpg" alt=""></a></p>
-<h4 id="3、更新说明"><a href="#3、更新说明" class="headerlink" title="3、更新说明"></a>3、更新说明</h4><p>1、iTunes升级：在桌面端打开最新版iTunes，同时按下“Shift+更新”选取将要刷入的固件，下面的动作交给苹果就好了；</p>
-<p>2、描述文件OTA更新：直接使用Safari浏览器打开对应描述文件，安装并重启后，直接在系统更新下检查并下载安装更新即可。</p>
-<p><strong>大家尽量不要在自己的主力设备上进行尝试，如果非要更新体验，请务必提前用iCloud或iTunes做好备份，以防万一！</strong></p>
+            <p>今天北京时间凌晨1点，iphone的春季发布会召开，可惜太晚，我熬不住，早上一起来必定是iphone占据头条，然后一大波人说：哎呀，这性价比，这屏幕怎么这么小，怎么长的和iphone5s一个样子，一点创新都没有等等，或者国产手机大厂商会发微博说苹果眼光不行，现在消费者都接受5寸屏幕手机，你推出个4寸小屏手机，没乔布斯苹果的设计太烂等等。</p>
+<p>早上一起来，打开挨踢之家，中关村在线，看一波头条。iphone SE有银色，金色，深空灰色，<em>玫瑰金</em>（不买玫瑰金你怎么知道我买的是最新款iphone SE，手动斜眼）。有16GB，64GB2个容量，处理器用的iphone6S上的64位A9，叼炸天，1200万摄像头，支持NFC，4K视频拍摄，价格方面：16GB RMB3288,64GB RMB4088.当然海外版性价比更高，64GB也就3000多。A9处理器带个4寸小身板，1136 x 640 像素分辨率的手机，这流畅度简直要飞起。</p>
+<p>进入正题</p>
+<p>先给大家一些swift学习地址，（swift于2015年12月4日正式开源）大家可以到这里学习：</p>
+<ul>
+<li><a href="https://swift.org/" target="_blank" rel="external">swift官网</a></li>
+<li>The <a href="https://github.com/apple/swift" target="_blank" rel="external">Apple home on GitHub</a> hosts all the Swift source code</li>
+<li>The <a href="https://swift.org/community/#code-of-conduct" target="_blank" rel="external">Swift mailing lists</a> are how we interact</li>
+<li>The <a href="https://swift.org/getting-started/" target="_blank" rel="external">Getting Started</a> pages will help you setup a Swift development environment</li>
+<li>The <a href="https://swift.org/download/" target="_blank" rel="external">Download</a> page includes pre-built binaries for the supported platforms</li>
+<li>The <a href="https://swift.org/contributing/#contributing-code" target="_blank" rel="external">Swift Evolution Process</a> describes how new features are proposed<br>swift中文文档，官网翻译推荐文档，原话：<blockquote>
+<p>A great example of this is the GitHub project for the Chinese translation:<br>github上可以下载阅读，地址：<a href="https://github.com/numbbbbb/the-swift-programming-language-in-chinese" target="_blank" rel="external">中文版 Apple 官方 Swift 教程《The Swift Programming Language》</a></p>
+</blockquote>
+</li>
+</ul>
+<p>如果大家愿意的话，可以一起帮助翻译，人多力量大，让大家更好地学习，顺便提高自己，造福他人，地址：<a href="https://lists.swift.org/mailman/listinfo/swift-dev" target="_blank" rel="external">swift-dev</a></p>
+<p>官网中有swift的详细介绍，不过都是英文滴，好在我英文还行，下面是swift2.2的<a href="https://swift.org/blog/swift-2-2-released/" target="_blank" rel="external">更新日志</a>：</p>
+<p>Swift 2.2 is a minor language release that is mostly source-compatible with Swift 2.1. It contains the following language changes that went through the Swift’s evolution process:</p>
+<ul>
+<li>SE-0001: Allow (most) keywords as argument labels</li>
+<li>SE-0015: Tuple comparison operators</li>
+<li>SE-0014: Constraining AnySequence.init</li>
+<li>SE-0011: Replace typealias keyword with associatedtype for associated type declarations</li>
+<li>SE-0021: Naming Functions with Argument Labels</li>
+<li>SE-0022: Referencing the Objective-C selector of a method</li>
+<li>SE-0020: Swift Language Version Build Configuration<br>Beyond these language changes Swift 2.2 also contains numerous bug fixes, enhancements to diagnostics, and produces even faster-running code.</li>
+</ul>
 <p>&nbsp;</p>
-<p>原文地址：www.ithome.com/html/iphone/233119.htm</p>
+<p>最后，其他的也就不墨迹，大家刚把得，加油，程序猿之路贵在学习，更新知识！</p>
+<p>&nbsp;</p>
 
           
         
@@ -557,7 +575,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/14/80/">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/16/32/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Timhbw">
@@ -579,8 +597,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/14/80/" itemprop="url">
-                  WWDC2016简报
+                <a class="post-title-link" href="/2016/03/16/32/" itemprop="url">
+                  画流程图，UML图神器：亿图图示专家
                 </a>
               
             
@@ -596,8 +614,1081 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-14T07:35:36Z">
-                2016-06-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-16T14:45:34Z">
+                2016-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>学生党文档比较多，一到学期末，各种实训报告，论文等等，里面经常要画流程图，UML图，以前用office，wps里面的画图工具，虽然能画出来，但是比例，风格总不是那么好，歪歪扭扭的，所以网上找工具，于是得到这么一个神器。功能比较多，画流程图，UML图不在话下。</p>
+<p>简单介绍：</p>
+<p>EDraw Max是一款功能强大的专业制作各种应用图形的设计软件，通过这款软件你可以轻松制作出流程图，组织结构图，业务流程，UML图，工作流程，程序结构，网络图，图表和图形，心智图，定向地<br>图以及数据库图表，该款软件内置了2000多个符号及预画库，让你在制作各类图形中应用自如，而且EDraw Max(亿图图示专家)是基于矢量绘图，这样制作的图形点用空间相对更少，对电脑的要求也非常的低，让我们完全没必要通过CorelDRAW、Photoshop之类的大型软件来制作各类专用图形。</p>
+<p>适用范围：</p>
+<p>流程设计、工作汇报、说明简介、程序设计、思路展示、网络布线等，都少不了要用流程图来形象清晰的说明问题。用Word自带的图形绘制工具，难免有点不够专业，功能也不是很完善，使用亿图专业流程图、网络图制作工具，不仅可以完成普通流程图的制作，还可以完成专业网络图的绘制，它界面美观，操作简单，自带的丰富素材库能帮你快速的绘制出满意的效果，还提供了丰富的模板和示例供参考。</p>
+<p>下面是一些运行截图：<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/UMLindex.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/UMLindex.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/UML1.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/UML1.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/UML2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/UML2.png" alt=""></a></p>
+<p>这是我当时做文档的一张截图，画得不好，请见谅：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/UML3.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/UML3.png" alt=""></a><br>下载链接：<br>[file]</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/16/31/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/16/31/" itemprop="url">
+                  genymotion安卓模拟器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-16T13:54:59Z">
+                2016-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>安卓开发的同学们用过安卓模拟器（当然我只是因为上课需要研究了下），Eclipse里面自带模拟器，但是用过的人都知道，非常难用，又慢又卡，genymotion是首选，国内外都非常推崇的，使用它你必须的注册一个账号，不然即使你安装了，也不能下载里面的机器。<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotionindex.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotionindex.png" alt=""></a></p>
+<p>在我这里，貌似<a href="http://www.genymobile.com/" target="_blank" rel="external">genymotion</a>官网也被墙啦，记得前几年英文官网还能上去，不知道是不是校园网的问题。</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotionerror.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotionerror.png" alt=""></a></p>
+<p>所以在这里给出基于2016/3/16的最新版genymotion-2.6.0-vbox的下载地址:</p>
+<p>[file]</p>
+<p>安装一直下一步就可以，免费软件，只不过要登录才能用。</p>
+<p>安装完桌面会出现3个图标：<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion1.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion1.png" alt=""></a></p>
+<p>点击Genymotion就可以愉快地运行了！<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion2.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion3.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion3.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion4.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion4.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion5.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion5.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion6.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/genymotion6.png" alt=""></a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/13/29/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/13/29/" itemprop="url">
+                  国外代理账号说明
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-13T09:48:30Z">
+                2016-03-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/国外代理/" itemprop="url" rel="index">
+                    <span itemprop="name">国外代理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&nbsp;</p>
+<h3 id="此页面内容失效！！！国际代理帐号密码说明请移步老司机开车"><a href="#此页面内容失效！！！国际代理帐号密码说明请移步老司机开车" class="headerlink" title="此页面内容失效！！！国际代理帐号密码说明请移步老司机开车"></a>此页面内容失效！！！国际代理帐号密码说明请移步<a href="http://vpn.huangbowei.com" target="_blank" rel="external">老司机开车</a></h3><p>&nbsp;</p>
+<p>免责声明：本站提供的账号均为个人使用，请勿用作非法活动，使用者需负起一切使用后果。</p>
+<p>vpn:</p>
+<p>服务器名称（地址）：</p>
+<p>vpn类型：pptp</p>
+<p>用户名：</p>
+<p>密码：</p>
+<p>&nbsp;</p>
+<p>ss:</p>
+<p>地址：</p>
+<p>端口：9008</p>
+<p>密码：</p>
+<p>加密：</p>
+<p>&nbsp;</p>
+<p>用的人多了，服务器偶尔会来大姨妈，表现为连不上服务器，或者连上了也非常慢，断断续续的样子。出现这种情况的时候，请联系我，会做下相应的处理，就会恢复得快一点。</p>
+<p>如果你连不上服务器，请再三手动输入确认上面四项没有填错，依然连不上的话，请尝试PING下服务器看是否通，如果不通，一般是你的线路（电信、联通、地域、时间等相关，有可能是暂时性问题）问题。但注意在少数情况下不管你是否能PING通，都跟是否能连上ss服务器无关。最后说下一般都不会是服务器的问题，也就是说最大的可能性是：1.客户端，2.线路。</p>
+<p>服务器域名会通过DNS解释成IP地址，域名对应的IP偶尔会变，也偶尔会用DNS做负载均衡，一个域名会解释到多个IP，如果使用时遇到问题，不妨试下改一改你客户端的DNS，一般避免用运营商的，可以用百度，阿里，谷歌，114等(180.76.76.76,223.5.5.5, 8.8.8.8, 114.114.114.114)。</p>
+<p>一般客户端会有两种使用模式：1.自动/PAC，2.全局。在电脑客户端上一般默认是模式1，在这个模式下，会有一个PAC列表，里面是一些你平时访问不了的网站地址，例如twitt<em>*.com，goo</em>le.com，当你要访问的网站地址匹配到这个列表其中一个地址时，流量就会自动走ss路线，当访问的网站地址没匹配到时，例如baidu.com，qq.com默认是不在列表中的，这时流量就不会走ss路线。模式1应该是最好用的，但当然那个列表也不是万能的，总会漏掉一些平时访问不了的小众的网站，这时你可以切换模式2，全局模式，在这个模式下，访问所有网站都会走ss路线。假如你不想用全局模式，又想访问那些小众的网站，那你可以动手编辑那个PAC列表，把你想访问的网站加入去，至于编辑方法可以自己去搜索一下。</p>
+<p>本站及本站所提供的ss服务(美国洛杉矶节点)运行在<a href="https://bandwagonhost.com/index.php" target="_blank" rel="external">搬瓦工VPS</a>上，点击<a href="https://bandwagonhost.com/aff.php?aff=6856" target="_blank" rel="external">链接</a> (自动使用我的优惠码)注册购买VPS可享受88折优惠。选洛杉矶或日本（不过新账号不能购买日本服务器）的机房在国内访问会比较快。(提示：搬瓦工可以使用支付宝或者PayPal支付，而PayPal可以使用银联卡，也即是一般的银行卡/借记卡来支付)</p>
+<p>ss mac，windows，android客户端下载：</p>
+<p>[file]</p>
+<p>&nbsp;</p>
+<p>使用教程见: <a href="http://www.huangbowei.com/archives/9.html" target="_blank" rel="external">科学上网利器 Shadowsocks 简介</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/12/28/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/12/28/" itemprop="url">
+                  小白搭建博客教程之流程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-12T09:03:07Z">
+                2016-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/建站/" itemprop="url" rel="index">
+                    <span itemprop="name">建站</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>搭建个人博客其实说简单也简单，说难也难，当初我一个独自探索，到现在也差不多摸清门路了，因此写一个教程防止大家走弯路，少碰壁，以最迅速，最直接的方式完成它,一下全部为个人见解，如有误，请指出。下面是后续文章链接:</p>
+<ol>
+<li><a href="http://www.huangbowei.com/archives/76.html" target="_blank" rel="external">购买域名</a>；</li>
+<li><a href="http://www.huangbowei.com/archives/77.html" target="_blank" rel="external">购买虚拟主机并搭建（Linux）</a>；</li>
+<li><a href="http://www.huangbowei.com/archives/78.html" target="_blank" rel="external">域名解析</a>；</li>
+<li><p><a href="http://www.huangbowei.com/archives/79.html" target="_blank" rel="external">wordpress等博客平台安装步骤</a>。<br>先说下大致步骤：</p>
+</li>
+<li><p>购买域名（如果你只打算以例如ip：115.159.xxx.xxx方式访问这步可以忽略），推荐<a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">狗爹</a>（godaddy），有许多优惠，还安全，不用担心被封，国内购买域名的地方也有很多：<a href="https://www.dnspod.cn/" target="_blank" rel="external">Dnspod</a>，<a href="http://www.xinnet.com/" target="_blank" rel="external">新网</a>等等，但是出于国内众多因素，在国内购买域名不怕一万，就怕万一，哪天谁不开心啦，直接封你域名，当然，一般是不会的。</p>
+</li>
+<li>购买虚拟主机，如果你家有公网ip地址可以直接在家搭建，但是当前公网ip本来就少，会分配公网ip给个人的运营商几乎没有，电信的用户可以试试，貌似联系客户，强烈要求分配公网ip就可以。（如果你是在校大学生，强烈建议<a href="http://www.qcloud.com/" target="_blank" rel="external">腾讯云</a>，1元主机加免费.cn域名一直到赠送到你毕业为止，阿里的貌似对学生优惠只有3个月）</li>
+<li><p>物色一个好的解析商，如<a href="https://www.dnspod.cn/" target="_blank" rel="external">DnsPod</a>，<a href="https://www.cloudxns.net/" target="_blank" rel="external">CloudXNS</a>等，我之前用的是DnsPod，然后转战CloudXNS(推荐)。</p>
+<blockquote>
+<ul>
+<li>解析商大致的作用流程：用户访问www.huangbowei.com，然后解析商就会应用你在解析商那里填写的规则，把www.huangbowei.com解析到115.159.xxx.xxx,然后用户就可以访问你的博客内容。<ul>
+<li>如果你直接访问ip地址，大致流程就是：用户输入115.159.xxx.xxx，转到访问博客内容。</li>
+<li>如果你没有解析商，用户输入www.huangbowei.com，然后不知道转到哪一个虚拟主机，就不能访问。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>选择一个搭建博客的平台：<a href="https://cn.wordpress.org/" target="_blank" rel="external">wordpress</a>，<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>，<a href="http://typecho.org/" target="_blank" rel="external">Typecho</a>，<a href="http://www.ghostchina.com/" target="_blank" rel="external">Ghost</a>，<a href="http://jekyll.bootcss.com/" target="_blank" rel="external">jekyll</a>等等，我第一个用的（也是大部分人第一次用的）就是wordpress，它操作简单，后台有图形化操作界面，主题多，插件多，使用人数多，碰到问题解决方法也多，但是现在越发臃肿，不能满足我对博客速度的极致要求，便转到Typecho，以后准备试试更简单，搭建环境更加简单，更黑客的Hexo。</p>
+</li>
+</ol>
+<p>## </p>
+<p>到这里，搭建博客大致的流程就结束啦，这只是一个大致的思路，由于全部写完篇幅过多，我准备过几天把每一步详细写出来，以及我碰到的问题，以及解答方法 。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/12/24/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/12/24/" itemprop="url">
+                  分享下平时我在windows平台下开发用的一些比较好的软件-winscp（四）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-11T16:47:13Z">
+                2016-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="WinSCP"><a href="#WinSCP" class="headerlink" title="WinSCP"></a>WinSCP</h3><p>WinSCP是一个Windows环境下使用SSH的开源图形化SFTP客户端。同时支持SCP协议。它的主要功能就是在本地与远程计算机间安全的复制文件。</p>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>图形用户界面</li>
+<li>多语言</li>
+<li>与Windows完美集成(拖拽, URL,快捷方式)</li>
+<li>支持所有常用文件操作</li>
+<li>支持基于SSH-1、SSH-2的SFTP和SCP协议</li>
+<li>支持批处理脚本和命令行方式</li>
+<li>多种半自动、自动的目录同步方式</li>
+<li>内置文本编辑器</li>
+<li>支持SSH密码、键盘交互、公钥和Kerberos(GSS) 验证</li>
+<li>通过与Pageant(PuTTY Agent)集成支持各种类型公钥验证</li>
+<li>提供Windows Explorer与Norton Commander界面</li>
+<li>可选地存储会话信息</li>
+<li>可将设置存在配置文件中而非注册表中，适合在移动介质上操作<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/winscp.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/winscp.png" alt=""></a></li>
+</ul>
+<p>WinSCP下载地址：</p>
+<p>[file]</p>
+<p>&nbsp;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/12/23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/12/23/" itemprop="url">
+                  分享下平时我在windows平台下开发用的一些比较好的软件-putty（三）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-11T16:35:45Z">
+                2016-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="putty"><a href="#putty" class="headerlink" title="putty"></a>putty</h4><blockquote>
+<p>PuTTY是一个Telnet、SSH、rlogin、纯TCP以及串行接口连接软件。较早的版本仅支持Windows平台，在最近的版本中开始支持各类Unix平台，并打算移植至Mac OS X上。除了官方版本外，有许多第三方的团体或个人将PuTTY移植到其他平台上，像是以Symbian为基础的移动电话。PuTTY为一开放源代码软件，主要由Simon Tatham维护，使用MIT licence授权。随着Linux在服务器端应用的普及，Linux系统管理越来越依赖于远程。在各种远程登录工具中，Putty是出色的工具之一。Putty是一个免费的、Windows 32平台下的telnet、rlogin和ssh客户端，但是功能丝毫不逊色于商业的telnet类工具。</p>
+</blockquote>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>1. 完全免费；</p>
+<p>2. 对于HTML网页编程代码，可直接选择在不同的浏览器中打开查看，以方便进行调试；</p>
+<p>3. 全面支持ssh1和ssh2；</p>
+<p>4. 体积很小，仅472KB(0.62 版本)；</p>
+<p>5. 操作简单，所有的操作都在一个控制面板中实现；</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/putty.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/putty.png" alt=""></a></p>
+<p>[file]</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/11/27/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/11/27/" itemprop="url">
+                  MarkdownPad 在win10下html渲染错误This view has crashed
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-10T23:28:16Z">
+                2016-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT技术/" itemprop="url" rel="index">
+                    <span itemprop="name">IT技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>前几天在安装MarkdownPad 的时候碰见一个问题，一直报错，不能正常运行，这里给出解决方法：<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/markdown%20error.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/markdown%20error.png" alt=""></a></p>
+<p>windows 10系统 需要下载 一个  awesomium_v1.6.6_sdk_win 这是一个 HTML UI ENGINE</p>
+<p>awesomium下载地址：</p>
+<p>[file]</p>
+<p>如果以上安装后问题还没解决，官方文档建议下载安装 Microsoft’s DirectX End-User Runtimes (June 2010).</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/11/20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/11/20/" itemprop="url">
+                  面试中被面试官问到的问题答案(一)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-10T16:30:52Z">
+                2016-03-10
               </time>
             
 
@@ -656,851 +1747,372 @@
       
         
           
-            <p>作为一个io是程序猿，昨天熬夜看WWDC2016，看到凌晨3点，看的是王自如在熊猫TV的直播。这里给大家简单介绍下大会上4大系统的升级说明。</p>
-<div id="paragraph" class="post_content"><br><br>#### iOS 10<br><br>iOS10这次拥有10项重大革新，而且其中很多新功能几乎是为中国用户量身打造，可以说iOS10是史上最接中国地气的国外研发操作系统。<br><br>##### <strong>1、锁屏</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20162.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20162.jpg" alt=""></a></strong><br><br>虽然iOS10的UI设计总体上并没有特别明显的变化，但还是重新设计了锁屏界面，锁屏界面下可以显示更丰富的通知内容，锁屏向右滑动可直接进入拍照界面，左滑则有丰富的插件集成。在锁屏界面上使用3D Touch，可以直接管理通知和各项操作，无需解锁进入系统。<br><br>##### <strong>2、控制中心</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20163.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20163.jpg" alt=""></a></strong><br><br>iOS10对控制中心作出了巨大改变，首先是改进了UI设计，布局更加合理，功能更加丰富，控制中心支持左右滑动，新增音乐控制中心，使用3D Touch也可以在控制中心实现更多样化的操作。<br><br>##### <strong>3、Siri开放SDK</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20164.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20164.jpg" alt=""></a></strong><br><br>iOS10中，用户可以直接在Siri中控制第三方应用，比如搜索、查看微信消息，通过Siri呼叫滴滴打车等。<br><br>首批支持Siri的第三方应用包括，微信、滴滴Uber、Lyft、WhatsApp、Slack、Shutterfly、Pinterest，Runtastic、RunKeeper、Saqure、Spark、Vonage、Skype等应用。<br><br>##### <strong>4、相册应用</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20165.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20165.jpg" alt=""></a></strong><br><br>iOS10中的相册应用现在加入智能脸部识别和场景识别功能，支持高级搜索功能，也将自动整合元素相近的照片，提供一个记忆功能面板，可以提供基于地图或不同身份的整合显示。并且新增LivePhoto编辑功能。<br><br>支持自动将相同类型图片创建视频，用户切换音乐之后，视频也会自动适应并给出相应的剪辑；<br><br>##### <strong>5、苹果地图</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20166.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20166.jpg" alt=""></a></strong><br><br>苹果地图提供了更加清晰的导航界面，支持实时交通信息显示，支持长路途搜索功能，并且支持Car Play；苹果开放苹果地图给开发者，可以集成大众点评订餐、滴滴、UBER叫车等服务。<br><br>##### <strong>6、Apple Music</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20167.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20167.jpg" alt=""></a></strong><br><br>经常被吐槽难用的Apple Music这次大幅更新了界面，界面更加简洁，提供单独的音乐下载管理面板，底部多了浏览功能，提供全新的歌词面板显示。<br><br>##### <strong>7、新闻</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20168.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20168.jpg" alt=""></a></strong><br><br>Apple News新增突发新闻推送以及新闻订阅功能。<br><br>##### <strong>8、Home应用</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20169.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc20169.jpg" alt=""></a></strong><br><br>iOS10新增Home统一智能家居管理应用，通过这个应用，智能硬件的开发商基本无需自己研发APP了，使用HomeKit可以管理所有连接iOS的智能硬件。home应用提供场景化功能，也可以在锁屏状态下使用3D Touch呼出面板，快速调整智能家居设备。<br><br>##### <strong>9、电话功能</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201610.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201610.jpg" alt=""></a></strong><br><br>iOS10电话功能专门为中国用户进行了优化，增加骚扰电话过滤功能，由腾讯安全提供技术支持。联系人功能加强，提供VoIP API，社交软件的联系方式可以直接添加到自带联系人中。<br><br>##### <strong>10、iMessage</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201611.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201611.jpg" alt=""></a></strong><br><br>iOS10 可以自动识别可以被emoji表情替换的词语，点击即可自动替换成emoji表情。iMessage支持使用触控板来发送信息，Apple Watch新增的触控板同样可以进行类似操作；支持在iMessage中使用Apple Music播放，同时iMessage正式向第三方应用开放，提供独立的程序抽屉以在iMessage中进行调用，可发送的消息不再局限于文本，也可以发 送视频、图片、音乐、各种动图、支付信息，也可以添加各种动态效果；支持发送手写信息。<br><br>##### <strong>其他</strong><br><br><strong><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201612.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201612.jpg" alt=""></a></strong><br><br>除了以上10大更新外，还有iPad版Safari浏览器支持独立分屏功能、加强隐私保护功能等更新。<br><br>iOS10开发者预览版已经放出，拥有开发者账号的可以下载安装，正式版将在9月发布。<br><br>&nbsp;<br><br>#### macOS Sierra<br><br></div><br><div class="post_content"><br><br>OS X成为历史，今后的苹果桌面系统叫macOS，新版的系统名为macOS Sierra，更新的核心就是移动、桌面生态的协同化，让iOS、watchOS和macOS融为一体，形成牢不可破的生态体验。macOS Sierra主要新功能如下：<br><br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201613.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201613.jpg" alt=""></a><br><br>1.  macOS支持使用Apple Watch解锁，该功能名为“Auto Unlock（自动解锁）”，佩戴升级watchOS 3后的Apple Watch靠近打在macOS的设备，即可自动解锁该设备。<br>2.  macOS新增通用剪贴板功能，macOS与iOS共享剪贴板中内内容并且完全同步，比如你可以在iOS上选择复制，在macOS上进行粘贴，非常方便。<br>3.  iCloud Drive也可以在Mac上使用，所有文件在macOS和iOS之间共享，支持自动将旧文件移动到iCloud上，从而释放macOS的空间；<br>4.  Siri功能登陆macOS，macOS版Siri同时在Dock栏以及顶部出现，它可以在Finder中搜索文件，可以处理邮件，使用iCloud Drive，播放音乐，从网上查找内容，控制音乐视频播放等等，还可以进行图片搜索，可以使用Siri进行语音回复，甚至可以使用Siri进行网页上的 Apple Pay支付。<br>&nbsp;<br><br>#### WatchOS 3<br><br></div><br><div class="post_content"><br><br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201614.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201614.png" alt=""></a><br><br>watchOS 3系统应用的响应速度更快，是此前的7倍，开启应用无需等待，在Apple Watch上实现应用驻留内存并可以实时预览。<br><br>watchOS 3采用全新的交互界面设计，配色、排版方案更加丰富，用户可通过滑动进行切换。新界面下误触的几率更低，提供Scribble功能，用户可以通过类似手写的滑动操作完成输入，而且还支持中文输入。<br><br>watchOS 3还新增了一个动态效果米奇表盘，升级全新健身应用，加入Activity Share功能，支持活动分享，查看好友的运动情况，以及发送互动信息。同时还增加了一款残疾人士专用应用Breathe，可以通过相关设置引导使用者进 行深呼吸，达到平静和放松的目的。<br><br>在watchOS 3系统下，侧键功能改名为“Dock”按键，按压即可在多个板块之间快速切换，而且第三方应用也可添加Dock面板，长按侧边按键可实现SOS紧急呼叫。<br><br>此外，watchOS 3开放了大量API，并加入游戏中心、Apple Pay功能，同时也能够直接在Apple Watch上观看视频。<br><br>#### tvOS<br><br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201615.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc201615.jpg" alt=""></a><br><br>新版tvOS内集成的Siri功能进一步增强。如今，Siri可以直接在电视上搜索YouTube视频。<br><br>新版tvOS将会支持1300个直播频道，并拥有6000多款原生应用。新版的tvOS还将提供单点登录功能，从而消除用户在反复输入身份验证信息的苦恼。<br><br>苹果还为新版tvOS推出了一款iOS遥控应用。功能和国内很多电视盒子的适配应用一样，用户可将iPhone作为Apple TV遥控器使用，还可以使用iPhone的键盘更加便捷的输入文本。<br><br>原文链接：www.ithome.com/html/iphone/233120.htm<br><br></div><br><div class="con-recom"></div>
-          
-        
-      
-    </div>
+            <p>以下问题的答案是之前写的一篇文章 <a href="http://www.shavekevin.com/mianshiwenti/" target="_blank" rel="external">面试中被面试官问到的问题</a> 现在把问题的答案整理了一份出来给大家。希望对大家有所帮助。如果整理的答案有问题，请联系我。shavekevin@gmail.com</p>
+<p>1.请你谈谈static和宏定义的区别。什么时候用static什么时候用宏定义。<br>让你声明的常量只在你声明的文件里有作用要不编译器会保存</p>
+<p>宏定义：</p>
+<p>1）. 一般来说我们使用宏定义最常见的是定义一些常量 简单的”函数”（比如求两个数的最大小值）<br>例如：定义常量PI</p>
+<pre><code>&lt;span class=&quot;hljs-preprocessor&quot;&gt;#&lt;span class=&quot;hljs-keyword&quot;&gt;define&lt;/span&gt; PI 3.1415926&lt;/span&gt;
+`&lt;/pre&gt;
+定义函数
+&lt;pre&gt;`&lt;span class=&quot;hljs-preprocessor&quot;&gt;#&lt;span class=&quot;hljs-keyword&quot;&gt;define&lt;/span&gt; MIN(A,B) ((A) &amp;lt; (B) ? (A):(B))&lt;/span&gt;
+`&lt;/pre&gt;
+我们不对宏定义进行修改
 
-    <div>
-      
-    </div>
+2) . 使用宏定义可以在很大程度上可以简化我们的代码
+例如：我们在写单例的时候 之前我们写的是
+&lt;pre&gt;`&lt;span class=&quot;hljs-preprocessor&quot;&gt;#import &lt;span class=&quot;hljs-title&quot;&gt;&quot;ShareSingleton.h&quot;&lt;/span&gt;&lt;/span&gt;
 
-    <div>
-      
-    </div>
+&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;ShareSingleton&lt;/span&gt;&lt;/span&gt;
 
++(instancetype)shareSingleton {
 
-    <footer class="post-footer">
-      
+    &lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; ShareSingleton *leader = &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt;;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_once_t&lt;/span&gt; onceToken;
+    &lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_once&lt;/span&gt;(&amp;amp;onceToken, ^{
+        leader = [[ShareSingleton alloc]init];
+    });
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; leader;
+}
+&lt;span class=&quot;hljs-keyword&quot;&gt;@end&lt;/span&gt;
+`&lt;/pre&gt;
+//如果我们使用宏定义的话我们可以这样写：
+&lt;pre&gt;`&lt;span class=&quot;hljs-preprocessor&quot;&gt;#define DISPATCH_ONCE_BLOCK(onceBlock) static dispatch_once_t onceToken; dispatch_once(&amp;amp;onceToken, onceBlock);&lt;/span&gt;
+&lt;span class=&quot;hljs-preprocessor&quot;&gt;#import &lt;span class=&quot;hljs-title&quot;&gt;&quot;ShareSingleton.h&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;ShareSingleton&lt;/span&gt;&lt;/span&gt;
 
-      
++(instancetype)shareSingleton {
 
-      
+    &lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; ShareSingleton *leader = &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt;;
+    DISPATCH_ONCE_BLOCK(^{
+        leader = [[ShareSingleton alloc]init];
+    })
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; leader;
+}
+&lt;span class=&quot;hljs-keyword&quot;&gt;@end&lt;/span&gt;
+`&lt;/pre&gt;
+其实#define的原理就是不管三七二十一，直接做替换，所以我们完全可以利用这个特点，发挥自己的想象，简化代码~ 宏定义实质是一个预编译指令，在程序未运行之前将某些指令付给相应的变量。
 
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
+小结一下： static标记的变量会存储到全局变量区，生命周期和程序相同。而宏定义所定义的生命周期与所在的载体的生命周期有关.
 
+static只在声明的类中可见。
+在声明的类中结束后，再次使用还是之前的值。
 
-    
-      
+2.你是怎么看待代理 通知的 他们有什么区别？
+首先，我们把代理通知 放到一起来讨论第一反映是传值。 ok，下面慢慢来说各个的用法和区别。
 
-  
+通知中心
 
-  
-  
-  
+通过NSNotification可以给多个对象传递数据和消息(多个传递) 代理 通过protocol（代理模式）只能给一个对象传递数据和消息(单一传递)“一对一”，对同一个协议，一个对象只能设置一个代理delegate，所以单例对象就不能用代理（可以用多点回调，下面见解）。
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/11/79/">
+代理更注重过程信息的传输：比如发起一个网络请求，可能想要知道此时请求是否已经开始、是否收到了数据、数据是否已经接受完成、数据接收失败。
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
+区别： 代理和通知的区别应该主要是一对一和一对多的关系。delegate的多点回调相对notification更加便捷，更多方便，让项目更好维护。
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
+3.说说你对内存管理的理解。
 
-    
-      <header class="post-header">
+内存管理原则
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/11/79/" itemprop="url">
-                  小白搭建博客教程-wordpress等博客平台安装步骤（4）完结
-                </a>
-              
-            
-          </h1>
-        
+引用计数的增加和减少相等，当引用计数降为0之后，不应该再使用这块内存空间。 凡是用alloc retain 或者copy让内存的引用计数增加了。就需要使用release或者autorelease让内存的引用 计数减少。在一段代码内。增加和减少的次数要相等。
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-10T23:25:26Z">
-                2016-06-10
-              </time>
-            
+autoreleasepool的使用
 
-            
+通过autoreleasepool控制autorelease对象的释放 向一个对象发送autorelease消息。这个对象何时释放取决于autoreleasepool
 
-            
-          </span>
+copy方法
+跟retain不同，一个对象想要copy，生成自己的副本，需要实现NSCopying协议，定义copy的细节（如何copy）如果类没有接受NSCoping协议而给类发送copy消息，会引起crash 总结： OC借助引用计数机制去管理内存，凡是使用了alloc copy retain 等 方法，增加了引用计数，就要使用release 和autorelease 减少引用计数，引用计数为0的时候，对象所占的内存，被系统回收。
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
+autorelease是未来某个时间（出autorelease）引用减一，不是即时的。
 
-                
-                
-              
-            </span>
-          
+不是任何对象都可以接受copy消息。只有接受了NSCoping协议的对象才接受copy消息。
 
-          
-            
-          
+4.谈谈你对iOS性能优化的理解.
 
-          
-          
+谈起iOS的性能优化我们首先想到的是应该是tableview表视图的优化。关于表视图的优化我们可以从以下几个方面来看:
 
-          
+1).tableviewcell渲染
+绘制时要尽可能的避免分配资源，比如UIFont，NSDateFormatter或者任何在绘制时 需要的对象，推荐使用类层级的初始化方法中执行分配，并将其存储为静态变量。
 
-          
+2）.图层渲染的问题
+透明图层对渲染性能会有一定的影响，系统必须将透明图层与下面的视图混合起来计算颜色，并 绘制出来。减少透明图层并使用不透明的图层来替代它们，可以极大地提高渲染速度。
 
-          
+3）.为代理方法瘦身
+我们要尽量避免在tableview的cellforrowatindexpath的代理方法里写那么多代码，这样做不仅可以简化代码方便维护和管理，这对程序的运行也有帮助。
 
-        </div>
-      </header>
-    
+4).复杂视图尽量采用纯代码的方式
 
+当 UITableViewCell拥有多个子视图时，IOS的渲染机制会拖慢速度。重写drawRect直接绘制内容的方式可 以提高性能，而不是在类初始化的时候初始化一些label或者imageview等。
 
-    <div class="post-body" itemprop="articleBody">
+（以下来源于yykit作者ibireme[这是源链接](http://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/)）
 
-      
-      
+下面就是些CPU 资源消耗原因和解决方案 还有GPU资源消耗原因和解决方案
 
-      
-        
-          
-            <p>上一回说道：<a href="http://www.huangbowei.com/archives/28.html" target="_blank" rel="external">小白搭建博客教程之流程</a>，这次趁着端午节写完它，也算是一个了结。</p>
-<p>教程有4篇：</p>
+对象的创建会分配内存、调整属性、甚至还有读取文件等操作，比较消耗 CPU 资源。尽量用轻量的对象代替重量的对象，可以对性能有所优化。比如 CALayer 比 UIView 要轻量许多，那么不需要响应触摸事件的控件，用 CALayer 显示会更加合适。如果对象不涉及 UI 操作，则尽量放到后台线程去创建，但可惜的是包含有 CALayer 的控件，都只能在主线程创建和操作。通过 Storyboard 创建视图对象时，其资源消耗会比直接通过代码创建对象要大非常多，在性能敏感的界面里，Storyboard 并不是一个好的技术选择。
+
+1).对象的创建
+尽量推迟对象创建的时间，并把对象的创建分散到多个任务中去。尽管这实现起来比较麻烦，并且带来的优势并不多，但如果有能力做，还是要尽量尝试一下。如果对象可以复用，并且复用的代价比释放、创建新对象要小，那么这类对象应当尽量放到一个缓存池里复用。
+
+2).对象调整
+对象的调整也经常是消耗 CPU 资源的地方。这里特别说一下 CALayer：CALayer 内部并没有属性，当调用属性方法时，它内部是通过运行时 resolveInstanceMethod 为对象临时添加一个方法，并把对应属性值保存到内部的一个 Dictionary 里，同时还会通知 delegate、创建动画等等，非常消耗资源。UIView 的关于显示相关的属性（比如 frame/bounds/transform）等实际上都是 CALayer 属性映射来的，所以对 UIView 的这些属性进行调整时，消耗的资源要远大于一般的属性。对此你在应用中，应该尽量减少不必要的属性修改。 当视图层次调整时，UIView、CALayer 之间会出现很多方法调用与通知，所以在优化性能时，应该尽量避免调整视图层次、添加和移除视图。 3). 对象销毁
+对象的销毁虽然消耗资源不多，但累积起来也是不容忽视的。通常当容器类持有大量对象时，其销毁时的资源消耗就非常明显。同样的，如果对象可以放到后台线程 去释放，那就挪到后台线程去。这里有个小 Tip：把对象捕获到 block 中，然后扔到后台队列去随便发送个消息以避免编译器警告，就可以让对象在后台线程销毁了。 例如：
+&lt;pre&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;NSArray&lt;/span&gt; *tmp = &lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;.array&lt;/span&gt;;  
+&lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;.array&lt;/span&gt; = &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt;;  
+&lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_async&lt;/span&gt;(queue, ^{  
+    [tmp class];
+});
+`&lt;/pre&gt;
+4).一些计算
+
+视图布局的计算是 App 中最为常见的消耗 CPU 资源的地方。如果能在后台线程提前计算好视图布局、并且对视图布局进行缓存，那么这个地方基本就不会产生性能问题了。 不论通过何种技术对视图进行布局，其最终都会落到对 UIView.frame/bounds/center 等属性的调整上。上面也说过，对这些属性的调整非常消耗资源，所以尽量提前计算好布局，在需要时一次性调整好对应属性，而不要多次、频繁的计算和调整这些 属性。 Autolayout 是苹果本身提倡的技术，在大部分情况下也能很好的提升开发效率，但是 Autolayout 对于复杂视图来说常常会产生严重的性能问题。随着视图数量的增长，Autolayout 带来的 CPU 消耗会呈指数级上升。具体数据可以看这个文章：[http://pilky.me/36/。](http://pilky.me/36/%E3%80%82) 如果你不想手动调整 frame 等属性，你可以用一些工具方法替代（比如常见的 left/right/top/bottom/width/height 快捷属性），或者使用 ComponentKit、AsyncDisplayKit 等框架.
+
+如果一个界面中包含大量文本（比如微博微信朋友圈等），文本的宽高计算会占用很大一部分资源，并且不可避免。如果你对文本显示没有特殊要求，可以参 考下 UILabel 内部的实现方式：用 [NSAttributedString boundingRectWithSize:options:context:] 来计算文本宽高，用 -[NSAttributedString drawWithRect:options:context:] 来绘制文本。尽管这两个方法性能不错，但仍旧需要放到后台线程进行以避免阻塞主线程。
+
+5).文本的绘制
+
+如果你用 CoreText 绘制文本，那就可以先生成 CoreText 排版对象，然后自己计算了，并且 CoreText 对象还能保留以供稍后绘制使用。 屏幕上能看到的所有文本内容控件，包括 UIWebView，在底层都是通过 CoreText 排版、绘制为 Bitmap 显示的。常见的文本控件 （UILabel、UITextView 等），其排版和绘制都是在主线程进行的，当显示大量文本时，CPU 的压力会非常大。对此解决方案只有一个，那就是自定义文本控件，用 TextKit 或最底层的 CoreText 对文本异步绘制。尽管这实现起来非常麻烦，但其带来的优势也非常大，CoreText 对象创建好后，能直接获取文本的宽高等信息，避免了多次计算（调整 UILabel 大小时算一遍、UILabel 绘制时内部再算一遍）；CoreText 对象占用内存较少，可以缓存下来以备稍后多次渲染.
+
+6).图片的解码
+
+当你用 UIImage 或 CGImageSource 的那几个方法创建图片时，图片数据并不会立刻解码。图片设置到 UIImageView 或者 CALayer.contents 中去，并且 CALayer 被提交到 GPU 前，CGImage 中的数据才会得到解码。这一步是发生在主线程的，并且不可避免。如果想要绕开这个机制，常见的做法是在后台线程先把图片绘制到 CGBitmapContext 中，然后从 Bitmap 直接创建图片。目前常见的网络图片库都自带这个功能。
+
+7).图像的绘制
+
+图像的绘制通常是指用那些以 CG 开头的方法把图像绘制到画布中，然后从画布创建图片并显示这样一个过程。这个最常见的地方就是 [UIView drawRect:] 里面了。由于 CoreGraphic 方法通常都是线程安全的，所以图像的绘制可以很容易的放到后台线程进行。一个简单异步绘制的过程大致如下（实际情况会比这个复杂得多，但原理基本一致）
+&lt;pre&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_async&lt;/span&gt;(backgroundQueue, ^{  
+        CGContextRef ctx = CGBitmapContextCreate(...);
+        &lt;span class=&quot;hljs-comment&quot;&gt;// draw in context...&lt;/span&gt;
+        CGImageRef img = CGBitmapContextCreateImage(ctx);
+        CFRelease(ctx);
+        &lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_async&lt;/span&gt;(mainQueue, ^{
+            layer&lt;span class=&quot;hljs-variable&quot;&gt;.contents&lt;/span&gt; = img;
+        });
+    });
+`&lt;/pre&gt;
+GPU 资源消耗原因和解决方案
+
+1.纹理的渲染
+
+所有的 Bitmap，包括图片、文本、栅格化的内容，最终都要由内存提交到显存，绑定为 GPU Texture。不论是提交到显存的过程，还是 GPU 调整和渲染 Texture 的过程，都要消耗不少 GPU 资源。当在较短时间显示大量图片时（比如 TableView 存在非常多的图片并且快速滑动时），CPU 占用率很低，GPU 占用非常高，界面仍然会掉帧。避免这种情况的方法只能是尽量减少在短时间内大量图片的显示，尽可能将多张图片合成为一张进行显示。 当图片过大，超过 GPU 的最大纹理尺寸时，图片需要先由 CPU 进行预处理，这对 CPU 和 GPU 都会带来额外的资源消耗。目前来说，iPhone 4S 以上机型，纹理尺寸上限都是 4096x4096，更详细的资料可以看这里：iosres.com。所以，尽量不要让图片和视图的大小超过这个值。
+
+2.视图的混合
+当多个视图（或者说 CALayer）重叠在一起显示时，GPU 会首先把他们混合到一起。如果视图结构过于复杂，混合的过程也会消耗很多 GPU 资源。为了减轻这种情况的 GPU 消耗，应用应当尽量减少视图数量和层次，并在不透明的视图里标明 opaque 属性以避免无用的 Alpha 通道合成。当然，这也可以用上面的方法，把多个视图预先渲染为一张图片来显示
+
+3.图像的生成
+
+CALayer 的 border、圆角、阴影、遮罩（mask），CASharpLayer 的矢量图形显示，通常会触发离屏渲染（offscreen rendering），而离屏渲染通常发生在 GPU 中。当一个列表视图中出现大量圆角的 CALayer，并且快速滑动时，可以观察到 GPU 资源已经占满，而 CPU 资源消耗很少。这时界面仍然能正常滑动，但平均帧数会降到很低。为了避免这种情况，可以尝试开启 CALayer.shouldRasterize 属性，但这会把原本离屏渲染的操作转嫁到 CPU 上去。对于只需要圆角的某些场合，也可以用一张已经绘制好的圆角图片覆盖到原本视图上面来模拟相同的视觉效果。最彻底的解决办法，就是把需要显示的图形在 后台线程绘制为图片，避免使用圆角、阴影、遮罩等属性。
+&lt;pre&gt;`如何检测应用的流畅度？
+`&lt;/pre&gt;
+“过早的优化是万恶之源”，在需求未定，性能问题不明显时，没必要尝试做优化，而要尽量正确的实现功能。做性能优化时，也最好是走修改代码 -&amp;gt; Profile -&amp;gt; 修改代码这样一个流程，优先解决最值得优化的地方。 如果你需要一个明确的 FPS 指示器，可以尝试一下 KMCGeigerCounter。对于 CPU 的卡顿，它可以通过内置的 CADisplayLink 检测出来；对于 GPU 带来的卡顿，它用了一个 1x1 的 SKView 来进行监视。这个项目有两个小问题：SKView 虽然能监视到 GPU 的卡顿，但引入 SKView 本身就会对 CPU/GPU 带来额外的一点的资源消耗；这个项目在 iOS 9 下有一些兼容问题，需要稍作调整。
+
+5.你用过单元测试吗?怎么才能做好单元测试？
+&gt; 什么是单元测试？
+单元测试：以下内容来自维基百科[单元测试](https://zh.wikipedia.org/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95)
+
+在计算机编程中，单元测试（英语：Unit Testing）又称为模块测试, 是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。在过程化编程中，一个单元就是单个程序、函数、过程 等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。
+&lt;pre&gt;`通常来说，程序员每修改一次程序就会进行最少一次单元测试，在编写程序的过程中前后很可能要进行多次单元测试，以证实程序达到软件规格书要求的工作目标，没有程序错误；虽然单元测试不是什么必须的，但也不坏，这牵涉到项目管理的政策决定。
+
+每个理想的测试案例独立于其它案例；为测试时隔离模块，经常使用&lt;span class=&quot;hljs-tag&quot;&gt;stubs&lt;/span&gt;、&lt;span class=&quot;hljs-tag&quot;&gt;mock&lt;/span&gt;&lt;span class=&quot;hljs-attr_selector&quot;&gt;[1]&lt;/span&gt;或&lt;span class=&quot;hljs-tag&quot;&gt;fake&lt;/span&gt;等测试马甲程序。单元测试通常由软件开发人员编写，用于确保他们所写的代码符合软件需求和遵循开发目标。它的实施方式可以是非常手动的（通过纸笔），或者是做成构建自动化的一部分。
+`&lt;/pre&gt;
+&gt; 单元测试有什么好处？
+单元测试的一个好处就是我们可以只测试单个模块，我们可以测试 单一模块有没有问题。比如说我们在开发中经常会写一些测试性的demo。我们写的测试性demo运行正常达到了我们需要的效果，那么我们就可以把demo的效果运用到我们的工程中进行调试。
+</code></pre><ul>
+<li>适应变更单元测试允许程序员在未来重构代码，并且确保模块依然工作正确（复合测试）。这个过程就是为所有函数和方法编写单元测试，一旦变更导致错误发生，借助于单元测试可以快速定位并修复错误。可读性强的单元测试可以使程序员方便地检查代码片断是否依然正常工作。良好设计的单元测试案例覆盖程序单元分支和循环条件的所有路径。在连续的单元测试环境，通过其固有的持续维护工作，单元测试可以延续用于准确反映当任何变更发生时可执行程序和代码的表现。借助于上述开发实践和单元测试的覆盖，可以分分秒秒维持准确性。</li>
+<li>简化集成单元测试消除程序单元的不可靠，采用自底向上的测试路径。通过先测试程序部件再测试部件组装，使集成测试变得更加简单。业界对于人工集成测试的必要性存在较大争议。尽管精心设计的单元测试体系看上去实现了集成测试，因为集成测试需要人为评估一些人为因素才能证实的方 面，单元测试替代集成测试不可信。一些人认为在足够的自动化测试系统的条件下，人力集成测试组不再是必需的。事实上，真实的需求最终取决于开发产品的特点 和使用目标。另外，人工或手动测试很大程度上依赖于组织的可用资源。[来源请求]</li>
+<li><p>文档记录单元测试提供了系统的一种文档记录。借助于查看单元测试提供的功能和单元测试中如何使用程序单元，开发人员可以直观的理解程序单元的基础API。单元测试具体表现了程序单元成功的关键特点。这些特点可以指出正确使用和非正确使用程序单元，也能指出需要捕获的程序单元的负面表现（译注：异常和错误）。尽管很多软件开发环境不仅依赖于代码做为产品文档，在单元测试中和单元测试本身确实文档化了程序单元的上述关键特点。<br>另一方面，传统文档易受程序本身实现的影响，并且时效性难以保证（如设计变更、功能扩展等在不太严格时经常不能保持文档同步更新）。</p>
+</li>
+<li><p>表达设计在测试驱动开发的软件实践中，单元测试可以取代正式的设计。每一个单元测试案例均可以视为一项类、方法和待观察行为等设计元素。下面的Java例可以帮助说明这一点。 当然，单元测试缺乏图的可读性，但UML图可以在自由工具（通常可从IDE扩展获取）中为大多数现代程序语言生成UML图，很难要求采购昂贵的UML设计套装软件。自由工具，类似于基于xUnit框架的工具，测试结果输出到一些可生成供人工识读的图形化工具系统中去。</p>
+</li>
+<li>分离接口和实现因为很多类会引用其它类，对这个类的测试经常会要求测试其它的类。一个最普遍的例子是依赖于数据库的类：为了测试它，测试人员通常编写代码去操作数据库。这是不对的，因为单元测试不应超出待测试的类边界。作为替代，软件开发人员应创建一个数据库连接的抽象接口，然后实现这个接口的模拟对象。通过对代码所需附件的抽象（临时降低了网状的耦合效应），这些独立程序单元较前者更能被完整测试。高质量的代码单元也可提供更好的可维护性。</li>
+<li><p>局限测试不可能发现所有的程序错误，单元测试也不例外。按定义，单元测试只测试程序单元自身的功能。因此，它不能发现集成错误、性能问题、或者其他系统 级别的问题。单元测试结合其他软件测试活动更为有效。与其它形式的软件测试类似，单元测试只能表明测到的问题，不能表明不存在未测试到的错误。软件测试是一个组合问题。例如，每一个布尔型的决断语句需要至少两种测试：一个返回真，一个返回假。因此，针对每行书写的代码，程序员通常需要写3 至5行的测试代码。[3]这很明显地很花时间而且对此的投入可能并不值得。也有些问题是根本不能简单地检测出来的——例如具不确定性的或牵扯到多线程的问 题。此外，替单元测试写的代码可能就像要测试的代码一样有程序错误。佛瑞德·布鲁克斯在人月神话一书中举例说明：“绝对不要带两个计时器去海边。最好总是 带一或三个”。意味着，如果两个计时器互相冲突的话，你该怎么知道哪个是对的？为了获得单元测试的好处，在软件开发过程中应形成一套严格纪律意识。仔细保 留记录是必要的，不仅仅只保留执行的测试，也包括保留对应的源码和其它软件单元的变更历史。即，使用版本控制系统是必要的。如果后续版本不能通过一个以前 测试通过的单元测试，版本控制系统可以提供对应时间段对源代码所做的变更清单。每天养成查看单元测试案例失败测试并及时确定错误原因的习惯是必要的。如果没有这样的流程，没有在团队工作流程中体现，单元测试系列将走向不同步，造成越来越多的错误和越来越低效的单元测试案例系列。</p>
+<blockquote>
+<p>iOS中的单元测试<br>在开发中，经常用到的单元测试一是测试某个模块的功能，也就是说把这个模块独立起来，单独进行测试。用到最多的应该是测试模块功能和接口调试功能。当然单元测试还有一些高级的用法自动测试和自动发布等。</p>
+</blockquote>
+<p>OCUnit（即用XCTest进行测试）其实就是苹果自带的测试框架，我们主要讲的就是这个。GHUnit是一个可视化的测试框架。（有了它，你可以点 击APP来决定测试哪个方法，并且可以点击查看测试结果等。）OCMock就是模拟某个方法或者属性的返回值，你可能会疑惑为什么要这样做?使用用模型生 成的模型对象，再传进去不就可以了？答案是可以的，但是有特殊的情况。比如你测试的是方法A，方法A里面调用到了方法B，而且方法B是有参数传入，但又不 是方法A所提供。这时候，你可以使用OCMock来模拟方法B返回的值。（在不影响测试的情况下，就可以这样去模拟。）除了这些，在没有网络的情况下，也 可以通过OCMock模拟返回的数据。UITests就是通过代码化来实现自动点击界面，输入文字等功能。靠人工操作的方式来覆盖所有测试用例是非常困难 的，尤其是加入新功能以后，旧的功能也要重新测试一遍，这导致了测试需要花非常多的时间来进行回归测试，这里产生了大量重复的工作，而这些重复的工作有些 是可以自动完成的，这时候UITests就可以帮助解决这个问题了。</p>
+<p>6. 你知道的的本地数据持久化都有哪些。你比较喜欢用哪些 为什么？</p>
+<p>采用的数据存储的方式有以下几种：<br>1、 FMDB（常用）<br>2、 Sqlite(次之)<br>3、 Coredata(次之)<br>4、 NSUserdefaults(最多使用)<br>5、 序列化反序列化（归档和解档）<br>6、 MongoDB(小众型的)</p>
+<p>大家讨论用的最多的是FMDB，原因很简单，关系型数据库，使用方便(相对于没经过封装和加工的Sqlite来说)。其次就是sqlite和 coredata 当然使用者三种主要是为了缓存。因为我们在开发中为了给用户更好的体验，就采用缓存的形式。一般情况下要做的操作就是在本地建立一个数据库(本地后台)。</p>
+<p>7.谈谈MVC设计模式的优缺点</p>
+<p>编程以来就一直被灌输MVC设计模式，具体MVC使用到底好在哪里 又有那些不足之处，可以通过下面的介绍得以了解。</p>
+<p>一、mvc原理</p>
+<p>mvc是一种程序开发设计模式,它实现了显示模块与功能模块的分离。提高了程序的可维护性、可移植性、可扩展性与可重用性，降低了程序的开发难度。它主要分模型、视图、控制器三层。</p>
+</li>
+</ul>
 <ol>
-<li><a href="http://www.huangbowei.com/archives/76.html" target="_blank" rel="external">购买域名</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/77.html" target="_blank" rel="external">购买虚拟主机并搭建（Linux）</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/78.html" target="_blank" rel="external">域名解析</a>；</li>
-<li><p><a href="http://www.huangbowei.com/archives/79.html" target="_blank" rel="external">wordpress等博客平台安装步骤</a>。<br>下面开始第四篇（中间比较悲催，这篇文章本来已经写好，然后发布的时候出错…草稿也没保存到）：</p>
+<li>模型(model)它是应用程序的主体部分，主要包括业务逻辑模块（web项目中的Action,dao类）和数据模块（pojo类）。模型与数据格式无关，这样一个模型能为多个视图提供数据。由于应用于模型的代码只需写一次就可以被多个视图重用，所以减少了代码的重复性</li>
+<li>视图(view) 用户与之交互的界面、在web中视图一般由jsp,html组成</li>
+<li><p>控制器(controller)接收来自界面的请求 并交给模型进行处理 在这个过程中控制器不做任何处理只是起到了一个连接的做用.<br>二、MVC的优点</p>
 </li>
-<li><p>域名已经解析好，大家访问网站可以看到探针，就是一些服务器的基本信息，这时候虚拟机里面还没有东西。我们先用putty登录虚拟机，输入以下命令：</p>
-<pre class="lang:default decode:true">cd /root/oneinstack  #进入oneinstack目录
-./vhost.sh  #添加虚拟主机，按照提示输入网站域名等，官网有详细说明</pre>
+<li><p>可以为一个模型在运行时同时建立和使用多个视图。变化-传播机制可以确保所有相关的视图及时得到模型数据变化，从而使所有关联的视图和控制器做到行为同步。</p>
 </li>
-<li><p>这时候用Winscp登录到虚拟机，进入以下目录，把下载好的wordpress解压，把里面的所有内容直接拖入以下目录。由于wordpress官网全都被墙，无语，特此提供目前最新版下载：[file]</p>
-<pre class="lang:default decode:true">/data/wwwroot/abc.com  #进入这个目录，abc.com根据个人设置变化</pre>
+<li>视图与控制器的可接插性，允许更换视图和控制器对象，而且可以根据需求动态的打开或关闭、甚至在运行期间进行对象替换。</li>
+<li>模型的可移植性。因为模型是独立于视图的，所以可以把一个模型独立地移植到新的平台工作。需要做的只是在新平台上对视图和控制器进行新的修改。</li>
+<li><p>潜在的框架结构。可以基于此模型建立应用程序框架，不仅仅是用在设计界面的设计中。<br>三、MVC的不足之处</p>
 </li>
-<li><p>这时候打开你的网址，就会自动跳转到wordpress安装界面,点击<span class="lang:default decode:true crayon-inline ">现在就开始！</span> ：<a href="http://cdn.huangbowei.com/images/yuminginstall.png" target="_blank" rel="external"><img src="http://cdn.huangbowei.com/images/yuminginstall.png" alt=""></a></p>
+<li><p>增加了系统结构和实现的复杂性。对于简单的界面，严格遵循MVC，使模型、视图与控制器分离，会增加结构的复杂性，并可能产生过多的更新操作，降低运行效率。</p>
 </li>
-<li>进入下一步，填写数据库信息：<a href="http://cdn.huangbowei.com/images/yuminginstall2.png" target="_blank" rel="external"><img src="http://cdn.huangbowei.com/images/yuminginstall2.png" alt=""></a></li>
-<li>不出意外，会报错，这一步90%的人都碰见过，我也不例外，毕竟第一次，看报错说明也很简单，就是wordpress这个数据库不存在，这个好办。（1）安 装过phpMyadmin，输入你的IP加phpMyadmin，例如<a href="http://115.123.12.34/phpMyadmin，输入数据库用户" target="_blank" rel="external">http://115.123.12.34/phpMyadmin，输入数据库用户</a> 名与密码后，在首页上方单击数据库，然后再下面新建数据库填入wordpress，单击创建就ok（2）未安装phpMyadmin，打开putty，登 录虚拟机，输入<span class="lang:default decode:true crayon-inline">mysql -u root -p</span>，然后输入数据库密码，然后输入<span class="lang:default decode:true crayon-inline ">create database wordpress;</span> 这样就创建好wordpress数据库了。<a href="http://cdn.huangbowei.com/images/yuminginstall3.png" target="_blank" rel="external"><img src="http://cdn.huangbowei.com/images/yuminginstall3.png" alt=""></a></li>
-<li>以上步骤做好后，点击<span class="lang:default decode:true crayon-inline ">重试</span> 再一次输入数据库账户密码，单击<span class="lang:default decode:true crayon-inline ">进行安装</span> ：<a href="http://cdn.huangbowei.com/images/yuminginstall4.png" target="_blank" rel="external"><img src="http://cdn.huangbowei.com/images/yuminginstall4.png" alt=""></a></li>
-<li>进入最后一步，输入你网站的基本信息。站点标题、管理员用户名、密码、联系邮箱。大功告成，等待一会儿，再次打开你的网站，就会发现一片神奇的新大陆，从此以后你也是有博客的男人啦！<a href="http://cdn.huangbowei.com/images/yuminginstall5.png" target="_blank" rel="external"><img src="http://cdn.huangbowei.com/images/yuminginstall5.png" alt=""></a></li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>经 历过wordpress的安装，你就学会了一门新套路，因为大部分程序都是这样安装的：下载好安装程序-解压-上传至网站根目录-打开对应网站-自动跳转 至程序安装程序。满满的全是套路。至于博客平台的选择，实在太多，后面有时间给大家介绍下。大家最好从wordpress开始入门，毕竟资料多，上手简 单。</p>
-<p>有些人喜欢推荐小白安装面板，也就是图形化管理主机，不需要打代码等等，然而像我这样 的程序猿，啪啪啪的打代码这么爽感，怎么可能会用面板这种东西。其实是因为面板会消耗一定内存，虽然非常小，但是这样毕竟不太好，多动动脑子，动动手。这 里还是要推荐几个比较好的面板(我没用过，从自己研究这么久大家的口碑推荐)：1.AMH（4.2以前免费，后面的就是按月收费)。2.Wdcp。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/10/78/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/10/78/" itemprop="url">
-                  小白搭建博客教程-域名解析(3)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-10T15:56:54Z">
-                2016-06-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>上一回说道：<a href="http://www.huangbowei.com/archives/28.html" target="_blank" rel="external">小白搭建博客教程之流程</a>，这次趁着端午节写完它，也算是一个了结。</p>
-<p>教程有4篇：</p>
-<ol>
-<li><a href="http://www.huangbowei.com/archives/76.html" target="_blank" rel="external">购买域名</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/77.html" target="_blank" rel="external">购买虚拟主机并搭建（Linux）</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/78.html" target="_blank" rel="external">域名解析</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/79.html" target="_blank" rel="external">wordpress等博客平台安装步骤</a>。<br>下面开始第三篇：</li>
-</ol>
-<h3 id="解释下DNS工作原理（不喜欢看的可以跳过这一步）：-s"><a href="#解释下DNS工作原理（不喜欢看的可以跳过这一步）：-s" class="headerlink" title="解释下DNS工作原理（不喜欢看的可以跳过这一步）：[s]"></a>解释下DNS工作原理（不喜欢看的可以跳过这一步）：[s]</h3><p>[p]</p>
-<p>DNS的工作原理及过程分下面几个步骤：</p>
-<ol>
-<li>客户机提出域名解析请求，并将该请求发送给本地的域名服务器。</li>
-<li>当本地的域名服务器收到请求后，就先查询本地的缓存，如果有该纪录项，则本地的域名服务器就直接把查询的结果返回。</li>
-<li>如果本地的缓存中没有该纪录，则本地域名服务器就直接把请求发给根域名服务器，然后根域名服务器再返回给本地域名服务器一个所查询域(根的子域) 的主域名服务器的地址。</li>
-<li>本地服务器再向上一步返回的域名服务器发送请求，然后接受请求的服务器查询自己的缓存，如果没有该纪录，则返回相关的下级的域名服务器的地址。</li>
-<li>重复第四步，直到找到正确的纪录。</li>
-<li>本地域名服务器把返回的结果保存到缓存，以备下一次使用，同时还将结果返回给客户机。<br>让 我们举一个例子来详细说明解析域名的过程。假设我们的客户机如果想要访问站点： www.apple.com ， 此客户本地的域名服务器 是 dns.company.com ， 一个根域名服务器是 ns.inter.net ，所要访问的网站的域名服务器 是 dns.apple.com ，域名解析的过程如下所示：</li>
-<li>客户机发出请求解析域名 www.apple.com 的报文；</li>
-<li>本地的域名服务器收到请求后，查询本地缓存，假设没有该纪录，则本地域名服务器 dns.company.com 则向根域名服务器 ns.inter.net 发出请求解析域名 www.apple.com ；</li>
-<li>根 域名服务器 ns.inter.net 收到请求后查询本地记录得到如下结果：apple.com NS dns.apple.com （表 示 apple.com 域中的域名服务器为：dns.apple.com ），同时给出 dns.apple.com 的地址，并将结果返 回给域名服务器 dns.company.com ；</li>
-<li>域名服务器 dns.company.com 收到回应后，再发出请求解析域名 www.apple.com的报文；</li>
-<li>域 名服务器 dns.apple.com 收到请求后，开始查询本地的记录，找到如下一条记 录： www.apple.com A 211.120.3.12 （表示 apple.com 域中域名服务 器 dns.apple.com 的IP地址为：211.120.3.12），并将结果返回给客户本地域名服务 器 dns.company.com ；</li>
-<li>客户本地域名服务器将返回的结果保存到本地缓存，同时将结果返回给客户机。<br>这样就完成了一次域名解析过程。<br>[/p]</li>
-</ol>
-<h3 id="解析商选择"><a href="#解析商选择" class="headerlink" title="解析商选择"></a>解析商选择</h3><p>解析商推荐CloudXNS，之前用的DNSpod，后来发现CloudXNS马上路转粉，功能比较多，也挺人性化的，也比DNSPod稳定。这个大家可以谷歌下或者自己观察。</p>
-<h3 id="如何设置域名解析？"><a href="#如何设置域名解析？" class="headerlink" title="如何设置域名解析？"></a>如何设置域名解析？</h3><ol>
-<li>首先进入<a href="https://www.cloudxns.net/Index/index.html" target="_blank" rel="external">CloudXNS</a>官网，注册帐号。</li>
-<li>点击左上角-添加域名，输入你购买的域名；</li>
-<li><p>然后你会看到提示：域名未接管提示</p>
-<ol>
-<li><p>您的域名还未被CloudXNS接管，请在域名注册处将域名的NS服务器修改为我们为您提供的专用NS服务器：<br>NS服务器：</p>
-<pre class="lang:default decode:true">lv3ns1.ffdns.net
-lv3ns2.ffdns.net
-lv3ns3.ffdns.net
-lv3ns4.ffdns.net</pre>
-
-<ol>
-<li>如果您已经修改为上述NS服务器：可能由于域名服务商或LocalDNS的原因，原NS记录还没有过期需要等待一段时间新NS记录才生效<br>&nbsp;</li>
-</ol>
+<li>视图与控制器间的过于紧密的连接。视图与控制器是相互分离，但确实联系紧密的部件，视图没有控制器的存在，其应用是很有限的，反之亦然，这样就妨碍了他们的独立重用。</li>
+<li>视图对模型数据的低效率访问。依据模型操作接口的不同，视图可能需要多次调用才能获得足够的显示数据。对未变化数据的不必要的频繁访问，也将损害操作性能。</li>
+<li><p>目前，一般高级的界面工具或构造器不支持模式。改造这些工具以适应MVC需要和建立分离的部件的代价是很高的，从而造成MVC使用的困难。<br>8.谈谈你对多线程的理解，你经常用的多线程有哪些实现方式，谈谈他们优缺点。</p>
+<p>使用NSOperationQueue用来管理子类化的NSOperation对象，控制其线程并发数目。GCD和NSOperation都 可以实现对线程的管理，区别是 NSOperation和NSOperationQueue是多线程的面向对象抽象。项目中使用NSOperation的优点是NSOperation是 对线程的高度抽象，在项目中使用它，会使项目的程序结构更好，子类化NSOperation的设计思路，是具有面向对象的优点（复用、封装），使得实现是 多线程支持，而接口简单，建议在复杂项目中使用。</p>
+<p>项目中使用GCD的优点是GCD本身非常简单、易用，对于不复杂的多线程操作，会节省代码量，而Block参数的使用，会是代码更为易读，建议在简单项目中使用。</p>
+<blockquote>
+<p>什么时候用多线程？<br>大多情况下,要用到多线程的主要是需要处理大量的IO操作时或处理的情况需要花大量的时间等等,比如:读写文 件、视频图像的采集、处理、显示、保存等。<br>多线程的作用?<br>可以解决负载均衡问题,充分利用cpu资源 。为了提高CPU的使用率,采用多线程的方式去同时完 成几件事情而互不干扰.<br>iOS实现多线程有哪几种方式？<br>主要有三种主要方法。</p>
+</blockquote>
+<p>1、NSThread。</p>
+<p>2、NSOperation。</p>
+<p>3、GCD。</p>
+<blockquote>
+<p>多线程安全问题的几种解决方案?<br>使用锁。锁是线程编程同步工具的基础。锁可以让你很容易保护代码中一大块区域以便你可以确保代码的正 确性。使用POSIX互斥锁;使用NSLock类;使用@synchronized指令等。<br>分线程回调主线程方法是什么？有什么作用呢？<br>回到主线程的方法:</p>
+</blockquote>
+<p>(1). performSelectorOnMainThrea<br><pre><code>[&lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt; performSelectorOnMainThread:&amp;lt;&lt;span class=&quot;hljs-preprocessor&quot;&gt;#(SEL)#&amp;gt;withObject:&lt;span class=&quot;hljs-title&quot;&gt;&amp;lt;#(id)#&amp;gt;&lt;/span&gt;waitUntilDone:&lt;span class=&quot;hljs-title&quot;&gt;&amp;lt;#(BOOL)#&amp;gt;&lt;/span&gt;];&lt;/span&gt;</code></pre><br>(2). GCD<br><pre><code>&lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_async&lt;/span&gt;(dispatch_get_main_queue(), ^{  
+});</code></pre><br>(3). NSOperationQueue<br><pre><code>[[NSOperationQueue mainQueue]addOperationWithBlock:^{
+}]</code></pre><br>作用:主线程是显示UI界面,子线程多数是进行数据处理.</p>
+<p>PS:最高境界是异步单线程，江湖上称协程。<br>可以参考 boost 中的 asio 用户级的任务调度</p>
+<p>9.谈谈你对面向对象和面向过程的认识。</p>
+<p>简单对比</p>
+<p>面向过程就像是一个细心的管家，事无具细的都要考虑到。而面向对象就像是个家用电器，你只需要知道他的功能，不需要知道它的工作原理。“面向过 程”是一种是事件为中心的编程思想。就是分析出解决问题所需的步骤，然后用函数把这写步骤实现，并按顺序调用。面向对象是以“对象”为中心的编程思想。</p>
+<p>简单的举个例子：汽车发动、汽车到站</p>
+<p>这对于“面向过程”来说，是两个事件，汽车启动是一个事件，汽车到站是另一个事件，面向过程编程的过程中我们关心的是事件，而不是汽车本身。针 对上述两个事件，形成两个函数，之后依次调用。然而这对于面向对象来说，我们关心的是汽车这类对象，两个事件只是这类对象所具有的行为。而且对于这两个行 为的顺序没有强制要求。</p>
+<p>两种思想的对比</p>
+<p>面向过程其实最为实际的一种思考方式，因为我们总是一贯一步一步的解决问题。(举个简单的事情，在初学面向对象的语言例如c++时，我们也总是 不经意的面向过程了!)。其实就算是面向对象思想也是包含有面向过程思想的，面向过程需形成事件、也就是函数，面向对象需抽象出类，并且也会定义出这类对 象的“行为”及方法。但是不论是面向过程的函数，还是面向对象的方法，两者所完成目的都是一致的。可以说面向过程是一种基础的方法，它考虑的是实际的实 现，一般情况下，面向过程是自顶向下逐步求精，其最重要的是模块化的思想方法。面向对象的方法主要是把事物给对象化，包括其属性和行为。这里在程序较小的 时候，面向过程就会体现出一种优势，其程序流程十分清楚。如同上述汽车发动、到站这一过程，面向过程可以很清晰的将这一过程体现出来。而面向对像仅仅是抽 象出一个Bus类，包括发动、到站之两个行为，具体的执行顺序不能体现出来。</p>
+<p>面向过程和面向对象的本质理解</p>
+<p>面向过程就是分析出解决问题所需的步骤，面向对象则是把构成问题的事物分解成对象，抽象出对象的目的并不在于完成某个步骤，而是描述其再整个解决问 题的步骤中的行为。面向过程的思维方式是分析综合，面向对象的思维方式是构造。 例如c语言解决问题时，一般是先定义数据结构，然后在构造算法。而是面向对象求解时则是先抽象出对象，构造一个“封闭”的环境，这个环境中有定义的数据和 解决问题的算法。面向过程的设计更具挑战性，技巧性，面向对象主要在于对象抽象的技术性，一旦完成抽象，任何人都可以做后面的工作了。从代码层结构上来说 的话，面向对象和面向过程的主要区别就是数据是单独存数还是与操作存储在一起。面向对象提供了数据的封装后，是的对某一操作而言，数据的访问变得可靠了。</p>
+<p>面向过程就是将coding当做一件事，一步一步完成，面向对象就是将coding当做一件事物，需要做什么的时候由事物(对象)本身的行为去完成。</p>
+<p>总的来说：</p>
 </li>
-</ol>
-</li>
-<li>这时候进入你域名购买服务商，修改DNS服务器设置（这里每个服务商位置不一样，一般在域名基本信息或者设置里面），修改为上面4个，等待5、6分钟，阿里云坑爹的要好久，我睡一觉起来才接管成功。这时候就再也不需要进入阿里云万网那里了，域名解析操作都可以在CloudXns完成。</li>
-<li>域名一般是www.huangbowei.com或者huangbowei.com，这时候解析就这样设置(记录值填写你的公网IP)：<a href="http://cdn.huangbowei.com/images/yumingdns1.png" target="_blank" rel="external"><img src="http://cdn.huangbowei.com/images/yumingdns1.png" alt=""></a>然后Oneinstack一键部署工具添加虚拟主机的时候选择你需要的主域名与副域名就可以。</li>
 </ol>
 <ul>
-<li>比如，www.huangbowei.com作为主域名，访问www.huangbowei.com和huangbowei.com都会跳转到www.huangbowei.com；</li>
-<li>如果huangbowei.com作为主域名，访问www.huangbowei.com和huangbowei.com都会跳转到huangbowei.com。这个看个人喜好而定。</li>
-<li>如果你想要添加一个域名qq.huangbowei.com，则解析如下(记录值填写你的公网IP)：<a href="http://cdn.huangbowei.com/images/yumingdns2.png" target="_blank" rel="external"><img src="http://cdn.huangbowei.com/images/yumingdns2.png" alt=""></a></li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/10/77/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/10/77/" itemprop="url">
-                  小白搭建博客教程-购买虚拟主机并搭建(2)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-10T11:03:25Z">
-                2016-06-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>上一回说道：<a href="http://www.huangbowei.com/archives/28.html" target="_blank" rel="external">小白搭建博客教程之流程</a>，这次趁着端午节写完它，也算是一个了结。</p>
-<p><div id="uniquename0" style="display: none; position: absolute ! important; overflow: hidden; height: 18px; z-index: 9999 ! important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute !important; overflow: hidden; height: 18px; z-index: 9999 !important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute ! important; overflow: hidden; height: 18px; z-index: 9999 ! important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute ! important; overflow: hidden; height: 18px; z-index: 9999 ! important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute ! important; overflow: hidden; height: 18px; z-index: 9999 ! important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute ! important; overflow: hidden; height: 18px; z-index: 9999 ! important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute !important; overflow: hidden; height: 18px; z-index: 9999 !important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute ! important; overflow: hidden; height: 18px; z-index: 9999 ! important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute ! important; overflow: hidden; height: 18px; z-index: 9999 ! important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute !important; overflow: hidden; height: 18px; z-index: 9999 !important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute !important; overflow: hidden; height: 18px; z-index: 9999 !important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute ! important; overflow: hidden; height: 18px; z-index: 9999 ! important;"></div></p>
-<p><div id="uniquename0" style="display: none; position: absolute ! important; overflow: hidden; height: 18px; z-index: 9999 ! important;"></div><br>教程有4篇：</p>
-<ol>
-<li><a href="http://www.huangbowei.com/archives/76.html" target="_blank" rel="external">购买域名</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/77.html" target="_blank" rel="external">购买虚拟主机并搭建（Linux）</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/78.html" target="_blank" rel="external">域名解析</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/79.html" target="_blank" rel="external">wordpress等博客平台安装步骤</a>。<br>下面开始第二篇：</li>
-</ol>
-<h2 id="虚拟主机选择"><a href="#虚拟主机选择" class="headerlink" title="虚拟主机选择"></a>虚拟主机选择</h2><p>域名有了，接下来要有主体，一个虚拟主机，可以让你的博客或者网站放在虚拟主机上“跑”起来。域名就好比车牌号，虚拟主机就好比发动机。</p>
-<p>虚拟主机大致分2种。国内虚拟主机与国外VPS。价格的话从几块到几千一个月不等，相差比较大，因为厂商搞活动，有些时候还免费送，充多少钱送多少钱。国内虚拟主机价格普遍比国外VPS高。</p>
-<p>国内便宜的主机建议大家不要购买，空间大小、数据库大小以及带宽流量都非常有限，即使是国外的无限主机在CPU使用率和文件个数方面也是有限制的，而且大部分便宜的虚拟主机都是公用IP，容易受到同虚拟主机网站的牵连，当然这个可以通过购买独立IP解决。想要玩一玩那就随便，真的想要写好一个博客还是选择阿里云、腾讯云（学生认证后1元可得65元每月的虚拟主机）等大厂商的服务比较好。（<span style="color: #ff0000;">国内访问速度快，需要备案，手续繁琐</span>）</p>
-<p>国外VPS性价比也不错，搬瓦工、Linode、Vultr等都可以选择，买VPS不仅可以搭建网站，还可以科学上网，你懂的，满足你的特殊需求。（<span style="color: #ff0000;">国内访问速度一般，无需备案，方便快捷</span>）</p>
-<h2 id="虚拟主机搭建环境"><a href="#虚拟主机搭建环境" class="headerlink" title="虚拟主机搭建环境"></a>虚拟主机搭建环境</h2><h4 id="一键部署工具选择"><a href="#一键部署工具选择" class="headerlink" title="一键部署工具选择"></a>一键部署工具选择</h4><p>虚拟主机买好后，可以进行以下步骤，大家一步一步来：</p>
-<h4 id="系统选择"><a href="#系统选择" class="headerlink" title="系统选择"></a>系统选择</h4><p>Centos7比较好，Centos稳定性高，遇到问题查阅资料方便，Debian占用内存等资源少，但是遇到问题查找资料没有Centos方便。</p>
-<h4 id="连接虚拟主机"><a href="#连接虚拟主机" class="headerlink" title="连接虚拟主机"></a>连接虚拟主机</h4><p>参考我之前写的文章：</p>
-<p>连接虚拟主机终端：<a href="http://www.huangbowei.com/archives/23.html" target="_blank" rel="external">分享下平时我在windows平台下开发用的一些比较好的软件-putty（三）</a></p>
-<p>虚拟主机上传文件：<a href="http://www.huangbowei.com/archives/24.html" target="_blank" rel="external">分享下平时我在windows平台下开发用的一些比较好的软件-winscp（四）</a></p>
-<p>接下来就是环境搭建了，需要用到putty。这里介绍搭建wordpress博客环境的搭建，毕竟干不同的事要不同的环境，这里要说明下。以下推荐几个一键部署工具：</p>
-<ol>
-<li><a href="https://oneinstack.com/" target="_blank" rel="external">OneinStack</a>；</li>
-<li>军哥的<a href="http://lnmp.org/" target="_blank" rel="external">LNMP</a>；</li>
-<li><a href="https://blog.linuxeye.com/31.html" target="_blank" rel="external">lnmp、lamp、lnmpa一键安装包</a>；<br>我一直用的是Oneinstack，因为这个更新快，功能强大，满足我这个强迫症用最新版本软件的需求。1和3是同一个·作者的，一直不懂为什么要出2个，而且里面内容差不多，最近看作者说以后会把3合并进1，只有Oneinstack。2是一些老站长比较推崇的，这个出现的比较早，2009年就有啦！！自然许多人就习惯用LNMP，毕竟情怀。而Oneinstack2015年才开发第一个初始版本。</li>
-</ol>
-<p>刚刚看啦下，LNMP最后一次更新在2016年6月1日，上一次在2015年6月1日。。。。，而且据我观察，几乎每个版本都是儿童节左右出来，原来如此，前几个月我看2015年才更新的稳定版，我还以为不会更新了，强迫症的我肯定不会用的，看来作者是稳定一年一更的节奏呀。</p>
-<h4 id="开始一键部署"><a href="#开始一键部署" class="headerlink" title="开始一键部署"></a>开始一键部署</h4><p>根据个人喜好选择好一键部署工具后，安装的话可以上工具网站，有很详细的介绍，我在这里也就不粘贴复制了。不过我在这里贴上<span style="color: #ff0000;">我的Oneinstack工具的配置</span>，因为许多小白连Nginx、PHP都不知道是啥，更不用谈如何选择了。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>服务器环境部署这一块大家可以多多尝试，尝试的越多，明白的就越多，有些问题也就理解的越透彻，当初我的服务器经历过无数次的部署与重装系统！！所以现在才略微了解其中的奥妙。还有，有些人喜欢用面板控制主机，因为图形化界面，容易操作，不需要敲代码，很方便，面板软件有：1、AMH （AMH 4.2 免费，后面的都是按月收费使用的）；2、wdCP。不过我从来没有使用过，没有办法评价，作为一个程序猿当然是进终端啪啪啪滴敲代码更爽了，安装面板还占用内存资源，还有Bug。</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/10/76/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/10/76/" itemprop="url">
-                  小白搭建博客教程-购买域名(1)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-09T23:38:33Z">
-                2016-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>上一回说道：<a href="http://www.huangbowei.com/archives/28.html" target="_blank" rel="external">小白搭建博客教程之流程</a>，这次趁着端午节写完它，也算是一个了结。</p>
-<p>教程有4篇：</p>
-<ol>
-<li><a href="http://www.huangbowei.com/archives/76.html" target="_blank" rel="external">购买域名</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/77.html" target="_blank" rel="external">购买虚拟主机并搭建（Linux）</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/78.html" target="_blank" rel="external">域名解析</a>；</li>
-<li><a href="http://www.huangbowei.com/archives/79.html" target="_blank" rel="external">wordpress等博客平台安装步骤</a>。<br>下面开始第一篇：</li>
-</ol>
-<p>一个网站想要别人记住，要的不仅是高质量的文章，还要有一个朗朗上口的域名，让别人愿意访问，容易记住，购买域名，推荐<a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">狗爹</a>（godaddy），因为经常有优惠。不过现在的话，阿里云的万网、DNSPod、西部数码都可以购买，毕竟国内服务商比较方便，价格也贵不到哪里。（<span style="color: #ff0000;">注意事项，许多域名第一年免费或者几块钱，大家不要贪图便宜，得看下续费价格，一般这种域名续费价格高昂，几百不等。一年后，如果你玩玩而已还好，就不续费或者换一个，如果你的网站做的还不错，这时候更换域名就没这么容易了。</span>）</p>
-<p>付款方式的话国内域名商一般都支持微信支付，支付宝支付等接地气的方式，很方便，国外的话情况不一样，一般信用卡或paypal，不适合小白。</p>
-<p>购买的话流程都一样，输入你想要的域名，如果没人注册，你可以进行下一步，如果已经被注册，那就得换过一个重新验证。然后填好你的个人信息，最好填真实的，然后付钱，大功告成，也可以设置下开启域名Whois隐私保护，可以在别人查询域名注册者的时候隐藏你的信息。还有域名都是一年一年购买的。.com域名一般50左右一年，每家域名商都不一样。大家也可以购买.vip后缀的域名，只要24元每年，尊贵域名，奢华之选！！详情可以看我之前写的文章<a href="http://www.huangbowei.com/archives/74.html" target="_blank" rel="external">启用iosdev.vip域名</a>。</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/07/75/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/06/07/75/" itemprop="url">
-                  腾讯云COS开启FTP功能
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-07T15:35:54Z">
-                2016-06-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>我的网站一直用的是腾讯云的COS，图片、JS、CSS等静态资源都存在上面，速度比较理想。但有一个通点：文件管理相当不方便，上传文件虽然说可以支持单文件20G，但是删除文件只能一个一个删除，而且当文件夹里面有文件是还不能删除，只能把文件夹里的东西一个一个删除，然后删除文件夹。有些人或许会说，那就放那里呗，反正不影响，但对于我这个强迫症来说，这个不能忍！！有时候我还真一个一个删除，真苦逼呀。</p>
-<p>所以今天上网研究一番，发现网上有用官方API写脚本批量控制的，还不错，还有就是用wp插件的。接下来就是本文的重点，超级无敌方便：申请官方FTP权限管理文件。</p>
-<p>步骤：</p>
-<ol>
-<li>登录腾讯云官网，进入控制台；</li>
-<li>点击右上角：工单-我的工单；</li>
-<li>左侧：提交工单-请选择问题分类-存储与CDN-对象存储COS；</li>
-<li>然后选择：<span class="text-truncate max-width" title="FTP功能开通">FTP功能开通。下面填写你想要开通FTP功能的Bucket；</span></li>
-<li>大功告成！审核速度没的说，我得大概7、8分钟就通过了。<br><a href="http://cdn.huangbowei.com/images/qcloudftp.png" target="_blank" rel="external"><img src="http://cdn.huangbowei.com/images/qcloudftp.png" alt=""></a></li>
-</ol>
-<p>到这里，大概的都差不多完成了，剩下的就是去创建FTP账户（对象存储服务-Bucke列表-修改配置-FTP设置），然后用Winscp登录，你就可以看到所有文件了，再也不用每次上传文件都苦逼的登录官网，然后上传，在这里你可以随意操作，当然风险也更大，万一操作失误就白白啦。下面是FTP的一些说明：</p>
-<p>客户端配置：</p>
+<li>面向对象是将事物高度抽象化。</li>
+<li>面向过程是一种自顶向下的编程。</li>
+<li><p>面向对象必须先建立抽象模型，之后直接使用模型就行了。<br>面向过程就是说把做事情的步骤一步一步要干啥清楚明了的告诉我们。就是说我们知道具体是通过什么方式来实现的。</p>
+<p>面向对象说白了就是我们只需要知道我们所使用的对象有什么功能，然后我们让对象去做事情。我们关心的不是实现的过程，而是能否实现和实现的结果。是事物抽象化的一种体现。</p>
+<p>10.什么是单例？怎么用？有什么好处？指出你项目中用到的单例模式。</p>
 <blockquote>
-<p>地址：ftp://ftp.file.myqcloud.com</p>
-<p>端口号：9421</p>
-<p>加密方式：TLS 显式加密（推荐） 或 不加密（不推荐）</p>
-<p>连接模式：pasv 被动模式</p>
-<p>超时设置：300 秒（建议）<br>功能限制：<br>不支持下载操作。</p>
-<p>不支持远程移动、复制和重命名操作。</p>
-<p>最大文件限制为 100 MB。<br>&nbsp;</p>
+<p>什么是单例模式<br>单例模式的意思就是只有一个实例。单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。这个类称为单例类。</p>
 </blockquote>
+<p>单例模式的要点有三个：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。</p>
+<blockquote>
+<p>单例模式的作用<br>可以保证在运行程序过程中，一个类只有一个实例，而且该实例易于供外界访问； 方便控制实例个数，节约系统资源。<br>如何使用？<br>单例是整个 Cocoa 中被广泛使用的核心设计模式之一。事实上，苹果开发者库把单例作为 “Cocoa 核心竞争力” 之一。作为一个iOS开发者，我们经常和单例打交道，比如 UIApplication 和 NSFileManager 等等。我们在开源项目、苹果示例代码和 StackOverflow 中见过了无数使用单例的例子。Xcode 甚至有一个默认的 “Dispatch Once” 代码片段，可以使我们非常简单地在代码中添加一个单例：<br><pre>`+ (instancetype)sharedInstance<br>{</pre></p>
+<pre><code>&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_once_t&lt;/span&gt; once;
+&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;id&lt;/span&gt; sharedInstance;
+&lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_once&lt;/span&gt;(&amp;amp;once, ^{
+    sharedInstance = [[&lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt; alloc] init];
+});
+&lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; sharedInstance;
+</code></pre><p>}<br>`<br>由于这些原因，单例在 iOS 开发中随处可见。问题是，它们很容易被滥用。</p>
+</blockquote>
+<p>尽管有些人认为单例是 ‘反模式’， ‘魔鬼’ 以及 ‘病态的说谎者’，我不会去完全否认单例所带来的的好处，而是会展示一些使用单例所带来的问题，这样下一次在使用 dispatch_once 代码片段的自动补全功能时，你可以对它的影响进行评估，三思而行。</p>
+<h3 id="全局状态"><a href="#全局状态" class="headerlink" title="全局状态"></a>全局状态</h3><p>大多数的开发者都认同使用全局可变的状态是不好的行为。太多状态使得程序难以理解，难以调试。我们这些面向对象的程序员在最小化代码的状态复杂程度的方面，有很多需要向函数式编程学习的地方。<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SPMath</span> </span>{</pre></p>
+<pre><code>NSUInteger _a;
+NSUInteger _b;
+</code></pre><p>}</p>
+<ul>
+<li>(NSUInteger)computeSum<br>{<br>  <span class="hljs-keyword">return</span> _a + _b;<br>}<br>`<br>在上面这个简单的数学库的实现中，程序员需要在调用 computeSum 前正确的设置实例变量 _a 和 _b。这样有以下问题：</li>
+</ul>
+<p>1.computeSum 没有显式地通过使用参数的形式声明它依赖于 _a 和 _b 的状态。与仅仅通过查看函数声明就可以知道这个函数的输出依赖于哪些变量不同的是，另一个开发者必须查看这个函数的具体实现才能明白这个函数依赖那些变量。隐藏依赖是不好的。</p>
+<p>2.当为调用 computeSum 做准备而修改 _a 和 _b 的数值时，程序员需要保证这些修改不会影响任何其他依赖于这两个变量的代码的正确性。而这在多线程的环境中是尤其困难的。</p>
+<p>把下面的代码和上面的例子做对比：<br><pre>`+ (NSUInteger)computeSumOf:(NSUInteger)a plus:(NSUInteger)b<br>{</pre></p>
+<pre><code>&lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; a + b;
+</code></pre><p>}<br>`<br>这里，对变量 a 和 b 的依赖被显式地声明了。我们不需要为了调用这个方法而去改变实例变量的状态。并且我们也不需要担心调用这个函数会留下持久的副作用。我们甚至可以把这个方法声明为类方法，这样就告诉了代码的阅读者这个方法不会修改任何实例的状态。</p>
+<p>那么，这个例子和单例又有什么关系呢？用 Miško Hevery 的话来说，”单例就是披着羊皮的全局状态”。一个单例可以被使用在任何地方，而不需要显式地声明依赖。就像变量 _a 和 _b 在 computeSum 内部被使用了，却没有被显式声明一样，程序的任意模块都可以调用 [SPMySingleton sharedInstance] 并且访问这个单例。这意味着任何和这个单例交互产生的副作用都会影响程序其他地方的任意代码。<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPSingleton</span> : <span class="hljs-title">NSObject</span></span></pre></p>
+<ul>
+<li>(instancetype)sharedInstance;</li>
+</ul>
+<ul>
+<li>(NSUInteger)badMutableState;</li>
+<li>(<span class="hljs-keyword">void</span>)setBadMutableState:(NSUInteger)badMutableState;</li>
+</ul>
+<p><span class="hljs-keyword">@end</span></p>
+<p><span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SPConsumerA</span></span></p>
+<ul>
+<li>(<span class="hljs-keyword">void</span>)someMethod<br>{<br>  <span class="hljs-keyword">if</span> ([[SPSingleton sharedInstance] badMutableState]) {<pre><code>&lt;span class=&quot;hljs-comment&quot;&gt;// ...&lt;/span&gt;
+</code></pre>  }<br>}</li>
+</ul>
+<p><span class="hljs-keyword">@end</span></p>
+<p><span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SPConsumerB</span></span></p>
+<ul>
+<li>(<span class="hljs-keyword">void</span>)someOtherMethod<br>{<br>  [[SPSingleton sharedInstance] setBadMutableState:<span class="hljs-number">0</span>];<br>}</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br>`<br>在上面的例子中，SPConsumerA 和 SPConsumerB 是两个完全独立的模块。但是 SPConsumerB 可以通过使用单例提供的共享状态来影响 SPConsumerA 的行为。这种情况应该只能发生在 consumer B 显式引用了 A，并表明了两者之间的关系时。这里使用了单例，由于其具有全局和多状态的特性，导致隐式地在两个看起来完全不相关的模块之间建立了耦合。</p>
+<p>让我们来看一个更具体的例子，并且暴露一个使用全局可变状态的额外问题。比如我们想要在我们的应用中构建一个网页查看器。为了支持这个查看器，我们构建了一个简单的 URL cache：<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPURLCache</span></span></pre></p>
+<ul>
+<li>(SPCache *)sharedURLCache;</li>
+</ul>
+<ul>
+<li>(<span class="hljs-keyword">void</span>)storeCachedResponse:(NSCachedURLResponse <em>)cachedResponse forRequest:(<span class="hljs-built_in">NSURLRequest</span> </em>)request;</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br>`<br>这个开发者开始写一些单元测试来保证代码在一些不同的情况下都能达到预期。首先，他写了一个测试用例来保证网页查看器在设备没有连接时能够展示出错 误信息。然后他写了一个测试用例来保证网页查看器能够正确的处理服务器错误。最后，他为成功情况时写了一个测试用例，来保证返回的网络内容能够被正确的显 示出来。这个开发者运行了所有的测试用例，并且它们都如预期一样正确。赞！</p>
+<p>几个月以后，这些测试用例开始出现失败，尽管网页查看器的代码从它写完后就从来没有再改动过！到底发生了什么？</p>
+<p>原来，有人改变了测试的顺序。处理成功的那个测试用例首先被运行，然后再运行其他两个。处理错误的那两个测试用例现在竟然成功了，和预期不一样，因为 URL cache 这个单例把不同测试用例之间的 response 缓存起来了。</p>
+<p>持久化状态是单元测试的敌人，因为单元测试在各个测试用例相互独立的情况下才有效。如果状态从一个测试用例传递到了另外一个，这样就和测试用例的执行顺序就有关系了。有 bug 的测试用例，尤其是那些本来不应该通过的测试用例，是非常糟糕的事情。</p>
+<h3 id="对象的生命周期"><a href="#对象的生命周期" class="headerlink" title="对象的生命周期"></a>对象的生命周期</h3><p>另外一个关键问题就是单例的生命周期。当你在程序中添加一个单例时，很容易会认为 “永远只会有一个实例”。但是在很多我看到过的 iOS 代码中，这种假定都可能被打破。</p>
+<p>比如，假设我们正在构建一个应用，在这个应用里用户可以看到他们的好友列表。他们的每个朋友都有一张个人信息的图片，并且我们想使我们的应用能够下 载并且在设备上缓存这些图片。 使用 dispatch_once 代码片段，我们可以写一个 SPThumbnailCache 单例：<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPThumbnailCache</span> : <span class="hljs-title">NSObject</span></span></pre></p>
+<ul>
+<li>(instancetype)sharedThumbnailCache;</li>
+</ul>
+<ul>
+<li>(<span class="hljs-keyword">void</span>)cacheProfileImage:(<span class="hljs-built_in">NSData</span> <em>)imageData forUserId:(<span class="hljs-built_in">NSString</span> </em>)userId;</li>
+<li>(<span class="hljs-built_in">NSData</span> <em>)cachedProfileImageForUserId:(<span class="hljs-built_in">NSString</span> </em>)userId;</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br>`<br>我们继续构建我们的应用，一切看起来都很正常，直到有一天，我们决定去实现‘注销’功能，这样用户可以在应用中进行账号切换。突然我们发现我们将要 面临一个讨厌的问题：用户相关的状态存储在全局单例中。当用户注销后，我们希望能够清理掉所有的硬盘上的持久化状态。否则，我们将会把这些被遗弃的数据残 留在用户的设备上，浪费宝贵的硬盘空间。对于用户登出又登录了一个新的账号这种情况，我们也想能够对这个新用户使用一个全新的 SPThumbnailCache 实例。</p>
+<p>问题在于按照定义单例被认为是“创建一次，永久有效”的实例。你可以想到一些对于上述问题的解决方案。或许我们可以在用户登出时移除这个单例：<br><pre>`<span class="hljs-keyword">static</span> SPThumbnailCache *sharedThumbnailCache;</pre></p>
+<ul>
+<li><p>(instancetype)sharedThumbnailCache<br>{<br>  <span class="hljs-keyword">if</span> (!sharedThumbnailCache) {</p>
+<pre><code>sharedThumbnailCache = [[&lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt; alloc] init];
+</code></pre><p>  }<br>  <span class="hljs-keyword">return</span> sharedThumbnailCache;<br>}</p>
+</li>
+<li><p>(<span class="hljs-keyword">void</span>)tearDown<br>{<br>  <span class="hljs-comment">// The SPThumbnailCache will clean up persistent states when deallocated</span><br>  sharedThumbnailCache = <span class="hljs-literal">nil</span>;<br>}<br>`<br>这是一个明显的对单例模式的滥用，但是它可以工作，对吧？</p>
+</li>
+</ul>
+<p>我们当然可以使用这种方式去解决，但是代价实在是太大了。我们不能使用简单的的 dispatch_once 方案了，而这个方案能够保证线程安全以及所有调用 [SPThumbnailCache sharedThumbnailCache] 的地方都能访问到同一个实例。现在我们需要对使用缩略图 cache 的代码的执行顺序非常小心。假设当用户正在执行登出操作时，有一些后台任务正在执行把图片保存到缓存中的操作:<br><pre>`dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="hljs-number">0</span>), ^{  </pre></p>
+<pre><code>[[SPThumbnailCache sharedThumbnailCache] cacheProfileImage:newImage &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt;UserId:userId];
+</code></pre><p>});<br>`<br>我们需要保证在所有的后台任务完成前， tearDown 一定不能被执行。这确保了 newImage 数据可以被正确的清理掉。或者，我们需要保证在缩略图 cache 被移除时，后台缓存任务一定要被取消掉。否则，一个新的缩略图 cache 的实例将会被延迟创建，并且之前用户的数据 (newImage 对象) 会被存储在它里面。</p>
+<p>由于对于单例实例来说它没有明确的所有者，(因为单例自己管理自己的生命周期)，“关闭”一个单例变得非常的困难。</p>
+<p>分析到这里，我希望你能够意识到，“这个缩略图 cache 从来就不应该作为一个单例！”。问题在于一个对象得生命周期可能在项目的最初阶段没有被很好得考虑清楚。举一个具体的例子，Dropbox 的 iOS 客户端曾经只支持一个账号登录。它以这样的状态存在了数年，直到有一天我们希望能够同时支持多个用户账号登录 (同时登陆私人账号和工作账号)。突然之间，我们以前的的假设“只能够同时有一个用户处于登录状态”就不成立了。如果假定了一个对象的生命周期和应用的生 命周期一致，那你的代码的灵活扩展就受到了限制，早晚有一天当产品的需求产生变化时，你会为当初的这个假定付出代价的。</p>
+<p>这里我们得到的教训是，单例应该只用来保存全局的状态，并且不能和任何作用域绑定。如果这些状态的作用域比一个完整的应用程序的生命周期要短，那么这个状态就不应该使用单例来管理。用一个单例来管理用户绑定的状态，是代码的坏味道，你应该认真的重新评估你的对象图的设计。</p>
+<h4 id="避免使用单例"><a href="#避免使用单例" class="headerlink" title="避免使用单例"></a>避免使用单例</h4><p>既然单例对局部作用域的状态有这么多的坏处，那么我们应该怎样避免使用它们呢？</p>
+<p>让我们来重温一下上面的例子。既然我们的缩略图 cache 的缓存状态是和具体的用户绑定的，那么让我们来定义一个user对象吧：<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPUser</span> : <span class="hljs-title">NSObject</span></span></pre></p>
+<p><span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">readonly</span>) SPThumbnailCache *thumbnailCache;</p>
+<p><span class="hljs-keyword">@end</span></p>
+<p><span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SPUser</span></span></p>
+<ul>
+<li><p>(instancetype)init<br>{<br>  <span class="hljs-keyword">if</span> ((<span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init])) {</p>
+<pre><code>_thumbnailCache = [[SPThumbnailCache alloc] init];
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// Initialize other user-specific state...&lt;/span&gt;
+</code></pre><p>  }<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;<br>}</p>
+</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br><code>&lt;/pre&gt;
+我们现在用一个对象来作为一个经过认证的用户会话的模型类，并且我们可以把所有和用户相关的状态存储在这个对象中。现在假设我们有一个view controller来展现好友列表：
+&lt;pre&gt;</code><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPFriendListViewController</span> : <span class="hljs-title">UIViewController</span></span></p>
+<ul>
+<li>(instancetype)initWithUser:(SPUser *)user;</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br>`<br>我们可以显式地把经过认证的 user 对象作为参数传递给这个 view controller。这种把依赖性传递给依赖对象的技术正式的叫法是依赖注入，它有很多优点：</p>
+<p>1.对于阅读这个 SPFriendListViewController 头文件的读者来说，可以很清楚的知道它只有在有登录用户的情况下才会被展示。</p>
+<p>2.这个 SPFriendListViewController 只要还在使用中，就可以强引用 user 对象。举例来说，对于前面的例子，我们可以像下面这样在后台任务中保存一个图片到缩略图 cache 中：<br><pre>`dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="hljs-number">0</span>), ^{  </pre></p>
+<pre><code>[_user.thumbnailCache cacheProfileImage:newImage &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt;UserId:userId];
+</code></pre><p>});</p>
+</li>
+</ul>
+<p>就算后台任务还没有完成，应用其他地方的代码也可以创建和使用一个全新的 SPUser 对象，而不会在清理第一个实例时阻塞用户交互. 为了更详细的说明一下第二点，让我们画一下在使用依赖注入之前和之后的对象图。</p>
+<p>假设我们的 SPFriendListViewController 是当前 window 的 root view controller。使用单例时，我们的对象图看起来如下所示：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions1.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions1.png" alt=""></a></p>
+<p>view controller 自己，以及自定义的 image view 的列表，都会和 sharedThumbnailCache 产生交互。当用户登出后，我们想要清理 root view controller 并且退出到登录页面：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions2.png" alt=""></a><br>这里的问题在于这个好友列表的 view controller 可能仍然在执行代码 (由于后台操作的原因)，并且可能因此仍然有一些没有执行的涉及到 sharedThumbnailCache 的调用。</p>
+<p>和使用依赖注入的解决方案对比一下：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions3.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions3.png" alt=""></a></p>
+<p>简单起见，假设 SPApplicationDelegate 管理 SPUser 的实例 (在实践中，你可能会把这些用户状态的管理工作交给另外一个对象来做，这样可以使你的 application delegate 简化)。当展现好友列表 view controller 时，会传递进去一个 user 的引用。这个引用也会向下传递给 profile image views。现在，当用户登出时，我们的对象图如下所示：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions4.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions4.png" alt=""></a></p>
+<p>这个对象图看起来和使用单例时很像。那么，区别是什么呢？</p>
+<p>关键问题是作用域。在单例那种情况中，sharedThumbnailCache 仍然可以被程序的任意模块访问。假如用户快速的登录了一个新的账号。该用户也想看看他的好友列表，这也就意味着需要再一次的和缩略图 cache 产生交互：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions5.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions5.png" alt=""></a></p>
+<p>当用户登录一个新账号，我们应该能够构建并且与全新的 SPThumbnailCache 交互，而不需要再在销毁老的缩略图 cache 上花费精力。基于对象管理的典型规则，老的 view controllers 和老的缩略图 cache 应该能够自己在后台延迟被清理掉。简而言之，我们应该隔离用户 A 相关联的状态和用户 B 相关联的状态：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions6.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions6.png" alt=""></a></p>
+<p>&nbsp;</p>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>这一切的关键点是，在面向对象编程中我们想要最小化可变状态的作用域。但是单例却因为使可变的状态可以被程序中的任何地方访问，而站在了对立面。下一次你想使用单例时，能够好好考虑一下使用依赖注入作为替代方案。</p>
+<p>&nbsp;</p>
+<p>原文：shavekevin.com/2016/02/28/mianshiwentidaanyi</p>
 
           
         
@@ -1541,7 +2153,7 @@ lv3ns4.ffdns.net</pre>
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/02/74/">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/10/26/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Timhbw">
@@ -1563,8 +2175,8 @@ lv3ns4.ffdns.net</pre>
             
               
                 
-                <a class="post-title-link" href="/2016/06/02/74/" itemprop="url">
-                  启用iosdev.vip域名
+                <a class="post-title-link" href="/2016/03/10/26/" itemprop="url">
+                  MarkDown编辑器推荐--MarkdownPad
                 </a>
               
             
@@ -1580,8 +2192,8 @@ lv3ns4.ffdns.net</pre>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-02T12:44:29Z">
-                2016-06-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-10T08:56:31Z">
+                2016-03-10
               </time>
             
 
@@ -1603,8 +2215,8 @@ lv3ns4.ffdns.net</pre>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
                   </a>
                 </span>
 
@@ -1640,13 +2252,24 @@ lv3ns4.ffdns.net</pre>
       
         
           
-            <p>很早就知道一个有全新，尽显贵族、王者、装逼，高大上的顶级域名要发售，所以特地订好日历时间提醒，也就是5月18日。当然，许多大公司早就和明智墨斯（vip后缀域名提供商）签订好协议，什么qq.vip，vip.vip，taobao.vip早就已经归属他们所有，防止恶意抢注域名，保护公司权益。当然，现在恶意抢注已经不好使了，经典案例：weixin.com最后还是归属腾讯微信所有。</p>
-<p>&nbsp;</p>
-<p>不过iosdev.vip这域名我还是5月19号购买的，因为18号当天没找到在哪里购买，当时也忙着别的事，就没买。19号，看群里有人发这个消息，还有购买地址，阿里云的，于是便进去选几个好点的域名备用，现在不用，以后说不定还能投资勒，毕竟不贵，才28元/年，续费30元/年,今天看了下，只要24元！！！西部数码貌似每次都比阿里价格低，只要22，但是相比较起来，阿里毕竟更加大牌，服务什么的更加方便快捷，所以最后还是在阿里入手。</p>
-<p>大家可以试一试：</p>
-<p><a href="http://iosdev.vip" target="_blank" rel="external">http://iosdev.vip</a></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
+            <p>如果安装碰到问题，请点击<a href="http://www.huangbowei.com/archives/27.html" target="_blank" rel="external">渲染错误</a></p>
+<p>先简单介绍下Markdown这个好东西：</p>
+<blockquote>
+<p>Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
+<p>Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。<br>写博客神器有木有！现在应用挺广泛的，情怀锤子便签支持Markdown，WordPress，Typecho，hexo等博客平台都支持。</p>
+</blockquote>
+<p>但是在线编辑还是会有点麻烦，实时预览也不方便，MarkDown编辑器有挺多的，但是个人觉得MarkDownPad比较优秀，可以实时预览，自定义样式表<br>等等。<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/MarkDownPad.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/MarkDownPad.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/markdown2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/markdown2.png" alt=""></a><br>MarkdownPad Pro 2.5.0 Build 27920 Final下载地址：</p>
+<p>[file]<br>使用方法：</p>
+<ol>
+<li>首先运行压缩包中的安装程序进行安装原版程序!</li>
+<li>安装完成后记得先不要运行程序！</li>
+<li>复制压缩包中的Pa_ttrar.exe和KG_ttrar.exe程序到安装目录！默认安装目录为：c:\Program Files\MarkdownPad 2\</li>
+<li>运行Pa_ttrar.exe,点击Patch按钮对源程序（即所安装程序的主程序）打补丁即可。</li>
+<li>切记,打补丁时一定要关闭（即所安装程序的主程序）.否则会失败的！</li>
+<li>运行KG_ttrar.exe，点击Generate按钮生成序列号！</li>
+<li>启动程序，用刚刚获得的序列号注册程序升级为专业版即可！</li>
+<li>ok，尽情使用！！！</li>
+</ol>
 
           
         
@@ -1687,7 +2310,7 @@ lv3ns4.ffdns.net</pre>
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/02/73/">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/10/22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Timhbw">
@@ -1709,8 +2332,8 @@ lv3ns4.ffdns.net</pre>
             
               
                 
-                <a class="post-title-link" href="/2016/06/02/73/" itemprop="url">
-                  激动人心的WWDC2016邀请函已经放出
+                <a class="post-title-link" href="/2016/03/10/22/" itemprop="url">
+                  分享下平时我在windows平台下开发用的一些比较好的软件-notepad++（二）
                 </a>
               
             
@@ -1726,8 +2349,707 @@ lv3ns4.ffdns.net</pre>
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-02T11:20:59Z">
-                2016-06-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-09T22:32:00Z">
+                2016-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.notepad++</p>
+<blockquote>
+<p>Notepad++是 Windows操作系统下的一套文本编辑器(软件版权许可证: GPL)，有完整的中文化接口及支持多国语言编写的功能(UTF8技术)。</p>
+<p>Notepad++功能比 Windows 中的 Notepad(记事本)强大，除了可以用来制作一般的纯文字说明文件，也十分适合编写计算机程序代码。Notepad++ 不仅有语法高亮度显示，也有语法折叠功能，并且支持宏以及扩充基本功能的外挂模组。</p>
+<p>Notepad++是免费软件，可以免费使用，自带中文，支持众多计算机程序语言: C,C++,Java,pascal,C#,XML,SQL,Ada,HTML,PHP,ASP, AutoIt, 汇编, DOS批处理, Caml, COBOL, Cmake, CSS,D, Diff, ActionScript, Fortran, Gui4Cli, HTML, Haskell, INNO, JSP, KIXtart, LISP, Lua, Make处理(Makefile), Matlab, INI文件, MS-DOS Style, NSIS, Normal text, Objective-C, Pascal,Python, Javascript,Verilog,Haskell,InnoSetup,CMake,VHDL,AutoIt,Matlab<br>&nbsp;</p>
+</blockquote>
+<p>特性</p>
+<ol>
+<li>所见即所得功能、语法高亮、字词自动完成功能，支持同时编辑多重文档；支持自定义语言；</li>
+<li>对于HTML网页编程代码，可直接选择在不同的浏览器中打开查看，以方便进行调试；</li>
+<li>自动检测文件类型，根据关键字显示节点，节点可自由折叠/打开，可显示缩进引导线，使代码富有层次感；</li>
+<li>可打开双窗口，在分窗口中又可打开多个子窗口；</li>
+<li>可显示选中文本的字节数，并非普通编辑器所显示的字数；提供了一些实用工具，如邻行互换位置、宏功能等；<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/notepad%2B%2B.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/notepad%2B%2B.png" alt=""></a><br>Notepad++下载地址：<br>[file]</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/10/25/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/10/25/" itemprop="url">
+                  有感于AlphaGo与韩国围棋选手李世石的“世纪人机大战”
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-09T18:28:25Z">
+                2016-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资讯/" itemprop="url" rel="index">
+                    <span itemprop="name">资讯</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>先介绍下他（它）们：</p>
+<p>李世石（朝鲜语：，朝鲜汉字：李世乭），1983年3月2日生于韩国 全罗南道，2006年3月12日与女友金贤珍完婚，同年9月3号女儿李慧琳出世。1995年入段，1998年二段，1999年三段，2003年因获LG杯冠军直接升为六段，2003年4月获得韩国最大棋战KT杯亚军，升为七段，2003年7月获第16届富士通杯冠军后直接升为九段。2006、2007、2008韩国围棋大奖——最优秀棋手大奖(MVP)。棋风特点——李世石属于典型的力战型棋风，善于敏锐地抓住对手的弱处主动出击，以强大的力量击垮对手，他的攻击可以用“稳，准，狠”来形容，经常能在劣势下完成逆转。</p>
+<p>阿尔法围棋（AlphaGo）是一款围棋人工智能程序，由位于英国伦敦的谷歌（Google）旗下DeepMind公司的戴维·西尔弗、艾佳·黄和戴密斯·哈萨比斯与他们的团队开发，这个程序利用“价值网络”去计算局面，用“策略网络”去选择下子。2015年10月阿尔法围棋以5:0完胜欧洲围棋冠军、职业二段选手樊麾；2016年3月对战世界围棋冠军、职业九段选手李世石。</p>
+<p>今天最火的恐怕就是这件事啦，我很早就听说啦AlphaGo要和李世石来一场，之前李世石说过Alpha只是三段棋手水平 输赢并无悬念，我觉得并非如此，现在人工智能如火如荼，有些话不能说的太早。果然，今天李世石在中盘出现了失误，丢失了开局的领先局面，最后在中盘的时候不得不投子认输。</p>
+<p>但是胜负未定，这只是5场围棋挑战赛的第一把，让我们等待后面剧情如何发展。(PS:最后李世石以1:3败给阿尔法狗)</p>
+<p>最后多说几句，今年VR，AR的盛行，各大龙头公司纷纷参与进来，分一杯羹，不知道今后会不会有发展空间，目测是一个黄金矿，很多小企业靠这个拿到投资，差不多是风险投资吧，准备趁这个翻身，拭目以待！</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/10/21/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/10/21/" itemprop="url">
+                  分享下平时我在windows平台下开发用的一些比较好的软件-editplus（一）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-09T16:27:00Z">
+                2016-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="editplus"><a href="#editplus" class="headerlink" title="editplus"></a>editplus</h3><blockquote>
+<p>EditPlus是一款由韩国 Sangil Kim （ES-Computing）出品的小巧但是功能强大的可处理文本、HTML和程序语言的Windows编辑器，你甚至可以通过设置用户工具将其作为C,Java,Php等等语言的一个简单的IDE。</p>
+<p>EditPlus（文字编辑器）汉化版是一套功能强大，可取代记事本的文字编辑器，拥有无限制的撤消与重做、英文拼字检查、自动换行、列数标记、搜寻取代、同时编辑多文件、全屏幕浏览功能。而它还有一个好用的功能，就是它有监视剪贴板的功能，同步于剪贴板可自动粘贴进 EditPlus 的窗口中省去粘贴的步骤。另外它也是一个非常好用的HTML编辑器，它除了支持颜色标记、HTML 标记，同时支持C、C++、Perl、Java，另外，它还内建完整的HTML &amp; CSS1 指令功能，对于习惯用记事本编辑网页的朋友，它可帮你节省一半以上的网页制作时间，若你有安装IE3.0 以上版本，它还会结合IE浏览器于 EditPlus 窗口中，让你可以直接预览编辑好的网页（若没安装IE，也可指定浏览器路径）。因此，它是一个相当棒又多用途多状态的编辑软件。</p>
+</blockquote>
+<h3 id="主要特点"><a href="#主要特点" class="headerlink" title="主要特点"></a>主要特点</h3><ol>
+<li>默认支持HTML、CSS、PHP、ASP、Perl、C/C++、Java、JavaScript和VBScript等语法高亮显示，通过定制语法文件，可以扩展到其他程序语言，在官方网站上可以下载（大部分语言都支持）。</li>
+<li>EditPlus提供了与Internet的无缝连接，可以在EditPlus的工作区域中打开Intelnet浏览窗口。</li>
+<li>提供了多工作窗口。不用切换到桌面，便可在工作区域中打开多个文档。</li>
+<li>正确地配置Java的编译器“Javac”以及解释器“Java”后，使用EditPlus的菜单可以直接编译执行Java程序。<br>总之，EditPlus功能强大，界面简洁美观，且启动速度快；中文支持比较好；支持语法高亮；支持代码折叠；支持代码自动完成(但其功能比较弱)，不支持 代码提示功能；配置功能强大，且比较容易，扩展也比较强。像PHP、Java程序等的开发环境，只要看一下资料，几分钟就可以搞定配置，很适合初学者学习 使用。有不错的项目工程管理功能。内置浏览器功能，这一点对于网页开发者来说很是方便。</li>
+</ol>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/editplus.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/editplus.png" alt=""></a></p>
+<p>editplus下载地址：<br>[file]</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/07/18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/07/18/" itemprop="url">
+                  如何让nginx服务器抵御DDOS攻击
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-07T03:29:56Z">
+                2016-03-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT技术/" itemprop="url" rel="index">
+                    <span itemprop="name">IT技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>DDOS是一种通过大流量的请求对目标进行轰炸式访问，导致提供服务的服务器资源耗尽进而无法继续提供服务的攻击手段。一般情况下，攻击者通过大量请求与连接使服务器处于饱和状态，以至于无法接受新的请求或变得很慢。</p>
+<h2 id="应用层DDOS攻击的特征"><a href="#应用层DDOS攻击的特征" class="headerlink" title="应用层DDOS攻击的特征"></a>应用层DDOS攻击的特征</h2><p>应用层（七层/HTTP层）DDOS攻击通常由木马程序发起，其可以通过设计更好的利用目标系统的脆弱点。例如，对于无法处理大量并发请求的系 统，仅仅通过建立大量的连接，并周期性的发出少量数据包来保持会话就可以耗尽系统的资源，使其无法接受新的连接请求达到DDOS的目的。其他还有采用发送 大量连接请求发送大数据包的请求进行攻击的形式。因为攻击是由木马程序发起，攻击者可以在很短时间内快速建立大量的连接，并发出大量的请求。</p>
+<p>以下是一些DDOS的特证，我们可以据此特征来抵抗DDOS（包括但不限于）：</p>
+<ul>
+<li><p>攻击经常来源于一些相对固定的IP或IP段，每个IP都有远大于真实用户的连接数和请求数。</p>
+<blockquote>
+<p>备注：这并不表明这种请求都是代表着DDOS攻击。在很多使用NAT的网络架构中，很多的客户端使用网关的IP地址访问公网资源。但是，即便如此，这样的请求数和连接数也会远少于DDOS攻击。</p>
+</blockquote>
+</li>
+<li><p>因为攻击是由木马发出且目的是使服务器超负荷，请求的频率会远远超过正常人的请求。</p>
+</li>
+<li>User-Agent通常是一个非标准的值</li>
+<li>Referer有时是一个容易联想到攻击的值</li>
+</ul>
+<h2 id="使用Nginx、Nginx-Plus抵抗DDOS攻击"><a href="#使用Nginx、Nginx-Plus抵抗DDOS攻击" class="headerlink" title="使用Nginx、Nginx Plus抵抗DDOS攻击"></a>使用Nginx、Nginx Plus抵抗DDOS攻击</h2><p>结合上面提到的DDOS攻击的特征，Nginx、Nginx Plus有很多的特性可以用来有效的防御DDOS攻击，可以从调整入口访问流量和控制反向代理到后端服务器的流量两个方面来达到抵御DDOS攻击的目的。</p>
+<h3 id="限制请求速度"><a href="#限制请求速度" class="headerlink" title="限制请求速度"></a>限制请求速度</h3><p>设置Nginx、Nginx Plus的连接请求在一个真实用户请求的合理范围内。比如，如果你觉得一个正常用户每两秒可以请求一次登录页面，你就可以设置Nginx每两秒钟接收一个客户端IP的请求（大约等同于每分钟30个请求）。</p>
+<pre class="lang:default decode:true">  limit_req_zone $binary_remote_addr zone=one:10m rate=30r/m;
+
+     server {
+
+     ...
+
+     location /login.html {
+
+         limit_req zone=one;
+
+     ...
+
+     }
+
+     }
+    `limit_req_zone`命令设置了一个叫one的共享内存区来存储请求状态的特定键值，在上面的例子中是客户端IP($binary_remote_addr)。location块中的`limit_req`通过引用one共享内存区来实现限制访问/login.html的目的。
+</pre>
+
+<h3 id="限制连接数量"><a href="#限制连接数量" class="headerlink" title="限制连接数量"></a>限制连接数量</h3><p>设置Nginx、Nginx Plus的连接数在一个真实用户请求的合理范围内。比如，你可以设置每个客户端IP连接/store不可以超过10个。</p>
+<pre class="lang:default decode:true">limit_conn_zone $binary_remote_addr zone=addr:10m;
+
+     server {
+
+     ...
+
+     location /store/ {
+
+         limit_conn addr 10;
+
+         ...
+
+      }
+
+     }
+    `limit_conn_zone`命令设置了一个叫addr的共享内存区来存储特定键值的状态，在上面的例子中是客户端IP（ $binary_remote_addr）。location块中`limit_conn`通过引用addr共享内存区来限制到/store/的最大连接数为10。</pre>
+<div class=""></div>
+<div class="">
+
+&nbsp;
+
+### 关闭慢连接
+
+> 有一些DDOS攻击，比如Slowlris，是通过建立大量的连接并周期性的发送一些数据包保持会话来达到攻击目的，这种周期通常会低于正常的请求。这种情况我们可以通过关闭慢连接来抵御攻击。
+`client_body_timeout`命令用来定义读取客户端请求的超时时间，`client_header_timeout`命令用来定于读取客户端请求头的超时时间。这两个参数的默认值都是60s，我们可以通过下面的命令将他们设置为5s：
+<pre class="lang:default decode:true ">  server {
+
+     client_body_timeout 5s;
+
+     client_header_timeout 5s;
+
+     ...
+
+     }</pre>
+
+<h3 id="设置IP黑名单"><a href="#设置IP黑名单" class="headerlink" title="设置IP黑名单"></a>设置IP黑名单</h3><p>如果确定攻击来源于某些IP地址，我们可以将其加入黑名单，Nginx就不会再接受他们的请求。比如，你已经确定攻击来自于从123.123.123.1到123.123.123.16的一段IP地址，你可以这样设置：</p>
+<pre class="lang:default decode:true">   location / {
+
+     deny 123.123.123.0/28;
+
+     ...
+
+     }</pre>
+或者你确定攻击来源于123.123.123.3、123.123.123.5、123.123.123.7几个IP，可以这样设置：
+<pre class="lang:default decode:true "> location / {
+
+     deny 123.123.123.3;
+
+     deny 123.123.123.5;
+
+     deny 123.123.123.7;
+
+     ...
+
+     }</pre>
+
+<h3 id="设置IP白名单"><a href="#设置IP白名单" class="headerlink" title="设置IP白名单"></a>设置IP白名单</h3><p>如果你的网站仅允许特定的IP或IP段访问，你可以结合使用allow和deny命令来限制仅允许你指定的IP地址访问你的网站。如下，你可以设置仅允许192.168.1.0段的内网用户访问：</p>
+<pre class="lang:default decode:true ">    location / {
+
+     allow 192.168.1.0/24;
+
+     deny all;
+
+     ...
+
+     }
+    deny命令会拒绝除了allow指定的IP段之外的所有其他IP的访问请求。</pre>
+
+<h3 id="使用缓存进行流量削峰"><a href="#使用缓存进行流量削峰" class="headerlink" title="使用缓存进行流量削峰"></a>使用缓存进行流量削峰</h3><p>通过打开Nginx的缓存功能并设置特定的缓存参数，可以削减来自攻击的流量，同时也可以减轻对后端服务器的请求压力。以下是一些有用的设置：</p>
+<ol>
+<li><code>proxy_cache_use_stale</code>的updating参数告诉Nginx什么时候该更新所缓存的对象。只需要到后端的一个更新请求，在缓存有效期间客户端对该对象的请求都无需访问后端服务器。当通过对一个文件的频繁请求来实施攻击时，缓存功能可极大的降低到后端服务器的请求。</li>
+<li><code>proxy_cache_key</code>命令定义的键值通常包含一些内嵌的变量（默认的键值$scheme$proxy_host$request_uri包含了三个变量）。如果键值包含<code>$query_string</code>变量，当攻击的请求字符串是随机的时候就会给Nginx代理过重的缓存负担，因此我们建议一般情况下不要包含<code>$query_string</code>变量。</li>
+</ol>
+<h3 id="识别DDOS攻击"><a href="#识别DDOS攻击" class="headerlink" title="识别DDOS攻击"></a>识别DDOS攻击</h3><p>到目前为止，我们都是集中在如何是用Nginx、Nginx Plus来减轻DDOS攻击带来的影响。如何才能让Nginx、Nginx Plus帮助我们识别DDOS攻击呢？<code>Nginx Plus Status module</code>提供了到后端服务器流量的详细统计，可以用来识别异常的流量。Nginx Plus提供一个当前服务状态的仪表盘页面，同时也可以在自定义系统或其他第三方系统中通过API的方式获取这些统计信息，并根据历史趋势分析识别非正常的流量进而发出告警。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Nginx和Nginx Plus可以作为抵御DDOS攻击的一个有力手段，而且Nginx Plus中提供了一些附加的特性来更好的抵御DDOS攻击并且当攻击发生时及时的识别到。</p>
+<p></p></div><p></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/07/19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/07/19/" itemprop="url">
+                  IOS面试中被面试官问到的问题
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-06T22:49:26Z">
+                2016-03-06
               </time>
             
 
@@ -1786,12 +3108,690 @@ lv3ns4.ffdns.net</pre>
       
         
           
-            <p>北京时间6月2日，苹果对外正式放出了WWDC 2016大会的邀请函，宣布苹果全球开发者大会（WWDC）主题演讲将于太平洋时间6月13日上午10点（北京时间6月14日凌晨一点）在位于旧金山的比尔·格雷厄姆市政礼堂拉开帷幕。</p>
-<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc.jpg" alt=""></a></p>
-<p>WWDC2016大会将持续至6月17日，届时苹果会直播这次大会，并发布所有分论坛的视频。苹果通常会借助WWDC主题演讲发布一些软件和产品升级，主要是最新版本的iOS和其它软件，激动人心有木有！</p>
-<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc2.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc2.jpg" alt=""></a></p>
-<p>邀请函是今天刚发出的，但是消息苹果公司早就宣布了，在<a href="https://developer.apple.com/" target="_blank" rel="external">苹果开发者官网</a>首页上，而且估计只有程序猿才看得懂的代码信息：</p>
-<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc3.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc3.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc4.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc4.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc5.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/wwdc5.png" alt=""></a></p>
+            <p>问题如下：</p>
+<ol>
+<li>请你谈谈static和宏定义的区别。什么时候用static什么时候用宏定义。</li>
+<li>你是怎么看待代理 通知的 他们有什么区别？</li>
+<li>说说你对内存管理的理解。</li>
+<li>谈谈你对ios性能优化的理解.</li>
+<li>你用过单元测试吗?怎么才能做好单元测试？</li>
+<li>你知道的的本地数据持久化都有哪些。你比较喜欢用哪些 为什么？</li>
+<li>谈谈MVC设计模式的优缺点。</li>
+<li>谈谈你对多线程的理解，你经常用的多线程有哪些实现方式，谈谈他们优缺点。</li>
+<li>谈谈你对面向对象和面向过程的认识。</li>
+<li>什么是单例？怎么用？有什么好处？指出你项目中用到的单例模式。</li>
+<li>谈谈你对数据结构 计算机组成原理 操作系统 以及算法的理解。</li>
+<li>谈谈tableview的重用机制。</li>
+<li>你是否自己写过第三方或者你有没有深入的了解过第三方的实现原理。</li>
+<li>又没有自己的技术博客，在github上又没有贡献自己的代码。</li>
+<li>遇到问题一般你怎么处理？</li>
+<li>你经常会逛哪些技术论坛？他们有什么区别</li>
+<li>有没有自己写过静态编译库，静态库的原理是什么?</li>
+<li>谈谈你对http tcp ip 协议的理解。</li>
+<li>谈谈你对http 和socket 的理解。</li>
+<li>如果让你实现第三方 你会从哪方面入手？</li>
+<li>你对视频转码音频处理有没有什么心得？</li>
+<li>谈谈你对类目和延展的区别。</li>
+<li>Objective-C中的C指的是什么？</li>
+<li>一个线程正在进行，你可以通过哪些方式返回到主线程里。</li>
+<li>谈谈你对ios中沙盒机制的理解。</li>
+<li>谈谈你对推送的理解。</li>
+<li>你是怎么看block和delegate的？</li>
+<li>谈谈ios9新特性。</li>
+<li>谈谈你平常了解行业最新动态的方式.</li>
+<li>谈谈你对行业前景的看法</li>
+<li>谈谈你对自己未来的发展方向。</li>
+<li>谈谈你对json xml的理解。</li>
+<li>AFNetworking你使用的是哪几个版本？他们有什么区别？</li>
+<li>你使用过什么样的视频播放器？你自定义过播放器吗？你自定义播放器的时候遇到的难点在哪？</li>
+<li>你使用数据的存储有哪些？coredata 和FMDB的区别在哪？两者的优势在哪？</li>
+<li>GCD NSOperation 和NSOperationqueue 的区别？ 你在单例中使用哪种？为什么？</li>
+<li>你平常学习新技术是通过什么渠道来获得的？</li>
+<li>如果有一个新的feature你会选择去看官方文档还是去看别人翻译好的？</li>
+<li>如果让你接手一个项目你认为在架构的时候需要考虑些什么？<br>&nbsp;</li>
+</ol>
+<p>原文链接：www.shavekevin.com/2015/12/31/mianshiwenti</p>
+<p>&nbsp;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/07/17/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/07/17/" itemprop="url">
+                  Mac OS X 和 Linux 下的微信客户端:Electronic WeChat
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-06T22:28:58Z">
+                2016-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Mac OS X 和 Linux下更好用的微信客户端. 使用Electron构建.</p>
+<p>Electronic WeChat 是本开源项目发布的产品。网页版微信是其中重要的一部分，但请注意这是一个社区发布的产品，而不是官方微信团队发布的产品。</p>
+<p>这个应用仍在开发中。主要在OS X下测试，Linux下亦可使用。</p>
+<h3 id="应用特性-更新日志"><a href="#应用特性-更新日志" class="headerlink" title="应用特性(更新日志)"></a>应用特性(<a href="https://github.com/geeeeeeeeek/electronic-wechat/blob/master/CHANGELOG.md" target="_blank" rel="external">更新日志</a>)</h3><p>Electronic WeChat v.s. Mac 官方微信客户端</p>
+<ul>
+<li>来自网页版微信的更现代的界面和更完备的功能</li>
+<li>拖入图片、文件即可发送</li>
+<li>阻止其他人撤回消息</li>
+<li>公众号文章支持一键分享到微博、QQ 空间、Facebook、Twitter、Evernote 和邮件</li>
+<li>拖入图片、文件即可发送</li>
+<li>群聊 @ 提及成员</li>
+<li>原生应用体验，未读消息小红点、消息通知等数十项优化</li>
+<li>去除外链重定向，直接打开淘宝等网站</li>
+<li>没有原生客户端万年不修复的bug<br>&nbsp;</li>
+</ul>
+<p>Electronic WeChat v.s. 网页版微信客户端</p>
+<ul>
+<li>能够显示贴纸消息</li>
+<li>原生应用的体验，独立于浏览器</li>
+<li>OS X中的dock未读消息计数和消息通知</li>
+<li>直接打开微信重定向的链接 (如 taobao.com)</li>
+</ul>
+<h3 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h3><p>在下载和运行这个项目之前，你需要在电脑上安装 <a href="https://git-scm.com" target="_blank" rel="external">Git</a> 和 <a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a> (来自 <a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a>)。在命令行中输入:</p>
+<pre class="lang:default decode:true "># 下载仓库
+git clone https://github.com/geeeeeeeeek/electronic-wechat.git
+# 进入仓库
+cd electronic-wechat
+# 安装依赖, 运行应用
+npm install &amp;&amp; npm start</pre>
+根据你的平台打包应用:
+<pre class="lang:default decode:true ">npm run build:osx
+npm run build:linux
+npm run build:win</pre>
+**提示:** 如果 `npm install` 下载缓慢，你可以使用 [淘宝镜像(cnpm)](http://npm.taobao.org/) 替代 npm 。
+
+**新渠道:** 使用你熟悉的包管理工具安装。请查看 [社区贡献的镜像](https://github.com/geeeeeeeeek/electronic-wechat/wiki/System-Support-Matrix#%E7%A4%BE%E5%8C%BA%E8%B4%A1%E7%8C%AE%E7%9A%84%E5%AE%89%E8%A3%85%E5%8C%85) 。
+
+**新渠道:** homebrew 安装也已支持 (更新至 electronic-wechat v1.2.0)！
+<pre class="lang:default decode:true">brew cask install electronic-wechat</pre>
+
+<h4 id="下载开箱即用的稳定版应用"><a href="#下载开箱即用的稳定版应用" class="headerlink" title="下载开箱即用的稳定版应用"></a><a href="https://github.com/geeeeeeeeek/electronic-wechat/blob/master/README_zh.md?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io#%E4%B8%8B%E8%BD%BD%E5%BC%80%E7%AE%B1%E5%8D%B3%E7%94%A8%E7%9A%84%E7%A8%B3%E5%AE%9A%E7%89%88%E5%BA%94%E7%94%A8" target="_blank" rel="external"></a><a href="https://github.com/geeeeeeeeek/electronic-wechat/releases" target="_blank" rel="external">下载开箱即用的稳定版应用</a></h4><h4 id="项目使用-MIT-许可"><a href="#项目使用-MIT-许可" class="headerlink" title="项目使用 MIT 许可"></a><a href="https://github.com/geeeeeeeeek/electronic-wechat/blob/master/README_zh.md?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io#%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8-mit-%E8%AE%B8%E5%8F%AF" target="_blank" rel="external"></a>项目使用 <a href="https://github.com/geeeeeeeeek/electronic-wechat/blob/master/LICENSE.md" target="_blank" rel="external">MIT</a> 许可</h4><p><em>Electronic WeChat</em> 是这个开源项目发布的产品。网页版微信是其中重要的一部分，但请注意这是一个社区发布的产品，而 <em>不是</em> 官方微信团队发布的产品。</p>
+<p>&nbsp;</p>
+<p>Github地址：<a href="https://github.com/geeeeeeeeek/electronic-wechat/releases" target="_blank" rel="external">点我进入</a></p>
+<p>官方使用方法:<a href="https://github.com/geeeeeeeeek/electronic-wechat/blob/master/README_zh.md?hmsr=toutiao.io&amp;utm_medium=toutiao.io&amp;utm_source=toutiao.io#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8" target="_blank" rel="external">点我进入</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/07/15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/07/15/" itemprop="url">
+                  HTTPS普及知识
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-06T22:12:26Z">
+                2016-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT技术/" itemprop="url" rel="index">
+                    <span itemprop="name">IT技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="为什么需要https"><a href="#为什么需要https" class="headerlink" title="为什么需要https"></a>为什么需要https</h4><p>HTTP是明文传输的，也就意味着，介于发送端、接收端中间的任意节点都可以知道你们传输的内容是什么。这些节点可能是路由器、代理等。</p>
+<p>举个最常见的例子，用户登陆。用户输入账号，密码，采用HTTP的话，只要在代理服务器上做点手脚就可以拿到你的密码了。</p>
+<blockquote>
+<p>用户登陆 –&gt; 代理服务器（做手脚）–&gt; 实际授权服务器<br>在发送端对密码进行加密？没用的，虽然别人不知道你原始密码是多少，但能够拿到加密后的账号密码，照样能登陆。</p>
+</blockquote>
+<h4 id="HTTPS是如何保障安全的"><a href="#HTTPS是如何保障安全的" class="headerlink" title="HTTPS是如何保障安全的"></a>HTTPS是如何保障安全的</h4><p>HTTPS其实就是secure http的意思啦，也就是HTTP的安全升级版。稍微了解网络基础的同学都知道，HTTP是应用层协议，位于HTTP协议之下是传输协议TCP。TCP负责传输，HTTP则定义了数据如何进行包装。</p>
+<blockquote>
+<p>HTTP –&gt; TCP （明文传输）<br>HTTPS相对于HTTP有哪些不同呢？其实就是在HTTP跟TCP中间加多了一层加密层TLS/SSL。</p>
+</blockquote>
+<h4 id="什么是TLS-SSL？"><a href="#什么是TLS-SSL？" class="headerlink" title="什么是TLS/SSL？"></a>什么是TLS/SSL？</h4><p>通俗的讲，TLS、SSL其实是类似的东西，SSL是个加密套件，负责对HTTP的数据进行加密。TLS是SSL的升级版。现在提到HTTPS，加密套件基本指的是TLS。</p>
+<h4 id="传输加密的流程"><a href="#传输加密的流程" class="headerlink" title="传输加密的流程"></a>传输加密的流程</h4><p>原先是应用层将数据直接给到TCP进行传输，现在改成应用层将数据给到TLS/SSL，将数据加密后，再给到TCP进行传输。</p>
+<h4 id="HTTPS是如何加密数据的"><a href="#HTTPS是如何加密数据的" class="headerlink" title="HTTPS是如何加密数据的"></a>HTTPS是如何加密数据的</h4><p>对安全或密码学基础有了解的同学，应该知道常见的加密手段。一般来说，加密分为对称加密、非对称加密（也叫公开密钥加密）。</p>
+<h5 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h5><p>对称加密的意思就是，加密数据用的密钥，跟解密数据用的密钥是一样的。</p>
+<p>对称加密的优点在于加密、解密效率通常比较高。缺点在于，数据发送方、数据接收方需要协商、共享同一把密钥，并确保密钥不泄露给其他人。此外，对于多个有数据交换需求的个体，两两之间需要分配并维护一把密钥，这个带来的成本基本是不可接受的。</p>
+<h5 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h5><p>非对称加密的意思就是，加密数据用的密钥（公钥），跟解密数据用的密钥（私钥）是不一样的。<br>什么叫做公钥呢？其实就是字面上的意思——公开的密钥，谁都可以查到。因此非对称加密也叫做公开密钥加密。<br>相对应的，私钥就是非公开的密钥，一般是由网站的管理员持有。</p>
+<p>公钥、私钥两个有什么联系呢？</p>
+<p>简单的说就是，通过公钥加密的数据，只能通过私钥解开。通过私钥加密的数据，只能通过公钥解开。</p>
+<p>很多同学都知道用私钥能解开公钥加密的数据，但忽略了一点，私钥加密的数据，同样可以用公钥解密出来。而这点对于理解HTTPS的整套加密、授权体系非常关键。<br>举个非对称加密的例子：</p>
+<blockquote>
+<p>登陆用户：小明</p>
+<p>授权网站：某知名社交网站（以下简称XX）<br>小明都是某知名社交网站XX的用户，XX出于安全考虑在登陆的地方用了非对称加密。小明在登陆界面敲入账号、密码，点击“登陆”。于是，浏览器利用公钥对小明的账号密码进行了加密，并向XX发送登陆请求。XX的登陆授权程序通过私钥，将账号、密码解密，并验证通过。之后，将小明的个人信息（含隐私），通过私钥加密后，传输回浏览器。浏览器通过公钥解密数据，并展示给小明。</p>
+</blockquote>
+<p>步骤一： 小明输入账号密码 –&gt; 浏览器用公钥加密 –&gt; 请求发送给XX</p>
+<p>步骤二： XX用私钥解密，验证通过 –&gt; 获取小明社交数据，用私钥加密 –&gt; 浏览器用公钥解密数据，并展示。</p>
+<p>用非对称加密，就能解决数据传输安全的问题了吗？前面特意强调了一下，私钥加密的数据，公钥是可以解开的，而公钥又是加密的。也就是说，非对称加密只能保证单向数据传输的安全性。</p>
+<p>此外，还有公钥如何分发/获取的问题。下面会对这两个问题进行进一步的探讨。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/05/14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/05/14/" itemprop="url">
+                  Android环境搭建，Android SDK下载
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-05T09:06:21Z">
+                2016-03-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/android/" itemprop="url" rel="index">
+                    <span itemprop="name">android</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>由于国内环境原因，Android开发环境搭建比较麻烦，在这里给出我搭建的步骤以及所有下载文件(PS:有人要问，我一个学ios的玩Android干嘛，原因就是学校开设安卓课程0-0)。</p>
+<h4 id="安装JDK和Eclipse"><a href="#安装JDK和Eclipse" class="headerlink" title="安装JDK和Eclipse"></a>安装JDK和Eclipse</h4><p>确保电脑安装了Java应用程序开发环境，因为Eclipse使用Java语言编写的应用程序，需要JRE才能运行。如果没有安装jdk，请<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">点击下载</a>。Eclipse<a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-developers/mars2" target="_blank" rel="external">点击下载</a>。以上2步都是一直点击下一步就可以，没有什么特别步骤。到此为止，Eclipse和JDK已经安装完毕，但在创建Android工程之前，还需要安装Android SDK和ADT的插件，并完成Eclipse的相关设置。<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/eclipse.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/eclipse.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/jdk.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/jdk.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/eclipse%20start.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/eclipse%20start.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/eclipseindex.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/eclipseindex.png" alt=""></a></p>
+<h4 id="安装Android-SDK"><a href="#安装Android-SDK" class="headerlink" title="安装Android SDK"></a>安装Android SDK</h4><p>Android SDK<a href="http://developer.android.com/sdk/index.html#Other" target="_blank" rel="external">下载地址</a>，下载好installer_r24.4.1-windows.exe后，安装完毕，打开”Android SDK Manager.exe”,下载最新版的Android  SDK。在Eclipse中开发Android程序，还需要把Android SDK与Eclipse开发环境关联起来。<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/sdkmanager2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/sdkmanager2.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/sdkdownload.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/sdkdownload.png" alt=""></a></p>
+<h4 id="安装ADT插件"><a href="#安装ADT插件" class="headerlink" title="安装ADT插件"></a>安装ADT插件</h4><p>ADT插件是Eclipse开发环境的定制插件，为Android应用程序提供了一个强大，完整的开发环境，可以快速地建立Android工程，用户界面和基于Android API的组件，还可以在Eclipse中使用Android SDK提供的工具进行程序调试，或对apk文件进行签名等。有以下2种安装方法：</p>
+<ol>
+<li>自动下载ADT插件这个方法：<br>打开Eclipse，依次点击Help——Install New Software，打开Eclipse的插件安装界面，然后单击Add按钮，Name不用输入，Location文本框中输入”<a href="https://dl-ssl.google.com/android/eclipse/&quot;。ADT就会自动安装了。" target="_blank" rel="external">https://dl-ssl.google.com/android/eclipse/&quot;。ADT就会自动安装了。</a></li>
+<li>手动下载ADT插件：<br>如果是离线下载就在Location文本框中输入你下载好的ADT文件在你计算机的路径。</li>
+</ol>
+<h4 id="最后收尾"><a href="#最后收尾" class="headerlink" title="最后收尾"></a>最后收尾</h4><p>一定要设置Android SDK的保存路径。打开Eclipse依次点击Window——Preferences，然后单击左侧Android，在SDK Location文本框中选择你的Android SDK保存路径，最后单击Apply按钮是设置生效。至此，Android应用程序的开发环境就安装完成了！</p>
+<p>由于上文许多地址被墙，导致国内不能正常浏览、下载，特给出以上软件下载地址，码字不易，全部手写，手动下载然后上传，各位请珍惜。</p>
+<p>[file]</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/05/12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/05/12/" itemprop="url">
+                  一键卸载OneDriver工具
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-04T16:45:27Z">
+                2016-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>刚安装完windows10，自带OneDriver，开机自启，而且还没啥用，个人认为，浪费系统资源，看着不舒服，于是便找到一个一键卸载工具，下载后以管理员身份运行就可以，会无响应一段时间，千万别急躁，等一下就可以。</p>
+<p>下载链接：</p>
+<p>[file]</p>
 
           
         
@@ -1827,7 +3827,7 @@ lv3ns4.ffdns.net</pre>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1864,7 +3864,7 @@ lv3ns4.ffdns.net</pre>
                alt="Timhbw" />
           <p class="site-author-name" itemprop="name">Timhbw</p>
            
-              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。#网站描述</p>
           
         </div>
         <nav class="site-state motion-element">

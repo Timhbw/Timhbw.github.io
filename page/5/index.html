@@ -87,15 +87,15 @@
 
 
 
-<meta name="description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。">
+<meta name="description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。#网站描述">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tim博客">
-<meta property="og:url" content="http://timhbw.github.io/page/5/index.html">
+<meta property="og:url" content="https://github.huangbowei.com/page/5/index.html">
 <meta property="og:site_name" content="Tim博客">
-<meta property="og:description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。">
+<meta property="og:description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。#网站描述">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tim博客">
-<meta name="twitter:description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。">
+<meta name="twitter:description" content="自学iOS开发进阶博客，分享高质量的iOS开发技术。#网站描述">
 
 
 
@@ -123,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://timhbw.github.io/page/5/"/>
+  <link rel="canonical" href="https://github.huangbowei.com/page/5/"/>
 
 
 
@@ -250,7 +250,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/06/01/72/">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/04/11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Timhbw">
@@ -272,8 +272,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/01/72/" itemprop="url">
-                  关于网站后期速度优化的一些坑
+                <a class="post-title-link" href="/2016/03/04/11/" itemprop="url">
+                  windows10强大小工具
                 </a>
               
             
@@ -289,327 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-01T09:12:24Z">
-                2016-06-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>由于网站已经迁移完成，所以昨天在优化服务器和WP，加快读者们的访问速度，毕竟有强迫症的我不能忍受网站点击下还在加载读条中，那是极其糟糕的，完全没有阅读欲望！所以就准备装一些WP的插件老解决，当然，插件不能太多，一句老话：能用代码解决的，千万不要用插件。插件越少越好。</p>
-<p>下面说一下我优化过程中的一些经验，防止大家走我的老路。</p>
-<ul>
-<li>WP Super Cache<br>这插件貌似人气很高，而且经久不衰，功能也还可以，带CDN功能，不过没有W3 Total Cache功能多。这插件最大的作用就是静态缓存。但是和我目前用的主题有点冲突：</li>
-</ul>
-<ol>
-<li>前台登陆后返回结果为网站主页：解决方法就是勾选WP Super Cache设置-高级-不要为已知用户缓存。</li>
-<li>和WP-PostViews插件冲突，阅读不计数，如果你不在意阅读数的话，可以不用管。解决方法的话网上有，但是很复杂，改动代码的。</li>
-<li>评论无效。多次测试，填写留言，无显示。后来发现是ajax评论与CDN缓存之间的问题。解决方法：<br>找到你主题里面的<span class="lang:default decode:true crayon-inline">comments-ajax.js</span> ，加入一行代码，亲测有效。<br><pre class="lang:default mark:6 decode:true ">var i = 0, got = -1, len = document.getElementsByTagName(‘script’).length;<br>while ( i &lt;= len &amp;&amp; got == -1){<br>var js_url = document.getElementsByTagName(‘script’)[i].src,<pre><code>got = js_url.indexOf(&apos;comments-ajax.js&apos;); i++ ;
-</code></pre>}<br>js_url = js_url.replace(‘www.yourcdndomain.com’,’www.yourdomain.com’);//添加的代码，第一个为你的CDN域名，第二个为你的网站域名</pre><br>由于这个插件带来的问题远远少于给我网站增加的速度，于是删除它。说实话，如果你的主题和这个插件兼容，没有啥问题，缓存测试也成功（PS：我的缓存测试显示时间戳不对），那还能用一用。如果会带来问题，需要修改代码才能解决（并不是说修改代码不好，考虑到小白居多，修改后问题更多，就算是老手，频繁的修改主题或wp代码也不利于以后维护），而且速度收益比较小，还是删除这个插件吧，并没有传说中的那么神奇。</li>
-</ol>
-<p>最后，权衡利弊，删除之。</p>
-<ul>
-<li>W3 Total Cache<br>这插件功能多到难以想象，压缩代码，CDN，等等，我个人最讨厌这种插件，太花哨了，过于庞大，带来问题的潜在因素也比较大。我安装这个插件主要是体验又拍云的CDN，利用这插件自带的CDN和FTP和又拍云CDN同步静态资源，这样就可以从又拍云调用资源，加快访问速度和减少源站的压力。然后发现并不怎么好用，FTP同步是能同步，就是灰常慢，而且没有提示，只告诉你花费的时间，没有剩余时间。</li>
-</ul>
-<p>最后，权衡利弊，删除之。</p>
-<ul>
-<li>WP CDN Rewrite<br>上面2个插件用的人多，效果说好的好，反正我体验完后觉得可有可无，对我的网站的速度提升不大（PS：可能我的网站的速度已经逆天0-0）。这插件的作用就是修改网站静态资源为CDN上镜像存储的资源，所以该插件的核心功能就是修改静态资源的URL，也是唯一的功能。因为我和大部分人装这类插件的目的一样：提升网站速度。你不要给我搞事，做好分内的事就好，这插件就是。设置还简单，只需要填写CDN Root URL (required)，CDN的根URL，这个可以在CDN服务提供商中找到，设置的时候不要忘了输入http://。</li>
-</ul>
-<p>&nbsp;</p>
-<h2 id="最后总结"><a href="#最后总结" class="headerlink" title="最后总结"></a>最后总结</h2><p>加速插件，缓存静态资源，CDN这类插件的目的就是让你的网站访问速度得以提升。可能会带来一些其它副作用，一般都能解决，但是你是不是真的需要？用这些插件真的有用？一般在国内阿里云，腾讯云的主机速度都不会差，我用的就是最低配置，完全够跑好几个wp，我现在跑4个网站都没有一点压力，当然，这个得看你网站的流量情况。小白的话，不要看什么插件好就装什么，有时候反而速度会慢下来，带来问题。插件能少装一个就少装一个，特别是那种功能非常多的插件。</p>
-<p>最后我就只装了这三个中的一个插件：WP CDN Rewrite。因为通过其他插件我发现什么静态缓存网页都是浮云，我只需要CDN缓存我网站的图片、CSS、JS等静态资源，方面调用。</p>
-<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn2.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn3.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn3.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn4.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn4.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn5.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cdn5.png" alt=""></a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/31/71/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/31/71/" itemprop="url">
-                  wordpress文章ID不连续
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-30T23:03:21Z">
-                2016-05-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>先说明，这个明显是强迫症才会搞这种累死人不的好处的活，当然，我也是这种人。当初Typecho写文章的时候还没太在意，因为文章ID变化不太大，没引起我注意。当转到wp后，2篇文章之间ID相差太大，强迫症的我不能忍，于是一顿搜索找到几个方法，发现网上那些文章都是抄的，还都是一模一样的，错别字、格式什么的都没变化。好在有张戈这位技术型博主，文章写的非常好，所以这里结合下我的经验分享下。</p>
-<ul>
-<li><p>真ID连续<br>一开始是采用这种的，毕竟强迫症，要解决就得真解决。下面是Mysql代码：<br><pre class="lang:default decode:true">update wp_posts set id = 3 where id = 69;//ID69的文章改为ID3文章<br>update wp_term_relationships set object_id = 3 where object_id = 69;<br>update wp_postmeta set post_id = 3 where post_id = 69;<br>update wp_comments set comment_post_ID = 3 where comment_post_ID = 69;<br></pre><br>但是改完几篇过后就会发现越来越不对劲呀！因为有一些ID是改不了的，比如菜单啥的，它也会占用ID号，总不能为了文章连续，一个一个改吧，工作量与复杂度太大了，而且容易出错，故弃之！</p>
-</li>
-<li><p>伪ID连续<br>这个是看到张戈的文章后得到的方法，一开始还没看明白，后来一想，这办法，还真不错，解决方式很巧妙，这也提供了一种解决问题的方式：有时候，一个问题，正面解决不了，从另一个方面入手解决反而更好。</p>
-</li>
-</ul>
-<p>这里我简单解释下，想要wp文章id连续，满足的是链接上的连续，在wp中固定链接可以是<span class="lang:default decode:true crayon-inline">/%post_id%.html</span> 也可以是<span class="lang:default decode:true crayon-inline">/%postname%.html</span> ，设置为post_id就是真ID，我们可以通过在后台中设置固定链接为<span class="lang:default decode:true crayon-inline">/%postname%.html</span>,然后写文章的时候将文章别名设置为阿拉伯数字（眼中的ID），这样改起来比动数据库简单、安全多啦。</p>
-<p>下面是步骤：</p>
-<ul>
-<li><p>进入Mysql命令或者PhpMyAdmin的SQl，执行下列命令：</p>
-<pre class="lang:default decode:true ">update wp_posts set post_name=ID where post_status='publish' and post_type='post';</pre>
-</li>
-<li><p>然后进入wordpress后台-设置-固定连接处，选择自定义链接，改为：<br><span class="lang:default decode:true crayon-inline ">/archives/%postname%.html</span></p>
-</li>
-</ul>
-<p>这样以后写文章的时候只要改一下别名就可以让所有文章ID”完美“连续！目前我就是采用这种方法的。</p>
-<p>更详细的介绍，请看原文：<a href="http://zhangge.net/5008.html" target="_blank" rel="external">http://zhangge.net/5008.html</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/30/70/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/30/70/" itemprop="url">
-                  分享一些HTML5的模板
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-29T23:14:12Z">
-                2016-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-04T15:42:55Z">
+                2016-03-04
               </time>
             
 
@@ -668,1312 +349,412 @@
       
         
           
-            <p>前几天看到一个HTML5 UP的网站，发现国内许多网站都用的他的模板做的首页，的确非常适合，高端大气上档次。</p>
-<ul>
-<li>完全响应式设计</li>
-<li>基于HTML5+CSS3</li>
-<li>定制性高</li>
-<li>100%免费分享<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/html5.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/html5.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/html52.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/html52.png" alt=""></a></li>
-</ul>
-<p>里面有38个完全免费的模板，于是我当一回雷锋，全部下载下来，分享给大家。</p>
-<p>这里给出官网以及下载地址：</p>
-<p><a href="http://html5up.net/" target="_blank" rel="external">http://html5up.net/</a></p>
-<p>[reply][file][/reply]</p>
-<p>&nbsp;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/29/69/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/29/69/" itemprop="url">
-                  写篇文章庆祝下
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-29T10:18:29Z">
-                2016-05-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/资讯/" itemprop="url" rel="index">
-                    <span itemprop="name">资讯</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>博客从Typecho迁移至Wordpress本来可以很快完工的，但是博主大三狗，事情灰常多，作为一个程序猿马上又要去培训，在选择培训机构，还要考英语6级，然后碰上感冒，不过现在这些事情全部搞定，现在就是安心学习、写博客，准备英语，准备培训啦，博客我会坚持写下去，更新频率不一定，估计暑假去培训比较忙会更新慢点，所以趁现在，把自己的好东西分享出来，哈哈。</p>
-<p>&nbsp;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/17/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/17/1/" itemprop="url">
-                  博客全新改版完成！
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-17T12:12:16Z">
-                2016-05-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>5月29日 博客迁移所有工作已经做好，感冒也痊愈，可喜可贺。 5月26日 由于这一个礼拜感冒，电脑几乎没开，所以博客博客什么的暂时没打理，现在稍微好点啦，开始完成博客迁移还没完成的部分。 5月19日 之前博客的文章正在编辑中，已经搬过来一部分，友情链接也都加上，有遗漏的请告知，不好意思啦，事情太多，忙不过来，难免有疏忽。总之，有问题可以一起交流。</p>
-<p>从一开始的wordpress到typecho再到wordpress，历经还几个月的磨练，个人技术也有些长进，发现简单的typecho已经满足不了我的需求，加上主机要升级，得重装系统，于是经过再三考虑，还是把博客转移，一步一步迁移。 由于平时还有课，大学狗，所以进度有点慢，目前整体已经好啦，所有文章连接不变，文章内容可能会变化，因为wordpress对MarkDown兼容不太好，所以每篇文章我都重新排版一遍，苦逼呀，不然SEO方面不好，好不容易收录的文章，链接变化就404，就得又等些日子才会收录。文章虽然迁移过来，由于Typecho用的是多说，因为没有好看的评论样式，只能用多说，而且多说服务器经常抽风，虽然部分代码本地化也没啥用。目前打算用主题自带的评论，挺好的，所以小伙伴们的留言、评论也就木有啦，只不过是重头再来，泪奔！！</p>
-<p>新的开始，希望我能给大家带来更多有用的东西，也记录自己学习、成长的点滴！ 在这里感谢下Typecho这个平台，以及从我开始用Typecho时就选用主题的作者<a href="https://qqdie.com/" target="_blank" rel="external"><span class="sidebar-profile-name">Jrotty</span></a>。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/15/68/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/15/68/" itemprop="url">
-                  【通知】服务器升级，博客可能暂时无法访问(已完成)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-14T16:10:03Z">
-                2016-05-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>由于腾讯云服务器升级，硬盘改为云硬盘，并且变为20g等等，虽然很早就得知这个消息，但是怕麻烦，而且现在8g硬盘也够用。然而最近觉得Typecho满足不了我的需求，很多东西无法实现，刚好发现一个极好的wordpress主题，有我想要的一切！！！SEO优化，社会化推广等等。所以决定再次投向wp的怀抱。<br>虽然wp臃肿，还好我有七牛，又拍云，腾讯云三家的CDN，看下能不能把wordpress优化和Typecho一样的流畅。</p>
-<p>综合以上几点，考虑几天后或者，决定找一个周末升级服务器，Typecho转wordpress，更换更加专业的主题，用上全新CDN！！！</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/11/67/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/11/67/" itemprop="url">
-                  新的CDN体验-又拍云
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-10T20:15:36Z">
-                2016-05-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/建站/" itemprop="url" rel="index">
-                    <span itemprop="name">建站</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="缘由"><a href="#缘由" class="headerlink" title="缘由"></a>缘由</h4><p>现在用的是腾讯云的CDN，因为主机是腾讯云的，所以干脆用全家桶。这些天逛博客，论坛，发现又拍云口碑还不错，去官网逛一逛，发现还不错，反正以后也用得上，就去注册一个账号试试，今天刚注册的，听说还有开发者计划：</p>
-<blockquote>
-<p>又拍云联盟是又拍云推出的开发者帮助计划对开发者提供完善的云存储、CDN 等服务，加速个人网站、博客、APP 等项目.</p>
-</blockquote>
-<h4 id="福利"><a href="#福利" class="headerlink" title="福利"></a>福利</h4><p>重点是下面这个：</p>
-<blockquote>
-<p>成为又拍云联盟的用户，一年内每月可免费使用 10GB 存储空间及 15GB 流量。</p>
-<p>提供图片的自定义缩略图、水印；提供音视频的转码、压缩处理，助力快速开发。</p>
-</blockquote>
-<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p>所以没办法，你看到我网站底部加了一个链接，还好不算太违和。大家谅解下。等我体验过后，为大家带来体验心得，大家等我的好消息，哈哈哈。</p>
-<h4 id="进展"><a href="#进展" class="headerlink" title="进展"></a>进展</h4><h5 id="5月11日更新"><a href="#5月11日更新" class="headerlink" title="5月11日更新"></a>5月11日更新</h5><p>今天下午在又拍云控制台查看是否审核通过，虽然发邮件了，发了2封，一封是欢迎申请联盟之类的，照常我以为是机器自动发送。第二封一看写的是底下的可以根据自己喜好变成图片或文字，还有个表情，有点人工发的意思。第三封叫我耐心等待，每周五出结果。于是我试着回一封邮件挑逗下，结果真有人回我！！！出乎意料。</p>
-<p>还有就是中午在控制台问客服，就是那种网站上悬浮窗的客户，结果没人回复我，就没管，干别的事情去。过啦不就，手机qq振动，加好友备注为又拍云。我以为是审核开发者联盟的过程，就加了。交流中得知，他是因为中午休息，客服帐号没有下线，导致我刚才问问题无人回复，结果他就加我qq解答(惊呆啦0-0)，顺便和他聊会天。</p>
-<p>头一次碰到服务态度这么好的公司，表示有点小激动，期待他们家公司的服务质量。</p>
-<h5 id="5月13日更新"><a href="#5月13日更新" class="headerlink" title="5月13日更新"></a>5月13日更新</h5><p>下午收到邮件通知了，审核通过，哈哈。</p>
-<blockquote>
-<p>您的又拍云联盟申请已审核通过，代金券已发放至您账户，请及时查看并进行核对。</p>
-<p>为更好在用户与用户之间交流，请加 又拍云用户交流群 xxxxxxxxx</p>
-<p>如有任何疑问，欢迎群内咨询，谢谢~</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/10/47/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/10/47/" itemprop="url">
-                  iOS 学习巩固笔记-Socket
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-09T22:18:31Z">
-                2016-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>下面是一些个人学习笔记，查缺补漏，巩固知识，希望大家能有所收获。</p>
-<p>&nbsp;</p>
-<ul>
-<li><span lang="en-US" xml:lang="en-US">Socket</span><span lang="zh-TW" xml:lang="zh-TW">又称</span><span lang="en-US" xml:lang="en-US">“</span><span lang="zh-TW" xml:lang="zh-TW">套接字</span><span lang="en-US" xml:lang="en-US">”</span></li>
-<li><span lang="zh-CN" xml:lang="zh-CN">网络上的两端通过建立一个</span><span lang="zh-CN" xml:lang="zh-CN">双向的通信连接实现数据的交换</span><span lang="zh-CN" xml:lang="zh-CN">，这个端就称为一个</span><span lang="en-US" xml:lang="en-US">Socket</span><span lang="zh-CN" xml:lang="zh-CN">端</span></li>
-<li><span lang="zh-CN" xml:lang="zh-CN">应用程序通常通过</span><span lang="en-US" xml:lang="en-US">“</span><span lang="zh-CN" xml:lang="zh-CN">套接字</span><span lang="en-US" xml:lang="en-US">“</span><span lang="zh-CN" xml:lang="zh-CN">向网络发出请求或者应答网络请求<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/iOS-Socket1.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/iOS-Socket1.png" alt=""></a></span><br>&nbsp;</li>
-</ul>
-<p>&nbsp;</p>
-<h2 id="网络通信的要素"><a href="#网络通信的要素" class="headerlink" title="网络通信的要素"></a>网络通信的要素</h2><ul>
-<li><span lang="zh-CN" xml:lang="zh-CN">网络上的请求就是通过</span><span lang="en-US" xml:lang="en-US">Socket</span><span lang="zh-CN" xml:lang="zh-CN">来建立连接然后互相通信</span></li>
-<li><span lang="en-US" xml:lang="en-US">IP</span><span lang="zh-CN" xml:lang="zh-CN">地址（网络上主机设备的</span><span lang="zh-CN" xml:lang="zh-CN">唯一标识</span><span lang="zh-CN" xml:lang="zh-CN">）</span></li>
-<li><p><span lang="zh-CN" xml:lang="zh-CN">端口号</span><span lang="en-US" xml:lang="en-US">(</span><span lang="zh-CN" xml:lang="zh-CN">定位程序</span><span lang="en-US" xml:lang="en-US">)</span></p>
-</li>
-<li><p>用于标示进程的逻辑地址，不同进程的标示</p>
-</li>
-<li><p><span lang="zh-CN" xml:lang="zh-CN">有效端口：</span><span lang="en-US" xml:lang="en-US">0~65535</span><span lang="zh-CN" xml:lang="zh-CN">，其中</span><span lang="en-US" xml:lang="en-US">0~1024</span><span lang="zh-CN" xml:lang="zh-CN">由系统使用</span><span lang="zh-CN" xml:lang="zh-CN">或者保留端口，开发中建议使用</span><span lang="en-US" xml:lang="en-US">1024</span><span lang="zh-CN" xml:lang="zh-CN">以上的端口</span></p>
-</li>
-<li><p>传输协议（用什么样的方式进行交互）</p>
-</li>
-<li><p>通讯的规则</p>
-</li>
-<li><span lang="zh-CN" xml:lang="zh-CN">常见协议：</span><span lang="en-US" xml:lang="en-US">TCP</span><span lang="zh-CN" xml:lang="zh-CN">、</span><span lang="en-US" xml:lang="en-US">UDP</span><br><a href="https://www.huangbowei.com/wp-content/uploads/2017/02/iOS-Socket2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/iOS-Socket2.png" alt=""></a></li>
-</ul>
-<p>&nbsp;</p>
-<h2 id="TCP-amp-UDP"><a href="#TCP-amp-UDP" class="headerlink" title="TCP&amp;UDP"></a>TCP&amp;UDP</h2><h3 id="TCP（传输控制协议）"><a href="#TCP（传输控制协议）" class="headerlink" title="TCP（传输控制协议）"></a><span lang="en-US" xml:lang="en-US">TCP</span><span lang="zh-CN" xml:lang="zh-CN">（传输控制协议）</span></h3><ul>
-<li>建立连接，形成传输数据的通道</li>
-<li>在连接中进行大数据传输（数据大小不收限制）</li>
-<li>通过三次握手完成连接，是可靠协议，安全送达</li>
-<li>必须建立连接，效率会稍低</li>
-</ul>
-<h3 id="UDP（用户数据报协议）"><a href="#UDP（用户数据报协议）" class="headerlink" title="UDP（用户数据报协议）"></a><span lang="en-US" xml:lang="en-US">UDP</span><span lang="zh-CN" xml:lang="zh-CN">（用户数据报协议）</span></h3><ul>
-<li>将数据及源和目的封装成数据包中，不需要建立连接</li>
-<li><span lang="zh-CN" xml:lang="zh-CN">每个数据报的</span><span lang="zh-CN" xml:lang="zh-CN">大小限制在</span><span lang="en-US" xml:lang="en-US">64K</span><span lang="zh-CN" xml:lang="zh-CN">之内</span></li>
-<li>因为无需连接，因此是不可靠协议</li>
-<li>不需要建立连接，速度快<br>&nbsp;</li>
-</ul>
-<p>&nbsp;</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/10/46/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/10/46/" itemprop="url">
-                  Markdown基本语法-自学收藏
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-09T18:27:11Z">
-                2016-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技巧/" itemprop="url" rel="index">
-                    <span itemprop="name">技巧</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>下面是一些常用语法，以前用Typecho用MarkDown写文章经常用（wordpress不能显示，所以只有代码展示）。</p>
-<h4 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h4><h1 id="这是-H1-一级标题"><a href="#这是-H1-一级标题" class="headerlink" title="这是 H1 一级标题"></a><pre class="lang:default decode:true">这是 H1 一级标题</pre></h1><h2 id="这是-H2-二级标题"><a href="#这是-H2-二级标题" class="headerlink" title="这是 H2 二级标题"></a>这是 H2 二级标题</h2><h1 id="这是-H1-一级标题-1"><a href="#这是-H1-一级标题-1" class="headerlink" title="这是 H1 一级标题"></a>这是 H1 一级标题</h1><h2 id="这是-H2-二级标题-1"><a href="#这是-H2-二级标题-1" class="headerlink" title="这是 H2 二级标题"></a>这是 H2 二级标题</h2><h3 id="这是-H3-三级标题"><a href="#这是-H3-三级标题" class="headerlink" title="这是 H3 三级标题"></a>这是 H3 三级标题</h3><h4 id="这是-H4-四级标题"><a href="#这是-H4-四级标题" class="headerlink" title="这是 H4 四级标题"></a>这是 H4 四级标题</h4><h5 id="这是-H5-五级标题"><a href="#这是-H5-五级标题" class="headerlink" title="这是 H5 五级标题"></a>这是 H5 五级标题</h5><h6 id="这是-H6-六级标题"><a href="#这是-H6-六级标题" class="headerlink" title="这是 H6 六级标题"></a>这是 H6 六级标题</h6><p><strong>快捷键</strong>: [ctrl + h]</p>
-<p>&nbsp;</p>
-<h4 id="待办事项"><a href="#待办事项" class="headerlink" title="待办事项"></a>待办事项</h4><pre class="lang:default decode:true">[ ] 未完成事项
-[-] 未完成事项
-[x] 完成事项
-[X] 完成事项</pre>
-
-<h4 id="缩写定义"><a href="#缩写定义" class="headerlink" title="缩写定义"></a>缩写定义</h4><pre class="lang:default decode:true">The HTML specification
-is maintained by the W3C.
-*[HTML]: Hyper Text Markup Language
-*[W3C]:  World Wide Web Consortium</pre>
-
-<h4 id="文字格式"><a href="#文字格式" class="headerlink" title="文字格式"></a>文字格式</h4><pre class="lang:default decode:true">**这是文字粗体格式**
-
-__这是文字粗体格式__
-
-*这是文字斜体格式*
-
-_这是文字斜体格式_</pre>
-
-<h4 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h4><pre class="lang:default decode:true">* 项目1
-* 子项目1.1
-* 子项目1.2
-* 子项目1.2.1
-* 项目2
-* 项目3</pre>
-
-<h4 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h4><pre class="lang:default decode:true">1\. 项目1
-2\. 项目2
-3\. 项目3
-1\. 项目3.1
-2\. 项目3.2</pre>
-
-<h4 id="有序列表起始编号"><a href="#有序列表起始编号" class="headerlink" title="有序列表起始编号"></a>有序列表起始编号</h4><pre class="lang:default decode:true ">58\. 项目5
-2\. 项目6</pre>
-**快捷键**: [ctrl + o]
-
-&nbsp;
-
-####  图片
-
-<pre class="lang:default decode:true">![图片名称](http://huangboweicom-10023220.file.myqcloud.com/images/firebugcourse.png)</pre>
-
-<h4 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h4><pre class="lang:default decode:true">[链接名称](链接地址)
-[链接名称][1]
-[1] : 链接地址</pre>
-
-<h4 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h4><pre class="lang:default decode:true">&gt; 第一行引用文字
-&gt; 第二行引用文字</pre>
-
-<h4 id="水平线"><a href="#水平线" class="headerlink" title="水平线"></a>水平线</h4><pre class="lang:default decode:true">***</pre>
-
-<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><h5 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h5><pre><code>var x = &quot;hello world&quot;`&lt;/pre&gt;
-
-##### 块代码
-
-&lt;pre class=&quot;lang:default decode:true&quot;&gt;```javascript
-var a = &quot;hello world&quot;;
-var b = &quot;good luck&quot;;
-``
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/09/48/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Timhbw">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Tim博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/09/48/" itemprop="url">
-                  iOS 学习巩固笔记-UIWebView/JavaScript
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-09T08:24:51Z">
-                2016-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ios/" itemprop="url" rel="index">
-                    <span itemprop="name">ios</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="1-UIWebView简介"><a href="#1-UIWebView简介" class="headerlink" title="1 UIWebView简介"></a>1 UIWebView简介</h2><ul>
-<li>UIWebView是iOS内置的浏览器控件</li>
-<li>系统自带的Safari浏览器就是通过UIWebView实现的</li>
-<li><span lang="zh-CN" xml:lang="zh-CN">UIWebView</span><span lang="zh-CN" xml:lang="zh-CN"><span lang="zh-CN" xml:lang="zh-CN">不但能加载远程的网页资源，还能加载绝大部分的常见文件：</span></span>html、htm、pdf、doc、ppt、txt、mp4等</li>
-</ul>
-<h3 id="1-1-UIWebView常用的加载资源的方法"><a href="#1-1-UIWebView常用的加载资源的方法" class="headerlink" title="1.1 UIWebView常用的加载资源的方法"></a>1.1 UIWebView常用的加载资源的方法</h3><pre class="lang:objc decode:true ">- (void)loadRequest:(NSURLRequest *)request;</pre>
-
-<h3 id="1-2-UIWebView常用属性和方法"><a href="#1-2-UIWebView常用属性和方法" class="headerlink" title="1.2 UIWebView常用属性和方法"></a>1.2 UIWebView常用属性和方法</h3><ul>
-<li><p>重新加载（刷新）</p>
-<pre class="lang:default decode:true ">- (void)reload;</pre>
-</li>
-<li><p>停止加载</p>
-<pre class="lang:default decode:true ">- (void)stopLoading;</pre>
-</li>
-<li><p>回退</p>
-<pre class="lang:default decode:true ">- (void)goBack;</pre>
-</li>
-<li><p>前进</p>
-<pre class="lang:default decode:true ">- (void)goForward;</pre>
-</li>
-<li><p>需要进行检测的数据类型</p>
-<pre class="lang:default decode:true">@property(nonatomic) UIDataDetectorTypes dataDetectorTypes</pre>
-</li>
-<li><p>是否能回退</p>
-<pre class="lang:default decode:true ">@property(nonatomic,readonly,getter=canGoBack) BOOL canGoBack;</pre>
-</li>
-<li><p>是否能前进</p>
-<pre class="lang:default decode:true ">@property(nonatomic,readonly,getter=canGoForward) BOOL canGoForward;</pre>
-</li>
-<li><p>是否正在加载中</p>
-<pre class="lang:default decode:true ">@property(nonatomic,readonly,getter=isLoading) BOOL loading;</pre>
-</li>
-<li><p>是否伸缩内容至适应屏幕当前尺寸<br><pre class="lang:default decode:true">@property(nonatomic) BOOL scalesPageToFit;</pre><br>&nbsp;</p>
-</li>
-</ul>
-<h3 id="1-3-监听UIWebView的加载过程"><a href="#1-3-监听UIWebView的加载过程" class="headerlink" title="1.3 监听UIWebView的加载过程"></a>1.3 监听UIWebView的加载过程</h3><p>成为UIWebView的代理，遵守UIWebViewDelegate协议，就能监听UIWebView的加载过程</p>
-<pre class="lang:default decode:true ">- (void)webViewDidStartLoad:(UIWebView *)webView;</pre>
-&nbsp;
-
-请求完毕（加载数据完毕）时调用这个方法
-<pre class="lang:default decode:true ">- (void)webViewDidFinishLoad:(UIWebView *)webView;</pre>
-&nbsp;
-
-请求错误时调用这个方法
-<pre class="lang:default decode:true ">- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;</pre>
-UIWebView在发送请求之前，都会调用这个方法，如果返回NO，代表停止加载请求，返回YES，代表允许加载请求
-<pre class="lang:default decode:true">- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;</pre>
-
-<h2 id="2-JavaScript简介"><a href="#2-JavaScript简介" class="headerlink" title="2 JavaScript简介"></a>2 JavaScript简介</h2><ul>
-<li>JavaScript是一门脚本语言，简称JS<br>&nbsp;</li>
-</ul>
-<h3 id="2-1-JavaScript的常见作用"><a href="#2-1-JavaScript的常见作用" class="headerlink" title="2.1 JavaScript的常见作用"></a>2.1 JavaScript的常见作用</h3><ul>
-<li>给HTML网页添加动态功能，比如响应用户的各种操作</li>
-<li>操纵HTML元素，比如添加、删除、修改网页元素</li>
-</ul>
-<h3 id="2-2-常见的JavaScript函数"><a href="#2-2-常见的JavaScript函数" class="headerlink" title="2.2 常见的JavaScript函数"></a>2.2 常见的JavaScript函数</h3><pre class="lang:default decode:true ">alert(10);   //弹框
-document.getElementById(‘test’);  //根据ID获得某个DOM元素
-</pre>
-
-<p>## </p>
-<h2 id="3-OC中调用JavaScipt"><a href="#3-OC中调用JavaScipt" class="headerlink" title="3 OC中调用JavaScipt"></a>3 OC中调用JavaScipt</h2><p>使用UIWebView的stringByEvaluatingJavaScriptFromString方法即可。</p>
-<h3 id="3-1-WebView的基本概念"><a href="#3-1-WebView的基本概念" class="headerlink" title="3.1 WebView的基本概念"></a>3.1 <span lang="zh-CN" xml:lang="zh-CN">WebView</span><span lang="zh-CN" xml:lang="zh-CN">的基本</span>概念</h3><ol>
-<li>webView是有缺点的，会导致内存泄露，而且这个问题是它系统本身的问题。</li>
-<li>手机上面的safai其实就是用webView来实现的</li>
-<li>现在的开发并不完全是原生的开发，而更加倾向于原生+Html5的方式</li>
-<li>webView是OC代码和html代码之间进行交互的桥梁<br>&nbsp;</li>
-</ol>
-<h3 id="3-1-1-代码"><a href="#3-1-1-代码" class="headerlink" title="3.1.1 代码"></a>3.1.1 代码</h3><ul>
-<li><p>网页操控相关方法<br><pre class="lang:default decode:true">[self.webView goBack];     //回退<br>[self.webView goForward];   //前进<br>[self.webView reload];      //刷新</pre><br>&nbsp;</p>
-</li>
-<li><p>设置是否能够前进和回退<br><pre class="lang:default decode:true">self.goBackBtn.enabled = webView.canGoBack;<br>self.fowardBtn.enabled = webView.canGoForward;</pre><br>&nbsp;</p>
-</li>
-<li><p>常用的属性设置<br><pre class="lang:default decode:true">//设置网页自动适应<br>self.webView.scalesPageToFit = YES;</pre></p>
-</li>
-</ul>
-<p>//设置检测网页中的格式类型，all表示检测所有类型包括超链接、电话号码、地址等。<br>self.webView.dataDetectorTypes = UIDataDetectorTypeAll;<br>&nbsp;</p>
-<ul>
-<li><p>可滚动范围<br><pre class="lang:default decode:true">self.webView.scrollView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);</pre><br>&nbsp;</p>
-</li>
-<li><p>代理方法<br>每当将加载请求的时候调用该方法，返回YES 表示加载该请求，返回NO 表示不加载该请求<br><pre class="lang:default decode:true">//可以在该方法中拦截请求<br>-(BOOL)webView:(UIWebView <em>)webView shouldStartLoadWithRequest:(NSURLRequest </em>)request navigationType:(UIWebViewNavigationType)navigationType<br>{<br>return ![request.URL.absoluteString containsString:@”dushu”];<br>}</pre></p>
-</li>
-</ul>
-<p>//开始加载网页，不仅监听我们指定的请求，还会监听内部发送的请求<br>-(void)webViewDidStartLoad:(UIWebView *)webView</p>
-<p>//网页加载完毕之后会调用该方法<br>-(void)webViewDidFinishLoad:(UIWebView *)webView</p>
-<p>//网页加载失败调用该方法<br>-(void)webView:(UIWebView <em>)webView didFailLoadWithError:(NSError </em>)error<br><br>&nbsp;</p>
-<ul>
-<li>加载本地资源<br><pre class="lang:default decode:true ">NSURL *url = [[NSBundle mainBundle] URLForResource:@”ithome.pdf” withExtension:nil];<br>[self.webView loadRequest:[NSURLRequest requestWithURL:url]];</pre><br>&nbsp;</li>
-</ul>
-<p>3.2 HTML</p>
-<p>1.Html决定网页的内容，css决定网页的样式，js决定网页的事件</p>
-<p>2.html学习网站：<a href="http://www.w3school.com.cn/h.asp" target="_blank" rel="external">W3School</a></p>
-<p>&nbsp;</p>
-<h3 id="3-2-OC和JS代码的互调"><a href="#3-2-OC和JS代码的互调" class="headerlink" title="3.2 OC和JS代码的互调"></a>3.2 OC和JS代码的互调</h3><ul>
-<li><p>OC调用JS的代码<br><pre class="lang:default decode:true ">NSString *str = [self.webView stringByEvaluatingJavaScriptFromString:@”sum()”];</pre><br>&nbsp;</p>
-</li>
-<li><p>JS调用OC的说明<br>新的需求：点击按钮的时候拨打电话</p>
-</li>
-</ul>
-<p>但是我在点击按钮的时候，用户是不知道的，我们怎么能够知道用户点击了网页上面的一个按钮，只能通过一个技巧，那就是自己搞一个特定的协议头比如说hbw:当我拦截到你的网络请求的时候，只需要判断一下当前的协议头是不是这个就能判断你现在是否是JS调用。</p>
-<p>OC里面有通过字符串生成SEL类型的方法，所以当拿到数据之后做下面的事情</p>
+            <p>Windows 10小工具，实用的Win10小工具，集成移除水印、 KMS激活、Office激活、系统激活、ESD转换、磁力搜索、文件HASH、系统信息、系统版本、任务监控、Hosts编辑、Adobe CC激活等诸多功能。</p>
+<p>更新内容：</p>
+<p>20160301更新</p>
 <ol>
-<li>截取方法的名称</li>
-<li>将截取出来的字符串转换为SEL</li>
-<li>利用performSelect方法来调用SEL<br>&nbsp;</li>
+<li>继续优化移除6个目录, 增强功能.</li>
+<li><p>更新内核库.<br>20160226更新</p>
+</li>
+<li><p>优化自动升级功能, 更加稳定.<br>20160225更新</p>
+</li>
+<li><p>支持12671 RS1系统.</p>
+</li>
+<li><p>内核更新.<br>20160223更新</p>
+</li>
+<li><p>移除,恢复6个目录功能优化完成, 实测完美.<br>20160219更新</p>
+</li>
+<li><p>本工具改名了, Qwins 系统工具</p>
+</li>
+<li><p>支持14267  RS1预览版本.<br>20160206更新</p>
+</li>
+<li><p>esd-decrypter组件更新至V15版本</p>
+</li>
+<li>其它细节修整.<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/win10tool.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/win10tool.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/win10tool2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/win10tool2.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/win10tool3.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/win10tool3.png" alt=""></a><br>下载地址：</li>
 </ol>
-<ul>
-<li>涉及到的相关方法<br><pre class="lang:default decode:true">//判断字符串是否以一个固定的字符开头，这里为A<br>[@”abc” hasPrefix:@”A”]</pre></li>
-</ul>
-<p>//截串操作</p>
-<ul>
-<li>(NSString *)substringFromIndex:(NSUInteger)from;</li>
-</ul>
-<p>//切割字符串，返回一个数组</p>
-<ul>
-<li>(NSArray&lt;NSString <em>&gt; </em>)componentsSeparatedByString:(NSString *)separator;</li>
-</ul>
-<p>//替换操作</p>
-<ul>
-<li>(NSString <em>)stringByReplacingOccurrencesOfString:(NSString </em>)target withString:(NSString *)replacement</li>
-</ul>
-<p>//把string包装成SEL<br>SEL selector = NSSelectorFromString(sel);<br><br>&nbsp;</p>
-<ul>
-<li>如何屏蔽警告<br><pre class="lang:default decode:true">#pragma clang diagnostic push<br>#pragma clang diagnostic ignored “-Warc-performSelector-leaks”<br>//-Warc-performSelector-leaks为唯一的警告标识,这里面的代码可以去除警告<br>[self performSelector:selector withObject:nil];<br>#pragma clang diagnostic pop</pre><br>&nbsp;</li>
-</ul>
-<h2 id="4-NSInvocation的基本使用-任意调用对象消息方法并可以传N多参数的一个类"><a href="#4-NSInvocation的基本使用-任意调用对象消息方法并可以传N多参数的一个类" class="headerlink" title="4 NSInvocation的基本使用(任意调用对象消息方法并可以传N多参数的一个类)"></a>4 NSInvocation的基本使用(任意调用对象消息方法并可以传N多参数的一个类)</h2><p>在iOS中可以直接调用某个对象的消息方式有两种：</p>
+<p>[file]</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/04/10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/04/10/" itemprop="url">
+                  小工具：修复windows下各种.dll缺失或者其他组件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-04T13:45:25Z">
+                2016-03-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/资源/" itemprop="url" rel="index">
+                    <span itemprop="name">资源</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>DirectX修复工具(DirectX Repair)是一款系统级工具软件，简便易用。本程序为绿色版，无需安装，可直接运行。</p>
+<p>本程序的主要功能是检测当前系统的DirectX状态，如果发现异常则进行修复。程序主要针对0xc000007b问题设计。</p>
+<p>本程序适用于多个操作系统，如Windows XP（需先安装.NET 2.0，详情请参阅“致Windows XP用户.txt”文件）、Windows Vista、Windows 7、Windows 8、Windows 8.1、Windows 8.1 Update、Windows 10，同时兼容32位操作系统和64位操作系统。本程序会根据系统的不同，自动调整任务模式，无需用户进行设置。</p>
+<p>本程序的V3.3版分为标准版、增强版以及在线修复版。其中的标准版以及增强版都包含完整的DirectX组件。除此之外，增强版中还额外包含了c++ Redistributable Package，因此增强版不但能解决DirectX组件的问题，而且还能解决c++组件异常产生的问题。增强版适合无法自行解决c++相关问题的用户使用。在线修复版的功能与标准版相同，只是其所需的文件将通过Internet下载，因此大大减小了程序的体积。本程序的各个版本之间，主程序完全相同，只是配套使用的数据包不同。因此，当您使用标准版数据包时，程序将进行标准修复；当您使用增强版的数据包时，程序将进行增强修复；当数据包不全或没有数据包（即只有DirectX Repair.exe程序）时，程序将进行在线修复。在线修复、离线修复可自由灵活组合，充分满足不同用户的需要。<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/directX.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/directX.png" alt=""></a><br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/directx2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/directx2.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/directx3.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/directx3.png" alt=""></a><br>下载地址:</p>
+<p>[file]</p>
+<p>&nbsp;</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/03/03/9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/03/03/9/" itemprop="url">
+                  科学上网利器 Shadowsocks 简介
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-02T22:28:17Z">
+                2016-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/国外代理/" itemprop="url" rel="index">
+                    <span itemprop="name">国外代理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Shadowsocks原理"><a href="#Shadowsocks原理" class="headerlink" title="Shadowsocks原理"></a>Shadowsocks原理</h3><p>简单理解的话，Shadowsocks是将以前通过SSH创建的Socks5协议拆开成Server端和client端，下面这个原理图能简单介绍其翻墙原理，基本上和利用SSH tunnel大致类似：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/what-is-shadowsocks.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/what-is-shadowsocks.png" alt=""></a></p>
+<div align="center"></div>
+
 <ol>
-<li>performSelector:withObject；</li>
-<li>NSInvocation。<br>第一种方式比较简单，能完成简单的调用。但是对于&gt;2个的参数或者有返回值的处理，那就需要做些额外工作才能搞定。那么在这种情况下，我们就可以使用NSInvocation来进行这些相对复杂的操作。</li>
+<li>PC客户端（即你的电脑）发出请求基于Socks5协议跟SS-Local端进行通讯，由于这个SS-Local一般是本机或路由器等局域网的其他机器，不经过GFW，所以解决GFW通过特征分析进行干扰的问题。</li>
+<li>SS-Local和SS-Server两端通过多种可选的加密方法进行通讯，经过GFW的时候因为是常规的TCP包，没有明显特征码GFW也无法对通讯数据进行解密，因此通讯放行。</li>
+<li>SS-Server将收到的加密数据进行解密，还原初始请求，再发送到用户需要访问的服务网站，获取响应原路再返回SS-04，返回途中依然使用了加密，使得流量是普通TCP包，并成功穿过GFW防火墙。<br>因此，Shadowsocks的优点在于它解决了GFW通过分析流量特征从而干扰的问题，这是它优于SSH和VPN翻墙的地方。</li>
 </ol>
-<p>封装invacation可以调用多个参数的方法</p>
-<p><pre class="lang:default decode:true">-(void)invacation<br>{<br>    //1.创建一个MethodSignature，签名中保存了方法的名称，参数和返回值<br>    //这个方法属于谁，那么就用谁来进行创建<br>    //注意：签名一般是用来设置参数和获得返回值的，和方法的调用没有太大的关系<br>    NSMethodSignature *signature = [ViewController instanceMethodSignatureForSelector:@selector(callWithNumber:andContext:withStatus:)];</pre></p>
-<pre><code>//注意不要写错了方法名称
-NSMethodSignature *signature = [ViewController methodSignatureForSelector:@selector(call)];
+<h3 id="安装使用说明"><a href="#安装使用说明" class="headerlink" title="安装使用说明"></a>安装使用说明</h3><p>Shadowsocks服务端有Python、libev、go版本，从系统占用资源和多用户配置方面来考虑，我选择使用Python来作为 Shadowsocks的服务端，网上已经有很多比较好的一键安装脚本，如teddysun，但对多用户配置还需要手工更改配置文件（iptables、 /etc/shadowsocks.json）。于是，自己写一个，包含安装、添加用户和卸载功能，并整合到《<a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=http://oneinstack.com/" target="_blank" rel="external">OneinStack</a>》和《<a href="https://blog.linuxeye.com/31.html" target="_blank" rel="external">lnmp一键安装包</a>》中。</p>
+<h4 id="Shadowsocks安装"><a href="#Shadowsocks安装" class="headerlink" title="Shadowsocks安装"></a>Shadowsocks安装</h4><div class="dp-highlighter"><br><br>1.  wget <a href="http://mirrors.linuxeye.com/oneinstack.tar.gz" target="_blank" rel="external">http://mirrors.linuxeye.com/oneinstack.tar.gz</a><br>2.  tar xzf oneinstack.tar.gz<br>3.  cd oneinstack<br>4.  ./shadowsocks.sh install<br></div><br><div align="center"><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/Shadowsocks_install.jpg" alt=""></div><br>出现如下即安装成功：<br><div class="dp-highlighter"><br><br>1.  Your Server IP: You_Server_IP<br>2.  Your Server Port: 9001<br>3.  Your Password: oneinstack<br>4.  Your Local IP: 127.0.0.1<br>5.  Your Local Port: 1080<br>6.  Your Encryption Method: aes-256-cfb<br></div>
 
-//2.通过MethodSignature来创建一个NSInvocation
-NSInvocation中保存了方法所属于的对象|方法名称|参数|返回值等等
-NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];  
+<h4 id="Shadowsocks添加用户"><a href="#Shadowsocks添加用户" class="headerlink" title="Shadowsocks添加用户"></a>Shadowsocks添加用户</h4><div class="dp-highlighter"><br><br>1.  ./shadowsocks.sh adduser<br></div><br><div align="center"><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/Shadowsocks_adduser.jpg" alt=""></div>
 
-//2.1 设置invocation，来调用方法    
-invocation.target = self;
-invocation.selector = @selector(call);
-invocation.selector = @selector(callWithNumber:);
-invocation.selector = @selector(callWithNumber:andContext:);
-invocation.selector = @selector(callWithNumber:andContext:withStatus:);
+<h4 id="Shadowsocks卸载"><a href="#Shadowsocks卸载" class="headerlink" title="Shadowsocks卸载"></a>Shadowsocks卸载</h4><div class="dp-highlighter"><br><br>1.  ./shadowsocks.sh uninstall<br></div><br><div align="center"><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/Shadowsocks_uninstall.jpg" alt=""></div>
 
-NSString *number = @&quot;1761237846&quot;;
-NSString *context = @&quot;玩游戏&quot;;
-NSString *status = @&quot;上课的时候&quot;;
+<h4 id="Shadowsocks服务管理"><a href="#Shadowsocks服务管理" class="headerlink" title="Shadowsocks服务管理"></a>Shadowsocks服务管理</h4><div class="dp-highlighter"><br><div class="bar"></div>
 
-//注意：
-//1.自定义的参数索引从2开始，0和1已经被self and _cmd占用了
-//2.方法签名中保存的方法名称必须和调用的名称一致
-[invocation setArgument:&amp;amp;number atIndex:2];
-[invocation setArgument:&amp;amp;context atIndex:3];
-[invocation setArgument:&amp;amp;status atIndex:4];
+<ol>
+<li>service shadowsocks start      <span class="comment">#启动</span></li>
+<li>service shadowsocks stop      <span class="comment">#关闭</span></li>
+<li>service shadowsocks restart   <span class="comment">#重启</span></li>
+<li>service shadowsocks status    <span class="comment">#状态</span><br></li></ol></div>
 
-//3.调用invok方法来执行
-[invocation invoke];
-</code></pre><p>}<br>&nbsp;</p>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>1.一般处理方式：</p>
-<ul>
-<li>app异常闪退，那么捕获crash信息，并记录在本地沙盒中。</li>
-<li>当下次用户重新打开app的时候，检查沙盒中是否保存有上次捕获到的crash信息。</li>
-<li>如果有那么利用专门的接口发送给服务器，以求在后期版本中修复。<br>&nbsp;</li>
-</ul>
-<p>2.如何抛出异常</p>
-<ul>
-<li>抛出异常的两种方式<br>方式一<br><pre class="lang:default decode:true ">@throw  [NSException exceptionWithName:@”程序异常” reason:@”异常原因：数组越界” userInfo:nil];</pre><br>方式二<br><pre class="lang:default decode:true">NSString *info = [NSString stringWithFormat:@”%@找不到方法”,NSStringFromSelector(aSelector)];</pre><br>下面这种方法是自动抛出的<br><pre class="lang:default decode:true">[NSException raise:@”抛出异常” format:info,nil];</pre><br>&nbsp;</li>
-</ul>
-<p>3.如何捕获异常</p>
-<p><pre class="lang:default decode:true">NSSetUncaughtExceptionHandler (&amp;UncaughtExceptionHandler);<br>void UncaughtExceptionHandler(NSException *exception) {</pre></p>
-<pre><code>NSArray *arr = [exception callStackSymbols];//得到当前调用栈信息
-NSString *reason = [exception reason];//非常重要，就是崩溃的原因
-NSString *name = [exception name];//异常类型    
-NSString *errorMsg = [NSString stringWithFormat:@&quot;当前调用栈的信息：%@\nCrash的原因：%@\n异常类型：%@\n&quot;,arr,reason,name];
-//把该信息保存到本地沙盒，下次回传给服务器。
-</code></pre><p>}</p>
-<p>void UncaughtExceptionHandler(NSException *exception) {</p>
-<pre><code>//获取异常崩溃信息    
-NSArray *callStack = [exception callStackSymbols];
-NSString *reason = [exception reason];
-NSString *name = [exception name];
-NSString *content = [NSString stringWithFormat:@&quot;========异常错误报告========\nname:%@\nreason:\n%@\ncallStackSymbols:\n%@&quot;,name,reason,[callStack componentsJoinedByString:@&quot;\n&quot;]];
+<h3 id="本地客户端"><a href="#本地客户端" class="headerlink" title="本地客户端"></a>本地客户端</h3><p>Windows 和 OS X 下的 GUI 客户端可以下载shadowsocks-gui，下载地址</p>
+<p><a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=http://sourceforge.net/projects/shadowsocksgui/files/dist" target="_blank" rel="external">http://sourceforge.net/projects/shadowsocksgui/files/dist</a></p>
+<p>&nbsp;</p>
+<p>如果无法打开，请使用备份地址</p>
+<p><strong>Win：</strong></p>
+<p>.NET Framework 3.5 版本，适合 Windows 7 用户，链接：<a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=http://pan.baidu.com/s/1kTKjIxp" target="_blank" rel="external">http://pan.baidu.com/s/1kTKjIxp</a> 密码：j3xd</p>
+<p>.NET Framework 4.0 版本，适合 Windows 8.1 用户，链接：<a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=http://pan.baidu.com/s/1jUnFK" target="_blank" rel="external">http://pan.baidu.com/s/1jUnFK</a> 密码：8220</p>
+<p><strong>OS X：</strong></p>
+<p>链接：<a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=http://pan.baidu.com/s/1mglBIBY" target="_blank" rel="external">http://pan.baidu.com/s/1mglBIBY</a> 密码：2cqe</p>
+<p>针对两个系统，OS X 和 Windows，以及手机 iOS 和 Android 客户端。</p>
+<h4 id="OS-X-下设置使用方法"><a href="#OS-X-下设置使用方法" class="headerlink" title="OS X 下设置使用方法"></a>OS X 下设置使用方法</h4><p>Mac 下使用极其方便，因为 GUI 已经集成了系统 Pac，所以无需设置任何科学上网的姿势，直接运行ShadowsocksX，然后输入服务商提供给你的账号信息，保存运行后，即可在所有浏览器里直接科学上网，如图：</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/Shadowsocks-GUI-Mac-Menu.png" alt=""></p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/Shadowsocks-GUI-Mac-Screenshot.png" alt=""></p>
+<h4 id="Windows-下设置使用方法"><a href="#Windows-下设置使用方法" class="headerlink" title="Windows 下设置使用方法"></a>Windows 下设置使用方法</h4><p>解压Shadowsocks-win-2.3.1.zip，打开shadowsocks.exe</p>
+<p>然后输入服务商提供给你的账号信息，如图：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/ss1.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/ss1.png" alt=""></a></p>
+<p>点击OK保存，成功后会在桌面右下方显示 Shadowsocks logo 的图标，然后右键点击 Enable 运行</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/ss2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/ss2.png" alt=""></a></p>
+<p>由于 Windows 系统的复杂性，我们需要单独对浏览器进行设置，本文只介绍 Chrome 和 Firefox 这两款优秀的浏览器，至于其他的浏览器，如 IE 等，本文不会介绍。</p>
+<p><strong>① Chrome 下的 Proxy SwitchySharp 插件</strong></p>
+<p><a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?hl=zh-CN" target="_blank" rel="external">https://chrome.google.com/webstore/detail/proxy-switchysharp/dpplabbmogkhghncfbfdeeokoefdjegm?hl=zh-CN</a></p>
+<p>如果您无法访问，也可以下载这个 .crx 文件</p>
+<p>链接：<a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=http://pan.baidu.com/s/1jGmvMPg" target="_blank" rel="external">http://pan.baidu.com/s/1jGmvMPg</a> 密码：if2e</p>
+<p>下载完成后在设置&gt;&gt;扩展，直接把该 .crx 文件拖入窗口然后安装即可</p>
+<p>然后打开 Proxy SwitchySharp 的设置，新建一个情景，命名为 Shadowsocks，并设置好端口，模式为 socks5 如图：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/ss4.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/ss4.jpg" alt=""></a></p>
+<p>&nbsp;</p>
+<p>再点切换规则，由于可能大概无法访问 Google，我们就启用切换规则，然后在 URL 模式里输入 <em>google</em> 统配好 Google 的所有域名，选择好模式匹配为通配符，情景模式为 Shadowsocks</p>
+<p>然后把在线规则列表打钩，输入URL为：<a href="https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt" target="_blank" rel="external">https://autoproxy-gfwlist.googlecode.com/svn/trunk/gfwlist.txt</a></p>
+<p>勾选AutoProxy 兼容列表，然后点立即更新，更新完成后保存即可，如图：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/ss3.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/ss3.jpg" alt=""></a></p>
+<p>如果不想用插件，直接全局代理，就把桌面的快捷方式 chrome.exe 右键 属性 &gt;&gt; 修改 Chrome.exe 运行参数，在目标那一栏，最后的引号后面加上</p>
+<div class="dp-highlighter">
 
-//把异常崩溃信息发送至开发者邮件
-NSMutableString *mailUrl = [NSMutableString string];
-[mailUrl appendString:@&quot;mailto:test@qq.com&quot;];
-[mailUrl appendString:@&quot;?subject=程序异常崩溃，请配合发送异常报告，谢谢合作！&quot;];
-[mailUrl appendFormat:@&quot;&amp;amp;body=%@&quot;, content];
+<ol>
+<li><p>–proxy-server=”socks5://127.0.0.1:1080” –host-resolver-rules=”MAP * 0.0.0.0 , EXCLUDE localhost”<br></p></li></ol></div><br>就是说修改为类似（1080 为你设置的本地端口，如果设置了不同的端口请自行修改）<p></p>
+<div class="dp-highlighter">
 
-//打开地址
-NSString *mailPath = [mailUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-[[UIApplication sharedApplication] openURL:[NSURL URLWithString:mailPath]];
-</code></pre><p>}<br>&nbsp;</p>
-<h2 id="5-补充"><a href="#5-补充" class="headerlink" title="5 补充"></a>5 补充</h2><ul>
-<li>关于JS相关的学习框架：WebViewJavascriptBridge<br>&nbsp;</li>
-</ul>
+<li><p>“C:\Program Files (x86)\Google\Chrome\Application\chrome.exe”–proxy-server=”socks5://127.0.0.1:1080” –host-resolver-rules=”MAP * 0.0.0.0 , EXCLUDE localhost”<br></p></li></div><br>然后运行 Chrome 即可<p></p>
+
+
+<p><strong>② Firefox 下的 AutoProxy 20131215 修复版</strong></p>
+<p>由于 AutoProxy 的作者没有更新，新的版本无法在 Firefox 27.0 以后进行代理规则设置，所以我们用 xthunder 作者 的修复版，下载链接：<a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=http://xthunder.googlecode.com/files/autoproxy20131215.xpi" target="_blank" rel="external">http://xthunder.googlecode.com/files/autoproxy20131215.xpi</a></p>
+<p>如果您无法访问，也可以访问此链接：<a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=http://pan.baidu.com/s/1c0rrGDq" target="_blank" rel="external">http://pan.baidu.com/s/1c0rrGDq</a> 密码：9abj</p>
+<p>下载好这个 .xpi 文件后，直接拖入任何 Firefox 窗口，然后安装重启浏览器即可。之后点击右上方新出现的小地球图标，进行设置</p>
+<p>点击首选项</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/AutoProxy-Menu.jpg" alt=""></p>
+<p>依次点击代理服务器&gt;&gt;编辑代理服务器</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/AutoProxy-Choose-Proxy-Server.jpg" alt=""></p>
+<p>新增加一个名称为Shadowsocks设置好本地的端口，类型为socks5</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/AutoProxy-Edit-Proxy-Server.jpg" alt=""></p>
+<p>然后点击代理规则&gt;&gt;增加代理规则</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/AutoProxy-Add-List.jpg" alt=""></p>
+<p>订阅 GFW List</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/AutoProxy-Add-List-2.jpg" alt=""></p>
+<p>然后保存，可以设置全局代理，也可以设置自动代理，推荐使用自动代理，只针对某一批网站走代理，然后右上方的小地球图标会变成蓝色（自动模式）或绿色（全局模式）</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/AutoProxy-Works.jpg" alt=""> <img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/AutoProxy-Works-2.jpg" alt=""></p>
+<h4 id="Android-以及-iOS-客户端"><a href="#Android-以及-iOS-客户端" class="headerlink" title="Android 以及 iOS 客户端"></a>Android 以及 iOS 客户端</h4><p>如果需要局部科学上网，那么你的 Android 需要 root，如果木有 root，那么就只能全局上网</p>
+<p>Android 客户端下载地址请摸我：</p>
+<p><a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=https://play.google.com/store/apps/details?id=com.github.shadowsocks" target="_blank" rel="external">https://play.google.com/store/apps/details?id=com.github.shadowsocks</a></p>
+<p>如果您无法访问，也可以摸摸这个：</p>
+<p><a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=http://apps.evozi.com/apk-downloader/?id=com.github.shadowsocks" target="_blank" rel="external">http://apps.evozi.com/apk-downloader/?id=com.github.shadowsocks</a></p>
+<p>设置账号信息和电脑上基本一致：</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/Shadowsocks-Android.jpg" alt=""></p>
+<p>iOS 非越狱的话，可以直接安装 Shadowsocks 的 app，下载地址请访问：</p>
+<p><a href="https://blog.linuxeye.com/wp-content/themes/begin/inc/go.php?url=https://itunes.apple.com/us/app/shadowsocks/id665729974?ls=1&amp;mt=8" target="_blank" rel="external">https://itunes.apple.com/us/app/shadowsocks/id665729974?ls=1&amp;mt=8</a></p>
+<p>这是个自带 SS 的浏览器，设置账号信息等大同小异，点击右上方的+号，然后设置你的账号：</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/Shadowsocks-iOS.png" alt=""></p>
+<p>iOS 越狱了的话，直接在 Cydia 里搜索 Shadowsocks ，然后安装</p>
+<p><img src="https://blog.linuxeye.com/wp-content/uploads/2015/07/Shadowsocks-iOS-Jail.jpg" alt=""></p>
+<p>原文地址：<a href="https://blog.linuxeye.com/423.html" target="_blank" rel="external">https://blog.linuxeye.com/423.html</a></p>
+<p>大家都懂的，就不多说啦，由于国内政策不便于宣传给出文件下载地址：</p>
+<p>&nbsp;</p>
+<p>[file]</p>
 
           
         
@@ -2009,7 +790,7 @@ NSString *mailPath = [mailUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8St
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
   </nav>
 
 
@@ -2046,7 +827,7 @@ NSString *mailPath = [mailUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8St
                alt="Timhbw" />
           <p class="site-author-name" itemprop="name">Timhbw</p>
            
-              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。#网站描述</p>
           
         </div>
         <nav class="site-state motion-element">
