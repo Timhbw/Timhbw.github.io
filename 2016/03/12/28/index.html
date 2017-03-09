@@ -1,0 +1,716 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="博客,建站," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="搭建个人博客其实说简单也简单，说难也难，当初我一个独自探索，到现在也差不多摸清门路了，因此写一个教程防止大家走弯路，少碰壁，以最迅速，最直接的方式完成它,一下全部为个人见解，如有误，请指出。下面是后续文章链接:
+
+购买域名；
+购买虚拟主机并搭建（Linux）；
+域名解析；
+wordpress等博客平台安装步骤。先说下大致步骤：
+
+购买域名（如果你只打算以例如ip：115.159.xxx.xxx方式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小白搭建博客教程之流程">
+<meta property="og:url" content="http://timhbw.github.io/2016/03/12/28/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="搭建个人博客其实说简单也简单，说难也难，当初我一个独自探索，到现在也差不多摸清门路了，因此写一个教程防止大家走弯路，少碰壁，以最迅速，最直接的方式完成它,一下全部为个人见解，如有误，请指出。下面是后续文章链接:
+
+购买域名；
+购买虚拟主机并搭建（Linux）；
+域名解析；
+wordpress等博客平台安装步骤。先说下大致步骤：
+
+购买域名（如果你只打算以例如ip：115.159.xxx.xxx方式">
+<meta property="og:updated_time" content="2017-03-09T02:38:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小白搭建博客教程之流程">
+<meta name="twitter:description" content="搭建个人博客其实说简单也简单，说难也难，当初我一个独自探索，到现在也差不多摸清门路了，因此写一个教程防止大家走弯路，少碰壁，以最迅速，最直接的方式完成它,一下全部为个人见解，如有误，请指出。下面是后续文章链接:
+
+购买域名；
+购买虚拟主机并搭建（Linux）；
+域名解析；
+wordpress等博客平台安装步骤。先说下大致步骤：
+
+购买域名（如果你只打算以例如ip：115.159.xxx.xxx方式">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://timhbw.github.io/2016/03/12/28/"/>
+
+
+
+
+
+  <title> 小白搭建博客教程之流程 | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/03/12/28/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                小白搭建博客教程之流程
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-12T17:03:07+08:00">
+                2016-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/建站/" itemprop="url" rel="index">
+                    <span itemprop="name">建站</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>搭建个人博客其实说简单也简单，说难也难，当初我一个独自探索，到现在也差不多摸清门路了，因此写一个教程防止大家走弯路，少碰壁，以最迅速，最直接的方式完成它,一下全部为个人见解，如有误，请指出。下面是后续文章链接:</p>
+<ol>
+<li><a href="http://www.huangbowei.com/archives/76.html" target="_blank" rel="external">购买域名</a>；</li>
+<li><a href="http://www.huangbowei.com/archives/77.html" target="_blank" rel="external">购买虚拟主机并搭建（Linux）</a>；</li>
+<li><a href="http://www.huangbowei.com/archives/78.html" target="_blank" rel="external">域名解析</a>；</li>
+<li><p><a href="http://www.huangbowei.com/archives/79.html" target="_blank" rel="external">wordpress等博客平台安装步骤</a>。<br>先说下大致步骤：</p>
+</li>
+<li><p>购买域名（如果你只打算以例如ip：115.159.xxx.xxx方式访问这步可以忽略），推荐<a href="https://sg.godaddy.com/zh/" target="_blank" rel="external">狗爹</a>（godaddy），有许多优惠，还安全，不用担心被封，国内购买域名的地方也有很多：<a href="https://www.dnspod.cn/" target="_blank" rel="external">Dnspod</a>，<a href="http://www.xinnet.com/" target="_blank" rel="external">新网</a>等等，但是出于国内众多因素，在国内购买域名不怕一万，就怕万一，哪天谁不开心啦，直接封你域名，当然，一般是不会的。</p>
+</li>
+<li>购买虚拟主机，如果你家有公网ip地址可以直接在家搭建，但是当前公网ip本来就少，会分配公网ip给个人的运营商几乎没有，电信的用户可以试试，貌似联系客户，强烈要求分配公网ip就可以。（如果你是在校大学生，强烈建议<a href="http://www.qcloud.com/" target="_blank" rel="external">腾讯云</a>，1元主机加免费.cn域名一直到赠送到你毕业为止，阿里的貌似对学生优惠只有3个月）</li>
+<li><p>物色一个好的解析商，如<a href="https://www.dnspod.cn/" target="_blank" rel="external">DnsPod</a>，<a href="https://www.cloudxns.net/" target="_blank" rel="external">CloudXNS</a>等，我之前用的是DnsPod，然后转战CloudXNS(推荐)。</p>
+<blockquote>
+<ul>
+<li>解析商大致的作用流程：用户访问www.huangbowei.com，然后解析商就会应用你在解析商那里填写的规则，把www.huangbowei.com解析到115.159.xxx.xxx,然后用户就可以访问你的博客内容。<ul>
+<li>如果你直接访问ip地址，大致流程就是：用户输入115.159.xxx.xxx，转到访问博客内容。</li>
+<li>如果你没有解析商，用户输入www.huangbowei.com，然后不知道转到哪一个虚拟主机，就不能访问。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>选择一个搭建博客的平台：<a href="https://cn.wordpress.org/" target="_blank" rel="external">wordpress</a>，<a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>，<a href="http://typecho.org/" target="_blank" rel="external">Typecho</a>，<a href="http://www.ghostchina.com/" target="_blank" rel="external">Ghost</a>，<a href="http://jekyll.bootcss.com/" target="_blank" rel="external">jekyll</a>等等，我第一个用的（也是大部分人第一次用的）就是wordpress，它操作简单，后台有图形化操作界面，主题多，插件多，使用人数多，碰到问题解决方法也多，但是现在越发臃肿，不能满足我对博客速度的极致要求，便转到Typecho，以后准备试试更简单，搭建环境更加简单，更黑客的Hexo。</p>
+</li>
+</ol>
+<p>## </p>
+<p>到这里，搭建博客大致的流程就结束啦，这只是一个大致的思路，由于全部写完篇幅过多，我准备过几天把每一步详细写出来，以及我碰到的问题，以及解答方法 。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
+            <a href="/tags/建站/" rel="tag"># 建站</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/12/24/" rel="next" title="分享下平时我在windows平台下开发用的一些比较好的软件-winscp（四）">
+                <i class="fa fa-chevron-left"></i> 分享下平时我在windows平台下开发用的一些比较好的软件-winscp（四）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/13/29/" rel="prev" title="国外代理账号说明">
+                国外代理账号说明 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

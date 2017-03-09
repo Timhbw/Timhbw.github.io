@@ -1,0 +1,776 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ios,Cydia,iOS10越狱,越狱," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="最近这些天有关越狱的消息不断，我估摸着越狱也快发布了，就等着国外大神发推或者国内的盘古，太极等发布工具。然后手头上的设备也 DFU 降级至10.1等待越狱，之前用着 beta 版本的 iOS10.2。在看这本书之前其实也不太想越狱（虽然每次出越狱必定尝试），毕竟越狱后设备安全风险增加，容易白苹果，手机上几百 G 的资料丢失比较麻烦，但是最近在看iOS逆向工程的书籍《iOS应用逆向工程 第2版》，不">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS10.1.X 已经可以越狱！逆向的同学有福了">
+<meta property="og:url" content="http://timhbw.github.io/2016/12/22/105/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="最近这些天有关越狱的消息不断，我估摸着越狱也快发布了，就等着国外大神发推或者国内的盘古，太极等发布工具。然后手头上的设备也 DFU 降级至10.1等待越狱，之前用着 beta 版本的 iOS10.2。在看这本书之前其实也不太想越狱（虽然每次出越狱必定尝试），毕竟越狱后设备安全风险增加，容易白苹果，手机上几百 G 的资料丢失比较麻烦，但是最近在看iOS逆向工程的书籍《iOS应用逆向工程 第2版》，不">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia01.jpg">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia02.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia03.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia04.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia05.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia06.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia07.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia08.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia09.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia10.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia11.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia12.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia13.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia14.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia15.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia16.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia17.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia18.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia19.png">
+<meta property="og:updated_time" content="2017-03-09T02:38:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS10.1.X 已经可以越狱！逆向的同学有福了">
+<meta name="twitter:description" content="最近这些天有关越狱的消息不断，我估摸着越狱也快发布了，就等着国外大神发推或者国内的盘古，太极等发布工具。然后手头上的设备也 DFU 降级至10.1等待越狱，之前用着 beta 版本的 iOS10.2。在看这本书之前其实也不太想越狱（虽然每次出越狱必定尝试），毕竟越狱后设备安全风险增加，容易白苹果，手机上几百 G 的资料丢失比较麻烦，但是最近在看iOS逆向工程的书籍《iOS应用逆向工程 第2版》，不">
+<meta name="twitter:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia01.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://timhbw.github.io/2016/12/22/105/"/>
+
+
+
+
+
+  <title> iOS10.1.X 已经可以越狱！逆向的同学有福了 | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/12/22/105/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS10.1.X 已经可以越狱！逆向的同学有福了
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-22T23:28:02+08:00">
+                2016-12-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ios/" itemprop="url" rel="index">
+                    <span itemprop="name">ios</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近这些天有关越狱的消息不断，我估摸着越狱也快发布了，就等着国外大神发推或者国内的盘古，太极等发布工具。然后手头上的设备也 DFU 降级至10.1等待越狱，之前用着 beta 版本的 iOS10.2。在看这本书之前其实也不太想越狱（虽然每次出越狱必定尝试），毕竟越狱后设备安全风险增加，容易白苹果，手机上几百 G 的资料丢失比较麻烦，但是最近在看iOS逆向工程的书籍《iOS应用逆向工程 第2版》，不越狱的话没办法测试，还想着用旧设备越狱测试，其实内心是想iOS10.1 越狱的，不然我降级干嘛呢，哈哈。</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia01.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia01.jpg" alt=""></a></p>
+<p>很幸运的是苹果于前天关闭 iOS10.1和 iOS10.1.1的验证，还好我降级的及时。我还想着既然关闭验证了，那越狱消息发布也快了，果不其然，昨天中午2016/12/22逛Twitter，Luca Todesco发布beta1版本的越狱工具，目前迭代至 beta3，还在更新迭代中，内心激动中。</p>
+<p>Luca Todesco 是来自意大利(由于他的推特上地理定位是朝鲜，所以很多报道写的是朝鲜大神发布越狱，这就尴尬了，朝鲜的国情大家懂得)的著名的黑客和安全研究人员 。大家越狱需谨慎，我的个人意见是不着急的话等到25号，仅供参考。由于现在还是 beta 版本的工具，极其不稳定，而且越狱后能安装的插件也不多，需要等待开发人员更新，所以先观望一段时间，毕竟如果白苹果的话，由于验证关闭，那就只能 iOS10.2再见，与越狱无缘，虽然有消息称会出10.2越狱，估计还的等一段时间。</p>
+<p>&nbsp;</p>
+<h4 id="1-支持系统"><a href="#1-支持系统" class="headerlink" title="1.支持系统"></a>1.支持系统</h4><p>由于该工具是beta版本，目前支持的系统为：</p>
+<p>支持系统：iOS10.1~iOS10.1.1</p>
+<p>&nbsp;</p>
+<h4 id="2-支持设备"><a href="#2-支持设备" class="headerlink" title="2.支持设备"></a>2.支持设备</h4><p>支持设备：iPhone 7、iPhone 7 Plus、iPhone 6s、iPhone 6s Plus、9.7 英寸 iPad Pro 和 12.9 英寸 iPad Pro</p>
+<p>&nbsp;</p>
+<h4 id="3-越狱工具"><a href="#3-越狱工具" class="headerlink" title="3.越狱工具"></a>3.越狱工具</h4><p>越狱工具下载地址：<a href="https://yalu.qwertyoruiop.com" target="_blank" rel="external">https://yalu.qwertyoruiop.com</a></p>
+<p>他的推特账户：<a href="https://twitter.com/qwertyoruiopz" target="_blank" rel="external">qwertyoruiopz</a></p>
+<p>&nbsp;</p>
+<h4 id="4-小白鼠越狱测试"><a href="#4-小白鼠越狱测试" class="headerlink" title="4.小白鼠越狱测试"></a>4.小白鼠越狱测试</h4><h5 id="4-1-下载测试版越狱工具"><a href="#4-1-下载测试版越狱工具" class="headerlink" title="4.1 下载测试版越狱工具"></a>4.1 下载测试版越狱工具</h5><ul>
+<li>网址一：<a href="https://yalu.qwertyoruiop.com" target="_blank" rel="external">https://yalu.qwertyoruiop.com</a><br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia02.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia02.png" alt=""></a></li>
+</ul>
+<p>&nbsp;</p>
+<ul>
+<li>网址二：<a href="http://www.cydiaimpactor.com" target="_blank" rel="external">http://www.cydiaimpactor.com</a><br><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia03.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia03.png" alt=""></a></li>
+</ul>
+<p>&nbsp;</p>
+<p>下载完毕</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia04.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia04.png" alt=""></a></p>
+<p>&nbsp;</p>
+<h5 id="4-2-安装程序"><a href="#4-2-安装程序" class="headerlink" title="4.2 安装程序"></a>4.2 安装程序</h5><p>1.安装Impactor_0.9.36</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia05.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia05.png" alt=""></a></p>
+<p>2.打开Impactor</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia06.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia06.png" alt=""></a></p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia07.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia07.png" alt=""></a></p>
+<p>3.电脑插上 iPhone</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia08.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia08.png" alt=""></a></p>
+<p>4.把下载好的<code>mach_portal+yalu-b3.ipa</code>拖到<code>Impactor</code>,会让你输入AppleID。</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia09.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia09.png" alt=""></a></p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia10.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia10.png" alt=""></a></p>
+<p>5.然后就会报错，看完报错说明大概懂意思了，由于我开启了2步验证，所以需要进入官网生成 App 专用密码。<a href="https://appleid.apple.com" target="_blank" rel="external">https://appleid.apple.com</a></p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia11.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia11.png" alt=""></a></p>
+<p>6.生成 App 专用密码</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia12.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia12.png" alt=""></a></p>
+<p>7.输入 appleid 账号以及 App 专用密码后，成功</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia13.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia13.png" alt=""></a></p>
+<p>&nbsp;</p>
+<p>8.手机上会出现一个应用图标<code>mach_portal</code>,当时还不能打开，需要进入设置 -&gt; 通用 -&gt; 设备管理 -&gt; 信任应用。</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia14.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia14.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia15.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia15.png" alt=""></a></p>
+<p>&nbsp;</p>
+<p>9.点击<code>mach_portal</code>应用程序，安静的等待几分钟，重启一次后没有出现 Cydia，继续重启，还是没有 Cydia，尝试多次后，还是无解，越狱失败，但是其他软件显示已经越狱，比如支付宝的指纹就不能用，说检测到设备已经越狱。论坛里也有人有这种现象，还不少，只能等待出正式版越狱工具了。</p>
+<p>&nbsp;</p>
+<p>10.今天越狱成功（2016/12/30更新），想着大不了直接升级到10.2，固件也已经下好。下面说下详细步骤：</p>
+<p>1.先用电脑 iTunes 备份iPhone 的数据到电脑本机，以备后面恢复手机数据使用，比备份在 iCloud恢复速度快。</p>
+<p>2.打开手机的 设置-&gt; iCloud -&gt; 查找我的 iPhone;</p>
+<p>3.打开电脑登录iCloud：<a href="https://www.icloud.com" target="_blank" rel="external">https://www.icloud.com</a>,进入查找我的 iPhone,可能会让你输入密码，输入 AppleID 密码就好;</p>
+<p>4.选择你的设备，然后选择‘抹掉 iPhone ’，后面一直下一步下一步就好;</p>
+<p>5.稍等几秒，手机会自动抹掉，然后慢慢等待。抹掉完毕设置一下手机，这时候进入桌面就会看到 Cydia，大功告成！！！（用<code>mach_portal+yalu-b3.ipa</code>,用<code>mach_portal+yalu-b4-1.ipa</code>的话 Cydia 会闪退,建议大家把图中我安装的插件都安装，以防手机白苹果之后，还能用 iFile、Terminal 救回来）。</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia16.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia16.png" alt=""></a></p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia17.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia17.png" alt=""></a></p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia18.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia18.png" alt=""></a></p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia19.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/cydia19.png" alt=""></a></p>
+<p>&nbsp;</p>
+<h4 id="5-总结"><a href="#5-总结" class="headerlink" title="5.总结"></a>5.总结</h4><p>出门在外没有无线，只能用手机开热点，电脑连接热点写文章，也算是对这篇文章的有始有终。越狱总算告一段落，算是2016年又一成功解决的事件之一。新的2017年，希望技术能够得到进一步的提升，逆向工程算是一个难啃的骨头的，利用自己的闲暇时间慢慢琢磨。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
+          
+            <a href="/tags/Cydia/" rel="tag"># Cydia</a>
+          
+            <a href="/tags/iOS10越狱/" rel="tag"># iOS10越狱</a>
+          
+            <a href="/tags/越狱/" rel="tag"># 越狱</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/02/104/" rel="next" title="【iOS秘籍】-下载历史版本App超详细教程">
+                <i class="fa fa-chevron-left"></i> 【iOS秘籍】-下载历史版本App超详细教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/01/05/106/" rel="prev" title="2016再见，2017努力！">
+                2016再见，2017努力！ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-支持系统"><span class="nav-number">1.</span> <span class="nav-text">1.支持系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-支持设备"><span class="nav-number">2.</span> <span class="nav-text">2.支持设备</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-越狱工具"><span class="nav-number">3.</span> <span class="nav-text">3.越狱工具</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-小白鼠越狱测试"><span class="nav-number">4.</span> <span class="nav-text">4.小白鼠越狱测试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#4-1-下载测试版越狱工具"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 下载测试版越狱工具</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-2-安装程序"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 安装程序</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-总结"><span class="nav-number">5.</span> <span class="nav-text">5.总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

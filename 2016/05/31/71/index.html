@@ -1,0 +1,691 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="wordpress," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="先说明，这个明显是强迫症才会搞这种累死人不的好处的活，当然，我也是这种人。当初Typecho写文章的时候还没太在意，因为文章ID变化不太大，没引起我注意。当转到wp后，2篇文章之间ID相差太大，强迫症的我不能忍，于是一顿搜索找到几个方法，发现网上那些文章都是抄的，还都是一模一样的，错别字、格式什么的都没变化。好在有张戈这位技术型博主，文章写的非常好，所以这里结合下我的经验分享下。
+
+真ID连续一开">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wordpress文章ID不连续">
+<meta property="og:url" content="http://timhbw.github.io/2016/05/31/71/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="先说明，这个明显是强迫症才会搞这种累死人不的好处的活，当然，我也是这种人。当初Typecho写文章的时候还没太在意，因为文章ID变化不太大，没引起我注意。当转到wp后，2篇文章之间ID相差太大，强迫症的我不能忍，于是一顿搜索找到几个方法，发现网上那些文章都是抄的，还都是一模一样的，错别字、格式什么的都没变化。好在有张戈这位技术型博主，文章写的非常好，所以这里结合下我的经验分享下。
+
+真ID连续一开">
+<meta property="og:updated_time" content="2017-03-09T02:38:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wordpress文章ID不连续">
+<meta name="twitter:description" content="先说明，这个明显是强迫症才会搞这种累死人不的好处的活，当然，我也是这种人。当初Typecho写文章的时候还没太在意，因为文章ID变化不太大，没引起我注意。当转到wp后，2篇文章之间ID相差太大，强迫症的我不能忍，于是一顿搜索找到几个方法，发现网上那些文章都是抄的，还都是一模一样的，错别字、格式什么的都没变化。好在有张戈这位技术型博主，文章写的非常好，所以这里结合下我的经验分享下。
+
+真ID连续一开">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://timhbw.github.io/2016/05/31/71/"/>
+
+
+
+
+
+  <title> wordpress文章ID不连续 | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/05/31/71/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                wordpress文章ID不连续
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-31T07:03:21+08:00">
+                2016-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/建站/" itemprop="url" rel="index">
+                    <span itemprop="name">建站</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>先说明，这个明显是强迫症才会搞这种累死人不的好处的活，当然，我也是这种人。当初Typecho写文章的时候还没太在意，因为文章ID变化不太大，没引起我注意。当转到wp后，2篇文章之间ID相差太大，强迫症的我不能忍，于是一顿搜索找到几个方法，发现网上那些文章都是抄的，还都是一模一样的，错别字、格式什么的都没变化。好在有张戈这位技术型博主，文章写的非常好，所以这里结合下我的经验分享下。</p>
+<ul>
+<li><p>真ID连续<br>一开始是采用这种的，毕竟强迫症，要解决就得真解决。下面是Mysql代码：<br><pre class="lang:default decode:true">update wp_posts set id = 3 where id = 69;//ID69的文章改为ID3文章<br>update wp_term_relationships set object_id = 3 where object_id = 69;<br>update wp_postmeta set post_id = 3 where post_id = 69;<br>update wp_comments set comment_post_ID = 3 where comment_post_ID = 69;<br></pre><br>但是改完几篇过后就会发现越来越不对劲呀！因为有一些ID是改不了的，比如菜单啥的，它也会占用ID号，总不能为了文章连续，一个一个改吧，工作量与复杂度太大了，而且容易出错，故弃之！</p>
+</li>
+<li><p>伪ID连续<br>这个是看到张戈的文章后得到的方法，一开始还没看明白，后来一想，这办法，还真不错，解决方式很巧妙，这也提供了一种解决问题的方式：有时候，一个问题，正面解决不了，从另一个方面入手解决反而更好。</p>
+</li>
+</ul>
+<p>这里我简单解释下，想要wp文章id连续，满足的是链接上的连续，在wp中固定链接可以是<span class="lang:default decode:true crayon-inline">/%post_id%.html</span> 也可以是<span class="lang:default decode:true crayon-inline">/%postname%.html</span> ，设置为post_id就是真ID，我们可以通过在后台中设置固定链接为<span class="lang:default decode:true crayon-inline">/%postname%.html</span>,然后写文章的时候将文章别名设置为阿拉伯数字（眼中的ID），这样改起来比动数据库简单、安全多啦。</p>
+<p>下面是步骤：</p>
+<ul>
+<li><p>进入Mysql命令或者PhpMyAdmin的SQl，执行下列命令：</p>
+<pre class="lang:default decode:true ">update wp_posts set post_name=ID where post_status='publish' and post_type='post';</pre>
+</li>
+<li><p>然后进入wordpress后台-设置-固定连接处，选择自定义链接，改为：<br><span class="lang:default decode:true crayon-inline ">/archives/%postname%.html</span></p>
+</li>
+</ul>
+<p>这样以后写文章的时候只要改一下别名就可以让所有文章ID”完美“连续！目前我就是采用这种方法的。</p>
+<p>更详细的介绍，请看原文：<a href="http://zhangge.net/5008.html" target="_blank" rel="external">http://zhangge.net/5008.html</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/wordpress/" rel="tag"># wordpress</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/30/70/" rel="next" title="分享一些HTML5的模板">
+                <i class="fa fa-chevron-left"></i> 分享一些HTML5的模板
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/01/72/" rel="prev" title="关于网站后期速度优化的一些坑">
+                关于网站后期速度优化的一些坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

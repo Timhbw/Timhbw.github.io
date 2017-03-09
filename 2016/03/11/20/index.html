@@ -1,0 +1,1074 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="以下问题的答案是之前写的一篇文章 面试中被面试官问到的问题 现在把问题的答案整理了一份出来给大家。希望对大家有所帮助。如果整理的答案有问题，请联系我。shavekevin@gmail.com
+1.请你谈谈static和宏定义的区别。什么时候用static什么时候用宏定义。让你声明的常量只在你声明的文件里有作用要不编译器会保存
+宏定义：
+1）. 一般来说我们使用宏定义最常见的是定义一些常量 简单的”">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试中被面试官问到的问题答案(一)">
+<meta property="og:url" content="http://timhbw.github.io/2016/03/11/20/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="以下问题的答案是之前写的一篇文章 面试中被面试官问到的问题 现在把问题的答案整理了一份出来给大家。希望对大家有所帮助。如果整理的答案有问题，请联系我。shavekevin@gmail.com
+1.请你谈谈static和宏定义的区别。什么时候用static什么时候用宏定义。让你声明的常量只在你声明的文件里有作用要不编译器会保存
+宏定义：
+1）. 一般来说我们使用宏定义最常见的是定义一些常量 简单的”">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/questions1.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/questions2.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/questions3.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/questions4.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/questions5.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/questions6.png">
+<meta property="og:updated_time" content="2017-03-09T02:38:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试中被面试官问到的问题答案(一)">
+<meta name="twitter:description" content="以下问题的答案是之前写的一篇文章 面试中被面试官问到的问题 现在把问题的答案整理了一份出来给大家。希望对大家有所帮助。如果整理的答案有问题，请联系我。shavekevin@gmail.com
+1.请你谈谈static和宏定义的区别。什么时候用static什么时候用宏定义。让你声明的常量只在你声明的文件里有作用要不编译器会保存
+宏定义：
+1）. 一般来说我们使用宏定义最常见的是定义一些常量 简单的”">
+<meta name="twitter:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/questions1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://timhbw.github.io/2016/03/11/20/"/>
+
+
+
+
+
+  <title> 面试中被面试官问到的问题答案(一) | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://timhbw.github.io/2016/03/11/20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                面试中被面试官问到的问题答案(一)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-11T00:30:52+08:00">
+                2016-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ios/" itemprop="url" rel="index">
+                    <span itemprop="name">ios</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>以下问题的答案是之前写的一篇文章 <a href="http://www.shavekevin.com/mianshiwenti/" target="_blank" rel="external">面试中被面试官问到的问题</a> 现在把问题的答案整理了一份出来给大家。希望对大家有所帮助。如果整理的答案有问题，请联系我。shavekevin@gmail.com</p>
+<p>1.请你谈谈static和宏定义的区别。什么时候用static什么时候用宏定义。<br>让你声明的常量只在你声明的文件里有作用要不编译器会保存</p>
+<p>宏定义：</p>
+<p>1）. 一般来说我们使用宏定义最常见的是定义一些常量 简单的”函数”（比如求两个数的最大小值）<br>例如：定义常量PI</p>
+<pre><code>&lt;span class=&quot;hljs-preprocessor&quot;&gt;#&lt;span class=&quot;hljs-keyword&quot;&gt;define&lt;/span&gt; PI 3.1415926&lt;/span&gt;
+`&lt;/pre&gt;
+定义函数
+&lt;pre&gt;`&lt;span class=&quot;hljs-preprocessor&quot;&gt;#&lt;span class=&quot;hljs-keyword&quot;&gt;define&lt;/span&gt; MIN(A,B) ((A) &amp;lt; (B) ? (A):(B))&lt;/span&gt;
+`&lt;/pre&gt;
+我们不对宏定义进行修改
+
+2) . 使用宏定义可以在很大程度上可以简化我们的代码
+例如：我们在写单例的时候 之前我们写的是
+&lt;pre&gt;`&lt;span class=&quot;hljs-preprocessor&quot;&gt;#import &lt;span class=&quot;hljs-title&quot;&gt;&quot;ShareSingleton.h&quot;&lt;/span&gt;&lt;/span&gt;
+
+&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;ShareSingleton&lt;/span&gt;&lt;/span&gt;
+
++(instancetype)shareSingleton {
+
+    &lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; ShareSingleton *leader = &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt;;
+    &lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_once_t&lt;/span&gt; onceToken;
+    &lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_once&lt;/span&gt;(&amp;amp;onceToken, ^{
+        leader = [[ShareSingleton alloc]init];
+    });
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; leader;
+}
+&lt;span class=&quot;hljs-keyword&quot;&gt;@end&lt;/span&gt;
+`&lt;/pre&gt;
+//如果我们使用宏定义的话我们可以这样写：
+&lt;pre&gt;`&lt;span class=&quot;hljs-preprocessor&quot;&gt;#define DISPATCH_ONCE_BLOCK(onceBlock) static dispatch_once_t onceToken; dispatch_once(&amp;amp;onceToken, onceBlock);&lt;/span&gt;
+&lt;span class=&quot;hljs-preprocessor&quot;&gt;#import &lt;span class=&quot;hljs-title&quot;&gt;&quot;ShareSingleton.h&quot;&lt;/span&gt;&lt;/span&gt;
+&lt;span class=&quot;hljs-class&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;@implementation&lt;/span&gt; &lt;span class=&quot;hljs-title&quot;&gt;ShareSingleton&lt;/span&gt;&lt;/span&gt;
+
++(instancetype)shareSingleton {
+
+    &lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; ShareSingleton *leader = &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt;;
+    DISPATCH_ONCE_BLOCK(^{
+        leader = [[ShareSingleton alloc]init];
+    })
+    &lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; leader;
+}
+&lt;span class=&quot;hljs-keyword&quot;&gt;@end&lt;/span&gt;
+`&lt;/pre&gt;
+其实#define的原理就是不管三七二十一，直接做替换，所以我们完全可以利用这个特点，发挥自己的想象，简化代码~ 宏定义实质是一个预编译指令，在程序未运行之前将某些指令付给相应的变量。
+
+小结一下： static标记的变量会存储到全局变量区，生命周期和程序相同。而宏定义所定义的生命周期与所在的载体的生命周期有关.
+
+static只在声明的类中可见。
+在声明的类中结束后，再次使用还是之前的值。
+
+2.你是怎么看待代理 通知的 他们有什么区别？
+首先，我们把代理通知 放到一起来讨论第一反映是传值。 ok，下面慢慢来说各个的用法和区别。
+
+通知中心
+
+通过NSNotification可以给多个对象传递数据和消息(多个传递) 代理 通过protocol（代理模式）只能给一个对象传递数据和消息(单一传递)“一对一”，对同一个协议，一个对象只能设置一个代理delegate，所以单例对象就不能用代理（可以用多点回调，下面见解）。
+
+代理更注重过程信息的传输：比如发起一个网络请求，可能想要知道此时请求是否已经开始、是否收到了数据、数据是否已经接受完成、数据接收失败。
+
+区别： 代理和通知的区别应该主要是一对一和一对多的关系。delegate的多点回调相对notification更加便捷，更多方便，让项目更好维护。
+
+3.说说你对内存管理的理解。
+
+内存管理原则
+
+引用计数的增加和减少相等，当引用计数降为0之后，不应该再使用这块内存空间。 凡是用alloc retain 或者copy让内存的引用计数增加了。就需要使用release或者autorelease让内存的引用 计数减少。在一段代码内。增加和减少的次数要相等。
+
+autoreleasepool的使用
+
+通过autoreleasepool控制autorelease对象的释放 向一个对象发送autorelease消息。这个对象何时释放取决于autoreleasepool
+
+copy方法
+跟retain不同，一个对象想要copy，生成自己的副本，需要实现NSCopying协议，定义copy的细节（如何copy）如果类没有接受NSCoping协议而给类发送copy消息，会引起crash 总结： OC借助引用计数机制去管理内存，凡是使用了alloc copy retain 等 方法，增加了引用计数，就要使用release 和autorelease 减少引用计数，引用计数为0的时候，对象所占的内存，被系统回收。
+
+autorelease是未来某个时间（出autorelease）引用减一，不是即时的。
+
+不是任何对象都可以接受copy消息。只有接受了NSCoping协议的对象才接受copy消息。
+
+4.谈谈你对iOS性能优化的理解.
+
+谈起iOS的性能优化我们首先想到的是应该是tableview表视图的优化。关于表视图的优化我们可以从以下几个方面来看:
+
+1).tableviewcell渲染
+绘制时要尽可能的避免分配资源，比如UIFont，NSDateFormatter或者任何在绘制时 需要的对象，推荐使用类层级的初始化方法中执行分配，并将其存储为静态变量。
+
+2）.图层渲染的问题
+透明图层对渲染性能会有一定的影响，系统必须将透明图层与下面的视图混合起来计算颜色，并 绘制出来。减少透明图层并使用不透明的图层来替代它们，可以极大地提高渲染速度。
+
+3）.为代理方法瘦身
+我们要尽量避免在tableview的cellforrowatindexpath的代理方法里写那么多代码，这样做不仅可以简化代码方便维护和管理，这对程序的运行也有帮助。
+
+4).复杂视图尽量采用纯代码的方式
+
+当 UITableViewCell拥有多个子视图时，IOS的渲染机制会拖慢速度。重写drawRect直接绘制内容的方式可 以提高性能，而不是在类初始化的时候初始化一些label或者imageview等。
+
+（以下来源于yykit作者ibireme[这是源链接](http://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/)）
+
+下面就是些CPU 资源消耗原因和解决方案 还有GPU资源消耗原因和解决方案
+
+对象的创建会分配内存、调整属性、甚至还有读取文件等操作，比较消耗 CPU 资源。尽量用轻量的对象代替重量的对象，可以对性能有所优化。比如 CALayer 比 UIView 要轻量许多，那么不需要响应触摸事件的控件，用 CALayer 显示会更加合适。如果对象不涉及 UI 操作，则尽量放到后台线程去创建，但可惜的是包含有 CALayer 的控件，都只能在主线程创建和操作。通过 Storyboard 创建视图对象时，其资源消耗会比直接通过代码创建对象要大非常多，在性能敏感的界面里，Storyboard 并不是一个好的技术选择。
+
+1).对象的创建
+尽量推迟对象创建的时间，并把对象的创建分散到多个任务中去。尽管这实现起来比较麻烦，并且带来的优势并不多，但如果有能力做，还是要尽量尝试一下。如果对象可以复用，并且复用的代价比释放、创建新对象要小，那么这类对象应当尽量放到一个缓存池里复用。
+
+2).对象调整
+对象的调整也经常是消耗 CPU 资源的地方。这里特别说一下 CALayer：CALayer 内部并没有属性，当调用属性方法时，它内部是通过运行时 resolveInstanceMethod 为对象临时添加一个方法，并把对应属性值保存到内部的一个 Dictionary 里，同时还会通知 delegate、创建动画等等，非常消耗资源。UIView 的关于显示相关的属性（比如 frame/bounds/transform）等实际上都是 CALayer 属性映射来的，所以对 UIView 的这些属性进行调整时，消耗的资源要远大于一般的属性。对此你在应用中，应该尽量减少不必要的属性修改。 当视图层次调整时，UIView、CALayer 之间会出现很多方法调用与通知，所以在优化性能时，应该尽量避免调整视图层次、添加和移除视图。 3). 对象销毁
+对象的销毁虽然消耗资源不多，但累积起来也是不容忽视的。通常当容器类持有大量对象时，其销毁时的资源消耗就非常明显。同样的，如果对象可以放到后台线程 去释放，那就挪到后台线程去。这里有个小 Tip：把对象捕获到 block 中，然后扔到后台队列去随便发送个消息以避免编译器警告，就可以让对象在后台线程销毁了。 例如：
+&lt;pre&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;NSArray&lt;/span&gt; *tmp = &lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;.array&lt;/span&gt;;  
+&lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;hljs-variable&quot;&gt;.array&lt;/span&gt; = &lt;span class=&quot;hljs-literal&quot;&gt;nil&lt;/span&gt;;  
+&lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_async&lt;/span&gt;(queue, ^{  
+    [tmp class];
+});
+`&lt;/pre&gt;
+4).一些计算
+
+视图布局的计算是 App 中最为常见的消耗 CPU 资源的地方。如果能在后台线程提前计算好视图布局、并且对视图布局进行缓存，那么这个地方基本就不会产生性能问题了。 不论通过何种技术对视图进行布局，其最终都会落到对 UIView.frame/bounds/center 等属性的调整上。上面也说过，对这些属性的调整非常消耗资源，所以尽量提前计算好布局，在需要时一次性调整好对应属性，而不要多次、频繁的计算和调整这些 属性。 Autolayout 是苹果本身提倡的技术，在大部分情况下也能很好的提升开发效率，但是 Autolayout 对于复杂视图来说常常会产生严重的性能问题。随着视图数量的增长，Autolayout 带来的 CPU 消耗会呈指数级上升。具体数据可以看这个文章：[http://pilky.me/36/。](http://pilky.me/36/%E3%80%82) 如果你不想手动调整 frame 等属性，你可以用一些工具方法替代（比如常见的 left/right/top/bottom/width/height 快捷属性），或者使用 ComponentKit、AsyncDisplayKit 等框架.
+
+如果一个界面中包含大量文本（比如微博微信朋友圈等），文本的宽高计算会占用很大一部分资源，并且不可避免。如果你对文本显示没有特殊要求，可以参 考下 UILabel 内部的实现方式：用 [NSAttributedString boundingRectWithSize:options:context:] 来计算文本宽高，用 -[NSAttributedString drawWithRect:options:context:] 来绘制文本。尽管这两个方法性能不错，但仍旧需要放到后台线程进行以避免阻塞主线程。
+
+5).文本的绘制
+
+如果你用 CoreText 绘制文本，那就可以先生成 CoreText 排版对象，然后自己计算了，并且 CoreText 对象还能保留以供稍后绘制使用。 屏幕上能看到的所有文本内容控件，包括 UIWebView，在底层都是通过 CoreText 排版、绘制为 Bitmap 显示的。常见的文本控件 （UILabel、UITextView 等），其排版和绘制都是在主线程进行的，当显示大量文本时，CPU 的压力会非常大。对此解决方案只有一个，那就是自定义文本控件，用 TextKit 或最底层的 CoreText 对文本异步绘制。尽管这实现起来非常麻烦，但其带来的优势也非常大，CoreText 对象创建好后，能直接获取文本的宽高等信息，避免了多次计算（调整 UILabel 大小时算一遍、UILabel 绘制时内部再算一遍）；CoreText 对象占用内存较少，可以缓存下来以备稍后多次渲染.
+
+6).图片的解码
+
+当你用 UIImage 或 CGImageSource 的那几个方法创建图片时，图片数据并不会立刻解码。图片设置到 UIImageView 或者 CALayer.contents 中去，并且 CALayer 被提交到 GPU 前，CGImage 中的数据才会得到解码。这一步是发生在主线程的，并且不可避免。如果想要绕开这个机制，常见的做法是在后台线程先把图片绘制到 CGBitmapContext 中，然后从 Bitmap 直接创建图片。目前常见的网络图片库都自带这个功能。
+
+7).图像的绘制
+
+图像的绘制通常是指用那些以 CG 开头的方法把图像绘制到画布中，然后从画布创建图片并显示这样一个过程。这个最常见的地方就是 [UIView drawRect:] 里面了。由于 CoreGraphic 方法通常都是线程安全的，所以图像的绘制可以很容易的放到后台线程进行。一个简单异步绘制的过程大致如下（实际情况会比这个复杂得多，但原理基本一致）
+&lt;pre&gt;`&lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_async&lt;/span&gt;(backgroundQueue, ^{  
+        CGContextRef ctx = CGBitmapContextCreate(...);
+        &lt;span class=&quot;hljs-comment&quot;&gt;// draw in context...&lt;/span&gt;
+        CGImageRef img = CGBitmapContextCreateImage(ctx);
+        CFRelease(ctx);
+        &lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_async&lt;/span&gt;(mainQueue, ^{
+            layer&lt;span class=&quot;hljs-variable&quot;&gt;.contents&lt;/span&gt; = img;
+        });
+    });
+`&lt;/pre&gt;
+GPU 资源消耗原因和解决方案
+
+1.纹理的渲染
+
+所有的 Bitmap，包括图片、文本、栅格化的内容，最终都要由内存提交到显存，绑定为 GPU Texture。不论是提交到显存的过程，还是 GPU 调整和渲染 Texture 的过程，都要消耗不少 GPU 资源。当在较短时间显示大量图片时（比如 TableView 存在非常多的图片并且快速滑动时），CPU 占用率很低，GPU 占用非常高，界面仍然会掉帧。避免这种情况的方法只能是尽量减少在短时间内大量图片的显示，尽可能将多张图片合成为一张进行显示。 当图片过大，超过 GPU 的最大纹理尺寸时，图片需要先由 CPU 进行预处理，这对 CPU 和 GPU 都会带来额外的资源消耗。目前来说，iPhone 4S 以上机型，纹理尺寸上限都是 4096x4096，更详细的资料可以看这里：iosres.com。所以，尽量不要让图片和视图的大小超过这个值。
+
+2.视图的混合
+当多个视图（或者说 CALayer）重叠在一起显示时，GPU 会首先把他们混合到一起。如果视图结构过于复杂，混合的过程也会消耗很多 GPU 资源。为了减轻这种情况的 GPU 消耗，应用应当尽量减少视图数量和层次，并在不透明的视图里标明 opaque 属性以避免无用的 Alpha 通道合成。当然，这也可以用上面的方法，把多个视图预先渲染为一张图片来显示
+
+3.图像的生成
+
+CALayer 的 border、圆角、阴影、遮罩（mask），CASharpLayer 的矢量图形显示，通常会触发离屏渲染（offscreen rendering），而离屏渲染通常发生在 GPU 中。当一个列表视图中出现大量圆角的 CALayer，并且快速滑动时，可以观察到 GPU 资源已经占满，而 CPU 资源消耗很少。这时界面仍然能正常滑动，但平均帧数会降到很低。为了避免这种情况，可以尝试开启 CALayer.shouldRasterize 属性，但这会把原本离屏渲染的操作转嫁到 CPU 上去。对于只需要圆角的某些场合，也可以用一张已经绘制好的圆角图片覆盖到原本视图上面来模拟相同的视觉效果。最彻底的解决办法，就是把需要显示的图形在 后台线程绘制为图片，避免使用圆角、阴影、遮罩等属性。
+&lt;pre&gt;`如何检测应用的流畅度？
+`&lt;/pre&gt;
+“过早的优化是万恶之源”，在需求未定，性能问题不明显时，没必要尝试做优化，而要尽量正确的实现功能。做性能优化时，也最好是走修改代码 -&amp;gt; Profile -&amp;gt; 修改代码这样一个流程，优先解决最值得优化的地方。 如果你需要一个明确的 FPS 指示器，可以尝试一下 KMCGeigerCounter。对于 CPU 的卡顿，它可以通过内置的 CADisplayLink 检测出来；对于 GPU 带来的卡顿，它用了一个 1x1 的 SKView 来进行监视。这个项目有两个小问题：SKView 虽然能监视到 GPU 的卡顿，但引入 SKView 本身就会对 CPU/GPU 带来额外的一点的资源消耗；这个项目在 iOS 9 下有一些兼容问题，需要稍作调整。
+
+5.你用过单元测试吗?怎么才能做好单元测试？
+&gt; 什么是单元测试？
+单元测试：以下内容来自维基百科[单元测试](https://zh.wikipedia.org/wiki/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95)
+
+在计算机编程中，单元测试（英语：Unit Testing）又称为模块测试, 是针对程序模块（软件设计的最小单位）来进行正确性检验的测试工作。程序单元是应用的最小可测试部件。在过程化编程中，一个单元就是单个程序、函数、过程 等；对于面向对象编程，最小单元就是方法，包括基类（超类）、抽象类、或者派生类（子类）中的方法。
+&lt;pre&gt;`通常来说，程序员每修改一次程序就会进行最少一次单元测试，在编写程序的过程中前后很可能要进行多次单元测试，以证实程序达到软件规格书要求的工作目标，没有程序错误；虽然单元测试不是什么必须的，但也不坏，这牵涉到项目管理的政策决定。
+
+每个理想的测试案例独立于其它案例；为测试时隔离模块，经常使用&lt;span class=&quot;hljs-tag&quot;&gt;stubs&lt;/span&gt;、&lt;span class=&quot;hljs-tag&quot;&gt;mock&lt;/span&gt;&lt;span class=&quot;hljs-attr_selector&quot;&gt;[1]&lt;/span&gt;或&lt;span class=&quot;hljs-tag&quot;&gt;fake&lt;/span&gt;等测试马甲程序。单元测试通常由软件开发人员编写，用于确保他们所写的代码符合软件需求和遵循开发目标。它的实施方式可以是非常手动的（通过纸笔），或者是做成构建自动化的一部分。
+`&lt;/pre&gt;
+&gt; 单元测试有什么好处？
+单元测试的一个好处就是我们可以只测试单个模块，我们可以测试 单一模块有没有问题。比如说我们在开发中经常会写一些测试性的demo。我们写的测试性demo运行正常达到了我们需要的效果，那么我们就可以把demo的效果运用到我们的工程中进行调试。
+</code></pre><ul>
+<li>适应变更单元测试允许程序员在未来重构代码，并且确保模块依然工作正确（复合测试）。这个过程就是为所有函数和方法编写单元测试，一旦变更导致错误发生，借助于单元测试可以快速定位并修复错误。可读性强的单元测试可以使程序员方便地检查代码片断是否依然正常工作。良好设计的单元测试案例覆盖程序单元分支和循环条件的所有路径。在连续的单元测试环境，通过其固有的持续维护工作，单元测试可以延续用于准确反映当任何变更发生时可执行程序和代码的表现。借助于上述开发实践和单元测试的覆盖，可以分分秒秒维持准确性。</li>
+<li>简化集成单元测试消除程序单元的不可靠，采用自底向上的测试路径。通过先测试程序部件再测试部件组装，使集成测试变得更加简单。业界对于人工集成测试的必要性存在较大争议。尽管精心设计的单元测试体系看上去实现了集成测试，因为集成测试需要人为评估一些人为因素才能证实的方 面，单元测试替代集成测试不可信。一些人认为在足够的自动化测试系统的条件下，人力集成测试组不再是必需的。事实上，真实的需求最终取决于开发产品的特点 和使用目标。另外，人工或手动测试很大程度上依赖于组织的可用资源。[来源请求]</li>
+<li><p>文档记录单元测试提供了系统的一种文档记录。借助于查看单元测试提供的功能和单元测试中如何使用程序单元，开发人员可以直观的理解程序单元的基础API。单元测试具体表现了程序单元成功的关键特点。这些特点可以指出正确使用和非正确使用程序单元，也能指出需要捕获的程序单元的负面表现（译注：异常和错误）。尽管很多软件开发环境不仅依赖于代码做为产品文档，在单元测试中和单元测试本身确实文档化了程序单元的上述关键特点。<br>另一方面，传统文档易受程序本身实现的影响，并且时效性难以保证（如设计变更、功能扩展等在不太严格时经常不能保持文档同步更新）。</p>
+</li>
+<li><p>表达设计在测试驱动开发的软件实践中，单元测试可以取代正式的设计。每一个单元测试案例均可以视为一项类、方法和待观察行为等设计元素。下面的Java例可以帮助说明这一点。 当然，单元测试缺乏图的可读性，但UML图可以在自由工具（通常可从IDE扩展获取）中为大多数现代程序语言生成UML图，很难要求采购昂贵的UML设计套装软件。自由工具，类似于基于xUnit框架的工具，测试结果输出到一些可生成供人工识读的图形化工具系统中去。</p>
+</li>
+<li>分离接口和实现因为很多类会引用其它类，对这个类的测试经常会要求测试其它的类。一个最普遍的例子是依赖于数据库的类：为了测试它，测试人员通常编写代码去操作数据库。这是不对的，因为单元测试不应超出待测试的类边界。作为替代，软件开发人员应创建一个数据库连接的抽象接口，然后实现这个接口的模拟对象。通过对代码所需附件的抽象（临时降低了网状的耦合效应），这些独立程序单元较前者更能被完整测试。高质量的代码单元也可提供更好的可维护性。</li>
+<li><p>局限测试不可能发现所有的程序错误，单元测试也不例外。按定义，单元测试只测试程序单元自身的功能。因此，它不能发现集成错误、性能问题、或者其他系统 级别的问题。单元测试结合其他软件测试活动更为有效。与其它形式的软件测试类似，单元测试只能表明测到的问题，不能表明不存在未测试到的错误。软件测试是一个组合问题。例如，每一个布尔型的决断语句需要至少两种测试：一个返回真，一个返回假。因此，针对每行书写的代码，程序员通常需要写3 至5行的测试代码。[3]这很明显地很花时间而且对此的投入可能并不值得。也有些问题是根本不能简单地检测出来的——例如具不确定性的或牵扯到多线程的问 题。此外，替单元测试写的代码可能就像要测试的代码一样有程序错误。佛瑞德·布鲁克斯在人月神话一书中举例说明：“绝对不要带两个计时器去海边。最好总是 带一或三个”。意味着，如果两个计时器互相冲突的话，你该怎么知道哪个是对的？为了获得单元测试的好处，在软件开发过程中应形成一套严格纪律意识。仔细保 留记录是必要的，不仅仅只保留执行的测试，也包括保留对应的源码和其它软件单元的变更历史。即，使用版本控制系统是必要的。如果后续版本不能通过一个以前 测试通过的单元测试，版本控制系统可以提供对应时间段对源代码所做的变更清单。每天养成查看单元测试案例失败测试并及时确定错误原因的习惯是必要的。如果没有这样的流程，没有在团队工作流程中体现，单元测试系列将走向不同步，造成越来越多的错误和越来越低效的单元测试案例系列。</p>
+<blockquote>
+<p>iOS中的单元测试<br>在开发中，经常用到的单元测试一是测试某个模块的功能，也就是说把这个模块独立起来，单独进行测试。用到最多的应该是测试模块功能和接口调试功能。当然单元测试还有一些高级的用法自动测试和自动发布等。</p>
+</blockquote>
+<p>OCUnit（即用XCTest进行测试）其实就是苹果自带的测试框架，我们主要讲的就是这个。GHUnit是一个可视化的测试框架。（有了它，你可以点 击APP来决定测试哪个方法，并且可以点击查看测试结果等。）OCMock就是模拟某个方法或者属性的返回值，你可能会疑惑为什么要这样做?使用用模型生 成的模型对象，再传进去不就可以了？答案是可以的，但是有特殊的情况。比如你测试的是方法A，方法A里面调用到了方法B，而且方法B是有参数传入，但又不 是方法A所提供。这时候，你可以使用OCMock来模拟方法B返回的值。（在不影响测试的情况下，就可以这样去模拟。）除了这些，在没有网络的情况下，也 可以通过OCMock模拟返回的数据。UITests就是通过代码化来实现自动点击界面，输入文字等功能。靠人工操作的方式来覆盖所有测试用例是非常困难 的，尤其是加入新功能以后，旧的功能也要重新测试一遍，这导致了测试需要花非常多的时间来进行回归测试，这里产生了大量重复的工作，而这些重复的工作有些 是可以自动完成的，这时候UITests就可以帮助解决这个问题了。</p>
+<p>6. 你知道的的本地数据持久化都有哪些。你比较喜欢用哪些 为什么？</p>
+<p>采用的数据存储的方式有以下几种：<br>1、 FMDB（常用）<br>2、 Sqlite(次之)<br>3、 Coredata(次之)<br>4、 NSUserdefaults(最多使用)<br>5、 序列化反序列化（归档和解档）<br>6、 MongoDB(小众型的)</p>
+<p>大家讨论用的最多的是FMDB，原因很简单，关系型数据库，使用方便(相对于没经过封装和加工的Sqlite来说)。其次就是sqlite和 coredata 当然使用者三种主要是为了缓存。因为我们在开发中为了给用户更好的体验，就采用缓存的形式。一般情况下要做的操作就是在本地建立一个数据库(本地后台)。</p>
+<p>7.谈谈MVC设计模式的优缺点</p>
+<p>编程以来就一直被灌输MVC设计模式，具体MVC使用到底好在哪里 又有那些不足之处，可以通过下面的介绍得以了解。</p>
+<p>一、mvc原理</p>
+<p>mvc是一种程序开发设计模式,它实现了显示模块与功能模块的分离。提高了程序的可维护性、可移植性、可扩展性与可重用性，降低了程序的开发难度。它主要分模型、视图、控制器三层。</p>
+</li>
+</ul>
+<ol>
+<li>模型(model)它是应用程序的主体部分，主要包括业务逻辑模块（web项目中的Action,dao类）和数据模块（pojo类）。模型与数据格式无关，这样一个模型能为多个视图提供数据。由于应用于模型的代码只需写一次就可以被多个视图重用，所以减少了代码的重复性</li>
+<li>视图(view) 用户与之交互的界面、在web中视图一般由jsp,html组成</li>
+<li><p>控制器(controller)接收来自界面的请求 并交给模型进行处理 在这个过程中控制器不做任何处理只是起到了一个连接的做用.<br>二、MVC的优点</p>
+</li>
+<li><p>可以为一个模型在运行时同时建立和使用多个视图。变化-传播机制可以确保所有相关的视图及时得到模型数据变化，从而使所有关联的视图和控制器做到行为同步。</p>
+</li>
+<li>视图与控制器的可接插性，允许更换视图和控制器对象，而且可以根据需求动态的打开或关闭、甚至在运行期间进行对象替换。</li>
+<li>模型的可移植性。因为模型是独立于视图的，所以可以把一个模型独立地移植到新的平台工作。需要做的只是在新平台上对视图和控制器进行新的修改。</li>
+<li><p>潜在的框架结构。可以基于此模型建立应用程序框架，不仅仅是用在设计界面的设计中。<br>三、MVC的不足之处</p>
+</li>
+<li><p>增加了系统结构和实现的复杂性。对于简单的界面，严格遵循MVC，使模型、视图与控制器分离，会增加结构的复杂性，并可能产生过多的更新操作，降低运行效率。</p>
+</li>
+<li>视图与控制器间的过于紧密的连接。视图与控制器是相互分离，但确实联系紧密的部件，视图没有控制器的存在，其应用是很有限的，反之亦然，这样就妨碍了他们的独立重用。</li>
+<li>视图对模型数据的低效率访问。依据模型操作接口的不同，视图可能需要多次调用才能获得足够的显示数据。对未变化数据的不必要的频繁访问，也将损害操作性能。</li>
+<li><p>目前，一般高级的界面工具或构造器不支持模式。改造这些工具以适应MVC需要和建立分离的部件的代价是很高的，从而造成MVC使用的困难。<br>8.谈谈你对多线程的理解，你经常用的多线程有哪些实现方式，谈谈他们优缺点。</p>
+<p>使用NSOperationQueue用来管理子类化的NSOperation对象，控制其线程并发数目。GCD和NSOperation都 可以实现对线程的管理，区别是 NSOperation和NSOperationQueue是多线程的面向对象抽象。项目中使用NSOperation的优点是NSOperation是 对线程的高度抽象，在项目中使用它，会使项目的程序结构更好，子类化NSOperation的设计思路，是具有面向对象的优点（复用、封装），使得实现是 多线程支持，而接口简单，建议在复杂项目中使用。</p>
+<p>项目中使用GCD的优点是GCD本身非常简单、易用，对于不复杂的多线程操作，会节省代码量，而Block参数的使用，会是代码更为易读，建议在简单项目中使用。</p>
+<blockquote>
+<p>什么时候用多线程？<br>大多情况下,要用到多线程的主要是需要处理大量的IO操作时或处理的情况需要花大量的时间等等,比如:读写文 件、视频图像的采集、处理、显示、保存等。<br>多线程的作用?<br>可以解决负载均衡问题,充分利用cpu资源 。为了提高CPU的使用率,采用多线程的方式去同时完 成几件事情而互不干扰.<br>iOS实现多线程有哪几种方式？<br>主要有三种主要方法。</p>
+</blockquote>
+<p>1、NSThread。</p>
+<p>2、NSOperation。</p>
+<p>3、GCD。</p>
+<blockquote>
+<p>多线程安全问题的几种解决方案?<br>使用锁。锁是线程编程同步工具的基础。锁可以让你很容易保护代码中一大块区域以便你可以确保代码的正 确性。使用POSIX互斥锁;使用NSLock类;使用@synchronized指令等。<br>分线程回调主线程方法是什么？有什么作用呢？<br>回到主线程的方法:</p>
+</blockquote>
+<p>(1). performSelectorOnMainThrea<br><pre><code>[&lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt; performSelectorOnMainThread:&amp;lt;&lt;span class=&quot;hljs-preprocessor&quot;&gt;#(SEL)#&amp;gt;withObject:&lt;span class=&quot;hljs-title&quot;&gt;&amp;lt;#(id)#&amp;gt;&lt;/span&gt;waitUntilDone:&lt;span class=&quot;hljs-title&quot;&gt;&amp;lt;#(BOOL)#&amp;gt;&lt;/span&gt;];&lt;/span&gt;</code></pre><br>(2). GCD<br><pre><code>&lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_async&lt;/span&gt;(dispatch_get_main_queue(), ^{  
+});</code></pre><br>(3). NSOperationQueue<br><pre><code>[[NSOperationQueue mainQueue]addOperationWithBlock:^{
+}]</code></pre><br>作用:主线程是显示UI界面,子线程多数是进行数据处理.</p>
+<p>PS:最高境界是异步单线程，江湖上称协程。<br>可以参考 boost 中的 asio 用户级的任务调度</p>
+<p>9.谈谈你对面向对象和面向过程的认识。</p>
+<p>简单对比</p>
+<p>面向过程就像是一个细心的管家，事无具细的都要考虑到。而面向对象就像是个家用电器，你只需要知道他的功能，不需要知道它的工作原理。“面向过 程”是一种是事件为中心的编程思想。就是分析出解决问题所需的步骤，然后用函数把这写步骤实现，并按顺序调用。面向对象是以“对象”为中心的编程思想。</p>
+<p>简单的举个例子：汽车发动、汽车到站</p>
+<p>这对于“面向过程”来说，是两个事件，汽车启动是一个事件，汽车到站是另一个事件，面向过程编程的过程中我们关心的是事件，而不是汽车本身。针 对上述两个事件，形成两个函数，之后依次调用。然而这对于面向对象来说，我们关心的是汽车这类对象，两个事件只是这类对象所具有的行为。而且对于这两个行 为的顺序没有强制要求。</p>
+<p>两种思想的对比</p>
+<p>面向过程其实最为实际的一种思考方式，因为我们总是一贯一步一步的解决问题。(举个简单的事情，在初学面向对象的语言例如c++时，我们也总是 不经意的面向过程了!)。其实就算是面向对象思想也是包含有面向过程思想的，面向过程需形成事件、也就是函数，面向对象需抽象出类，并且也会定义出这类对 象的“行为”及方法。但是不论是面向过程的函数，还是面向对象的方法，两者所完成目的都是一致的。可以说面向过程是一种基础的方法，它考虑的是实际的实 现，一般情况下，面向过程是自顶向下逐步求精，其最重要的是模块化的思想方法。面向对象的方法主要是把事物给对象化，包括其属性和行为。这里在程序较小的 时候，面向过程就会体现出一种优势，其程序流程十分清楚。如同上述汽车发动、到站这一过程，面向过程可以很清晰的将这一过程体现出来。而面向对像仅仅是抽 象出一个Bus类，包括发动、到站之两个行为，具体的执行顺序不能体现出来。</p>
+<p>面向过程和面向对象的本质理解</p>
+<p>面向过程就是分析出解决问题所需的步骤，面向对象则是把构成问题的事物分解成对象，抽象出对象的目的并不在于完成某个步骤，而是描述其再整个解决问 题的步骤中的行为。面向过程的思维方式是分析综合，面向对象的思维方式是构造。 例如c语言解决问题时，一般是先定义数据结构，然后在构造算法。而是面向对象求解时则是先抽象出对象，构造一个“封闭”的环境，这个环境中有定义的数据和 解决问题的算法。面向过程的设计更具挑战性，技巧性，面向对象主要在于对象抽象的技术性，一旦完成抽象，任何人都可以做后面的工作了。从代码层结构上来说 的话，面向对象和面向过程的主要区别就是数据是单独存数还是与操作存储在一起。面向对象提供了数据的封装后，是的对某一操作而言，数据的访问变得可靠了。</p>
+<p>面向过程就是将coding当做一件事，一步一步完成，面向对象就是将coding当做一件事物，需要做什么的时候由事物(对象)本身的行为去完成。</p>
+<p>总的来说：</p>
+</li>
+</ol>
+<ul>
+<li>面向对象是将事物高度抽象化。</li>
+<li>面向过程是一种自顶向下的编程。</li>
+<li><p>面向对象必须先建立抽象模型，之后直接使用模型就行了。<br>面向过程就是说把做事情的步骤一步一步要干啥清楚明了的告诉我们。就是说我们知道具体是通过什么方式来实现的。</p>
+<p>面向对象说白了就是我们只需要知道我们所使用的对象有什么功能，然后我们让对象去做事情。我们关心的不是实现的过程，而是能否实现和实现的结果。是事物抽象化的一种体现。</p>
+<p>10.什么是单例？怎么用？有什么好处？指出你项目中用到的单例模式。</p>
+<blockquote>
+<p>什么是单例模式<br>单例模式的意思就是只有一个实例。单例模式确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。这个类称为单例类。</p>
+</blockquote>
+<p>单例模式的要点有三个：一是某个类只能有一个实例；二是它必须自行创建这个实例；三是它必须自行向整个系统提供这个实例。</p>
+<blockquote>
+<p>单例模式的作用<br>可以保证在运行程序过程中，一个类只有一个实例，而且该实例易于供外界访问； 方便控制实例个数，节约系统资源。<br>如何使用？<br>单例是整个 Cocoa 中被广泛使用的核心设计模式之一。事实上，苹果开发者库把单例作为 “Cocoa 核心竞争力” 之一。作为一个iOS开发者，我们经常和单例打交道，比如 UIApplication 和 NSFileManager 等等。我们在开源项目、苹果示例代码和 StackOverflow 中见过了无数使用单例的例子。Xcode 甚至有一个默认的 “Dispatch Once” 代码片段，可以使我们非常简单地在代码中添加一个单例：<br><pre>`+ (instancetype)sharedInstance<br>{</pre></p>
+<pre><code>&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_once_t&lt;/span&gt; once;
+&lt;span class=&quot;hljs-keyword&quot;&gt;static&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;id&lt;/span&gt; sharedInstance;
+&lt;span class=&quot;hljs-built_in&quot;&gt;dispatch_once&lt;/span&gt;(&amp;amp;once, ^{
+    sharedInstance = [[&lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt; alloc] init];
+});
+&lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; sharedInstance;
+</code></pre><p>}<br>`<br>由于这些原因，单例在 iOS 开发中随处可见。问题是，它们很容易被滥用。</p>
+</blockquote>
+<p>尽管有些人认为单例是 ‘反模式’， ‘魔鬼’ 以及 ‘病态的说谎者’，我不会去完全否认单例所带来的的好处，而是会展示一些使用单例所带来的问题，这样下一次在使用 dispatch_once 代码片段的自动补全功能时，你可以对它的影响进行评估，三思而行。</p>
+<h3 id="全局状态"><a href="#全局状态" class="headerlink" title="全局状态"></a>全局状态</h3><p>大多数的开发者都认同使用全局可变的状态是不好的行为。太多状态使得程序难以理解，难以调试。我们这些面向对象的程序员在最小化代码的状态复杂程度的方面，有很多需要向函数式编程学习的地方。<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SPMath</span> </span>{</pre></p>
+<pre><code>NSUInteger _a;
+NSUInteger _b;
+</code></pre><p>}</p>
+<ul>
+<li>(NSUInteger)computeSum<br>{<br>  <span class="hljs-keyword">return</span> _a + _b;<br>}<br>`<br>在上面这个简单的数学库的实现中，程序员需要在调用 computeSum 前正确的设置实例变量 _a 和 _b。这样有以下问题：</li>
+</ul>
+<p>1.computeSum 没有显式地通过使用参数的形式声明它依赖于 _a 和 _b 的状态。与仅仅通过查看函数声明就可以知道这个函数的输出依赖于哪些变量不同的是，另一个开发者必须查看这个函数的具体实现才能明白这个函数依赖那些变量。隐藏依赖是不好的。</p>
+<p>2.当为调用 computeSum 做准备而修改 _a 和 _b 的数值时，程序员需要保证这些修改不会影响任何其他依赖于这两个变量的代码的正确性。而这在多线程的环境中是尤其困难的。</p>
+<p>把下面的代码和上面的例子做对比：<br><pre>`+ (NSUInteger)computeSumOf:(NSUInteger)a plus:(NSUInteger)b<br>{</pre></p>
+<pre><code>&lt;span class=&quot;hljs-keyword&quot;&gt;return&lt;/span&gt; a + b;
+</code></pre><p>}<br>`<br>这里，对变量 a 和 b 的依赖被显式地声明了。我们不需要为了调用这个方法而去改变实例变量的状态。并且我们也不需要担心调用这个函数会留下持久的副作用。我们甚至可以把这个方法声明为类方法，这样就告诉了代码的阅读者这个方法不会修改任何实例的状态。</p>
+<p>那么，这个例子和单例又有什么关系呢？用 Miško Hevery 的话来说，”单例就是披着羊皮的全局状态”。一个单例可以被使用在任何地方，而不需要显式地声明依赖。就像变量 _a 和 _b 在 computeSum 内部被使用了，却没有被显式声明一样，程序的任意模块都可以调用 [SPMySingleton sharedInstance] 并且访问这个单例。这意味着任何和这个单例交互产生的副作用都会影响程序其他地方的任意代码。<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPSingleton</span> : <span class="hljs-title">NSObject</span></span></pre></p>
+<ul>
+<li>(instancetype)sharedInstance;</li>
+</ul>
+<ul>
+<li>(NSUInteger)badMutableState;</li>
+<li>(<span class="hljs-keyword">void</span>)setBadMutableState:(NSUInteger)badMutableState;</li>
+</ul>
+<p><span class="hljs-keyword">@end</span></p>
+<p><span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SPConsumerA</span></span></p>
+<ul>
+<li>(<span class="hljs-keyword">void</span>)someMethod<br>{<br>  <span class="hljs-keyword">if</span> ([[SPSingleton sharedInstance] badMutableState]) {<pre><code>&lt;span class=&quot;hljs-comment&quot;&gt;// ...&lt;/span&gt;
+</code></pre>  }<br>}</li>
+</ul>
+<p><span class="hljs-keyword">@end</span></p>
+<p><span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SPConsumerB</span></span></p>
+<ul>
+<li>(<span class="hljs-keyword">void</span>)someOtherMethod<br>{<br>  [[SPSingleton sharedInstance] setBadMutableState:<span class="hljs-number">0</span>];<br>}</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br>`<br>在上面的例子中，SPConsumerA 和 SPConsumerB 是两个完全独立的模块。但是 SPConsumerB 可以通过使用单例提供的共享状态来影响 SPConsumerA 的行为。这种情况应该只能发生在 consumer B 显式引用了 A，并表明了两者之间的关系时。这里使用了单例，由于其具有全局和多状态的特性，导致隐式地在两个看起来完全不相关的模块之间建立了耦合。</p>
+<p>让我们来看一个更具体的例子，并且暴露一个使用全局可变状态的额外问题。比如我们想要在我们的应用中构建一个网页查看器。为了支持这个查看器，我们构建了一个简单的 URL cache：<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPURLCache</span></span></pre></p>
+<ul>
+<li>(SPCache *)sharedURLCache;</li>
+</ul>
+<ul>
+<li>(<span class="hljs-keyword">void</span>)storeCachedResponse:(NSCachedURLResponse <em>)cachedResponse forRequest:(<span class="hljs-built_in">NSURLRequest</span> </em>)request;</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br>`<br>这个开发者开始写一些单元测试来保证代码在一些不同的情况下都能达到预期。首先，他写了一个测试用例来保证网页查看器在设备没有连接时能够展示出错 误信息。然后他写了一个测试用例来保证网页查看器能够正确的处理服务器错误。最后，他为成功情况时写了一个测试用例，来保证返回的网络内容能够被正确的显 示出来。这个开发者运行了所有的测试用例，并且它们都如预期一样正确。赞！</p>
+<p>几个月以后，这些测试用例开始出现失败，尽管网页查看器的代码从它写完后就从来没有再改动过！到底发生了什么？</p>
+<p>原来，有人改变了测试的顺序。处理成功的那个测试用例首先被运行，然后再运行其他两个。处理错误的那两个测试用例现在竟然成功了，和预期不一样，因为 URL cache 这个单例把不同测试用例之间的 response 缓存起来了。</p>
+<p>持久化状态是单元测试的敌人，因为单元测试在各个测试用例相互独立的情况下才有效。如果状态从一个测试用例传递到了另外一个，这样就和测试用例的执行顺序就有关系了。有 bug 的测试用例，尤其是那些本来不应该通过的测试用例，是非常糟糕的事情。</p>
+<h3 id="对象的生命周期"><a href="#对象的生命周期" class="headerlink" title="对象的生命周期"></a>对象的生命周期</h3><p>另外一个关键问题就是单例的生命周期。当你在程序中添加一个单例时，很容易会认为 “永远只会有一个实例”。但是在很多我看到过的 iOS 代码中，这种假定都可能被打破。</p>
+<p>比如，假设我们正在构建一个应用，在这个应用里用户可以看到他们的好友列表。他们的每个朋友都有一张个人信息的图片，并且我们想使我们的应用能够下 载并且在设备上缓存这些图片。 使用 dispatch_once 代码片段，我们可以写一个 SPThumbnailCache 单例：<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPThumbnailCache</span> : <span class="hljs-title">NSObject</span></span></pre></p>
+<ul>
+<li>(instancetype)sharedThumbnailCache;</li>
+</ul>
+<ul>
+<li>(<span class="hljs-keyword">void</span>)cacheProfileImage:(<span class="hljs-built_in">NSData</span> <em>)imageData forUserId:(<span class="hljs-built_in">NSString</span> </em>)userId;</li>
+<li>(<span class="hljs-built_in">NSData</span> <em>)cachedProfileImageForUserId:(<span class="hljs-built_in">NSString</span> </em>)userId;</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br>`<br>我们继续构建我们的应用，一切看起来都很正常，直到有一天，我们决定去实现‘注销’功能，这样用户可以在应用中进行账号切换。突然我们发现我们将要 面临一个讨厌的问题：用户相关的状态存储在全局单例中。当用户注销后，我们希望能够清理掉所有的硬盘上的持久化状态。否则，我们将会把这些被遗弃的数据残 留在用户的设备上，浪费宝贵的硬盘空间。对于用户登出又登录了一个新的账号这种情况，我们也想能够对这个新用户使用一个全新的 SPThumbnailCache 实例。</p>
+<p>问题在于按照定义单例被认为是“创建一次，永久有效”的实例。你可以想到一些对于上述问题的解决方案。或许我们可以在用户登出时移除这个单例：<br><pre>`<span class="hljs-keyword">static</span> SPThumbnailCache *sharedThumbnailCache;</pre></p>
+<ul>
+<li><p>(instancetype)sharedThumbnailCache<br>{<br>  <span class="hljs-keyword">if</span> (!sharedThumbnailCache) {</p>
+<pre><code>sharedThumbnailCache = [[&lt;span class=&quot;hljs-keyword&quot;&gt;self&lt;/span&gt; alloc] init];
+</code></pre><p>  }<br>  <span class="hljs-keyword">return</span> sharedThumbnailCache;<br>}</p>
+</li>
+<li><p>(<span class="hljs-keyword">void</span>)tearDown<br>{<br>  <span class="hljs-comment">// The SPThumbnailCache will clean up persistent states when deallocated</span><br>  sharedThumbnailCache = <span class="hljs-literal">nil</span>;<br>}<br>`<br>这是一个明显的对单例模式的滥用，但是它可以工作，对吧？</p>
+</li>
+</ul>
+<p>我们当然可以使用这种方式去解决，但是代价实在是太大了。我们不能使用简单的的 dispatch_once 方案了，而这个方案能够保证线程安全以及所有调用 [SPThumbnailCache sharedThumbnailCache] 的地方都能访问到同一个实例。现在我们需要对使用缩略图 cache 的代码的执行顺序非常小心。假设当用户正在执行登出操作时，有一些后台任务正在执行把图片保存到缓存中的操作:<br><pre>`dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="hljs-number">0</span>), ^{  </pre></p>
+<pre><code>[[SPThumbnailCache sharedThumbnailCache] cacheProfileImage:newImage &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt;UserId:userId];
+</code></pre><p>});<br>`<br>我们需要保证在所有的后台任务完成前， tearDown 一定不能被执行。这确保了 newImage 数据可以被正确的清理掉。或者，我们需要保证在缩略图 cache 被移除时，后台缓存任务一定要被取消掉。否则，一个新的缩略图 cache 的实例将会被延迟创建，并且之前用户的数据 (newImage 对象) 会被存储在它里面。</p>
+<p>由于对于单例实例来说它没有明确的所有者，(因为单例自己管理自己的生命周期)，“关闭”一个单例变得非常的困难。</p>
+<p>分析到这里，我希望你能够意识到，“这个缩略图 cache 从来就不应该作为一个单例！”。问题在于一个对象得生命周期可能在项目的最初阶段没有被很好得考虑清楚。举一个具体的例子，Dropbox 的 iOS 客户端曾经只支持一个账号登录。它以这样的状态存在了数年，直到有一天我们希望能够同时支持多个用户账号登录 (同时登陆私人账号和工作账号)。突然之间，我们以前的的假设“只能够同时有一个用户处于登录状态”就不成立了。如果假定了一个对象的生命周期和应用的生 命周期一致，那你的代码的灵活扩展就受到了限制，早晚有一天当产品的需求产生变化时，你会为当初的这个假定付出代价的。</p>
+<p>这里我们得到的教训是，单例应该只用来保存全局的状态，并且不能和任何作用域绑定。如果这些状态的作用域比一个完整的应用程序的生命周期要短，那么这个状态就不应该使用单例来管理。用一个单例来管理用户绑定的状态，是代码的坏味道，你应该认真的重新评估你的对象图的设计。</p>
+<h4 id="避免使用单例"><a href="#避免使用单例" class="headerlink" title="避免使用单例"></a>避免使用单例</h4><p>既然单例对局部作用域的状态有这么多的坏处，那么我们应该怎样避免使用它们呢？</p>
+<p>让我们来重温一下上面的例子。既然我们的缩略图 cache 的缓存状态是和具体的用户绑定的，那么让我们来定义一个user对象吧：<br><pre>`<span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPUser</span> : <span class="hljs-title">NSObject</span></span></pre></p>
+<p><span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">readonly</span>) SPThumbnailCache *thumbnailCache;</p>
+<p><span class="hljs-keyword">@end</span></p>
+<p><span class="hljs-class"><span class="hljs-keyword">@implementation</span> <span class="hljs-title">SPUser</span></span></p>
+<ul>
+<li><p>(instancetype)init<br>{<br>  <span class="hljs-keyword">if</span> ((<span class="hljs-keyword">self</span> = [<span class="hljs-keyword">super</span> init])) {</p>
+<pre><code>_thumbnailCache = [[SPThumbnailCache alloc] init];
+
+&lt;span class=&quot;hljs-comment&quot;&gt;// Initialize other user-specific state...&lt;/span&gt;
+</code></pre><p>  }<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span>;<br>}</p>
+</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br><code>&lt;/pre&gt;
+我们现在用一个对象来作为一个经过认证的用户会话的模型类，并且我们可以把所有和用户相关的状态存储在这个对象中。现在假设我们有一个view controller来展现好友列表：
+&lt;pre&gt;</code><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SPFriendListViewController</span> : <span class="hljs-title">UIViewController</span></span></p>
+<ul>
+<li>(instancetype)initWithUser:(SPUser *)user;</li>
+</ul>
+<p><span class="hljs-keyword">@end</span><br>`<br>我们可以显式地把经过认证的 user 对象作为参数传递给这个 view controller。这种把依赖性传递给依赖对象的技术正式的叫法是依赖注入，它有很多优点：</p>
+<p>1.对于阅读这个 SPFriendListViewController 头文件的读者来说，可以很清楚的知道它只有在有登录用户的情况下才会被展示。</p>
+<p>2.这个 SPFriendListViewController 只要还在使用中，就可以强引用 user 对象。举例来说，对于前面的例子，我们可以像下面这样在后台任务中保存一个图片到缩略图 cache 中：<br><pre>`dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, <span class="hljs-number">0</span>), ^{  </pre></p>
+<pre><code>[_user.thumbnailCache cacheProfileImage:newImage &lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt;UserId:userId];
+</code></pre><p>});</p>
+</li>
+</ul>
+<p>就算后台任务还没有完成，应用其他地方的代码也可以创建和使用一个全新的 SPUser 对象，而不会在清理第一个实例时阻塞用户交互. 为了更详细的说明一下第二点，让我们画一下在使用依赖注入之前和之后的对象图。</p>
+<p>假设我们的 SPFriendListViewController 是当前 window 的 root view controller。使用单例时，我们的对象图看起来如下所示：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions1.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions1.png" alt=""></a></p>
+<p>view controller 自己，以及自定义的 image view 的列表，都会和 sharedThumbnailCache 产生交互。当用户登出后，我们想要清理 root view controller 并且退出到登录页面：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions2.png" alt=""></a><br>这里的问题在于这个好友列表的 view controller 可能仍然在执行代码 (由于后台操作的原因)，并且可能因此仍然有一些没有执行的涉及到 sharedThumbnailCache 的调用。</p>
+<p>和使用依赖注入的解决方案对比一下：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions3.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions3.png" alt=""></a></p>
+<p>简单起见，假设 SPApplicationDelegate 管理 SPUser 的实例 (在实践中，你可能会把这些用户状态的管理工作交给另外一个对象来做，这样可以使你的 application delegate 简化)。当展现好友列表 view controller 时，会传递进去一个 user 的引用。这个引用也会向下传递给 profile image views。现在，当用户登出时，我们的对象图如下所示：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions4.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions4.png" alt=""></a></p>
+<p>这个对象图看起来和使用单例时很像。那么，区别是什么呢？</p>
+<p>关键问题是作用域。在单例那种情况中，sharedThumbnailCache 仍然可以被程序的任意模块访问。假如用户快速的登录了一个新的账号。该用户也想看看他的好友列表，这也就意味着需要再一次的和缩略图 cache 产生交互：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions5.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions5.png" alt=""></a></p>
+<p>当用户登录一个新账号，我们应该能够构建并且与全新的 SPThumbnailCache 交互，而不需要再在销毁老的缩略图 cache 上花费精力。基于对象管理的典型规则，老的 view controllers 和老的缩略图 cache 应该能够自己在后台延迟被清理掉。简而言之，我们应该隔离用户 A 相关联的状态和用户 B 相关联的状态：</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/questions6.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/questions6.png" alt=""></a></p>
+<p>&nbsp;</p>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>这一切的关键点是，在面向对象编程中我们想要最小化可变状态的作用域。但是单例却因为使可变的状态可以被程序中的任何地方访问，而站在了对立面。下一次你想使用单例时，能够好好考虑一下使用依赖注入作为替代方案。</p>
+<p>&nbsp;</p>
+<p>原文：shavekevin.com/2016/02/28/mianshiwentidaanyi</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/10/26/" rel="next" title="MarkDown编辑器推荐--MarkdownPad">
+                <i class="fa fa-chevron-left"></i> MarkDown编辑器推荐--MarkdownPad
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/11/27/" rel="prev" title="MarkdownPad 在win10下html渲染错误This view has crashed">
+                MarkdownPad 在win10下html渲染错误This view has crashed <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">83</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">105</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局状态"><span class="nav-number">1.</span> <span class="nav-text">全局状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的生命周期"><span class="nav-number">2.</span> <span class="nav-text">对象的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#避免使用单例"><span class="nav-number">2.1.</span> <span class="nav-text">避免使用单例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结论"><span class="nav-number">2.2.</span> <span class="nav-text">结论</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
