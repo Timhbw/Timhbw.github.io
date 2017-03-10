@@ -1,0 +1,1430 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ios,iOS基础,面试," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tim博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="「Tim的博客」iOS基础问答面试题连载(一)-附答案
+「Tim的博客」iOS基础问答面试题连载(二)-附答案
+「Tim的博客」iOS基础问答面试题连载(三)-附答案
+「Tim的博客」iOS基础问答面试题连载(四)
+以下是一些自己收集的比较基础的问题（大神可以忽略），附上答案，方便大家阅读。俗话说得好，基础不牢，地动山摇。文章末尾会提供PDF版的文档，方便大家木有网的时候也可以用移动设备观看。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS基础问答面试题连载(一)-附答案">
+<meta property="og:url" content="https://github.huangbowei.com/2016/11/16/100-1/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="「Tim的博客」iOS基础问答面试题连载(一)-附答案
+「Tim的博客」iOS基础问答面试题连载(二)-附答案
+「Tim的博客」iOS基础问答面试题连载(三)-附答案
+「Tim的博客」iOS基础问答面试题连载(四)
+以下是一些自己收集的比较基础的问题（大神可以忽略），附上答案，方便大家阅读。俗话说得好，基础不牢，地动山摇。文章末尾会提供PDF版的文档，方便大家木有网的时候也可以用移动设备观看。">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/iosinterviewquestion.jpg">
+<meta property="og:updated_time" content="2017-03-10T03:32:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS基础问答面试题连载(一)-附答案">
+<meta name="twitter:description" content="「Tim的博客」iOS基础问答面试题连载(一)-附答案
+「Tim的博客」iOS基础问答面试题连载(二)-附答案
+「Tim的博客」iOS基础问答面试题连载(三)-附答案
+「Tim的博客」iOS基础问答面试题连载(四)
+以下是一些自己收集的比较基础的问题（大神可以忽略），附上答案，方便大家阅读。俗话说得好，基础不牢，地动山摇。文章末尾会提供PDF版的文档，方便大家木有网的时候也可以用移动设备观看。">
+<meta name="twitter:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/iosinterviewquestion.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6226504685738526000',
+      author: 'timhbw博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.huangbowei.com/2016/11/16/100-1/"/>
+
+
+
+
+
+  <title> iOS基础问答面试题连载(一)-附答案 | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/11/16/100-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS基础问答面试题连载(一)-附答案
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-16T06:00:15+08:00">
+                2016-11-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ios/" itemprop="url" rel="index">
+                    <span itemprop="name">ios</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/16/100-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/16/100-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/iosinterviewquestion.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/iosinterviewquestion.jpg" alt=""></a></p>
+<p>「Tim的博客」<a href="http://www.huangbowei.com/archives/100.html" target="_blank" rel="external">iOS基础问答面试题连载(一)-附答案</a></p>
+<p>「Tim的博客」<a href="http://www.huangbowei.com/archives/102.html" target="_blank" rel="external">iOS基础问答面试题连载(二)-附答案</a></p>
+<p>「Tim的博客」<a href="http://www.huangbowei.com/archives/103.html" target="_blank" rel="external">iOS基础问答面试题连载(三)-附答案</a></p>
+<p>「Tim的博客」<a href="http://www.huangbowei.com/archives/107.html" target="_blank" rel="external">iOS基础问答面试题连载(四)</a></p>
+<p>以下是一些自己收集的比较基础的问题（大神可以忽略），附上答案，方便大家阅读。俗话说得好，基础不牢，地动山摇。文章末尾会提供PDF版的文档，方便大家木有网的时候也可以用移动设备观看。</p>
+<p>&nbsp;</p>
+<h4 id="1-简单的描述下类扩展和分类的区别-说2点"><a href="#1-简单的描述下类扩展和分类的区别-说2点" class="headerlink" title="1.简单的描述下类扩展和分类的区别?(说2点)"></a>1.简单的描述下类扩展和分类的区别?(说2点)</h4><ul>
+<li>类扩展没有名字,分类有名字。</li>
+<li>类扩展可以为某个类增加额外的属性、成员变量、方法声明;分类只能扩充方法,不能扩充成员变量,如果在分类中声明了一个属性,分类只会生成这个属性的get\set方法声明。<br>&nbsp;</li>
+</ul>
+<h4 id="2-简要的说明UIView的frame和bounds的区别。"><a href="#2-简要的说明UIView的frame和bounds的区别。" class="headerlink" title="2.简要的说明UIView的frame和bounds的区别。"></a>2.简要的说明UIView的frame和bounds的区别。</h4><ul>
+<li>frame表示的是控件矩形框在父控件中的位置和尺寸,是以父控件的左上角为坐标原点.</li>
+<li>bounds表示的是控件矩形框的位置和尺寸,是以自己的左上角为坐标原点.<br>&nbsp;</li>
+</ul>
+<h4 id="3-什么是控制器"><a href="#3-什么是控制器" class="headerlink" title="3.什么是控制器"></a>3.什么是控制器</h4><ul>
+<li>凡是继承自UIViewController的对象都是控制器.<br>&nbsp;</li>
+</ul>
+<h4 id="4-简单的描述控制器的作用"><a href="#4-简单的描述控制器的作用" class="headerlink" title="4.简单的描述控制器的作用"></a>4.简单的描述控制器的作用</h4><ul>
+<li>负责处理软件界面的各种事件,并负责软件界面的创建和销毁.<br>&nbsp;</li>
+</ul>
+<h4 id="5-简单的描述下storyboard的作用"><a href="#5-简单的描述下storyboard的作用" class="headerlink" title="5.简单的描述下storyboard的作用"></a>5.简单的描述下storyboard的作用</h4><ul>
+<li>用来描述描述软件界面的.<br>&nbsp;</li>
+</ul>
+<h4 id="6-简述程序的启动原理"><a href="#6-简述程序的启动原理" class="headerlink" title="6.简述程序的启动原理"></a>6.简述程序的启动原理</h4><ul>
+<li>程序一启动，就会加载Main.storyboard文件;会创建箭头所指的控制器，并显示控制器所管理的软件界面<br>&nbsp;</li>
+</ul>
+<h4 id="7-IBOutLet有什么作用"><a href="#7-IBOutLet有什么作用" class="headerlink" title="7.IBOutLet有什么作用"></a>7.IBOutLet有什么作用</h4><ul>
+<li>被IBOutlet修饰的属性能拖线到storyboard中,而且只能修饰属性.<br>&nbsp;</li>
+</ul>
+<h4 id="8-IBAction有什么作用"><a href="#8-IBAction有什么作用" class="headerlink" title="8.IBAction有什么作用"></a>8.IBAction有什么作用</h4><ul>
+<li>被IBAction修饰的方法能拖线到storyboard中,只能修饰方法返回值类型<br>&nbsp;</li>
+</ul>
+<h4 id="9-IBAction和IBOutLet前缀IB是什么意思"><a href="#9-IBAction和IBOutLet前缀IB是什么意思" class="headerlink" title="9.IBAction和IBOutLet前缀IB是什么意思"></a>9.IBAction和IBOutLet前缀IB是什么意思</h4><ul>
+<li>IB全称:Interface Builder,从Xcode4开始,Interface Builder已经整合到Xcode中<br>&nbsp;</li>
+</ul>
+<h4 id="10-简单描述父子控件"><a href="#10-简单描述父子控件" class="headerlink" title="10.简单描述父子控件"></a>10.简单描述父子控件</h4><ul>
+<li>每个控件都是个容器，能容纳其他控件;内部小控件是大控件的子控件;大控件是内部小控件的父控件<br>&nbsp;</li>
+</ul>
+<hr>
+<p>#### </p>
+<h4 id="11-解释下引用资源的时候每个选项的含义"><a href="#11-解释下引用资源的时候每个选项的含义" class="headerlink" title="11. 解释下引用资源的时候每个选项的含义"></a>11. 解释下引用资源的时候每个选项的含义</h4><ul>
+<li>copy:勾选copy,会把资源拷贝一份到项目的文件夹中(建议勾选,因为这样修改项目中的资源不会影响源资源)</li>
+<li>Added folder:如果勾选Create groups,只会会创建一个虚拟的文件夹,程序打包后,安装包中不存在这个文件夹;如果勾选Create folder references,真的创建一个文件夹,程序打包后,安装包中真的有这个文件夹.</li>
+<li>Add to targets:要不要把资源打包到软件安装包中去.一定要勾选,不勾选到时候程序打包后,安装包中没有这个资源.<br>&nbsp;</li>
+</ul>
+<h4 id="12-UILabel如何设置自动换行"><a href="#12-UILabel如何设置自动换行" class="headerlink" title="12.UILabel如何设置自动换行"></a>12.UILabel如何设置自动换行</h4><ul>
+<li>设置numberOflines 为0.</li>
+</ul>
+<h4 id="13-Character-Wrap和Word-Wrap的区别"><a href="#13-Character-Wrap和Word-Wrap的区别" class="headerlink" title="13.Character Wrap和Word Wrap的区别"></a>13.Character Wrap和Word Wrap的区别</h4><ul>
+<li>Character Wrap 字符包裹;</li>
+<li>Word Wrap 单词包裹&lt;保证单词的完整性&gt;.<br>&nbsp;</li>
+</ul>
+<h4 id="14-contentMode的作用"><a href="#14-contentMode的作用" class="headerlink" title="14.contentMode的作用"></a>14.contentMode的作用</h4><ul>
+<li>内容模式: 一般用来控制图片如何显示<br>&nbsp;</li>
+</ul>
+<hr>
+<p>&nbsp;</p>
+<h4 id="15-initWithImage-的作用"><a href="#15-initWithImage-的作用" class="headerlink" title="15.initWithImage:的作用?"></a>15.initWithImage:的作用?</h4><ul>
+<li>根据传入的图片对象创建UIImageView对象;并且UIImageView的尺寸默认等于图片的尺寸<br>&nbsp;</li>
+</ul>
+<h4 id="16-如何修改一个控件的frame属性"><a href="#16-如何修改一个控件的frame属性" class="headerlink" title="16.如何修改一个控件的frame属性?"></a>16.如何修改一个控件的frame属性?</h4><ol>
+<li>直接使用CGRectMake函数</li>
+<li>利用临时结构体变量</li>
+<li>直接运用结构体赋值<br>&nbsp;</li>
+</ol>
+<h4 id="17-如何抽方法"><a href="#17-如何抽方法" class="headerlink" title="17.如何抽方法?"></a>17.如何抽方法?</h4><ul>
+<li>先把相同的代码抽到方法中</li>
+<li>把要变化的东西换成变量,然后编译,把报错的设置为方法的参数<br>&nbsp;</li>
+</ul>
+<h4 id="18-通过imageNamed-这个方法加载图片有什么特点"><a href="#18-通过imageNamed-这个方法加载图片有什么特点" class="headerlink" title="18.通过imageNamed:这个方法加载图片有什么特点?"></a>18.通过imageNamed:这个方法加载图片有什么特点?</h4><ul>
+<li><p>有缓存<br><span class="lang:default decode:true crayon-inline ">UIImage *image =[UIImage imageNamed:@”图片名”]</span></p>
+</li>
+<li><p>使用场合：图片比较小、使用频率比较高</p>
+</li>
+<li>建议：把需要缓存的图片放到Images.xcassets<br>&nbsp;</li>
+</ul>
+<h4 id="19-开发如何选择UILabel-UIImageView-UIButton"><a href="#19-开发如何选择UILabel-UIImageView-UIButton" class="headerlink" title="19.开发如何选择UILabel,UIImageView,UIButton"></a>19.开发如何选择UILabel,UIImageView,UIButton</h4><ul>
+<li>能用UILabel,UIImageView的尽量用UILabel,UIImageView;需要和用户交互用UIButton<br>&nbsp;</li>
+</ul>
+<hr>
+<p>&nbsp;</p>
+<h4 id="20-什么是自定义控件"><a href="#20-什么是自定义控件" class="headerlink" title="20.什么是自定义控件"></a>20.什么是自定义控件</h4><ul>
+<li>继承自系统的控件写一个自己的控件,目的是封装控件内部的细节</li>
+</ul>
+<h4 id="21-通过代码如何自定义控件-并且简单的描述下每一个步骤的理由"><a href="#21-通过代码如何自定义控件-并且简单的描述下每一个步骤的理由" class="headerlink" title="21.通过代码如何自定义控件? 并且简单的描述下每一个步骤的理由?"></a>21.通过代码如何自定义控件? 并且简单的描述下每一个步骤的理由?</h4><ul>
+<li>新建一个继承UIView的类,(所谓自定义控件就是继承系统自带的控件写一个自己的控件)</li>
+<li>在initWithFrame方法中添加子控件(保证别人在外面不管是通过init还是initWithFrame创建都能够添加子控件,因为init方法内部会调用initWithFrame</li>
+<li>在layoutSubViews方法中设置子控件的frame(因为在InitWithFrame方法中当前控件尺寸可能没值,所以计算不了子控件的位置和尺寸,而在layoutSubViews方法,能够拿到当前控件的尺寸)</li>
+<li>提供一个模型属性，重写模型属性的set方法(保证在别人在设置数据的那一刻就可以拿到数据设置到对应的子控件上)</li>
+</ul>
+<h4 id="22-什么是模型"><a href="#22-什么是模型" class="headerlink" title="22.什么是模型"></a>22.什么是模型</h4><ul>
+<li>概念：专门用来存放数据的对象</li>
+<li>特点：一般继承NSObject，在.h文件中声明一些用来存放数据的属性</li>
+</ul>
+<h4 id="23-通过XIB如何自定义控件-并且简单的描述下每一个步骤的理由"><a href="#23-通过XIB如何自定义控件-并且简单的描述下每一个步骤的理由" class="headerlink" title="23.通过XIB如何自定义控件? 并且简单的描述下每一个步骤的理由?"></a>23.通过XIB如何自定义控件? 并且简单的描述下每一个步骤的理由?</h4><ol>
+<li>新建一个继承UIView的类,(所谓自定义控件就是继承系统自带的控件写一个自己的控件)</li>
+<li>新建一个xib文件（xib的文件名最好和类名一样）</li>
+<li>修改最外面那个控件的class为控件类名(只有修改类名,当时候从xib中出来的才是我这种类型的控件)</li>
+<li>提供一个模型属性，重写模型属性的set方法(保证在别人在设置数据的那一刻就可以拿到数据设置到对应的子控件上)<br>&nbsp;</li>
+</ol>
+<h4 id="24-instancetype和id的区别"><a href="#24-instancetype和id的区别" class="headerlink" title="24.instancetype和id的区别"></a>24.instancetype和id的区别</h4><ul>
+<li>都可以代表任意类型</li>
+<li>instancetype只能作为返回值</li>
+<li>id类型可以作为返回值,也可以作为参数,也可以定义变量</li>
+<li>instancetype会类型检测,id不会进行类型检测<br>&nbsp;</li>
+</ul>
+<h4 id="25-property的使用策略"><a href="#25-property的使用策略" class="headerlink" title="25. @property的使用策略"></a>25. @property的使用策略</h4><ul>
+<li>assign:’基本数据类型’、’枚举‘、’结构体‘等非OC对象</li>
+<li>weak:OC对象类型（比如NSArray、NSDate、NSNumber、模型类）</li>
+<li>strong:OC对象类型（比如NSArray、NSDate、NSNumber、模型类）</li>
+<li>一个对象只要有强指针引用，就不会被销毁<br>&nbsp;</li>
+</ul>
+<h4 id="26-懒加载的好处"><a href="#26-懒加载的好处" class="headerlink" title="26.懒加载的好处?"></a>26.懒加载的好处?</h4><ul>
+<li>用到时再加载,只会加载一次<br>&nbsp;</li>
+</ul>
+<hr>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4 id="27-如果是通过xib或者storyboard创建控件，初始化的操作可以在initWithFrame-方法中做吗"><a href="#27-如果是通过xib或者storyboard创建控件，初始化的操作可以在initWithFrame-方法中做吗" class="headerlink" title="27.如果是通过xib或者storyboard创建控件，初始化的操作可以在initWithFrame:方法中做吗?"></a>27.如果是通过xib或者storyboard创建控件，初始化的操作可以在initWithFrame:方法中做吗?</h4><ul>
+<li>如果是通过xib或者storyboard创建控件，初始化时是不会调用initWithFrame,会调用initWithCoder.初始化完毕会调用awakeFromNib方法,建议在awakeFromNib中做初始化<br>&nbsp;</li>
+</ul>
+<h4 id="28-通过alloc-init或者alloc-initWithFrame创建控件会不会主动加载xib"><a href="#28-通过alloc-init或者alloc-initWithFrame创建控件会不会主动加载xib" class="headerlink" title="28.通过alloc/init或者alloc/initWithFrame创建控件会不会主动加载xib?"></a>28.通过alloc/init或者alloc/initWithFrame创建控件会不会主动加载xib?</h4><ul>
+<li>通过alloc/init或者alloc/initWithFrame创建控件不会主动加载xib,即使xib的名称和控件的类名一样</li>
+</ul>
+<h4 id="29-用一个属性引用UI控件的时候为什么可以用weak"><a href="#29-用一个属性引用UI控件的时候为什么可以用weak" class="headerlink" title="29.用一个属性引用UI控件的时候为什么可以用weak?"></a>29.用一个属性引用UI控件的时候为什么可以用weak?</h4><ul>
+<li>因为UI控件添加到父控件中以后,会有强指针指向这个对象,就应经可以保证这个对象不会被销毁.在搞一个属性引用这个对象,用弱引用就可以.</li>
+</ul>
+<h4 id="30-如何隐藏一个控件"><a href="#30-如何隐藏一个控件" class="headerlink" title="30.如何隐藏一个控件?"></a>30.如何隐藏一个控件?</h4><ul>
+<li>设置hidden为YES;</li>
+<li>设置alpha为0.0.<br>&nbsp;</li>
+</ul>
+<h4 id="31-如何用按钮来实现图片上文字下的效果？"><a href="#31-如何用按钮来实现图片上文字下的效果？" class="headerlink" title="31.如何用按钮来实现图片上文字下的效果？"></a>31.如何用按钮来实现图片上文字下的效果？</h4><pre class="lang:default decode:true ">自定义按钮,实现
+-（CGRect）titleRectForContentRect:(CGRect)contentRect
+{
+// 返回文字的frame
+}
+-  (CGRect)imageRectForContentRect:(CGRect)contentRect
+{
+// 返回图片的frame
+}
+
+- 自定义按钮,实现layoutSubViews方法调整按钮内部子控件的位置和尺寸
+</pre>
+&nbsp;
+
+#### 32.通过代码如何设置的内边距?
+
+<pre class="lang:default decode:true ">self.btn.contentEdgeInsets = UIEdgeInsetsMake(30, 30, 0, 0);
+self.btn.titleEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0);
+self.btn.imageEdgeInsets = UIEdgeInsetsMake(0, -30, 0, 0);</pre>
+&nbsp;
+
+#### 33.如何处理图片拉伸问题?
+
+<pre class="lang:default decode:true ">创建可拉伸的图片对象
+
+bg = [bg resizableImageWithCapInsets:UIEdgeInsetsMake(10,10,10,10) resizingMode:..];//平铺和拉伸
+
+UIImage *bg = ...</pre>
+&nbsp;
+
+#### 34.在xcode中如何配置拉伸图片?
+
+*   选中图片---&gt;右边(Slicing)--&gt;Sices:Horizontal and Vertical --&gt;上下左右设置
+&nbsp;
+
+#### 35.KVC的作用?
+
+*   Key Value Coding 键值编码,可以修改属性的值,并且可以修改私有的成员比变量;可以取值
+&nbsp;
+
+* * *
+
+&nbsp;
+
+#### 36.如何监听scrollView停止滚动?
+
+1.  设置scrollView的代理
+2.  代理对象遵守&lt;UIScrollViewDelegate&gt;协议
+3.  实现协议里面
+<pre class="lang:objc decode:true">- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+</pre>
+&nbsp;
+
+#### 37.定时器一般有什么作用?以及如何使用定时器
+
+*   可以办到每隔一定的时间做一件事件.
+通过
+<pre class="lang:default decode:true ">+ (NSTimer *)scheduledTimerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo;
+</pre>
+可以创建一个自定执行任务的定时器对象
+
+通过 - (void)invalidate这个方法可以停止定时器
+
+&nbsp;
+
+#### 38.scrollView的使用场景
+
+*   当内容数据一多，在可视的View中就展示不完，这时候就需要用到UIScrollView控件.
+&nbsp;
+
+#### 39.UIScrollView无法滚动的原因
+
+1.  没有设置contentSize,或者设置的contenSize小于等于scrollView的尺寸
+2.  scrollEnable = NO;
+3.  userInteractionEnable = NO; // 是否允许与用户交互
+&nbsp;
+
+#### 40.scrollEnable和userInteractionEnable的区别
+
+1.  scrollEnable仅仅是不能滚动，其他事件依旧能够响应
+2.  userInteractionEnable禁止任何交互事件
+&nbsp;
+
+#### 41.alwaysBounceVertical alwaysBounceHorizontal的作用
+
+*   不管有没有contentSize，总是有弹簧效果;作用：用来做下拉刷新和上拉刷新的
+&nbsp;
+
+#### 42.如何监听UIScrollView各种行为
+
+1.  设置scrollView的delegate（代理）为控制器对象
+2.  控制器要遵守协议UIScrollViewDelegate协议
+3.  控制器要实现UIScrollViewDelegate协议里面的方法
+&nbsp;
+
+#### 43.代理的注意点
+
+1.  scrollView的代理可以是任何类型的OC 对象
+2.  代理一定是weak
+&nbsp;
+
+#### 44.利用UIScrollView如何实现内容缩放
+
+1.  设置代理
+2.  实现代理方法
+<span class="lang:default decode:true crayon-inline ">-(UIView *)viewForZoomingInScrollview:(UIScrollView *)scrollView;</span>
+3.  设置缩放比例
+<pre class="lang:default decode:true ">self.scrollView.maximumZoomScale = 2.0;
+self.scrollView.minimumZoomScale = 0.2;</pre>
+
+<h4 id="45-如何监听控件的行为？"><a href="#45-如何监听控件的行为？" class="headerlink" title="45.如何监听控件的行为？"></a>45.如何监听控件的行为？</h4><ol>
+<li>通过addTarget:<br>只有继承来自UICotrol的对象，才有这个功能</li>
+<li>通过delegate：<br>只有拥有delegate属性的控件，才有这个功能<br>&nbsp;</li>
+</ol>
+<hr>
+<p>&nbsp;</p>
+<h4 id="46-通过autolayout如何实现UILabel包裹内容"><a href="#46-通过autolayout如何实现UILabel包裹内容" class="headerlink" title="46.通过autolayout如何实现UILabel包裹内容?"></a>46.通过autolayout如何实现UILabel包裹内容?</h4><ol>
+<li>设置位置约束</li>
+<li>设置宽度约束&lt;=固定值</li>
+<li>不需要设置高度约束<br>&nbsp;</li>
+</ol>
+<h4 id="47-什么是适配"><a href="#47-什么是适配" class="headerlink" title="47.什么是适配?"></a>47.什么是适配?</h4><ul>
+<li>适应、兼容各种不同的情况</li>
+<li>系统适配:针对不同版本的操作系统进行适配</li>
+<li>屏幕适配:针对不同大小的屏幕尺寸进行适配<br>&nbsp;</li>
+</ul>
+<h4 id="48-点和像素的区别"><a href="#48-点和像素的区别" class="headerlink" title="48.点和像素的区别"></a>48.点和像素的区别</h4><ul>
+<li>在用户眼中,屏幕是由无数个像素组成的,像素越多，屏幕越清晰</li>
+<li>在开发者眼中,屏幕是由无数个点组成的，点又是由像素组成的,一个点钟包含的像素越多,屏幕越清晰.<br>&nbsp;</li>
+</ul>
+<h4 id="49-什么是Autolayout"><a href="#49-什么是Autolayout" class="headerlink" title="49.什么是Autolayout?"></a>49.什么是Autolayout?</h4><ul>
+<li>Autolayout是一种“自动布局”技术，专门用来布局UI界面的<br>&nbsp;</li>
+</ul>
+<h4 id="50-简单描述下Autolayout的2个核心概念约束和参照"><a href="#50-简单描述下Autolayout的2个核心概念约束和参照" class="headerlink" title="50.简单描述下Autolayout的2个核心概念约束和参照"></a>50.简单描述下Autolayout的2个核心概念约束和参照</h4><ul>
+<li>约束:通过给控件添加约束,来决定控件的位置和尺寸</li>
+<li>参照:在添加约束时,是依照谁来添加(可以是父控件或者兄弟控件)<br>&nbsp;</li>
+</ul>
+<h4 id="51-Autolayout的警告和错误"><a href="#51-Autolayout的警告和错误" class="headerlink" title="51.Autolayout的警告和错误"></a>51.Autolayout的警告和错误</h4><ul>
+<li>警告:控件的frame不匹配所添加的约束</li>
+<li>错误:1&gt;缺乏必要的约束;2&gt;两个约束冲突<br>&nbsp;</li>
+</ul>
+<h4 id="52-通过代码添加约束的原则"><a href="#52-通过代码添加约束的原则" class="headerlink" title="52.通过代码添加约束的原则"></a>52.通过代码添加约束的原则</h4><ol>
+<li>对于两个同层级view之间的约束关系，添加到它们的父view上</li>
+<li>对于两个不同层级view之间的约束关系，添加到他们最近的共同父view上</li>
+<li>对于有层次关系的两个view之间的约束关系，添加到层次较高的父view上<br>&nbsp;</li>
+</ol>
+<h4 id="53-什么是VFL"><a href="#53-什么是VFL" class="headerlink" title="53.什么是VFL"></a>53.什么是VFL</h4><ul>
+<li>VFL全称是Visual Format Language，翻译过来是“可视化格式语言”</li>
+<li>VFL是苹果公司为了简化Autolayout的编码而推出的抽象语言<br>&nbsp;</li>
+</ul>
+<h4 id="54-通过约束如何实现动画"><a href="#54-通过约束如何实现动画" class="headerlink" title="54.通过约束如何实现动画"></a>54.通过约束如何实现动画</h4><ul>
+<li>在修改了约束之后，只要执行下面代码，就能做动画效果<br><pre class="lang:default decode:true">[UIView animateWithDuration:1.0 animations:^{</pre></li>
+</ul>
+<p>[添加了约束的view的父控件 layoutIfNeeded];</p>
+<p>}];<br>&nbsp;</p>
+<hr>
+<p>&nbsp;</p>
+<h4 id="55-性能优化的具体实现"><a href="#55-性能优化的具体实现" class="headerlink" title="55.性能优化的具体实现"></a>55.性能优化的具体实现</h4><ul>
+<li>当滚动列表时，部分UITableViewCell会移出窗口，UITableView会将窗口外的UITableViewCell放入一个对象池中，等待重用。</li>
+<li>当UITableView要求dataSource返回UITableViewCell时，dataSource会先查看这个对象池，如果池中有未使用的UITableViewCell，dataSource会用新的数据配置这个UITableViewCell，然后返回给UITableView，重新显示到窗口中，从而避免创建新对象.<br>&nbsp;</li>
+</ul>
+<h4 id="56-UITableView如何展示数据"><a href="#56-UITableView如何展示数据" class="headerlink" title="56.UITableView如何展示数据?"></a>56.UITableView如何展示数据?</h4><ol>
+<li>设置数据源对象self.tableView.dataSource = self;</li>
+<li>数据源对象要遵守协议</li>
+<li>实现数据源方法<br><pre class="lang:default decode:true">// 多少组数据</pre></li>
+</ol>
+<ul>
+<li>(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;</li>
+</ul>
+<p>// 每一组有多少行数据</p>
+<ul>
+<li>(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;</li>
+</ul>
+<p>// 每一行显示什么内容</p>
+<ul>
+<li>(UITableViewCell <em>)tableView:(UITableView </em>)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;<br>&nbsp;</li>
+</ul>
+<h4 id="57-UITableView的有哪几种样式"><a href="#57-UITableView的有哪几种样式" class="headerlink" title="57.UITableView的有哪几种样式"></a>57.UITableView的有哪几种样式</h4><ul>
+<li>UITableViewStylePlain</li>
+<li>UITableViewStyleGrouped<br>&nbsp;</li>
+</ul>
+<h4 id="58-UITableViewController的认识"><a href="#58-UITableViewController的认识" class="headerlink" title="58.UITableViewController的认识"></a>58.UITableViewController的认识</h4><ul>
+<li>tableVieController有个tableView属性,指向一个tableView,而tableView的dataSource和delegate属性指向就是这个控制器.并且这个控制器已经遵守了UITableViewDataSource和UITableViewDelegate协议.而每个控制器的内部都有一个view属性,在tableVieController中,view和tableView属性指向的是同一个对象.<br>&nbsp;</li>
+</ul>
+<h4 id="59-性能优化的思路"><a href="#59-性能优化的思路" class="headerlink" title="59.性能优化的思路"></a>59.性能优化的思路</h4><ul>
+<li>iOS设备的内存有限，如果用UITableView显示成千上万条数据，就需要成千上万个UITableViewCell对象的话，那将会耗尽iOS设备的内存。要解决该问题，需要重用UITableViewCell对象<br>&nbsp;</li>
+</ul>
+<h4 id="60-UITableView的性能优化的实现步骤"><a href="#60-UITableView的性能优化的实现步骤" class="headerlink" title="60.UITableView的性能优化的实现步骤"></a>60.UITableView的性能优化的实现步骤</h4><p><pre class="lang:default decode:true ">/<em>*  每当一个cell要进入视野范围就会调用这个方法 </em>/</pre></p>
+<ul>
+<li>(UITableViewCell <em>)tableView:(UITableView </em>)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath<br>{</li>
+</ul>
+<p>// 1.定义一个重用标识<br>static NSString *ID = @”tim”;</p>
+<p>// 2.去缓存池取可循环利用的cell<br>UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];</p>
+<p>// 3.缓存池如果没有可循环利用的cell,自己创建<br>if (cell == nil) {<br>cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];<br>// 建议:所有cell都一样的设置,写在这个大括号中;所有cell不都一样的设置写在外面<br>cell.backgroundColor = [UIColor redColor];</p>
+<p>}<br>// 4.设置数据<br>cell.textLabel.text = [NSString stringWithFormat:@”第%zd行数据”,indexPath.row];</p>
+<p>return cell;<br>}<br><br>&nbsp;</p>
+<h4 id="61-registerClass-的作用"><a href="#61-registerClass-的作用" class="headerlink" title="61.registerClass:的作用"></a>61.registerClass:的作用</h4><ul>
+<li>根据一个ID注册这个ID标识对应的cell类型.<br>&nbsp;</li>
+</ul>
+<h4 id="62-通过注册的方法如何实现cell的重用"><a href="#62-通过注册的方法如何实现cell的重用" class="headerlink" title="62.通过注册的方法如何实现cell的重用"></a>62.通过注册的方法如何实现cell的重用</h4><p>&nbsp;</p>
+<p><pre class="lang:default decode:true">NSString *ID = @”wine”;</pre></p>
+<ul>
+<li>(void)viewDidLoad {<br>[super viewDidLoad];<br>// 注册ID 这个标识对应的cell类型为UITableViewCell<br>[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ID];<br>}</li>
+<li>(UITableViewCell <em>)tableView:(UITableView </em>)tableView cellForRowAtIndexPath:(NSIndexPath <em>)indexPath<br>{<br>// 1.先去缓存池中查找可循环利用的cell<br>UITableViewCell </em>cell = [tableView dequeueReusableCellWithIdentifier:ID];</li>
+</ul>
+<p>// 2.设置数据<br>cell.textLabel.text = [NSString stringWithFormat:@”%zd行的数据”, indexPath.row];</p>
+<p>return cell;<br>}<br>&nbsp;</p>
+<h4 id="63-如何监听tableView内部cell的点击事件"><a href="#63-如何监听tableView内部cell的点击事件" class="headerlink" title="63.如何监听tableView内部cell的点击事件"></a>63.如何监听tableView内部cell的点击事件</h4><ol>
+<li>设置代理</li>
+<li>代理对象遵守协议</li>
+<li>实现协议里面的方法<br>&nbsp;</li>
+</ol>
+<hr>
+<p>&nbsp;</p>
+<h4 id="64-简述registerNib-nullable-UINib-nib-forCellReuseIdentifier-NSString-identifier-和registerClass-nullable-Class-cellClass-forCellReuseIdentifier-NSString-identifier-这2个方法的区别"><a href="#64-简述registerNib-nullable-UINib-nib-forCellReuseIdentifier-NSString-identifier-和registerClass-nullable-Class-cellClass-forCellReuseIdentifier-NSString-identifier-这2个方法的区别" class="headerlink" title="64.简述registerNib:(nullable UINib )nib forCellReuseIdentifier:(NSString )identifier 和registerClass:(nullable Class)cellClass forCellReuseIdentifier:(NSString *)identifier 这2个方法的区别"></a>64.简述<span class="lang:default decode:true crayon-inline ">registerNib:(nullable UINib <em>)nib forCellReuseIdentifier:(NSString </em>)identifier</span> 和<span class="lang:default decode:true crayon-inline ">registerClass:(nullable Class)cellClass forCellReuseIdentifier:(NSString *)identifier</span> 这2个方法的区别</h4><ul>
+<li>registerClass这个方法是根据ID 注册对应的cell类型,系统创建cell的方式是通过alloc/initWithStyle…</li>
+<li>registerNib 这个方法是根据ID 注册一个xib文件,系统创建cell的方式是通过加载xib文件.<br>&nbsp;</li>
+</ul>
+<h4 id="65-如何计算一段文字的宽度和高度"><a href="#65-如何计算一段文字的宽度和高度" class="headerlink" title="65.如何计算一段文字的宽度和高度?"></a>65.如何计算一段文字的宽度和高度?</h4><ul>
+<li>第一种情况:如果label只有一行,通过sizeWithAttributes:这个方法,告知这段文字的字体和字体大小就可以计算这段文字的尺寸.</li>
+<li>第二种情况:如果label需要换行计算高度,通过boundingRectWithSize: options: attributes:attributes context: 这个方法,告知这段文字的字体和字体大小,并且在一个限制的尺寸内计算这段文字的尺寸.<br>&nbsp;</li>
+</ul>
+<h4 id="66-什么是自定义cell"><a href="#66-什么是自定义cell" class="headerlink" title="66.什么是自定义cell?"></a>66.什么是自定义cell?</h4><ul>
+<li>继承自系统的UITableViewCell写一个自己的cell<br>&nbsp;</li>
+</ul>
+<h4 id="67-通过代码自定义cell能在ininWithFrame-方法中添加子控件吗"><a href="#67-通过代码自定义cell能在ininWithFrame-方法中添加子控件吗" class="headerlink" title="67.通过代码自定义cell能在ininWithFrame:方法中添加子控件吗?"></a>67.通过代码自定义cell能在ininWithFrame:方法中添加子控件吗?</h4><ul>
+<li>不能,自定义cell 是在initWithStyle:reuseIdentifier:方法添加子控件<br>&nbsp;</li>
+</ul>
+<h4 id="68-通过代码自定义cell能在initWithStyle-reuseIdentifier-方法中计算子控件的位置和尺寸吗"><a href="#68-通过代码自定义cell能在initWithStyle-reuseIdentifier-方法中计算子控件的位置和尺寸吗" class="headerlink" title="68.通过代码自定义cell能在initWithStyle:reuseIdentifier:方法中计算子控件的位置和尺寸吗?"></a>68.通过代码自定义cell能在initWithStyle:reuseIdentifier:方法中计算子控件的位置和尺寸吗?</h4><ul>
+<li>不行,因为在这个方法,cell的尺寸可能还没有,而计算子控件的位置和尺寸需要相对于cell来计算.通过代码自定义cell是在layoutSubviews中计算的<br>&nbsp;</li>
+</ul>
+<h4 id="69-通过代码自定义cell-frame和Autolayout2中的方式有什么区别"><a href="#69-通过代码自定义cell-frame和Autolayout2中的方式有什么区别" class="headerlink" title="69.通过代码自定义cell,frame和Autolayout2中的方式有什么区别?"></a>69.通过代码自定义cell,frame和Autolayout2中的方式有什么区别?</h4><ul>
+<li>这2种方法,只是子控件的位置和尺寸的确定方法不一样.frame是通过设置子控件的frame来确定;而Autolayout是通过添加约束的方式来确定<br>&nbsp;</li>
+</ul>
+<h4 id="70-通过storyboard的方式是如何加载cell"><a href="#70-通过storyboard的方式是如何加载cell" class="headerlink" title="70.通过storyboard的方式是如何加载cell"></a>70.通过storyboard的方式是如何加载cell</h4><ul>
+<li>首先根据ID去缓存池中取,如果缓存中没有,也没有注册,会自动去storyboard中找有没有ID这种标识的Cell,如果有,会加载这个cell,并且绑定这个标识返回<br>&nbsp;</li>
+</ul>
+<h4 id="71-字典转模型第三方框架的了解"><a href="#71-字典转模型第三方框架的了解" class="headerlink" title="71.字典转模型第三方框架的了解"></a>71.字典转模型第三方框架的了解</h4><ul>
+<li>Mantle:所有模型都必须继承自MTModel</li>
+<li>JSONModel:所有模型都必须继承自JSONModel</li>
+<li>MJExtension:不需要强制继承任何其他类<br>&nbsp;</li>
+</ul>
+<h4 id="72-设计框架需要考虑的问题"><a href="#72-设计框架需要考虑的问题" class="headerlink" title="72.设计框架需要考虑的问题"></a>72.设计框架需要考虑的问题</h4><ul>
+<li>侵入性:侵入性大就意味着很难离开这个框架</li>
+<li>易用性:比如少量代码实现N多功能</li>
+<li>扩展性:很容易给这个框架增加新功能<br>&nbsp;</li>
+</ul>
+<p>[reply]<a href="https://github.com/Timhbw/iOSInterviewQuestions" target="_blank" rel="external">PDF文件下载</a>[/reply]</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
+          
+            <a href="/tags/iOS基础/" rel="tag"># iOS基础</a>
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/14/99/" rel="next" title="学习提升之HTTP状态码详解">
+                <i class="fa fa-chevron-left"></i> 学习提升之HTTP状态码详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/16/100/" rel="prev" title="iOS基础问答面试题连载(一)-附答案">
+                iOS基础问答面试题连载(一)-附答案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/16/100-1/"
+           data-title="iOS基础问答面试题连载(一)-附答案" data-url="https://github.huangbowei.com/2016/11/16/100-1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">168</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/timhbw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huangboweicom" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-简单的描述下类扩展和分类的区别-说2点"><span class="nav-number">1.</span> <span class="nav-text">1.简单的描述下类扩展和分类的区别?(说2点)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-简要的说明UIView的frame和bounds的区别。"><span class="nav-number">2.</span> <span class="nav-text">2.简要的说明UIView的frame和bounds的区别。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-什么是控制器"><span class="nav-number">3.</span> <span class="nav-text">3.什么是控制器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-简单的描述控制器的作用"><span class="nav-number">4.</span> <span class="nav-text">4.简单的描述控制器的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-简单的描述下storyboard的作用"><span class="nav-number">5.</span> <span class="nav-text">5.简单的描述下storyboard的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-简述程序的启动原理"><span class="nav-number">6.</span> <span class="nav-text">6.简述程序的启动原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-IBOutLet有什么作用"><span class="nav-number">7.</span> <span class="nav-text">7.IBOutLet有什么作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-IBAction有什么作用"><span class="nav-number">8.</span> <span class="nav-text">8.IBAction有什么作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-IBAction和IBOutLet前缀IB是什么意思"><span class="nav-number">9.</span> <span class="nav-text">9.IBAction和IBOutLet前缀IB是什么意思</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-简单描述父子控件"><span class="nav-number">10.</span> <span class="nav-text">10.简单描述父子控件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-解释下引用资源的时候每个选项的含义"><span class="nav-number">11.</span> <span class="nav-text">11. 解释下引用资源的时候每个选项的含义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-UILabel如何设置自动换行"><span class="nav-number">12.</span> <span class="nav-text">12.UILabel如何设置自动换行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-Character-Wrap和Word-Wrap的区别"><span class="nav-number">13.</span> <span class="nav-text">13.Character Wrap和Word Wrap的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-contentMode的作用"><span class="nav-number">14.</span> <span class="nav-text">14.contentMode的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-initWithImage-的作用"><span class="nav-number">15.</span> <span class="nav-text">15.initWithImage:的作用?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-如何修改一个控件的frame属性"><span class="nav-number">16.</span> <span class="nav-text">16.如何修改一个控件的frame属性?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-如何抽方法"><span class="nav-number">17.</span> <span class="nav-text">17.如何抽方法?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-通过imageNamed-这个方法加载图片有什么特点"><span class="nav-number">18.</span> <span class="nav-text">18.通过imageNamed:这个方法加载图片有什么特点?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-开发如何选择UILabel-UIImageView-UIButton"><span class="nav-number">19.</span> <span class="nav-text">19.开发如何选择UILabel,UIImageView,UIButton</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20-什么是自定义控件"><span class="nav-number">20.</span> <span class="nav-text">20.什么是自定义控件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#21-通过代码如何自定义控件-并且简单的描述下每一个步骤的理由"><span class="nav-number">21.</span> <span class="nav-text">21.通过代码如何自定义控件? 并且简单的描述下每一个步骤的理由?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-什么是模型"><span class="nav-number">22.</span> <span class="nav-text">22.什么是模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-通过XIB如何自定义控件-并且简单的描述下每一个步骤的理由"><span class="nav-number">23.</span> <span class="nav-text">23.通过XIB如何自定义控件? 并且简单的描述下每一个步骤的理由?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-instancetype和id的区别"><span class="nav-number">24.</span> <span class="nav-text">24.instancetype和id的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#25-property的使用策略"><span class="nav-number">25.</span> <span class="nav-text">25. @property的使用策略</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#26-懒加载的好处"><span class="nav-number">26.</span> <span class="nav-text">26.懒加载的好处?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#27-如果是通过xib或者storyboard创建控件，初始化的操作可以在initWithFrame-方法中做吗"><span class="nav-number">27.</span> <span class="nav-text">27.如果是通过xib或者storyboard创建控件，初始化的操作可以在initWithFrame:方法中做吗?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#28-通过alloc-init或者alloc-initWithFrame创建控件会不会主动加载xib"><span class="nav-number">28.</span> <span class="nav-text">28.通过alloc/init或者alloc/initWithFrame创建控件会不会主动加载xib?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#29-用一个属性引用UI控件的时候为什么可以用weak"><span class="nav-number">29.</span> <span class="nav-text">29.用一个属性引用UI控件的时候为什么可以用weak?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#30-如何隐藏一个控件"><span class="nav-number">30.</span> <span class="nav-text">30.如何隐藏一个控件?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#31-如何用按钮来实现图片上文字下的效果？"><span class="nav-number">31.</span> <span class="nav-text">31.如何用按钮来实现图片上文字下的效果？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#45-如何监听控件的行为？"><span class="nav-number">32.</span> <span class="nav-text">45.如何监听控件的行为？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#46-通过autolayout如何实现UILabel包裹内容"><span class="nav-number">33.</span> <span class="nav-text">46.通过autolayout如何实现UILabel包裹内容?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#47-什么是适配"><span class="nav-number">34.</span> <span class="nav-text">47.什么是适配?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#48-点和像素的区别"><span class="nav-number">35.</span> <span class="nav-text">48.点和像素的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#49-什么是Autolayout"><span class="nav-number">36.</span> <span class="nav-text">49.什么是Autolayout?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#50-简单描述下Autolayout的2个核心概念约束和参照"><span class="nav-number">37.</span> <span class="nav-text">50.简单描述下Autolayout的2个核心概念约束和参照</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#51-Autolayout的警告和错误"><span class="nav-number">38.</span> <span class="nav-text">51.Autolayout的警告和错误</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#52-通过代码添加约束的原则"><span class="nav-number">39.</span> <span class="nav-text">52.通过代码添加约束的原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#53-什么是VFL"><span class="nav-number">40.</span> <span class="nav-text">53.什么是VFL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#54-通过约束如何实现动画"><span class="nav-number">41.</span> <span class="nav-text">54.通过约束如何实现动画</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#55-性能优化的具体实现"><span class="nav-number">42.</span> <span class="nav-text">55.性能优化的具体实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#56-UITableView如何展示数据"><span class="nav-number">43.</span> <span class="nav-text">56.UITableView如何展示数据?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#57-UITableView的有哪几种样式"><span class="nav-number">44.</span> <span class="nav-text">57.UITableView的有哪几种样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#58-UITableViewController的认识"><span class="nav-number">45.</span> <span class="nav-text">58.UITableViewController的认识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#59-性能优化的思路"><span class="nav-number">46.</span> <span class="nav-text">59.性能优化的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#60-UITableView的性能优化的实现步骤"><span class="nav-number">47.</span> <span class="nav-text">60.UITableView的性能优化的实现步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#61-registerClass-的作用"><span class="nav-number">48.</span> <span class="nav-text">61.registerClass:的作用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#62-通过注册的方法如何实现cell的重用"><span class="nav-number">49.</span> <span class="nav-text">62.通过注册的方法如何实现cell的重用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#63-如何监听tableView内部cell的点击事件"><span class="nav-number">50.</span> <span class="nav-text">63.如何监听tableView内部cell的点击事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#64-简述registerNib-nullable-UINib-nib-forCellReuseIdentifier-NSString-identifier-和registerClass-nullable-Class-cellClass-forCellReuseIdentifier-NSString-identifier-这2个方法的区别"><span class="nav-number">51.</span> <span class="nav-text">64.简述registerNib:(nullable UINib )nib forCellReuseIdentifier:(NSString )identifier 和registerClass:(nullable Class)cellClass forCellReuseIdentifier:(NSString *)identifier 这2个方法的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#65-如何计算一段文字的宽度和高度"><span class="nav-number">52.</span> <span class="nav-text">65.如何计算一段文字的宽度和高度?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#66-什么是自定义cell"><span class="nav-number">53.</span> <span class="nav-text">66.什么是自定义cell?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#67-通过代码自定义cell能在ininWithFrame-方法中添加子控件吗"><span class="nav-number">54.</span> <span class="nav-text">67.通过代码自定义cell能在ininWithFrame:方法中添加子控件吗?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#68-通过代码自定义cell能在initWithStyle-reuseIdentifier-方法中计算子控件的位置和尺寸吗"><span class="nav-number">55.</span> <span class="nav-text">68.通过代码自定义cell能在initWithStyle:reuseIdentifier:方法中计算子控件的位置和尺寸吗?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#69-通过代码自定义cell-frame和Autolayout2中的方式有什么区别"><span class="nav-number">56.</span> <span class="nav-text">69.通过代码自定义cell,frame和Autolayout2中的方式有什么区别?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#70-通过storyboard的方式是如何加载cell"><span class="nav-number">57.</span> <span class="nav-text">70.通过storyboard的方式是如何加载cell</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#71-字典转模型第三方框架的了解"><span class="nav-number">58.</span> <span class="nav-text">71.字典转模型第三方框架的了解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#72-设计框架需要考虑的问题"><span class="nav-number">59.</span> <span class="nav-text">72.设计框架需要考虑的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"githubhuangbowei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

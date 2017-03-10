@@ -1,0 +1,1229 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Aria2,百度云下载," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tim博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="之前写过一篇，发现浏览下载人数众多，所以抽出时间把相关资源更新、失效的链接剔除以及添加最新软件下载链接（2017/01/17）。
+这次给大家介绍一个下载利器，之前玩路由器也听说过，然而那时候水平有限，并不太懂。大家都知道，在mac下太坑爹，迅雷下东西大部分时候都是0KB/S,也没有百度云下载(新更新的百度网盘 Mac 版本可以下载东西，之前只能同步文件用)，用浏览器下载速度也慢。这些天又偶遇Ari">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Aria2-不限速全平台下载利器">
+<meta property="og:url" content="https://github.huangbowei.com/2016/06/28/86-1/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="之前写过一篇，发现浏览下载人数众多，所以抽出时间把相关资源更新、失效的链接剔除以及添加最新软件下载链接（2017/01/17）。
+这次给大家介绍一个下载利器，之前玩路由器也听说过，然而那时候水平有限，并不太懂。大家都知道，在mac下太坑爹，迅雷下东西大部分时候都是0KB/S,也没有百度云下载(新更新的百度网盘 Mac 版本可以下载东西，之前只能同步文件用)，用浏览器下载速度也慢。这些天又偶遇Ari">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download2.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download3.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download4.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/YAAW-for-Chrome.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/YAAW-for-Chrome2.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/QQ旋风网页版离线下载增强.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/ThunderLixianExporter.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/115网盘下载.png">
+<meta property="og:updated_time" content="2017-03-10T03:32:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Aria2-不限速全平台下载利器">
+<meta name="twitter:description" content="之前写过一篇，发现浏览下载人数众多，所以抽出时间把相关资源更新、失效的链接剔除以及添加最新软件下载链接（2017/01/17）。
+这次给大家介绍一个下载利器，之前玩路由器也听说过，然而那时候水平有限，并不太懂。大家都知道，在mac下太坑爹，迅雷下东西大部分时候都是0KB/S,也没有百度云下载(新更新的百度网盘 Mac 版本可以下载东西，之前只能同步文件用)，用浏览器下载速度也慢。这些天又偶遇Ari">
+<meta name="twitter:image" content="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6226504685738526000',
+      author: 'timhbw博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.huangbowei.com/2016/06/28/86-1/"/>
+
+
+
+
+
+  <title> Aria2-不限速全平台下载利器 | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/06/28/86-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Aria2-不限速全平台下载利器
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-28T23:54:48+08:00">
+                2016-06-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT技术/" itemprop="url" rel="index">
+                    <span itemprop="name">IT技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/06/28/86-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/28/86-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前写过一篇，发现浏览下载人数众多，所以抽出时间把相关资源更新、失效的链接剔除以及添加最新软件下载链接（2017/01/17）。</p>
+<p>这次给大家介绍一个下载利器，之前玩路由器也听说过，然而那时候水平有限，并不太懂。大家都知道，在mac下太坑爹，迅雷下东西大部分时候都是0KB/S,也没有百度云下载(新更新的百度网盘 Mac 版本可以下载东西，之前只能同步文件用)，用浏览器下载速度也慢。这些天又偶遇Aria2，然后钻研一番，得道。特地分享出来给大家,话不多说，一个字一个字的码还要核对失效链接等资源，希望大家多多支持。</p>
+<h4 id="1-工具下载-包含本文中出现的所有工具的最新版本"><a href="#1-工具下载-包含本文中出现的所有工具的最新版本" class="headerlink" title="1.工具下载(包含本文中出现的所有工具的最新版本)"></a>1.工具下载(包含本文中出现的所有工具的最新版本)</h4><p>下载链接:<a href="https://pan.baidu.com/s/1skFZ43V" target="_blank" rel="external">点击下载</a></p>
+<p>[reply]密码: xtpj[/reply]</p>
+<p>&nbsp;</p>
+<h4 id="2-Aria2简介"><a href="#2-Aria2简介" class="headerlink" title="2. Aria2简介"></a>2. Aria2简介</h4><p>官网地址：<a href="https://aria2.github.io/" target="_blank" rel="external">Aria2官网</a></p>
+<blockquote>
+<p>aria2 is a <strong>lightweight</strong> multi-protocol &amp; multi-source command-line <strong>download utility</strong>. It supports <strong>HTTP/HTTPS</strong>, <strong>FTP</strong>, <strong>SFTP</strong>,<strong>BitTorrent</strong> and <strong>Metalink</strong>. aria2 can be manipulated via built-in <strong>JSON-RPC</strong> and <strong>XML-RPC</strong> interfaces.(Aria2是一个命令行下<strong>轻量级</strong>、多协议、多来源的<strong>下载工具</strong>（支持 <strong>HTTP/HTTPS、FTP、BitTorrent</strong>、<strong>Metalink</strong>），内建 <strong>XML-RPC</strong> 和 <strong>JSON-RPC</strong> 用户界面。)<br>&nbsp;</p>
+</blockquote>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2.png" alt=""></a></p>
+<p>&nbsp;</p>
+<h4 id="3-安装与配置"><a href="#3-安装与配置" class="headerlink" title="3.安装与配置"></a>3.安装与配置</h4><h4 id="3-1-Aria2-for-macOS"><a href="#3-1-Aria2-for-macOS" class="headerlink" title="3.1 Aria2 for macOS"></a>3.1 Aria2 for macOS</h4><h5 id="3-1-1-懒人版-—-Aria2GUI（客户端，推荐）"><a href="#3-1-1-懒人版-—-Aria2GUI（客户端，推荐）" class="headerlink" title="3.1.1 懒人版 — Aria2GUI（客户端，推荐）"></a>3.1.1 懒人版 — Aria2GUI（客户端，推荐）</h5><p>下载安装Aria2GUI.dmg，位于网盘的Aria2 for Mac文件夹中,或者 github 地址：<a href="https://github.com/yangshun1029/aria2gui/releases/" target="_blank" rel="external">aria2gui mac 1.3.5客户端</a>。</p>
+<p>首先下载 <a href="https://github.com/acgotaku/BaiduExporter" target="_blank" rel="external">BaiduExporter 0.8.5</a> Chrome 浏览器插件,然后解压下载好的文件，打开 Chrome 浏览器，点击浏览器右上角设置-&gt;扩展程序，把开发者模式打上勾，最后把文件夹中的 chrome.crx往 Chrome 中拖，一直点击下一步下一步的节奏。打开Aria2GUI，然后打开需要下载的百度云盘的分享链接，会发现网页上下载按钮旁边多出一个「导出下载」按钮，点击它弹出的「ARIA2 RPC」就自动添加到你的下载队列里了。</p>
+<p>测试链接：<a href="https://pan.baidu.com/s/1pLAohjd" target="_blank" rel="external">阿甘正传</a></p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download2.png" alt=""></a><a href="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download3.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download3.png" alt=""></a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>这时候看Aria2客户端就能看到下载的文件了，我这边移动下载速度满速下载。<br><a href="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download4.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/aria2download4.png" alt=""></a></p>
+<h5 id="3-1-2-技术宅版-—-适合喜欢折腾的人"><a href="#3-1-2-技术宅版-—-适合喜欢折腾的人" class="headerlink" title="3.1.2 技术宅版 — 适合喜欢折腾的人"></a>3.1.2 技术宅版 — 适合喜欢折腾的人</h5><p>下载安装Aria2。下载安装最新Mac版的Aria2（目前是1.30.0）,项目地址:<a href="https://github.com/aria2/aria2/releases/tag/release-1.30.0" target="_blank" rel="external">Aria2 Github地址</a>,当然网盘中也有:Aria2 for Mac-&gt; aria2-1.30.0-osx-darwin.dmg.</p>
+<p>下载aria2.conf。找到网盘文件夹中的配置文件aria2.conf。运行Aria2所有的选项都可以在配置文件中设置。想更进一步了解配置文件可以参考以下网站：</p>
+<p>1.<a href="http://aria2c.com/usage.html" target="_blank" rel="external">Aria2 &amp; YAAW 使用说明</a></p>
+<p>2.<a href="https://aria2.github.io/manual/en/html/aria2c.html" target="_blank" rel="external">aria2c(1) — aria2 1.30.0 documentation</a></p>
+<p>用文本编辑器打开aria2c.conf, 第二行是设置下载路径</p>
+<p>&nbsp;</p>
+<pre class="lang:default decode:true ">dir=/Users/XXX/Downloads  ,把XXX改为你自己电脑的用户名</pre>
+&nbsp;
+
+[![](https://www.huangbowei.com/wp-content/uploads/2016/06/FindYourUsername.png)](https://www.huangbowei.com/wp-content/uploads/2016/06/FindYourUsername.png)
+
+*   打开终端Terminal，输入：
+<pre class="lang:default decode:true ">mkdir ~/.aria2
+(该命令会在用户根目录下会生成一个.aria2的隐藏文件夹)
+
+open ~/.aria2
+(该命令会打开.aria2隐藏文件夹)</pre>
+&nbsp;
+
+&nbsp;
+
+*   将配置文件`aria2.conf` 拖入`.aria2`文件夹中（这一步是为了方便每次启动aria2c的时候不用每次手动输入配置文件的位置），接着找到压缩文件aria2c.zip，解压后将aria2c文件夹整个拖入 /Applications 目录下。
+运行Aria2,继续在Terminal输入：
+<pre class="lang:default decode:true ">aria2c</pre>
+&nbsp;
+
+*   如果第二步中的文件放置的位置没问题那么aria2c应该已经启动了,看aria2c 是否启动的办法是Terminal中输入：
+&nbsp;
+<pre class="lang:default decode:true ">ps aux|grep aria2c</pre>
+&nbsp;
+
+*   出现图片中第三行的结果说明aria2c已经正常启动，如果无法正常启动，检查第二步中各种文件的位置是否正确
+[![](https://www.huangbowei.com/wp-content/uploads/2016/06/ps-auxgrep-aria2c.png)](https://www.huangbowei.com/wp-content/uploads/2016/06/ps-auxgrep-aria2c.png)
+
+&nbsp;
+
+*   通过webui-aria2控制Aria2
+aria2是基于命令行的下载工具，不过还好大神们早已开发了各种易用的UI方便我们小白使用，最常用的: [Aria2 WebUI](http://ziahamza.github.io/webui-aria2/)、[Yet Another Aria2 Web Frontend](http://binux.github.io/yaaw/demo/)。最简便的方法是直接打开以上网站然后设置主机为[code]代码localhost[/code]会自动连接(爱折腾的可以到 [webui-aria2](https://github.com/ziahamza/webui-aria2) 或 [yaaw](https://github.com/binux/yaaw) 下载所需文件自己搭建server)。
+下面以webui-aria2为例：打开 [http://ziahamza.github.io/webui-aria2/ ](http://ziahamza.github.io/webui-aria2/)出现以下结果说明webui和Aria2已经连接成功。
+
+&nbsp;
+
+[![](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUI.png)](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUI.png) [![](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIConfig.png)](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIConfig.png) [![](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIDownload.png)](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIDownload.png) [![](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIDownload2.png)](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIDownload2.png) [![](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIDownload3.png)](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIDownload3.png) [![](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIDownload4.png)](https://www.huangbowei.com/wp-content/uploads/2016/06/aria2WebUIDownload4.png)
+
+&nbsp;
+
+&nbsp;
+
+如果连接不成功可以打开网页上方设置,查看主机是否为localhost,或者端口是否是6800。到这里就可以在webui中添加链接或者种子开始满速下载啦。
+
+#### 3.2 Aria2 for Windows
+
+##### 3.2.1 懒人版 — Aria2GUI(网页版，推荐)
+
+首先下载网盘相关文件，详见网盘Aria2 for Windows。其中aria2.rar这个文件一定要解压在D:\aria2这个文件夹里，即D:\aria2\里面不能再有文件夹了，然后在D盘根目录建立一个Downloads的文件夹，这个文件夹就是你下载的文件存放的地方，不要把文件的名字搞错了(如果想要更改目录的，需要修改2个文件里面的内容，一个是aria2.conf，一个是HideRun.vbs，修改里面的D:为你的磁盘就好)；
+
+进入D:\aria2\里面，双击HideRun.vbs这个文件，电脑不会有任何反应，因为运行窗口被屏蔽掉了，这时你进入任务管理器可以看到aria2c.exe这个进程正在运行。如果想开机自行启动，请看折腾版。
+
+然后找到 `aria2网页版.zip`，将这个文件在任意位置解压缩，然后双击index.html这个文件，你的默认浏览器就会打开一个网页，这个网页就是控制aria2这个软件的界面，这是中文界面。然后把他加入浏览器的收藏夹即可，不必每次都找到文件夹再点击打开。
+
+同样必须安装浏览器插件，才能使用,网盘中的plugin就有。这样就可以下载百度云，迅雷离线中的资源，下载速度很快，而且占用的电脑资源小，但是设置有一点点复杂。
+
+##### 3.2.2 折腾版 (不推荐)
+
+*   aria2 Github下载（注意32与64位）
+下载地址：[aria2 1.30.0](https://github.com/aria2/aria2/releases/tag/release-1.30.0)
+
+*   安装
+把下载好的文件解压后找一个英文路径的放进去就ok了，我就放在D:\Program Files\aria2\下
+接下来新建几个文件：
+<pre class="lang:default decode:true">Aria2.log （日志，空文件就行）
+aria2.session （下载历史，空文件就行）
+aria2.conf （配置文件）
+HideRun.vbs （隐藏cmd窗口运行用到的）</pre>
+
+<ul>
+<li><p>配置aria2.conf，用文本编辑工具打开刚才建立的aria2.conf，复制按下面的内容，注意修改以下选项：</p>
+<pre class="lang:default decode:true">dir=D:\Downloads\ （下载文件保存路径，改为你想要的）
+log=D:\Program Files\aria2\Aria2.log （日志文件，如果不需要日志，这一行可去掉，如果需要，路径D:\Program Files\aria2\改为你安装aria2的路径）
+input-file=D:\Program Files\aria2\aria2.session
+save-session=D:\Program Files\aria2\aria2.session（这两个是记录和读取下载历史用的，断电和重启时保证下载任务不会丢失，如果有时aria2不能启动，清空这里面的内容就行了，路径D:\Program Files\aria2\改为你安装aria2的路径）
+</pre>
+</li>
+<li><p>完整版配置文件：<br><pre class="lang:default decode:true">dir=D:\Downloads\</pre></p>
+</li>
+</ul>
+<p>log=D:\Program Files\aria2\Aria2.log</p>
+<p>input-file=D:\Program Files\aria2\aria2.session</p>
+<p>save-session=D:\Program Files\aria2\aria2.session</p>
+<p>save-session-interval=60</p>
+<p>force-save=true</p>
+<p>log-level=error</p>
+<h1 id="see-—-split-option"><a href="#see-—-split-option" class="headerlink" title="see — split option"></a>see — split option</h1><p>max-concurrent-downloads=5</p>
+<p>continue=true</p>
+<p>max-overall-download-limit=0</p>
+<p>max-overall-upload-limit=50K</p>
+<p>max-upload-limit=20</p>
+<h1 id="Http-FTP-options"><a href="#Http-FTP-options" class="headerlink" title="Http/FTP options"></a>Http/FTP options</h1><p>connect-timeout=120</p>
+<p>lowest-speed-limit=10K</p>
+<p>max-connection-per-server=10</p>
+<p>max-file-not-found=2</p>
+<p>min-split-size=1M</p>
+<p>split=5</p>
+<p>check-certificate=false</p>
+<p>http-no-cache=true</p>
+<h1 id="FTP-Specific-Options"><a href="#FTP-Specific-Options" class="headerlink" title="FTP Specific Options"></a>FTP Specific Options</h1><h1 id="BT-PT-Setting"><a href="#BT-PT-Setting" class="headerlink" title="BT/PT Setting"></a>BT/PT Setting</h1><p>bt-enable-lpd=true</p>
+<p>#bt-max-peers=55</p>
+<p>follow-torrent=true</p>
+<p>enable-dht6=false</p>
+<p>bt-seed-unverified</p>
+<p>rpc-save-upload-metadata=true</p>
+<p>bt-hash-check-seed</p>
+<p>bt-remove-unselected-file</p>
+<p>bt-request-peer-speed-limit=100K</p>
+<p>seed-ratio=0.0</p>
+<h1 id="Metalink-Specific-Options"><a href="#Metalink-Specific-Options" class="headerlink" title="Metalink Specific Options"></a>Metalink Specific Options</h1><h1 id="RPC-Options"><a href="#RPC-Options" class="headerlink" title="RPC Options"></a>RPC Options</h1><p>enable-rpc=true</p>
+<p>pause=false</p>
+<p>rpc-allow-origin-all=true</p>
+<p>rpc-listen-all=true</p>
+<p>rpc-save-upload-metadata=true</p>
+<p>rpc-secure=false</p>
+<h1 id="Advanced-Options"><a href="#Advanced-Options" class="headerlink" title="Advanced Options"></a>Advanced Options</h1><p>daemon=true</p>
+<p>disable-ipv6=true</p>
+<p>enable-mmap=true</p>
+<p>file-allocation=falloc</p>
+<p>max-download-result=120</p>
+<p>#no-file-allocation-limit=32M</p>
+<p>force-sequential=true</p>
+<p>parameterized-uri=true</p>
+<ul>
+<li>实现开机无cmd窗口启动<br>用文本编辑工具打开刚才建立的<code>HideRun.vbs</code></li>
+</ul>
+<p>复制以下内容，注意修改D:\Progra~1\aria2\ 为你的aria2安装路径。</p>
+<pre class="lang:default decode:true">CreateObject(“WScript.Shell”).Run “D:\Progra~1\aria2\aria2c.exe — conf-path=aria2.conf”,0
+</pre>
+
+<ul>
+<li>要启动aria2，一定要点击这个文件，不要点击aria2c.exe<br>如果要开机启动，创建一个HideRun.vbs的快捷方式，把快捷方式放到 <code>C:\Users\用户名\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</code>中</li>
+<li>管理界面<br>aria2是命令行下载器，是没有界面的，不过有webui，最简单就是直接访问在线网址就行了:</li>
+</ul>
+<ol>
+<li><a href="http://webui-aria2.ghostry.cn/" target="_blank" rel="external">Aria2 WebUI ghostry</a></li>
+<li><a href="http://ziahamza.github.io/webui-aria2/" target="_blank" rel="external">Aria2 WebUI ziahamza</a></li>
+<li><a href="http://aria2c.com/" target="_blank" rel="external">Aria2 Web控制台</a></li>
+</ol>
+<h4 id="4-进阶运用-浏览器插件"><a href="#4-进阶运用-浏览器插件" class="headerlink" title="4.进阶运用(浏览器插件)"></a>4.进阶运用(浏览器插件)</h4><ul>
+<li><a href="https://chrome.google.com/webstore/detail/yaaw-for-chrome/dennnbdlpgjgbcjfgaohdahloollfgoc" target="_blank" rel="external">1.YAAW for Chrome</a><br>点击YAAW图标便会出现YAAW的管理界面,设置好 JSON-RPC Path即可.</li>
+</ul>
+<p>如果Chrome设置了下载之前不询问下载位置的话,可以自动取消Chrome下载 使用Aria2c下载.</p>
+<p>可以设置多大的文件使用导出下载,小文件使用Chrome自带的下载功能,拦截下载默认使用第一个RPC地址.</p>
+<p>开启右键菜单之后任意链接都可以右键导出到YAAW进行下载.</p>
+<p>&nbsp;</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2016/06/YAAW-for-Chrome.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/YAAW-for-Chrome.png" alt=""></a> <a href="https://www.huangbowei.com/wp-content/uploads/2016/06/YAAW-for-Chrome2.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/YAAW-for-Chrome2.png" alt=""></a></p>
+<ul>
+<li><p><a href="https://github.com/rhyzx/xuanfeng-userscript" target="_blank" rel="external">2.QQ旋风网页版离线下载增强</a> :<br>UI精简<br>Aria2命令/文件导出<br>Aria2 RPC<br>IDM文件导出<br>Orbit文件导出<br>自动登录<br>magnet链接支持<br>bt任务文件夹折叠<br>限速解除<br><a href="https://www.huangbowei.com/wp-content/uploads/2016/06/QQ旋风网页版离线下载增强.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/QQ旋风网页版离线下载增强.png" alt=""></a></p>
+</li>
+<li><p><a href="http://userscripts-mirror.org/scripts/show/162138" target="_blank" rel="external">3.BaiduPanDownloadHelper</a>:<br>批量导出百度盘的下载链接<br>支持2层目录<br>支持个人主页、分享文件夹或单文件、分享专辑页面、分享主页<br>支持复制到剪贴板、复制为 Aria2 格式、YAAW</p>
+</li>
+<li><p><a href="https://github.com/binux/ThunderLixianExporter" target="_blank" rel="external">4.ThunderLixianExporter</a><br>将迅雷离线地址导出成aria2/wget等下载命令，方便Linux/Mac用户使用<br>原生导出界面整合, 原生设置界面整合<br><strong>反文件名截断</strong><br>多种可扩展的导出器(aria2/aria2-rpc/wget/IDM/Orbit)<br>云点播HTML5播放，导出<br>直接输出选中的链接，配合<br>FlashGot/DownThemAll使用<br><a href="https://www.huangbowei.com/wp-content/uploads/2016/06/ThunderLixianExporter.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/ThunderLixianExporter.png" alt=""></a></p>
+</li>
+<li><p><a href="https://github.com/acgotaku/115" target="_blank" rel="external">4.115网盘下载</a><br><a href="https://www.huangbowei.com/wp-content/uploads/2016/06/115网盘下载.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2016/06/115网盘下载.png" alt=""></a></p>
+</li>
+</ul>
+<p>&nbsp;</p>
+<p>部分内容参考自：bbs.feng.com/read-htm-tid-9585996.html</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Aria2/" rel="tag"># Aria2</a>
+          
+            <a href="/tags/百度云下载/" rel="tag"># 百度云下载</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/28/86/" rel="next" title="Aria2-不限速全平台下载利器">
+                <i class="fa fa-chevron-left"></i> Aria2-不限速全平台下载利器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/09/87-1/" rel="prev" title="仍在继续的学习生涯">
+                仍在继续的学习生涯 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/06/28/86-1/"
+           data-title="Aria2-不限速全平台下载利器" data-url="https://github.huangbowei.com/2016/06/28/86-1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">168</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/timhbw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huangboweicom" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-工具下载-包含本文中出现的所有工具的最新版本"><span class="nav-number">1.</span> <span class="nav-text">1.工具下载(包含本文中出现的所有工具的最新版本)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Aria2简介"><span class="nav-number">2.</span> <span class="nav-text">2. Aria2简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-安装与配置"><span class="nav-number">3.</span> <span class="nav-text">3.安装与配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-Aria2-for-macOS"><span class="nav-number">4.</span> <span class="nav-text">3.1 Aria2 for macOS</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-1-懒人版-—-Aria2GUI（客户端，推荐）"><span class="nav-number">4.1.</span> <span class="nav-text">3.1.1 懒人版 — Aria2GUI（客户端，推荐）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-2-技术宅版-—-适合喜欢折腾的人"><span class="nav-number">4.2.</span> <span class="nav-text">3.1.2 技术宅版 — 适合喜欢折腾的人</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#see-—-split-option"><span class="nav-number"></span> <span class="nav-text">see — split option</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Http-FTP-options"><span class="nav-number"></span> <span class="nav-text">Http/FTP options</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#FTP-Specific-Options"><span class="nav-number"></span> <span class="nav-text">FTP Specific Options</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#BT-PT-Setting"><span class="nav-number"></span> <span class="nav-text">BT/PT Setting</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Metalink-Specific-Options"><span class="nav-number"></span> <span class="nav-text">Metalink Specific Options</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RPC-Options"><span class="nav-number"></span> <span class="nav-text">RPC Options</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Advanced-Options"><span class="nav-number"></span> <span class="nav-text">Advanced Options</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-进阶运用-浏览器插件"><span class="nav-number">1.</span> <span class="nav-text">4.进阶运用(浏览器插件)</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"githubhuangbowei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

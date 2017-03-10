@@ -1,0 +1,1146 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="https,又拍云," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tim博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="HTTPS（全称：HyperText Transfer Protocol over Secure Socket Layer），其实 HTTPS 并不是一个新鲜协议，Google 很早就开始启用了，初衷是为了保证数据安全。 近两年，Google、Apple、Facebook 等这样的互联网巨头，不谋而合地开始大力推行 HTTPS， 国外的大型互联网公司很多也都已经启用了全站 HTTPS，这也是未来">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网站全站开启 HTTPS（一、又拍云一键部署）">
+<meta property="og:url" content="https://github.huangbowei.com/2017/02/01/110-1/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="HTTPS（全称：HyperText Transfer Protocol over Secure Socket Layer），其实 HTTPS 并不是一个新鲜协议，Google 很早就开始启用了，初衷是为了保证数据安全。 近两年，Google、Apple、Facebook 等这样的互联网巨头，不谋而合地开始大力推行 HTTPS， 国外的大型互联网公司很多也都已经启用了全站 HTTPS，这也是未来">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps01.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps02.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps03.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps04.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps05.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps06.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps07.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps08.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps09.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps10.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps11.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps12.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps13.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps14.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps15.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps16.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps17.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps18.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps19.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps20.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttpsssltest.png">
+<meta property="og:updated_time" content="2017-03-10T03:32:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="网站全站开启 HTTPS（一、又拍云一键部署）">
+<meta name="twitter:description" content="HTTPS（全称：HyperText Transfer Protocol over Secure Socket Layer），其实 HTTPS 并不是一个新鲜协议，Google 很早就开始启用了，初衷是为了保证数据安全。 近两年，Google、Apple、Facebook 等这样的互联网巨头，不谋而合地开始大力推行 HTTPS， 国外的大型互联网公司很多也都已经启用了全站 HTTPS，这也是未来">
+<meta name="twitter:image" content="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps01.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6226504685738526000',
+      author: 'timhbw博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.huangbowei.com/2017/02/01/110-1/"/>
+
+
+
+
+
+  <title> 网站全站开启 HTTPS（一、又拍云一键部署） | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2017/02/01/110-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                网站全站开启 HTTPS（一、又拍云一键部署）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-01T19:11:02+08:00">
+                2017-02-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/博客/" itemprop="url" rel="index">
+                    <span itemprop="name">博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/01/110-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/02/01/110-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>HTTPS（全称：HyperText Transfer Protocol over Secure Socket Layer），其实 HTTPS 并不是一个新鲜协议，Google 很早就开始启用了，初衷是为了保证数据安全。 近两年，Google、Apple、Facebook 等这样的互联网巨头，不谋而合地开始大力推行 HTTPS， 国外的大型互联网公司很多也都已经启用了全站 HTTPS，这也是未来互联网发展的趋势。为鼓励全球网站的 HTTPS 实现，Google 甚至调整了搜索引擎算法，让采用 HTTPS 的网站在搜索中排名更靠前。想必在不久的将来，全网 HTTPS 势在必行。<br>越来越多的网站选择 HTTPS 加密访问作为用户信息与网站安全的保障，所以趁着过年这几天有时间，准备把手下所有网站全部加上小绿锁，这几天也一直在研究，终于搞定，，一通全通，其实步骤也不难，只需要几步就可以搞定，下面把详细教程写出来，以免大家走弯路。通过查阅资料等，我大概掌握到3种比较便捷、自动的方法，这里先介绍第一种：</p>
+</blockquote>
+<p>服务器环境：</p>
+<ol>
+<li>上海腾讯云65元/月</li>
+<li>Debina 7.8 64位</li>
+<li>lnmp（lnmp.org）<br>&nbsp;</li>
+</ol>
+<h4 id="1-全站-HTTPS-趋势"><a href="#1-全站-HTTPS-趋势" class="headerlink" title="1.全站 HTTPS 趋势"></a>1.全站 HTTPS 趋势</h4><div class="introduction"><br><br><em>   苹果宣布 2017 年 App Store 中的所用应用都必须使用 HTTPS 加密连接；
+</em>   百度、Google 等搜索引擎优先收录 HTTPS 页面并提升排名；<br><em>   英美强制要求所有政府网站 2016 年实现全站 HTTPS 加密；
+</em>   百度、阿里巴巴等互联网巨头均启用全站 HTTPS 加密；<br>*   新一代 HTTP/2 协议的支持需以 HTTPS 为基础；<br></div>
+
+<h4 id="2-专有名词介绍"><a href="#2-专有名词介绍" class="headerlink" title="2.专有名词介绍"></a>2.专有名词介绍</h4><p>先介绍一些专有名词，以便大家更好地阅读文章，已经了解的可以忽略这一步：</p>
+<p><strong>HTTPS</strong></p>
+<p>HTTPS（全称：Hyper Text Transfer Protocol over Secure Socket Layer），是以安全为目标的 HTTP 通道，即 HTTP 的安全版。HTTPS 的安全基础是 SSL/TLS，它提供了身份验证与加密通讯的方法，现在被广泛用于万维网上安全敏感的通讯，比如交易、支付等。</p>
+<p><strong>SSL（Secure Socket Layer，安全套接字层）</strong></p>
+<p>SSL 由为 Netscape 公司所研发，用以保障在 Internet 上数据传输之安全，利用数据加密 (Encryption) 技术，可确保数据在网络上传输过程中不会被截取。SSL 协议位于 TCP/IP 协议与各种应用层协议之间，为数据通讯提供安全支持。</p>
+<p><strong>TLS（Transport Layer Security，传输层安全）</strong></p>
+<p>传输层加密协议，其前身是 SSL 协议， 1999 年经过 IETF（The Internet Engineering Task Force 国际互联网工程任务组） 讨论和规范后，改名为 TLS。发展至今已经有 TLS 1.0、TLS 1.1、TLS 1.2 三个版本。TLS 1.3 改动会比较大，还在草案阶段，目前使用最广泛的是 TLS 1.1、TLS 1.2。</p>
+<p><strong>SSL 证书</strong></p>
+<p>SSL 证书就是遵守 SSL 协议的服务器数字证书，通过验证域名、服务器身份后，由受信任的数字证书授权机构 CA 颁发，具有服务器身份验证和数据传输加密等功能。</p>
+<p><strong>CA</strong></p>
+<p>数字证书授权机构 （CA，Certificate Authority） 是负责发放和管理数字证书的权威机构，并作为电子商务交易中受信任的第三方，承担公钥体系中公钥的合法性检验的责任。</p>
+<p><strong>域名型 SSL 证书（DV SSL）</strong></p>
+<p>即证书颁布机构只对域名的所有者（一般是域名管理员邮箱，比如admin@hotmail.com）进行在线检查，通常是发送验证邮件给域名管理员或以该域名结尾的邮箱。</p>
+<p><strong>企业型 SSL 证书（OV SSL）</strong></p>
+<p>是要购买者提交组织机构资料和单位授权信等在官方注册的凭证，证书颁发机构在签发 SSL 证书前不仅仅要检验域名所有权，还必须对这些资料的真实合法性进行多方查验，只有通过验证的才能颁发 SSL 证书。</p>
+<p><strong>增强型 SSL 证书（EV SSL）</strong></p>
+<p>与其他 SSL 证书一样，都是基于 SSL/TLS 安全协议，但是验证流程更加具体详细，验证步骤更多，这样一来证书所绑定的网站就更加的可靠、可信。它跟普通 SSL 证书的区别也是明显的，安全浏览器的地址栏变绿，如果是不受信的 SSL 证书则拒绝显示，如果是钓鱼网站，地址栏则会变成红色，以警示用户。</p>
+<h4 id="3-网站申请证书"><a href="#3-网站申请证书" class="headerlink" title="3.网站申请证书"></a>3.网站申请证书</h4><p>前一个月左右看群里消息，发现又拍云也可以免费部署证书，但是一直没有时间，所以过年尝试下。又拍云的免费证书，官方宣称：一键部署，免费、自动化证书签发。到底是不是，我来试试就知道了，下面开始。</p>
+<p>进入又拍云官网：<a href="https://www.upyun.com/" target="_blank" rel="external">又拍云</a>，注册账号什么的不用我说了，大家都会。</p>
+<ul>
+<li><p>这个是测试网站，现在访问还是 http 形式的，非常不安全。<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps01.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps01.png" alt=""></a></p>
+</li>
+<li><p>注册好账号后，进入又拍云的控制台，如图依次点击：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps02.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps02.png" alt=""></a></p>
+</li>
+<li>点击继续：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps03.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps03.png" alt=""></a></li>
+<li>填写需要申请的域名，域名需要已经备案的：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps04.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps04.png" alt=""></a></li>
+<li>这时候会提醒你没有绑定服务，点击前往绑定服务，这个窗口无需关闭：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps05.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps05.png" alt=""></a></li>
+<li>接下来是创建服务：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps06.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps06.png" alt=""></a></li>
+<li>服务名称只要自己方便记忆就好，<span style="color: #ff0000; font-size: 14pt;">这里回源协议选择 HTTP，服务器端的配置文件不需要更改，更加方便</span>：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps07.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps07.png" alt=""></a></li>
+<li>根据提示填写：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps08.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps08.png" alt=""></a></li>
+<li>服务创建成功：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps09.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps09.png" alt=""></a></li>
+<li>根据提示到域名服务商添加 CNAME 记录：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps10.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps10.png" alt=""></a></li>
+<li>由于我的是托管在腾讯云，之前用的是 CloudXNS ，不错，广大博主都从 Dnspod 迁移过来，但是我为了方便管理，就全部托管在腾讯云：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps11.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps11.png" alt=""></a></li>
+<li>这时候再回到上一个页面，点击下一步：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps12.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps12.png" alt=""></a></li>
+<li>点击提交：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps13.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps13.png" alt=""></a></li>
+<li>申请提交已经成功，等待审核：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps14.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps14.png" alt=""></a></li>
+<li>会显示对应状态，我的还在审核中，一般几分钟就好：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps15.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps15.png" alt=""></a></li>
+<li>证书已经申请成功：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps16.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps16.png" alt=""></a></li>
+<li>接下来还需要简单配置2步，第一步：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps17.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps17.png" alt=""></a></li>
+<li>第二步：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps18.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps18.png" alt=""></a></li>
+<li><p>又拍云配置成功，但是服务器端也要做相应的修改，我的修改路径是在：<span class="lang:default decode:true crayon-inline ">/usr/local/nginx/conf/vhost</span> ,下面是网站的 Nginx 配置的图片，下面会给出代码格式，方便大家对照，大家根据自己情况修改对应域名：<a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps19.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps19.png" alt=""></a></p>
+<pre class="lang:default decode:true">server
+{
+    listen 443 ssl http2;
+    #listen [::]:80;
+    server_name ssl.huangbowei.com;
+    index index.html index.htm index.php default.html default.htm default.php;
+    root  /home/wwwroot/ssl.huangbowei.com;
+
+    include none.conf;
+    #error_page   404   /404.html;
+    include enable-php.conf;
+
+    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)$
+    {
+        expires      30d;
+    }
+
+    location ~ .*\.(js|css)?$
+    {
+        expires      12h;
+    }
+
+    location ~ /\.
+    {
+        deny all;
+    }
+
+    access_log off;
+}</pre>
+</li>
+<li><p>这时候大家刷新下浏览器，就会看到网站已经有一把令人心情愉悦的小绿锁了，如果没有，清除浏览器缓存或者重启 Nginx 服务器，点击进入<a href="https://ssl.huangbowei.com/" target="_blank" rel="external">测试网站</a>：<br><pre class="lang:default decode:true">cd lnmp1.3-full</pre></p>
+</li>
+</ul>
+<p>lnmp nginx restart<br><a href="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps20.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttps20.png" alt=""></a></p>
+<ul>
+<li>网站检测，<a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="external">ssllabs</a>：<img src="https://www.huangbowei.com/wp-content/uploads/2017/02/upyunhttpsssltest.png" alt=""></li>
+</ul>
+<h4 id="4-总结"><a href="#4-总结" class="headerlink" title="4.总结"></a>4.总结</h4><p>虽然看起来步骤简单，但是大家动手才知道。一开始我也不太会，几天后，阅读一些文章和文档，才知道具体步骤，然后结合<a href="http://docs.upyun.com/cdn/ssl/" target="_blank" rel="external">又拍云文档</a>才配置成功，一次部署，自动续期，Let’s Encrypt 证书有效期是90天，然后就必须重新签发，好在又拍云会自动完成续签，虽然<a href="https://letsencrypt.org/" target="_blank" rel="external">Let’s Encrypt 官方</a>、<a href="https://oneinstack.com/changelog/" target="_blank" rel="external">Oneinstack</a>、<a href="https://lnmp.org/notice/v1-4beta.html" target="_blank" rel="external">lnmp</a>（2017/6 即将推出的正式版1.4版本，测试版已经有） 都有相应的Let’s Encrypt自动续期脚本，各有各的好处，大家根据自身情况选择。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/https/" rel="tag"># https</a>
+          
+            <a href="/tags/又拍云/" rel="tag"># 又拍云</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/23/109-1/" rel="next" title="VPS搭建梯子科学上网教程">
+                <i class="fa fa-chevron-left"></i> VPS搭建梯子科学上网教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/02/01/110/" rel="prev" title="网站全站开启 HTTPS（一、又拍云一键部署）">
+                网站全站开启 HTTPS（一、又拍云一键部署） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2017/02/01/110-1/"
+           data-title="网站全站开启 HTTPS（一、又拍云一键部署）" data-url="https://github.huangbowei.com/2017/02/01/110-1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">168</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/timhbw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huangboweicom" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-全站-HTTPS-趋势"><span class="nav-number">1.</span> <span class="nav-text">1.全站 HTTPS 趋势</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-专有名词介绍"><span class="nav-number">2.</span> <span class="nav-text">2.专有名词介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-网站申请证书"><span class="nav-number">3.</span> <span class="nav-text">3.网站申请证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-总结"><span class="nav-number">4.</span> <span class="nav-text">4.总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"githubhuangbowei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

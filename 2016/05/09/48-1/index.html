@@ -1,0 +1,1242 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ios," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tim博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="1 UIWebView简介
+UIWebView是iOS内置的浏览器控件
+系统自带的Safari浏览器就是通过UIWebView实现的
+UIWebView不但能加载远程的网页资源，还能加载绝大部分的常见文件：html、htm、pdf、doc、ppt、txt、mp4等
+
+1.1 UIWebView常用的加载资源的方法- (void)loadRequest:(NSURLRequest *)request">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 学习巩固笔记-UIWebView/JavaScript">
+<meta property="og:url" content="https://github.huangbowei.com/2016/05/09/48-1/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="1 UIWebView简介
+UIWebView是iOS内置的浏览器控件
+系统自带的Safari浏览器就是通过UIWebView实现的
+UIWebView不但能加载远程的网页资源，还能加载绝大部分的常见文件：html、htm、pdf、doc、ppt、txt、mp4等
+
+1.1 UIWebView常用的加载资源的方法- (void)loadRequest:(NSURLRequest *)request">
+<meta property="og:updated_time" content="2017-03-10T03:32:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 学习巩固笔记-UIWebView/JavaScript">
+<meta name="twitter:description" content="1 UIWebView简介
+UIWebView是iOS内置的浏览器控件
+系统自带的Safari浏览器就是通过UIWebView实现的
+UIWebView不但能加载远程的网页资源，还能加载绝大部分的常见文件：html、htm、pdf、doc、ppt、txt、mp4等
+
+1.1 UIWebView常用的加载资源的方法- (void)loadRequest:(NSURLRequest *)request">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6226504685738526000',
+      author: 'timhbw博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.huangbowei.com/2016/05/09/48-1/"/>
+
+
+
+
+
+  <title> iOS 学习巩固笔记-UIWebView/JavaScript | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/05/09/48-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS 学习巩固笔记-UIWebView/JavaScript
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-09T16:24:51+08:00">
+                2016-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ios/" itemprop="url" rel="index">
+                    <span itemprop="name">ios</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/05/09/48-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/48-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-UIWebView简介"><a href="#1-UIWebView简介" class="headerlink" title="1 UIWebView简介"></a>1 UIWebView简介</h2><ul>
+<li>UIWebView是iOS内置的浏览器控件</li>
+<li>系统自带的Safari浏览器就是通过UIWebView实现的</li>
+<li><span lang="zh-CN" xml:lang="zh-CN">UIWebView</span><span lang="zh-CN" xml:lang="zh-CN"><span lang="zh-CN" xml:lang="zh-CN">不但能加载远程的网页资源，还能加载绝大部分的常见文件：</span></span>html、htm、pdf、doc、ppt、txt、mp4等</li>
+</ul>
+<h3 id="1-1-UIWebView常用的加载资源的方法"><a href="#1-1-UIWebView常用的加载资源的方法" class="headerlink" title="1.1 UIWebView常用的加载资源的方法"></a>1.1 UIWebView常用的加载资源的方法</h3><pre class="lang:objc decode:true ">- (void)loadRequest:(NSURLRequest *)request;</pre>
+
+<h3 id="1-2-UIWebView常用属性和方法"><a href="#1-2-UIWebView常用属性和方法" class="headerlink" title="1.2 UIWebView常用属性和方法"></a>1.2 UIWebView常用属性和方法</h3><ul>
+<li><p>重新加载（刷新）</p>
+<pre class="lang:default decode:true ">- (void)reload;</pre>
+</li>
+<li><p>停止加载</p>
+<pre class="lang:default decode:true ">- (void)stopLoading;</pre>
+</li>
+<li><p>回退</p>
+<pre class="lang:default decode:true ">- (void)goBack;</pre>
+</li>
+<li><p>前进</p>
+<pre class="lang:default decode:true ">- (void)goForward;</pre>
+</li>
+<li><p>需要进行检测的数据类型</p>
+<pre class="lang:default decode:true">@property(nonatomic) UIDataDetectorTypes dataDetectorTypes</pre>
+</li>
+<li><p>是否能回退</p>
+<pre class="lang:default decode:true ">@property(nonatomic,readonly,getter=canGoBack) BOOL canGoBack;</pre>
+</li>
+<li><p>是否能前进</p>
+<pre class="lang:default decode:true ">@property(nonatomic,readonly,getter=canGoForward) BOOL canGoForward;</pre>
+</li>
+<li><p>是否正在加载中</p>
+<pre class="lang:default decode:true ">@property(nonatomic,readonly,getter=isLoading) BOOL loading;</pre>
+</li>
+<li><p>是否伸缩内容至适应屏幕当前尺寸<br><pre class="lang:default decode:true">@property(nonatomic) BOOL scalesPageToFit;</pre><br>&nbsp;</p>
+</li>
+</ul>
+<h3 id="1-3-监听UIWebView的加载过程"><a href="#1-3-监听UIWebView的加载过程" class="headerlink" title="1.3 监听UIWebView的加载过程"></a>1.3 监听UIWebView的加载过程</h3><p>成为UIWebView的代理，遵守UIWebViewDelegate协议，就能监听UIWebView的加载过程</p>
+<pre class="lang:default decode:true ">- (void)webViewDidStartLoad:(UIWebView *)webView;</pre>
+&nbsp;
+
+请求完毕（加载数据完毕）时调用这个方法
+<pre class="lang:default decode:true ">- (void)webViewDidFinishLoad:(UIWebView *)webView;</pre>
+&nbsp;
+
+请求错误时调用这个方法
+<pre class="lang:default decode:true ">- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error;</pre>
+UIWebView在发送请求之前，都会调用这个方法，如果返回NO，代表停止加载请求，返回YES，代表允许加载请求
+<pre class="lang:default decode:true">- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;</pre>
+
+<h2 id="2-JavaScript简介"><a href="#2-JavaScript简介" class="headerlink" title="2 JavaScript简介"></a>2 JavaScript简介</h2><ul>
+<li>JavaScript是一门脚本语言，简称JS<br>&nbsp;</li>
+</ul>
+<h3 id="2-1-JavaScript的常见作用"><a href="#2-1-JavaScript的常见作用" class="headerlink" title="2.1 JavaScript的常见作用"></a>2.1 JavaScript的常见作用</h3><ul>
+<li>给HTML网页添加动态功能，比如响应用户的各种操作</li>
+<li>操纵HTML元素，比如添加、删除、修改网页元素</li>
+</ul>
+<h3 id="2-2-常见的JavaScript函数"><a href="#2-2-常见的JavaScript函数" class="headerlink" title="2.2 常见的JavaScript函数"></a>2.2 常见的JavaScript函数</h3><pre class="lang:default decode:true ">alert(10);   //弹框
+document.getElementById(‘test’);  //根据ID获得某个DOM元素
+</pre>
+
+<p>## </p>
+<h2 id="3-OC中调用JavaScipt"><a href="#3-OC中调用JavaScipt" class="headerlink" title="3 OC中调用JavaScipt"></a>3 OC中调用JavaScipt</h2><p>使用UIWebView的stringByEvaluatingJavaScriptFromString方法即可。</p>
+<h3 id="3-1-WebView的基本概念"><a href="#3-1-WebView的基本概念" class="headerlink" title="3.1 WebView的基本概念"></a>3.1 <span lang="zh-CN" xml:lang="zh-CN">WebView</span><span lang="zh-CN" xml:lang="zh-CN">的基本</span>概念</h3><ol>
+<li>webView是有缺点的，会导致内存泄露，而且这个问题是它系统本身的问题。</li>
+<li>手机上面的safai其实就是用webView来实现的</li>
+<li>现在的开发并不完全是原生的开发，而更加倾向于原生+Html5的方式</li>
+<li>webView是OC代码和html代码之间进行交互的桥梁<br>&nbsp;</li>
+</ol>
+<h3 id="3-1-1-代码"><a href="#3-1-1-代码" class="headerlink" title="3.1.1 代码"></a>3.1.1 代码</h3><ul>
+<li><p>网页操控相关方法<br><pre class="lang:default decode:true">[self.webView goBack];     //回退<br>[self.webView goForward];   //前进<br>[self.webView reload];      //刷新</pre><br>&nbsp;</p>
+</li>
+<li><p>设置是否能够前进和回退<br><pre class="lang:default decode:true">self.goBackBtn.enabled = webView.canGoBack;<br>self.fowardBtn.enabled = webView.canGoForward;</pre><br>&nbsp;</p>
+</li>
+<li><p>常用的属性设置<br><pre class="lang:default decode:true">//设置网页自动适应<br>self.webView.scalesPageToFit = YES;</pre></p>
+</li>
+</ul>
+<p>//设置检测网页中的格式类型，all表示检测所有类型包括超链接、电话号码、地址等。<br>self.webView.dataDetectorTypes = UIDataDetectorTypeAll;<br>&nbsp;</p>
+<ul>
+<li><p>可滚动范围<br><pre class="lang:default decode:true">self.webView.scrollView.contentInset = UIEdgeInsetsMake(50, 0, 0, 0);</pre><br>&nbsp;</p>
+</li>
+<li><p>代理方法<br>每当将加载请求的时候调用该方法，返回YES 表示加载该请求，返回NO 表示不加载该请求<br><pre class="lang:default decode:true">//可以在该方法中拦截请求<br>-(BOOL)webView:(UIWebView <em>)webView shouldStartLoadWithRequest:(NSURLRequest </em>)request navigationType:(UIWebViewNavigationType)navigationType<br>{<br>return ![request.URL.absoluteString containsString:@”dushu”];<br>}</pre></p>
+</li>
+</ul>
+<p>//开始加载网页，不仅监听我们指定的请求，还会监听内部发送的请求<br>-(void)webViewDidStartLoad:(UIWebView *)webView</p>
+<p>//网页加载完毕之后会调用该方法<br>-(void)webViewDidFinishLoad:(UIWebView *)webView</p>
+<p>//网页加载失败调用该方法<br>-(void)webView:(UIWebView <em>)webView didFailLoadWithError:(NSError </em>)error<br><br>&nbsp;</p>
+<ul>
+<li>加载本地资源<br><pre class="lang:default decode:true ">NSURL *url = [[NSBundle mainBundle] URLForResource:@”ithome.pdf” withExtension:nil];<br>[self.webView loadRequest:[NSURLRequest requestWithURL:url]];</pre><br>&nbsp;</li>
+</ul>
+<p>3.2 HTML</p>
+<p>1.Html决定网页的内容，css决定网页的样式，js决定网页的事件</p>
+<p>2.html学习网站：<a href="http://www.w3school.com.cn/h.asp" target="_blank" rel="external">W3School</a></p>
+<p>&nbsp;</p>
+<h3 id="3-2-OC和JS代码的互调"><a href="#3-2-OC和JS代码的互调" class="headerlink" title="3.2 OC和JS代码的互调"></a>3.2 OC和JS代码的互调</h3><ul>
+<li><p>OC调用JS的代码<br><pre class="lang:default decode:true ">NSString *str = [self.webView stringByEvaluatingJavaScriptFromString:@”sum()”];</pre><br>&nbsp;</p>
+</li>
+<li><p>JS调用OC的说明<br>新的需求：点击按钮的时候拨打电话</p>
+</li>
+</ul>
+<p>但是我在点击按钮的时候，用户是不知道的，我们怎么能够知道用户点击了网页上面的一个按钮，只能通过一个技巧，那就是自己搞一个特定的协议头比如说hbw:当我拦截到你的网络请求的时候，只需要判断一下当前的协议头是不是这个就能判断你现在是否是JS调用。</p>
+<p>OC里面有通过字符串生成SEL类型的方法，所以当拿到数据之后做下面的事情</p>
+<ol>
+<li>截取方法的名称</li>
+<li>将截取出来的字符串转换为SEL</li>
+<li>利用performSelect方法来调用SEL<br>&nbsp;</li>
+</ol>
+<ul>
+<li>涉及到的相关方法<br><pre class="lang:default decode:true">//判断字符串是否以一个固定的字符开头，这里为A<br>[@”abc” hasPrefix:@”A”]</pre></li>
+</ul>
+<p>//截串操作</p>
+<ul>
+<li>(NSString *)substringFromIndex:(NSUInteger)from;</li>
+</ul>
+<p>//切割字符串，返回一个数组</p>
+<ul>
+<li>(NSArray&lt;NSString <em>&gt; </em>)componentsSeparatedByString:(NSString *)separator;</li>
+</ul>
+<p>//替换操作</p>
+<ul>
+<li>(NSString <em>)stringByReplacingOccurrencesOfString:(NSString </em>)target withString:(NSString *)replacement</li>
+</ul>
+<p>//把string包装成SEL<br>SEL selector = NSSelectorFromString(sel);<br><br>&nbsp;</p>
+<ul>
+<li>如何屏蔽警告<br><pre class="lang:default decode:true">#pragma clang diagnostic push<br>#pragma clang diagnostic ignored “-Warc-performSelector-leaks”<br>//-Warc-performSelector-leaks为唯一的警告标识,这里面的代码可以去除警告<br>[self performSelector:selector withObject:nil];<br>#pragma clang diagnostic pop</pre><br>&nbsp;</li>
+</ul>
+<h2 id="4-NSInvocation的基本使用-任意调用对象消息方法并可以传N多参数的一个类"><a href="#4-NSInvocation的基本使用-任意调用对象消息方法并可以传N多参数的一个类" class="headerlink" title="4 NSInvocation的基本使用(任意调用对象消息方法并可以传N多参数的一个类)"></a>4 NSInvocation的基本使用(任意调用对象消息方法并可以传N多参数的一个类)</h2><p>在iOS中可以直接调用某个对象的消息方式有两种：</p>
+<ol>
+<li>performSelector:withObject；</li>
+<li>NSInvocation。<br>第一种方式比较简单，能完成简单的调用。但是对于&gt;2个的参数或者有返回值的处理，那就需要做些额外工作才能搞定。那么在这种情况下，我们就可以使用NSInvocation来进行这些相对复杂的操作。</li>
+</ol>
+<p>封装invacation可以调用多个参数的方法</p>
+<p><pre class="lang:default decode:true">-(void)invacation<br>{<br>    //1.创建一个MethodSignature，签名中保存了方法的名称，参数和返回值<br>    //这个方法属于谁，那么就用谁来进行创建<br>    //注意：签名一般是用来设置参数和获得返回值的，和方法的调用没有太大的关系<br>    NSMethodSignature *signature = [ViewController instanceMethodSignatureForSelector:@selector(callWithNumber:andContext:withStatus:)];</pre></p>
+<pre><code>//注意不要写错了方法名称
+NSMethodSignature *signature = [ViewController methodSignatureForSelector:@selector(call)];
+
+//2.通过MethodSignature来创建一个NSInvocation
+NSInvocation中保存了方法所属于的对象|方法名称|参数|返回值等等
+NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];  
+
+//2.1 设置invocation，来调用方法    
+invocation.target = self;
+invocation.selector = @selector(call);
+invocation.selector = @selector(callWithNumber:);
+invocation.selector = @selector(callWithNumber:andContext:);
+invocation.selector = @selector(callWithNumber:andContext:withStatus:);
+
+NSString *number = @&quot;1761237846&quot;;
+NSString *context = @&quot;玩游戏&quot;;
+NSString *status = @&quot;上课的时候&quot;;
+
+//注意：
+//1.自定义的参数索引从2开始，0和1已经被self and _cmd占用了
+//2.方法签名中保存的方法名称必须和调用的名称一致
+[invocation setArgument:&amp;amp;number atIndex:2];
+[invocation setArgument:&amp;amp;context atIndex:3];
+[invocation setArgument:&amp;amp;status atIndex:4];
+
+//3.调用invok方法来执行
+[invocation invoke];
+</code></pre><p>}<br>&nbsp;</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>1.一般处理方式：</p>
+<ul>
+<li>app异常闪退，那么捕获crash信息，并记录在本地沙盒中。</li>
+<li>当下次用户重新打开app的时候，检查沙盒中是否保存有上次捕获到的crash信息。</li>
+<li>如果有那么利用专门的接口发送给服务器，以求在后期版本中修复。<br>&nbsp;</li>
+</ul>
+<p>2.如何抛出异常</p>
+<ul>
+<li>抛出异常的两种方式<br>方式一<br><pre class="lang:default decode:true ">@throw  [NSException exceptionWithName:@”程序异常” reason:@”异常原因：数组越界” userInfo:nil];</pre><br>方式二<br><pre class="lang:default decode:true">NSString *info = [NSString stringWithFormat:@”%@找不到方法”,NSStringFromSelector(aSelector)];</pre><br>下面这种方法是自动抛出的<br><pre class="lang:default decode:true">[NSException raise:@”抛出异常” format:info,nil];</pre><br>&nbsp;</li>
+</ul>
+<p>3.如何捕获异常</p>
+<p><pre class="lang:default decode:true">NSSetUncaughtExceptionHandler (&amp;UncaughtExceptionHandler);<br>void UncaughtExceptionHandler(NSException *exception) {</pre></p>
+<pre><code>NSArray *arr = [exception callStackSymbols];//得到当前调用栈信息
+NSString *reason = [exception reason];//非常重要，就是崩溃的原因
+NSString *name = [exception name];//异常类型    
+NSString *errorMsg = [NSString stringWithFormat:@&quot;当前调用栈的信息：%@\nCrash的原因：%@\n异常类型：%@\n&quot;,arr,reason,name];
+//把该信息保存到本地沙盒，下次回传给服务器。
+</code></pre><p>}</p>
+<p>void UncaughtExceptionHandler(NSException *exception) {</p>
+<pre><code>//获取异常崩溃信息    
+NSArray *callStack = [exception callStackSymbols];
+NSString *reason = [exception reason];
+NSString *name = [exception name];
+NSString *content = [NSString stringWithFormat:@&quot;========异常错误报告========\nname:%@\nreason:\n%@\ncallStackSymbols:\n%@&quot;,name,reason,[callStack componentsJoinedByString:@&quot;\n&quot;]];
+
+//把异常崩溃信息发送至开发者邮件
+NSMutableString *mailUrl = [NSMutableString string];
+[mailUrl appendString:@&quot;mailto:test@qq.com&quot;];
+[mailUrl appendString:@&quot;?subject=程序异常崩溃，请配合发送异常报告，谢谢合作！&quot;];
+[mailUrl appendFormat:@&quot;&amp;amp;body=%@&quot;, content];
+
+//打开地址
+NSString *mailPath = [mailUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+[[UIApplication sharedApplication] openURL:[NSURL URLWithString:mailPath]];
+</code></pre><p>}<br>&nbsp;</p>
+<h2 id="5-补充"><a href="#5-补充" class="headerlink" title="5 补充"></a>5 补充</h2><ul>
+<li>关于JS相关的学习框架：WebViewJavascriptBridge<br>&nbsp;</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/09/48/" rel="next" title="iOS 学习巩固笔记-UIWebView/JavaScript">
+                <i class="fa fa-chevron-left"></i> iOS 学习巩固笔记-UIWebView/JavaScript
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/10/46-1/" rel="prev" title="Markdown基本语法-自学收藏">
+                Markdown基本语法-自学收藏 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/09/48-1/"
+           data-title="iOS 学习巩固笔记-UIWebView/JavaScript" data-url="https://github.huangbowei.com/2016/05/09/48-1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">168</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/timhbw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huangboweicom" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-UIWebView简介"><span class="nav-number">1.</span> <span class="nav-text">1 UIWebView简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-UIWebView常用的加载资源的方法"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 UIWebView常用的加载资源的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-UIWebView常用属性和方法"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 UIWebView常用属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-监听UIWebView的加载过程"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 监听UIWebView的加载过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-JavaScript简介"><span class="nav-number">2.</span> <span class="nav-text">2 JavaScript简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-JavaScript的常见作用"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 JavaScript的常见作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-常见的JavaScript函数"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 常见的JavaScript函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-OC中调用JavaScipt"><span class="nav-number">3.</span> <span class="nav-text">3 OC中调用JavaScipt</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-WebView的基本概念"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 WebView的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-1-代码"><span class="nav-number">3.2.</span> <span class="nav-text">3.1.1 代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-OC和JS代码的互调"><span class="nav-number">3.3.</span> <span class="nav-text">3.2 OC和JS代码的互调</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-NSInvocation的基本使用-任意调用对象消息方法并可以传N多参数的一个类"><span class="nav-number">4.</span> <span class="nav-text">4 NSInvocation的基本使用(任意调用对象消息方法并可以传N多参数的一个类)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">5.</span> <span class="nav-text">异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-补充"><span class="nav-number">6.</span> <span class="nav-text">5 补充</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"githubhuangbowei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

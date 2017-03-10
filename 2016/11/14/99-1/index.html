@@ -1,0 +1,1141 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ios,HTTP,状态码," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tim博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="最近太忙了，不好意思，木有更新博客，所以今天抽空把这些天积累的知识都写下来与大家分享。这篇文章是我在学习网络部分的一些学习笔记，在这里分享给大家。之前看到状态码都是搜索下就完事，常用的也都记得，毕竟搭建博客等过程深入学习过这些。下面进入正题，在讲解状态码之前先了解下其他相关的知识，涉及的内容可能比较多，大家耐心看看，学习的过程就是如此，一个知识点发散思维。
+先记录下iOS中发送HTTP请求的方案：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习提升之HTTP状态码详解">
+<meta property="og:url" content="https://github.huangbowei.com/2016/11/14/99-1/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="最近太忙了，不好意思，木有更新博客，所以今天抽空把这些天积累的知识都写下来与大家分享。这篇文章是我在学习网络部分的一些学习笔记，在这里分享给大家。之前看到状态码都是搜索下就完事，常用的也都记得，毕竟搭建博客等过程深入学习过这些。下面进入正题，在讲解状态码之前先了解下其他相关的知识，涉及的内容可能比较多，大家耐心看看，学习的过程就是如此，一个知识点发散思维。
+先记录下iOS中发送HTTP请求的方案：">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/tcpip.png">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/zhuangtaima.png">
+<meta property="og:updated_time" content="2017-03-10T03:32:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习提升之HTTP状态码详解">
+<meta name="twitter:description" content="最近太忙了，不好意思，木有更新博客，所以今天抽空把这些天积累的知识都写下来与大家分享。这篇文章是我在学习网络部分的一些学习笔记，在这里分享给大家。之前看到状态码都是搜索下就完事，常用的也都记得，毕竟搭建博客等过程深入学习过这些。下面进入正题，在讲解状态码之前先了解下其他相关的知识，涉及的内容可能比较多，大家耐心看看，学习的过程就是如此，一个知识点发散思维。
+先记录下iOS中发送HTTP请求的方案：">
+<meta name="twitter:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/tcpip.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6226504685738526000',
+      author: 'timhbw博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.huangbowei.com/2016/11/14/99-1/"/>
+
+
+
+
+
+  <title> 学习提升之HTTP状态码详解 | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/11/14/99-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                学习提升之HTTP状态码详解
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-14T18:23:57+08:00">
+                2016-11-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IT技术/" itemprop="url" rel="index">
+                    <span itemprop="name">IT技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/14/99-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/14/99-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>最近太忙了，不好意思，木有更新博客，所以今天抽空把这些天积累的知识都写下来与大家分享。这篇文章是我在学习网络部分的一些学习笔记，在这里分享给大家。之前看到状态码都是搜索下就完事，常用的也都记得，毕竟搭建博客等过程深入学习过这些。下面进入正题，在讲解状态码之前先了解下其他相关的知识，涉及的内容可能比较多，大家耐心看看，学习的过程就是如此，一个知识点发散思维。</p>
+<p>先记录下iOS中发送HTTP请求的方案：</p>
+<div class="quote"><br>&gt; 苹果原生（自带）<br>&gt;<br>&gt;<br>&gt; 1.NSURLConnection：用法简单，最古老最经典最直接的一种方案【坑比较多】<br>&gt;<br>&gt;<br>&gt; 2.NSURLSession：功能比NSURLConnection更加强大，苹果目前比较推荐使用这种技术【2013推出，iOS7开始出的技术】<br>&gt;<br>&gt;<br>&gt; 3.CFNetwork：NSURL*的底层，纯C语言<br>&gt;<br>&gt; 第三方框架<br>&gt;<br>&gt;<br>&gt; 1.ASIHttpRequest：外号“HTTP终结者”，功能极其强大，可惜早已停止更新<br>&gt;<br>&gt;<br>&gt; 2.AFNetworking：简单易用，提供了基本够用的常用功能，维护和使用者多<br>&gt;<br>&gt;<br>&gt; 3.MKNetworkKit：简单易用，产自三哥的故乡印度，维护和使用者少<br></div>
+
+<h2 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h2><h4 id="1-URL"><a href="#1-URL" class="headerlink" title="1.URL"></a>1.URL</h4><h5 id="1-1-什么是URL？"><a href="#1-1-什么是URL？" class="headerlink" title="1.1 什么是URL？"></a>1.1 什么是URL？</h5><ol>
+<li>URL的全称是Uniform Resource Locator（统一资源定位符）</li>
+<li>通过1个URL，能找到互联网上唯一的1个资源</li>
+<li>URL就是资源的地址、位置，互联网上的每个资源都有一个唯一的URL</li>
+<li>URL的基本格式 = 协议://主机地址/路径<pre class="lang:default decode:true ">http://cdn.huangbowei.com/images/xcodepluginslogo.png
+http://21X.3X.45X.2X/images/xcodepluginslogo.png
+协议：不同的协议，代表着不同的资源查找方式、资源传输方式
+主机地址：存放资源的主机（服务器）的IP地址（域名）
+路径：资源在主机（服务器）中的具体位置</pre>
+
+</li>
+</ol>
+<h4 id="2-URL中常见的协议"><a href="#2-URL中常见的协议" class="headerlink" title="2.URL中常见的协议"></a>2.URL中常见的协议</h4><h5 id="2-1-HTTP"><a href="#2-1-HTTP" class="headerlink" title="2.1 HTTP"></a>2.1 HTTP</h5><p>超文本传输协议，访问的是远程的网络资源，格式是http://</p>
+<p>http协议是在网络开发中最常用的协议</p>
+<h5 id="2-2-file"><a href="#2-2-file" class="headerlink" title="2.2 file"></a>2.2 file</h5><p>访问的是本地计算机上的资源，格式是file://（不用加主机地址）</p>
+<h5 id="2-3-mailto"><a href="#2-3-mailto" class="headerlink" title="2.3 mailto"></a>2.3 mailto</h5><p>访问的是电子邮件地址，格式是mailto:</p>
+<h5 id="2-4-FTP"><a href="#2-4-FTP" class="headerlink" title="2.4 FTP"></a>2.4 FTP</h5><p>访问的是共享主机的文件资源，格式是ftp://</p>
+<h4 id="3-TCP-IP协议簇"><a href="#3-TCP-IP协议簇" class="headerlink" title="3.TCP/IP协议簇"></a>3.TCP/IP协议簇</h4><ul>
+<li><p>为了能够理解HTTP，我们需要先了解TCP/IP协议簇。通常意义上，我们使用的网络是在TCP/IP协议簇的基础上运作的，而HTTP属于它内部的一个子集。</p>
+</li>
+<li><p>计算机与网络设备需要通信，双方就必须要基于相同的方法，比如具体应该如何探测通信目标，由哪一方面发起通信，使用什么语言进行沟通等等，所有的这一切都需要规则。而我们则把这些规则称之为协议（potocol）。</p>
+</li>
+<li><p>在协议中规定了很多的各式各样的内容，如选址方法，双方建立通信的顺序等等。这些协议如（ICMP DNS TCP FTP HTTP SNMP PPPoE IP FDDI）等等，通常我们把TCP/IP认为是在IP协议的通信过程中，使用到的协议簇的统称。</p>
+</li>
+<li><p>TCP 协议簇里面最重要的一点就是分层设计:按照层次分别分为应用层、传输层、网络层和数据链路层。其中，与HTTP关系密切的协议有TCP、IP、DNS等。</p>
+</li>
+</ul>
+<h4 id="4-TCP-IP参考模型"><a href="#4-TCP-IP参考模型" class="headerlink" title="4.TCP/IP参考模型"></a>4.TCP/IP参考模型</h4><div class="mceTemp"><br><br><em>   <a href="https://www.huangbowei.com/wp-content/uploads/2017/01/tcpip.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/tcpip.png" alt=""></a>
+</em>   TCP/IP参考模型<br></div>
+
+<h4 id="5-HTTP协议简介"><a href="#5-HTTP协议简介" class="headerlink" title="5.HTTP协议简介"></a>5.HTTP协议简介</h4><h5 id="5-1-不管是移动客户端还是PC端，访问远程的网络资源经常使用HTTP协议"><a href="#5-1-不管是移动客户端还是PC端，访问远程的网络资源经常使用HTTP协议" class="headerlink" title="5.1 不管是移动客户端还是PC端，访问远程的网络资源经常使用HTTP协议"></a>5.1 不管是移动客户端还是PC端，访问远程的网络资源经常使用HTTP协议</h5><ul>
+<li>访问Tim的博客主页：<a href="http://www.huangbowei.com" target="_blank" rel="external">http://www.huangbowei.com</a></li>
+<li>获得腾讯新闻的新闻数据</li>
+<li>获得A站的视频数据</li>
+</ul>
+<h5 id="5-2-HTTP协议的作用"><a href="#5-2-HTTP协议的作用" class="headerlink" title="5.2 HTTP协议的作用"></a>5.2 HTTP协议的作用</h5><ul>
+<li>HTTP的全称是Hypertext Transfer Protocol，超文本传输协议</li>
+<li>规定客户端和服务器之间的数据传输格式</li>
+<li>让客户端和服务器能有效地进行数据沟通</li>
+</ul>
+<h4 id="6-HTTP协议的特点-为什么选择HTTP"><a href="#6-HTTP协议的特点-为什么选择HTTP" class="headerlink" title="6.HTTP协议的特点(为什么选择HTTP)"></a>6.HTTP协议的特点(为什么选择HTTP)</h4><h5 id="6-1-简单快速"><a href="#6-1-简单快速" class="headerlink" title="6.1 简单快速"></a>6.1 简单快速</h5><p>因为HTTP协议简单，所以HTTP服务器的程序规模小，因而通信速度很快。</p>
+<h5 id="6-2-灵活"><a href="#6-2-灵活" class="headerlink" title="6.2 灵活"></a>6.2 灵活</h5><p>HTTP允许传输各种各样的数据。</p>
+<h5 id="6-3-HTTP-0-9和1-0使用非持续连接"><a href="#6-3-HTTP-0-9和1-0使用非持续连接" class="headerlink" title="6.3 HTTP 0.9和1.0使用非持续连接"></a>6.3 HTTP 0.9和1.0使用非持续连接</h5><p>限制每次连接只处理一个请求，服务器对客户端的请求做出响应后，马上断开连接，这种方式可以节省传输时间。</p>
+<h2 id="正题"><a href="#正题" class="headerlink" title="正题"></a>正题</h2><p>了解了一些基本知识后，下面开始聊聊HTTP协议里面的状态码：</p>
+<h4 id="1-何谓HTTP状态码"><a href="#1-何谓HTTP状态码" class="headerlink" title="1 何谓HTTP状态码"></a>1 何谓HTTP状态码</h4><p>HTTP状态码的作用是：Web服务器用来告诉客户端，发生了什么事。</p>
+<p>状态码位于HTTP Response 的第一行中，会返回一个”三位数字的状态码“和一个“状态消息”。 ”三位数字的状态码“便于程序进行处理， “状态消息”更便于人理解。</p>
+<h4 id="2-状态码分类"><a href="#2-状态码分类" class="headerlink" title="2 状态码分类"></a>2 状态码分类</h4><p>HTTP状态码被分为五大类， 目前我们使用的HTTP协议版本是1.1， 支持以下的状态码。随着协议的发展，HTTP规范中会定义更多的状态码。</p>
+<table style="height: 295px;" width="548" cellspacing="1" cellpadding="2"><br><tbody><br><tr class="firstRow"><br><td></td><br><td>已定义范围</td><br><td>分类</td><br></tr><br><tr><br><td>1XX</td><br><td>100-101</td><br><td>信息提示</td><br></tr><br><tr><br><td>2XX</td><br><td>200-206</td><br><td>成功</td><br></tr><br><tr><br><td>3XX</td><br><td>300-305</td><br><td>重定向</td><br></tr><br><tr><br><td>4XX</td><br><td>400-415</td><br><td>客户端错误</td><br></tr><br><tr><br><td>5XX</td><br><td>500-505</td><br><td>服务器错误</td><br></tr><br></tbody><br></table>
+
+<h4 id="3-常见的状态码"><a href="#3-常见的状态码" class="headerlink" title="3 常见的状态码"></a>3 常见的状态码</h4><p>一般常见的状态码已经够使用的，我之前弄博客的时候几乎每天都要见到，不是301就是501，幸运的就是200完美！</p>
+<p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/zhuangtaima.png" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/zhuangtaima.png" alt=""></a></p>
+<h5 id="3-1-1XX-信息性状态码"><a href="#3-1-1XX-信息性状态码" class="headerlink" title="3.1 1XX 信息性状态码"></a>3.1 1XX 信息性状态码</h5><p>信息性状态码，表示接受的请求正在处理。</p>
+<table style="height: 203px;" width="687" cellspacing="1" cellpadding="2"><br><tbody><br><tr class="firstRow"><br><td width="40px">状态码</td><br><td width="200px"> 状态消息</td><br><td> 含义</td><br><td></td><br></tr><br><tr><br><td>100</td><br><td>Continue(继续)</td><br><td>收到了请求的起始部分，客户端应该继续请求</td><br><td></td><br></tr><br><tr><br><td>101</td><br><td>Switching Protocols（切换协议）</td><br><td>服务器正根据客户端的指示将协议切换成Update Header列出的协议</td><br><td></td><br></tr><br></tbody><br></table>
+
+<h5 id="3-2-2XX-成功状态码"><a href="#3-2-2XX-成功状态码" class="headerlink" title="3.2 2XX 成功状态码"></a>3.2 2XX 成功状态码</h5><p>2xx 响应结果表示从客户端发来的请求在服务器端被正常处理了。</p>
+<table cellspacing="1" cellpadding="2"><br><tbody><br><tr class="firstRow"><br><td width="40px">状态码</td><br><td width="200px">状态消息</td><br><td>含义</td><br><td></td><br></tr><br><tr><br><td>200</td><br><td>OK</td><br><td>服务器成功处理了请求（这个是我们见到最多的）</td><br><td></td><br></tr><br><tr><br><td>201</td><br><td>Created（已创建）</td><br><td>对于那些要服务器创建对象的请求来说，资源已创建完毕。</td><br><td></td><br></tr><br><tr><br><td>202</td><br><td>Accepted（已接受）</td><br><td>请求已接受， 但服务器尚未处理</td><br><td></td><br></tr><br><tr><br><td>203</td><br><td>Non-Authoritative Information（非权威信息）</td><br><td>服务器已将事务成功处理，只是实体Header包含的信息不是来自原始服务器，而是来自资源的副本。</td><br><td></td><br></tr><br><tr><br><td>204</td><br><td>No Content(没有内容)</td><br><td>Response中包含一些Header和一个状态行， 但不包括实体的主题内容（没有response body）</td><br><td></td><br></tr><br><tr><br><td>205</td><br><td>Reset Content(重置内容)</td><br><td> 另一个主要用于浏览器的代码。意思是浏览器应该重置当前页面上所有的HTML表单。</td><br><td></td><br></tr><br><tr><br><td>206</td><br><td>Partial Content（部分内容）</td><br><td> 部分请求成功</td><br><td></td><br></tr><br></tbody><br></table>
+
+<h5 id="3-3-3XX-重定向状态码"><a href="#3-3-3XX-重定向状态码" class="headerlink" title="3.3 3XX 重定向状态码"></a>3.3 3XX 重定向状态码</h5><p>3XX 响应结果表明浏览器需要执行某些特殊的处理以完成请求。重定向状态码用来告诉浏览器客户端，它们访问的资源已被移动， Web服务器发送一个重定向状态码和一个可选的Location Header, 告诉客户端新的资源地址在哪。之前改域名做SEO优化的时候经常会碰到301重定向。</p>
+<table cellspacing="1" cellpadding="2"><br><tbody><br><tr class="firstRow"><br><td width="40px">状态码</td><br><td width="200px">状态消息</td><br><td>含义</td><br><td></td><br></tr><br><tr><br><td>300</td><br><td>Multiple Choices（多项选择）</td><br><td> 客户端请求了实际指向多个资源的URL。这个代码是和一个选项列表一起返回的，然后用户就可以选择他希望的选项了</td><br><td></td><br></tr><br><tr><br><td>301</td><br><td>Moved Permanently（永久移除)</td><br><td>请求的URL已移走。Response中应该包含一个Location URL, 说明资源现在所处的位置</td><br><td></td><br></tr><br><tr><br><td>302</td><br><td>Found（已找到）</td><br><td>与状态码301类似。但这里的移除是临时的。 客户端会使用Location中给出的URL，重新发送新的HTTP request</td><br><td></td><br></tr><br><tr><br><td>303</td><br><td> See Other（参见其他）</td><br><td>类似302</td><br><td></td><br></tr><br><tr><br><td>304</td><br><td>Not Modified（未修改）</td><br><td>客户的缓存资源是最新的， 要客户端使用缓存</td><br><td></td><br></tr><br><tr><br><td>305</td><br><td> Use Proxy（使用代理）</td><br><td>必须通过代理访问资源， 代理的地址在Response 的Location中</td><br><td></td><br></tr><br><tr><br><td>306</td><br><td> 未使用</td><br><td> 这个状态码当前没使用</td><br><td></td><br></tr><br><tr><br><td>307</td><br><td>Temporary Redirect（临时重定向</td><br><td>类似302</td><br><td></td><br></tr><br></tbody><br></table>
+
+<h5 id="3-4-4XX客户端错误状态码"><a href="#3-4-4XX客户端错误状态码" class="headerlink" title="3.4 4XX客户端错误状态码"></a>3.4 4XX客户端错误状态码</h5><p>有时客户端会发送一些服务器无法处理的东西，比如格式错误的Request, 或者最常见的是， 请求一个不存在的URL。</p>
+<table cellspacing="1" cellpadding="2"><br><tbody><br><tr class="firstRow"><br><td width="40px">状态码</td><br><td width="200px">状态消息</td><br><td>含义</td><br><td></td><br></tr><br><tr><br><td>400</td><br><td>Bad Request（坏请求）</td><br><td>告诉客户端，它发送了一个错误的请求。</td><br><td></td><br></tr><br><tr><br><td>401</td><br><td>Unauthorized（未授权）</td><br><td>需要客户端对自己认证</td><br><td></td><br></tr><br><tr><br><td>402</td><br><td>Payment Required（要求付款）</td><br><td>这个状态还没被使用， 保留给将来用</td><br><td></td><br></tr><br><tr><br><td>403</td><br><td>Forbidden（禁止）</td><br><td>请求被服务器拒绝了</td><br><td></td><br></tr><br><tr><br><td>404</td><br><td>Not Found（未找到）</td><br><td>未找到资源</td><br><td></td><br></tr><br><tr><br><td>405</td><br><td>Method Not Allowed（不允许使用的方法）</td><br><td>不支持该Request的方法。</td><br><td></td><br></tr><br><tr><br><td>406</td><br><td>Not Acceptable（无法接受）</td><br><td></td><br><td></td><br></tr><br><tr><br><td>407</td><br><td>Proxy Authentication Required(要求进行代理认证)</td><br><td>与状态码401类似， 用于需要进行认证的代理服务器</td><br><td></td><br></tr><br><tr><br><td>408</td><br><td>Request Timeout（请求超时）</td><br><td> 如果客户端完成请求时花费的时间太长， 服务器可以回送这个状态码并关闭连接</td><br><td></td><br></tr><br><tr><br><td>409</td><br><td>Conflict（冲突）</td><br><td>发出的请求在资源上造成了一些冲突</td><br><td></td><br></tr><br><tr><br><td>410</td><br><td>Gone（消失了）</td><br><td>服务器曾经有这个资源，现在没有了， 与状态码404类似</td><br><td></td><br></tr><br><tr><br><td>411</td><br><td>Length Required（要求长度指示）</td><br><td>服务器要求在Request中包含Content-Length。</td><br><td></td><br></tr><br><tr><br><td>412</td><br><td>Precondition Failed（先决条件失败）</td><br><td></td><br><td></td><br></tr><br><tr><br><td>413</td><br><td>Request Entity Too Large（请求实体太大）</td><br><td>客户端发送的实体主体部分比服务器能够或者希望处理的要大</td><br><td></td><br></tr><br><tr><br><td>414</td><br><td>Request URI Too Long（请求URI太长）</td><br><td>客户端发送的请求所携带的URL超过了服务器能够或者希望处理的长度</td><br><td></td><br></tr><br><tr><br><td>415</td><br><td>Unsupported Media Type（不支持的媒体类型）</td><br><td>服务器无法理解或不支持客户端所发送的实体的内容类型</td><br><td></td><br></tr><br><tr><br><td>416</td><br><td>Requested Range Not Satisfiable（所请求的范围未得到满足）</td><br><td></td><br><td></td><br></tr><br><tr><br><td>417</td><br><td>Expectation Failed（无法满足期望）</td><br><td></td><br><td></td><br></tr><br></tbody><br></table>
+
+<h5 id="3-5-5XX服务器错误状态码"><a href="#3-5-5XX服务器错误状态码" class="headerlink" title="3.5 5XX服务器错误状态码"></a>3.5 5XX服务器错误状态码</h5><p>有时候客户端发送了一条有效Request, Web服务器自身却出错了。 可能是Web服务器运行出错了， 或者网站都挂了。  5XX就是用来描述服务器错误的。</p>
+<table cellspacing="1" cellpadding="2"><br><tbody><br><tr class="firstRow"><br><td width="40px">状态码</td><br><td width="200px">状态消息</td><br><td>含义</td><br><td></td><br></tr><br><tr><br><td>500</td><br><td>Internal Server Error(内部服务器错误)</td><br><td>服务器遇到一个错误，使其无法为请求提供服务</td><br><td></td><br></tr><br><tr><br><td>501</td><br><td>Not Implemented（未实现）</td><br><td>客户端发起的请求超出服务器的能力范围(比如，使用了服务器不支持的请求方法)时，使用此状态码。</td><br><td></td><br></tr><br><tr><br><td>502</td><br><td>Bad Gateway（网关故障）</td><br><td>代理使用的服务器遇到了上游的无效响应</td><br><td></td><br></tr><br><tr><br><td>503</td><br><td>Service Unavailable（未提供此服务）</td><br><td>服务器目前无法为请求提供服务，但过一段时间就可以恢复服务</td><br><td></td><br></tr><br><tr><br><td>504</td><br><td>Gateway Timeout（网关超时）</td><br><td>与状态吗408类似， 但是响应来自网关或代理，此网关或代理在等待另一台服务器的响应时出现了超时</td><br><td></td><br></tr><br><tr><br><td>505</td><br><td>HTTP Version Not Supported（不支持的HTTP版本）</td><br><td>服务器收到的请求使用了它不支持的HTTP协议版本。 有些服务器不支持HTTP早期的HTTP协议版本，也不支持太高的协议版本</td><br><td></td><br></tr><br></tbody><br></table>
+
+<p>#### </p>
+<p><span style="font-size: 14pt;">下面是表格里的状态码的一些详细说明，供强迫症患者食用</span></p>
+<h5 id="3-6-204-No-Content-没有内容"><a href="#3-6-204-No-Content-没有内容" class="headerlink" title="3.6 204 No Content(没有内容)"></a>3.6 204 No Content(没有内容)</h5><p>该状态码表示服务器接收到的请求已经处理完毕，但是服务器不需要返回响应体.<br>比如，客户端是浏览器的话，发出的请求返回204响应，那么浏览器显示的页面不会发生更新。</p>
+<h5 id="3-7-206-Partial-Content-部分内容"><a href="#3-7-206-Partial-Content-部分内容" class="headerlink" title="3.7 206 Partial Content(部分内容)"></a>3.7 206 Partial Content(部分内容)</h5><p>该状态码表示客户端进行了范围请求，而服务器成功执行了这部分的GET请求。<br>客户端发起的请求，必须在请求头中包含Range字段。服务端响应报文中，必须包含由<code>Content-Range</code>指定范围的实体内容(entity-bodies )</p>
+<h5 id="3-8-301-Moved-Permanently（永久移除"><a href="#3-8-301-Moved-Permanently（永久移除" class="headerlink" title="3.8 301 Moved Permanently（永久移除)"></a>3.8 301 Moved Permanently（永久移除)</h5><p>永久性重定向。该状态码表示请求的资源已经被分配了新的URI，并且以后使用资源现在所指的URI。并且根据请求的方法有不同的处理方式：<br>HEAD：必须在响应头部<code>Location</code>字段中指明新的永久性的URI。<br>GET：除了有<code>Location</code>字段以外，还需要在响应体中附上永久性URI的超链接文本。<br>POST：客户端在发送POST请求，受到301响应之后，不应该自动跳转URI，应当让用户确认跳转。</p>
+<pre class="lang:default decode:true ">比如访问：
+http://www.huangbowei.cn/
+或者http://iosdev.vip/
+
+请求会被重定向到：
+http://www.huangbowei.com/</pre>
+
+<h5 id="3-9-302-Found"><a href="#3-9-302-Found" class="headerlink" title="3.9 302 Found"></a>3.9 302 Found</h5><p>临时性重定向。该状态码表示请求的资源已被分配了新的URI，希望用户本次能使用新的URI访问。<br>和301 Moved Permanently 状态码相似，但302状态码代表的资源不是被永久移动，只是临时性质的。<br>如果，用户把一个URI收藏为书签，302响应是不会像301那样去更新书签。</p>
+<h5 id="3-10-303-See-Other"><a href="#3-10-303-See-Other" class="headerlink" title="3.10 303 See Other"></a>3.10 303 See Other</h5><p>该状态码表示由于请求对应的资源存在另一个URI，应使用GET方法定向获取请求的资源。303与302不同之处在于，302是不会改变请求的方法，如果请求方法是POST的话，重定向的请求也应该是POST。而对于303，使用POST请求的话，重定向的请求应该是GET请求。</p>
+<h5 id="3-11-304-Not-Modified"><a href="#3-11-304-Not-Modified" class="headerlink" title="3.11 304 Not Modified"></a>3.11 304 Not Modified</h5><p>该状态码表示客户端发送附带条件请求时，服务器端允许请求访问资源，但未满足条件的情况。304状态码返回时，不包含任何响应的主题部分。</p>
+<h5 id="3-12-307-Temporary-Redirect"><a href="#3-12-307-Temporary-Redirect" class="headerlink" title="3.12 307 Temporary Redirect"></a>3.12 307 Temporary Redirect</h5><p>临时重定向。该状态码与302和303的有着类似的含义，不同之处在于，307状态码并不会指定客户端要用什么样的请求方法请求重定向地址。(302指定使用原有请求方法，303指定使用GET方法)</p>
+<h5 id="3-13-400-Bad-Request（坏请求"><a href="#3-13-400-Bad-Request（坏请求" class="headerlink" title="3.13 400 Bad Request（坏请求)"></a>3.13 400 Bad Request（坏请求)</h5><p>表示该请求报文中存在语法错误，导致服务器无法理解该请求。客户端需要修改请求的内容后再次发送请求。</p>
+<h5 id="3-14-401-Unauthorized-需要认证"><a href="#3-14-401-Unauthorized-需要认证" class="headerlink" title="3.14 401 Unauthorized(需要认证)"></a>3.14 401 Unauthorized(需要认证)</h5><p>该状态码表示发送的请求需要有通过HTTP认证(Basic认证，Digest认证)的认证信息。返回含有401的响应，必须在头部包含WWW-Authenticate以指明服务器需要哪种方式的认证。</p>
+<h5 id="3-15-403-Forbidden-禁止"><a href="#3-15-403-Forbidden-禁止" class="headerlink" title="3.15 403 Forbidden(禁止)"></a>3.15 403 Forbidden(禁止)</h5><p>该状态码表明对请求资源的访问被服务器拒绝了。服务器没有必要给出拒绝的详细理由，但如果想做说明的话，可以在实体的主体部分原因进行描述，这样就能让用户看到了。<br>未获得文件系统的访问权限，访问权限出现某些问题，从未授权的发送源IP地址试图访问等情况都可能发生403响应。</p>
+<h5 id="3-16-404-Not-Found-无法找到指定的资源"><a href="#3-16-404-Not-Found-无法找到指定的资源" class="headerlink" title="3.16 404 Not Found(无法找到指定的资源)"></a>3.16 404 Not Found(无法找到指定的资源)</h5><p>该状态码表明服务器上无法找到指定的资源。通常被用于服务器不想透露拒绝请求的原因，或者没有其他的响应可提供。</p>
+<h5 id="3-17-405-Method-Not-Allowed-不允许使用的方法"><a href="#3-17-405-Method-Not-Allowed-不允许使用的方法" class="headerlink" title="3.17 405 Method Not Allowed(不允许使用的方法)"></a>3.17 405 Method Not Allowed(不允许使用的方法)</h5><p>405是指Web服务器不支持Request中的方法。</p>
+<h5 id="3-18-411-Length-Required（要求长度指示）"><a href="#3-18-411-Length-Required（要求长度指示）" class="headerlink" title="3.18 411 Length Required（要求长度指示）"></a>3.18 411 Length Required（要求长度指示）</h5><p>服务器要求在Request中包含Content-Length。当浏览器使用Post方法，发送数据给Web服务器时， 必须要有Content-Length。这样Web服务器才知道你要发送多少数据，否则Web服务器会返回411状态码</p>
+<h5 id="3-19-413-Request-Entity-Too-Large（请求实体太大）"><a href="#3-19-413-Request-Entity-Too-Large（请求实体太大）" class="headerlink" title="3.19 413 Request Entity Too Large（请求实体太大）"></a>3.19 413 Request Entity Too Large（请求实体太大）</h5><p>作用：客户端发送的实体主体部分比服务器能够或者希望处理的要大。  一般情况下我们看不到这个状态码。 因为浏览器不会发送太大的数据给网站，但是机器人可能会。</p>
+<h5 id="3-20-414-Request-URI-Too-Long-请求URL太长"><a href="#3-20-414-Request-URI-Too-Long-请求URL太长" class="headerlink" title="3.20 414 Request URI Too Long(请求URL太长)"></a>3.20 414 Request URI Too Long(请求URL太长)</h5><p>就是说Request URI太长， 一般浏览器本身对URI的长度就会有限制，所以不会发送URI很长的Request. 我们平常是根本看不到414错误的。 但是机器人可以发送很长URI。</p>
+<h5 id="3-21-500-Internal-Server-Error-内部服务器错误"><a href="#3-21-500-Internal-Server-Error-内部服务器错误" class="headerlink" title="3.21 500 Internal Server Error(内部服务器错误)"></a>3.21 500 Internal Server Error(内部服务器错误)</h5><p>该状态码表明服务器端在执行请求时发生了错误。也有可能是Web应用存在的BUG或某些临时的故障。弄博客的时候经常见，哈哈哈。</p>
+<h5 id="3-22-501-Not-Implemented-未实现"><a href="#3-22-501-Not-Implemented-未实现" class="headerlink" title="3.22 501 Not Implemented(未实现)"></a>3.22 501 Not Implemented(未实现)</h5><p>客户端发起的请求超出服务器的能力范围(比如，使用了服务器不支持的请求方法)时，使用此状态码）。  一般的Web服务器只支持GET和POST方法。</p>
+<h5 id="3-23-502-Bad-Gateway（网关故障）"><a href="#3-23-502-Bad-Gateway（网关故障）" class="headerlink" title="3.23 502 Bad Gateway（网关故障）"></a>3.23 502 Bad Gateway（网关故障）</h5><p>代理使用的服务器遇到了上游的无效响应。当我们访问www.youtube.com，就可以看到熟悉的502了。</p>
+<h5 id="3-24-503-Service-Unavailable"><a href="#3-24-503-Service-Unavailable" class="headerlink" title="3.24 503 Service Unavailable"></a>3.24 503 Service Unavailable</h5><p>该状态码表明服务器暂时处于超负载或正在进行停机维护，现在无法处理请求。如果事先得知解除以上需要的时间，最好写入<code>Retry-After</code>首部字段再返回给客户端。</p>
+<h5 id="3-25-505-HTTP-Version-Not-Supported-不支持的HTTP版本"><a href="#3-25-505-HTTP-Version-Not-Supported-不支持的HTTP版本" class="headerlink" title="3.25 505 HTTP Version Not Supported(不支持的HTTP版本)"></a>3.25 505 HTTP Version Not Supported(不支持的HTTP版本)</h5><p>表示Web服务器不支持此HTTP协议的版本。</p>
+<p>参考文章： HTTP协议之状态码详解</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
+          
+            <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+          
+            <a href="/tags/状态码/" rel="tag"># 状态码</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/24/98-1/" rel="next" title="Mac开发必备软件-SimPholders">
+                <i class="fa fa-chevron-left"></i> Mac开发必备软件-SimPholders
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/14/99/" rel="prev" title="学习提升之HTTP状态码详解">
+                学习提升之HTTP状态码详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/14/99-1/"
+           data-title="学习提升之HTTP状态码详解" data-url="https://github.huangbowei.com/2016/11/14/99-1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">168</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/timhbw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huangboweicom" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#了解"><span class="nav-number">1.</span> <span class="nav-text">了解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-URL"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.URL</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-什么是URL？"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">1.1 什么是URL？</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-URL中常见的协议"><span class="nav-number">1.0.2.</span> <span class="nav-text">2.URL中常见的协议</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2-1-HTTP"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">2.1 HTTP</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-2-file"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">2.2 file</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-3-mailto"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">2.3 mailto</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-4-FTP"><span class="nav-number">1.0.2.4.</span> <span class="nav-text">2.4 FTP</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-TCP-IP协议簇"><span class="nav-number">1.0.3.</span> <span class="nav-text">3.TCP/IP协议簇</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-TCP-IP参考模型"><span class="nav-number">1.0.4.</span> <span class="nav-text">4.TCP/IP参考模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-HTTP协议简介"><span class="nav-number">1.0.5.</span> <span class="nav-text">5.HTTP协议简介</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-1-不管是移动客户端还是PC端，访问远程的网络资源经常使用HTTP协议"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">5.1 不管是移动客户端还是PC端，访问远程的网络资源经常使用HTTP协议</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-2-HTTP协议的作用"><span class="nav-number">1.0.5.2.</span> <span class="nav-text">5.2 HTTP协议的作用</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-HTTP协议的特点-为什么选择HTTP"><span class="nav-number">1.0.6.</span> <span class="nav-text">6.HTTP协议的特点(为什么选择HTTP)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#6-1-简单快速"><span class="nav-number">1.0.6.1.</span> <span class="nav-text">6.1 简单快速</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-2-灵活"><span class="nav-number">1.0.6.2.</span> <span class="nav-text">6.2 灵活</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-3-HTTP-0-9和1-0使用非持续连接"><span class="nav-number">1.0.6.3.</span> <span class="nav-text">6.3 HTTP 0.9和1.0使用非持续连接</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正题"><span class="nav-number">2.</span> <span class="nav-text">正题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-何谓HTTP状态码"><span class="nav-number">2.0.1.</span> <span class="nav-text">1 何谓HTTP状态码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-状态码分类"><span class="nav-number">2.0.2.</span> <span class="nav-text">2 状态码分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-常见的状态码"><span class="nav-number">2.0.3.</span> <span class="nav-text">3 常见的状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-1-1XX-信息性状态码"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">3.1 1XX 信息性状态码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-2-2XX-成功状态码"><span class="nav-number">2.0.3.2.</span> <span class="nav-text">3.2 2XX 成功状态码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-3-3XX-重定向状态码"><span class="nav-number">2.0.3.3.</span> <span class="nav-text">3.3 3XX 重定向状态码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-4-4XX客户端错误状态码"><span class="nav-number">2.0.3.4.</span> <span class="nav-text">3.4 4XX客户端错误状态码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-5-5XX服务器错误状态码"><span class="nav-number">2.0.3.5.</span> <span class="nav-text">3.5 5XX服务器错误状态码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-6-204-No-Content-没有内容"><span class="nav-number">2.0.3.6.</span> <span class="nav-text">3.6 204 No Content(没有内容)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-7-206-Partial-Content-部分内容"><span class="nav-number">2.0.3.7.</span> <span class="nav-text">3.7 206 Partial Content(部分内容)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-8-301-Moved-Permanently（永久移除"><span class="nav-number">2.0.3.8.</span> <span class="nav-text">3.8 301 Moved Permanently（永久移除)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-9-302-Found"><span class="nav-number">2.0.3.9.</span> <span class="nav-text">3.9 302 Found</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-10-303-See-Other"><span class="nav-number">2.0.3.10.</span> <span class="nav-text">3.10 303 See Other</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-11-304-Not-Modified"><span class="nav-number">2.0.3.11.</span> <span class="nav-text">3.11 304 Not Modified</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-12-307-Temporary-Redirect"><span class="nav-number">2.0.3.12.</span> <span class="nav-text">3.12 307 Temporary Redirect</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-13-400-Bad-Request（坏请求"><span class="nav-number">2.0.3.13.</span> <span class="nav-text">3.13 400 Bad Request（坏请求)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-14-401-Unauthorized-需要认证"><span class="nav-number">2.0.3.14.</span> <span class="nav-text">3.14 401 Unauthorized(需要认证)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-15-403-Forbidden-禁止"><span class="nav-number">2.0.3.15.</span> <span class="nav-text">3.15 403 Forbidden(禁止)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-16-404-Not-Found-无法找到指定的资源"><span class="nav-number">2.0.3.16.</span> <span class="nav-text">3.16 404 Not Found(无法找到指定的资源)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-17-405-Method-Not-Allowed-不允许使用的方法"><span class="nav-number">2.0.3.17.</span> <span class="nav-text">3.17 405 Method Not Allowed(不允许使用的方法)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-18-411-Length-Required（要求长度指示）"><span class="nav-number">2.0.3.18.</span> <span class="nav-text">3.18 411 Length Required（要求长度指示）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-19-413-Request-Entity-Too-Large（请求实体太大）"><span class="nav-number">2.0.3.19.</span> <span class="nav-text">3.19 413 Request Entity Too Large（请求实体太大）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-20-414-Request-URI-Too-Long-请求URL太长"><span class="nav-number">2.0.3.20.</span> <span class="nav-text">3.20 414 Request URI Too Long(请求URL太长)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-21-500-Internal-Server-Error-内部服务器错误"><span class="nav-number">2.0.3.21.</span> <span class="nav-text">3.21 500 Internal Server Error(内部服务器错误)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-22-501-Not-Implemented-未实现"><span class="nav-number">2.0.3.22.</span> <span class="nav-text">3.22 501 Not Implemented(未实现)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-23-502-Bad-Gateway（网关故障）"><span class="nav-number">2.0.3.23.</span> <span class="nav-text">3.23 502 Bad Gateway（网关故障）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-24-503-Service-Unavailable"><span class="nav-number">2.0.3.24.</span> <span class="nav-text">3.24 503 Service Unavailable</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-25-505-HTTP-Version-Not-Supported-不支持的HTTP版本"><span class="nav-number">2.0.3.25.</span> <span class="nav-text">3.25 505 HTTP Version Not Supported(不支持的HTTP版本)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"githubhuangbowei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

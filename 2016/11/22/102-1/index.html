@@ -1,0 +1,1210 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ios,iOS基础,面试," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Tim博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="「Tim的博客」iOS基础问答面试题连载(一)-附答案
+「Tim的博客」iOS基础问答面试题连载(二)-附答案
+「Tim的博客」iOS基础问答面试题连载(三)-附答案
+「Tim的博客」iOS基础问答面试题连载(四)
+以下是一些自己收集的比较基础的问题（大神可以忽略），附上答案，方便大家阅读。俗话说得好，基础不牢，地动山摇。文章末尾会提供PDF版的文档，方便大家木有网的时候也可以用移动设备观看。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS基础问答面试题连载(二)-附答案">
+<meta property="og:url" content="https://github.huangbowei.com/2016/11/22/102-1/index.html">
+<meta property="og:site_name" content="Tim博客">
+<meta property="og:description" content="「Tim的博客」iOS基础问答面试题连载(一)-附答案
+「Tim的博客」iOS基础问答面试题连载(二)-附答案
+「Tim的博客」iOS基础问答面试题连载(三)-附答案
+「Tim的博客」iOS基础问答面试题连载(四)
+以下是一些自己收集的比较基础的问题（大神可以忽略），附上答案，方便大家阅读。俗话说得好，基础不牢，地动山摇。文章末尾会提供PDF版的文档，方便大家木有网的时候也可以用移动设备观看。">
+<meta property="og:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/iosinterviewquestion.jpg">
+<meta property="og:updated_time" content="2017-03-10T03:32:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS基础问答面试题连载(二)-附答案">
+<meta name="twitter:description" content="「Tim的博客」iOS基础问答面试题连载(一)-附答案
+「Tim的博客」iOS基础问答面试题连载(二)-附答案
+「Tim的博客」iOS基础问答面试题连载(三)-附答案
+「Tim的博客」iOS基础问答面试题连载(四)
+以下是一些自己收集的比较基础的问题（大神可以忽略），附上答案，方便大家阅读。俗话说得好，基础不牢，地动山摇。文章末尾会提供PDF版的文档，方便大家木有网的时候也可以用移动设备观看。">
+<meta name="twitter:image" content="https://www.huangbowei.com/wp-content/uploads/2017/01/iosinterviewquestion.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6226504685738526000',
+      author: 'timhbw博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://github.huangbowei.com/2016/11/22/102-1/"/>
+
+
+
+
+
+  <title> iOS基础问答面试题连载(二)-附答案 | Tim博客 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Tim博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">不忘初心，方得始终</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocapitalize="off" autocomplete="off" autocorrect="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://github.huangbowei.com/2016/11/22/102-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Timhbw">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Tim博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                iOS基础问答面试题连载(二)-附答案
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-22T04:41:23+08:00">
+                2016-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/ios/" itemprop="url" rel="index">
+                    <span itemprop="name">ios</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/11/22/102-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/11/22/102-1/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">字数统计</span>
+                  
+                    <span title="字数统计" }}">
+                      
+                    </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                  
+                    <span class="post-meta-item-text">阅读时长</span>
+                  
+                    <span title="阅读时长" }}">
+                      
+                    </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.huangbowei.com/wp-content/uploads/2017/01/iosinterviewquestion.jpg" target="_blank" rel="external"><img src="https://www.huangbowei.com/wp-content/uploads/2017/01/iosinterviewquestion.jpg" alt=""></a></p>
+<p>「Tim的博客」<a href="http://www.huangbowei.com/archives/100.html" target="_blank" rel="external">iOS基础问答面试题连载(一)-附答案</a></p>
+<p>「Tim的博客」<a href="http://www.huangbowei.com/archives/102.html" target="_blank" rel="external">iOS基础问答面试题连载(二)-附答案</a></p>
+<p>「Tim的博客」<a href="http://www.huangbowei.com/archives/103.html" target="_blank" rel="external">iOS基础问答面试题连载(三)-附答案</a></p>
+<p>「Tim的博客」<a href="http://www.huangbowei.com/archives/107.html" target="_blank" rel="external">iOS基础问答面试题连载(四)</a></p>
+<p>以下是一些自己收集的比较基础的问题（大神可以忽略），附上答案，方便大家阅读。俗话说得好，基础不牢，地动山摇。文章末尾会提供PDF版的文档，方便大家木有网的时候也可以用移动设备观看。</p>
+<p>&nbsp;</p>
+<h4 id="1-xcode5和xcode7区别"><a href="#1-xcode5和xcode7区别" class="headerlink" title="1.xcode5和xcode7区别?"></a>1.xcode5和xcode7区别?</h4><ul>
+<li>xcode7没有Frameworks文件夹,xcode7内部会自动帮你导入一些常见的框架.</li>
+<li>xcode7多了LaunchScreen.xib,LaunchScreen.xib设置启动界面,而且可以确定模拟器或者真机的真实尺寸,如果没有设置,默认4s的尺寸(320,480)</li>
+<li>xcode7没有pch文件</li>
+<li>xcode5当中也有info.plist,只不过它的名字很长.是工程的名称.<br>&nbsp;</li>
+</ul>
+<h4 id="2-pch文件原理"><a href="#2-pch文件原理" class="headerlink" title="2.pch文件原理?"></a>2.pch文件原理?</h4><ul>
+<li>把pch里面的所有内容导入到每个文件中去<br>&nbsp;</li>
+</ul>
+<h4 id="3-UIApplication常见功能"><a href="#3-UIApplication常见功能" class="headerlink" title="3.UIApplication常见功能?"></a>3.UIApplication常见功能?</h4><ol>
+<li>设置应用提醒数字</li>
+<li>设置连网状态</li>
+<li>设置状态栏</li>
+<li>跳转网页<br>&nbsp;</li>
+</ol>
+<h4 id="4-程序完整启动流程"><a href="#4-程序完整启动流程" class="headerlink" title="4.程序完整启动流程?"></a>4.程序完整启动流程?</h4><ol>
+<li>执行Main</li>
+<li>执行UIApplicationMain函数.</li>
+<li>创建UIApplication对象,并设置UIApplicationMain对象的代理.UIApplication的第三个参数就是UIApplication的名称,如果指定为nil,它会默认为UIApplication.UIApplication的第四个参数为UIApplication的代理.</li>
+<li>开启一个主运行循环.保证应用程序不退出.</li>
+<li>加载info.plist.加载配置文件.判断一下info.plist文件当中有没有Main storyboard file base name,里面有没有指定storyboard文件,如果有就去加载info.plist文件,如果没有,那么应用程序加载完毕.<br>&nbsp;</li>
+</ol>
+<h4 id="5-UIWindow是什么"><a href="#5-UIWindow是什么" class="headerlink" title="5.UIWindow是什么?"></a>5.UIWindow是什么?</h4><ul>
+<li>UIWindow是一种特殊的UIView，通常在一个app中至少有一个UIWindow</li>
+<li>iOS程序启动完毕后，创建的第一个视图控件就是UIWindow，接着创建控制器的view，</li>
+<li>最后将控制器的view添加到UIWindow上，于是控制器的view就显示在屏幕上了</li>
+<li>一个iOS程序之所以能显示到屏幕上，完全是因为它有UIWindow<br>&nbsp;</li>
+</ul>
+<h4 id="6-手动创建窗口的步骤"><a href="#6-手动创建窗口的步骤" class="headerlink" title="6.手动创建窗口的步骤?"></a>6.手动创建窗口的步骤?</h4><ol>
+<li>创建窗口,要有窗口显示,必须要有强引用.窗口也是控件,要想展示出来.必须得要有尺寸.</li>
+<li>创建控制器</li>
+<li>设置控制器为窗口的根控制器</li>
+<li>显示窗口<br>&nbsp;</li>
+</ol>
+<h4 id="7-makeKeyAndVisible做了哪些事情"><a href="#7-makeKeyAndVisible做了哪些事情" class="headerlink" title="7.makeKeyAndVisible做了哪些事情?"></a>7.makeKeyAndVisible做了哪些事情?</h4><ul>
+<li>让窗口成为显示状态.</li>
+<li>把根控制器的View添加到窗口上面.</li>
+<li>把当前窗口设置成应用程序的主窗口<br>&nbsp;</li>
+</ul>
+<h4 id="8-如何从从StoryBoard加载控制器"><a href="#8-如何从从StoryBoard加载控制器" class="headerlink" title="8.如何从从StoryBoard加载控制器?"></a>8.如何从从StoryBoard加载控制器?</h4><ul>
+<li>加载指定的storyBoard</li>
+<li>加载箭头所指向的控制器.</li>
+<li>加载指定标识的控制器.<br>&nbsp;</li>
+</ul>
+<h4 id="9-initWithNibName的加载过程"><a href="#9-initWithNibName的加载过程" class="headerlink" title="9.initWithNibName的加载过程?"></a>9.initWithNibName的加载过程?</h4><ul>
+<li>如果没有指定名称.指定为nil,那么它就会去先加载跟它相同名称的Xib.</li>
+<li>如果没有跟它相同名称的Xib,那么它就会再去加载跟它相同名称去点Controller的名字的Xib.</li>
+<li>控制器的init方法会调用initWithNibName:方法.<br>&nbsp;</li>
+</ul>
+<h4 id="10-LoadView-作用以及使用LoadView的注意点"><a href="#10-LoadView-作用以及使用LoadView的注意点" class="headerlink" title="10.LoadView 作用以及使用LoadView的注意点?"></a>10.LoadView 作用以及使用LoadView的注意点?</h4><ul>
+<li>控制器调用loadView方法创建控制器的view.它的默认做法是:</li>
+<li>先去判断当前控制器是不是从StoryBoard当中加载的,如果是,那么它就会从StoryBoard当中加载控制器的View.</li>
+<li>如果不是从StoryBoard当中加载的, 那么它还会判断是不是从Xib当中创建的控制器.如果是,那么它就会从xib加载控制器的View.</li>
+<li><p>如果也不是从Xib加载的控制器.那么它就会创建一个空的UIView.设为当前控制器的View.</p>
+<ul>
+<li><p>注意点:</p>
+<pre><code>*   一旦重写了loadView,表示需要自己创建控制器的View.
+</code></pre><ul>
+<li>如果控制器的View还没有赋值,就不能调用控制器View的get方法.会造成死循环.<br>因为控制器View的get方法底层会调用loadView方法.<br>&nbsp;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>&nbsp;</p>
+<h4 id="11-UIPickView是什么控件-基本用法怎样的"><a href="#11-UIPickView是什么控件-基本用法怎样的" class="headerlink" title="11.UIPickView是什么控件,基本用法怎样的?"></a>11.UIPickView是什么控件,基本用法怎样的?</h4><ul>
+<li>UIPickView选择控件,用来供用户选择一些城市等.它的基本用法与tableView基本相似,要设置数据源,代理, 让其展示数据<br>&nbsp;</li>
+</ul>
+<h4 id="12-KVC底层实现"><a href="#12-KVC底层实现" class="headerlink" title="12.KVC底层实现?"></a>12.KVC底层实现?</h4><ul>
+<li>拿字符串与当前类的属性进行匹配.如果匹配到,就给该属性赋值.<span class="lang:default decode:true crayon-inline ">[flagItem setValue:obj forKeyPath:key];</span></li>
+</ul>
+<ol>
+<li>会找有没有跟key值相同名称的set方法,如果有，就会调用set方法,把obj传入</li>
+<li>如果说没有set方法.那么它会去找没有相同名称,并且带有下划线的成员属性,如果有就会给该属性赋值.</li>
+<li>如果也没有带有下划线的成员属性,就看有没有跟它相同名称的成员属性,如果有就会给该属性赋值.</li>
+<li>如果还没有跟它相同名称的成员属性,就会调用<code>setValue:(id)value
+forUndefinedKey:</code></li>
+<li>如果没有实现setValue: forUndefinedKey: 就直接报错<br>&nbsp;</li>
+</ol>
+<h4 id="13-导航控制器View的结构是怎样的"><a href="#13-导航控制器View的结构是怎样的" class="headerlink" title="13.导航控制器View的结构是怎样的?"></a>13.导航控制器View的结构是怎样的?</h4><ul>
+<li>一个专门存放栈顶控制器View的View</li>
+<li>一个导航条,导航条的高度为44,Y值为20<br>&nbsp;</li>
+</ul>
+<h4 id="14-导航push做了哪些事情"><a href="#14-导航push做了哪些事情" class="headerlink" title="14.导航push做了哪些事情?"></a>14.导航push做了哪些事情?</h4><ul>
+<li>当调用push方法时, 会把要push的控制器添加到导航控制器管理的栈中,把之前导航控制器中栈顶控制器View给移除,把当前栈顶控制器添加上去.<br>&nbsp;</li>
+</ul>
+<h4 id="15-导航pop做了哪些事情"><a href="#15-导航pop做了哪些事情" class="headerlink" title="15.导航pop做了哪些事情?"></a>15.导航pop做了哪些事情?</h4><ul>
+<li>当调用pop方法时, 会把要pop的控制器从栈里移除,把之前导航控制器中栈顶控制器View给移除,把当前栈顶控制器添加上去.<br>&nbsp;</li>
+</ul>
+<h4 id="16-如何设置导航条的内容"><a href="#16-如何设置导航条的内容" class="headerlink" title="16.如何设置导航条的内容?"></a>16.如何设置导航条的内容?</h4><ul>
+<li>导航条的内容由导航控制器的栈顶控制器的NavigationItem决定.<br>&nbsp;</li>
+</ul>
+<h4 id="17-导航控制器pop操作有哪些"><a href="#17-导航控制器pop操作有哪些" class="headerlink" title="17.导航控制器pop操作有哪些?"></a>17.导航控制器pop操作有哪些?</h4><ul>
+<li>返回上一级</li>
+<li>返回到根控制器</li>
+<li>返回到指定的控制器.<br>&nbsp;</li>
+</ul>
+<h4 id="18-文本框如何拦截用户输入"><a href="#18-文本框如何拦截用户输入" class="headerlink" title="18.文本框如何拦截用户输入?"></a>18.文本框如何拦截用户输入?</h4><ul>
+<li>给指定的文件框,设置代理 ,实现代理方法.里面包括是否允许开始编辑,是否允许结束编辑,是否允许改变字符等等.<br>&nbsp;</li>
+</ul>
+<h4 id="19-如何自定义键盘"><a href="#19-如何自定义键盘" class="headerlink" title="19.如何自定义键盘?"></a>19.如何自定义键盘?</h4><ul>
+<li>自定义键盘,要继承系统的UITextField,设置文本框的一个属性,该属性名称为inputView.这样就可以把键盘定义成自己要想的View.<br>&nbsp;</li>
+</ul>
+<h4 id="20-导航控制器的作用"><a href="#20-导航控制器的作用" class="headerlink" title="20.导航控制器的作用?"></a>20.导航控制器的作用?</h4><ul>
+<li>导航控制器可以轻松的完成控制器之间的切换.其操作有push,pop等.<br>&nbsp;</li>
+</ul>
+<hr>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4 id="21-自动跳转与手动型跳转区别"><a href="#21-自动跳转与手动型跳转区别" class="headerlink" title="21.自动跳转与手动型跳转区别?"></a>21.自动跳转与手动型跳转区别?</h4><ul>
+<li>自动跳转:通过控件直接拖线的方式进行跳转</li>
+<li>手动跳转:在跳转之前要去做一些处理工作. 必须得要执行<code>performSegueWithIdentifier:</code>才能跳转.<br>&nbsp;</li>
+</ul>
+<h4 id="22-什么时候使用代理-代理的步骤"><a href="#22-什么时候使用代理-代理的步骤" class="headerlink" title="22.什么时候使用代理 ,代理的步骤?"></a>22.什么时候使用代理 ,代理的步骤?</h4><ul>
+<li>当一个对象发生某一件事时,想要把自己的东西传给别人.或是通知别人做某事使用代理.</li>
+<li>使用场景: 上下级之间,通常是它的上一级成为它的代理.</li>
+<li>步骤：</li>
+</ul>
+<ol>
+<li>定义协议</li>
+<li>定义代理属性</li>
+<li>在.m文件当中调用代理方法</li>
+<li>设置代理</li>
+<li>遵守协议</li>
+<li>实现协议方法<br>&nbsp;</li>
+</ol>
+<hr>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4 id="23-ios当中存储方式有哪些"><a href="#23-ios当中存储方式有哪些" class="headerlink" title="23.ios当中存储方式有哪些?"></a>23.ios当中存储方式有哪些?</h4><ol>
+<li>XML属性列表(plist)</li>
+<li>Preference(偏好设置)</li>
+<li>NSKeyedArchiver,只有遵守NSCoding协议的对象才可以使用这种方式。</li>
+<li>SQLite</li>
+<li>Core Data<br>&nbsp;</li>
+</ol>
+<hr>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h4 id="24-tableView性能优化"><a href="#24-tableView性能优化" class="headerlink" title="24.tableView性能优化"></a>24.tableView性能优化</h4><ol>
+<li>tableView的缓存机制.</li>
+<li>在不等高Cell当中,提前计算Cell的行高.提前估一个行高.200-250</li>
+<li>如果说Cell当中有圆形图片,图片不要用ImageView加载layer.corneadius裁剪去做.会造成离屏渲染. 用绘图Qurarzds裁剪,生成一张圆形的图片.</li>
+<li>如果说图片的宽高,指定为小数点.会造成锯齿,造成锯齿就会导致离屏渲染</li>
+<li>cell当中的ImageView的大小最好是跟UIImage是一样大,如果不一样大 它会对UIImage做形变操作.cell当中展示都是小图.小图的大小跟ImageView  点击放大,是再去用大的ImageView加载大图.</li>
+<li>做tableView的时候一定要用真机.</li>
+<li>如果是从网络加载数据,一定要放到子线程(异步加载)当中做.</li>
+<li>加载完毕的数据一定做本地缓存.</li>
+<li>cell当中不要动态的添加子控件.一般都在创建时,就把要出现的Cell给添加进去,暂时不要显示的,可隐藏.</li>
+<li>尽量减少Cell内部子控件的个数.</li>
+<li>如果控件非常多,把不需要与用户进行交互的控件.能过异步绘制出来.生成一张图片.把图片添加到cell当中<br>&nbsp;</li>
+</ol>
+<p>[reply]<a href="https://github.com/Timhbw/iOSInterviewQuestions" target="_blank" rel="external">PDF2文件下载</a>[/reply]</p>
+<p>&nbsp;</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ios/" rel="tag"># ios</a>
+          
+            <a href="/tags/iOS基础/" rel="tag"># iOS基础</a>
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/11/17/101/" rel="next" title="《Pro Git》学习笔记连载(一.起因)">
+                <i class="fa fa-chevron-left"></i> 《Pro Git》学习笔记连载(一.起因)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/22/102/" rel="prev" title="iOS基础问答面试题连载(二)-附答案">
+                iOS基础问答面试题连载(二)-附答案 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/11/22/102-1/"
+           data-title="iOS基础问答面试题连载(二)-附答案" data-url="https://github.huangbowei.com/2016/11/22/102-1/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Timhbw" />
+          <p class="site-author-name" itemprop="name">Timhbw</p>
+           
+              <p class="site-description motion-element" itemprop="description">自学iOS开发进阶博客，分享高质量的iOS开发技术。</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">168</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">108</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/timhbw" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/huangboweicom" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-xcode5和xcode7区别"><span class="nav-number">1.</span> <span class="nav-text">1.xcode5和xcode7区别?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-pch文件原理"><span class="nav-number">2.</span> <span class="nav-text">2.pch文件原理?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-UIApplication常见功能"><span class="nav-number">3.</span> <span class="nav-text">3.UIApplication常见功能?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-程序完整启动流程"><span class="nav-number">4.</span> <span class="nav-text">4.程序完整启动流程?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-UIWindow是什么"><span class="nav-number">5.</span> <span class="nav-text">5.UIWindow是什么?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-手动创建窗口的步骤"><span class="nav-number">6.</span> <span class="nav-text">6.手动创建窗口的步骤?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-makeKeyAndVisible做了哪些事情"><span class="nav-number">7.</span> <span class="nav-text">7.makeKeyAndVisible做了哪些事情?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-如何从从StoryBoard加载控制器"><span class="nav-number">8.</span> <span class="nav-text">8.如何从从StoryBoard加载控制器?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-initWithNibName的加载过程"><span class="nav-number">9.</span> <span class="nav-text">9.initWithNibName的加载过程?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-LoadView-作用以及使用LoadView的注意点"><span class="nav-number">10.</span> <span class="nav-text">10.LoadView 作用以及使用LoadView的注意点?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-UIPickView是什么控件-基本用法怎样的"><span class="nav-number">11.</span> <span class="nav-text">11.UIPickView是什么控件,基本用法怎样的?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-KVC底层实现"><span class="nav-number">12.</span> <span class="nav-text">12.KVC底层实现?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13-导航控制器View的结构是怎样的"><span class="nav-number">13.</span> <span class="nav-text">13.导航控制器View的结构是怎样的?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14-导航push做了哪些事情"><span class="nav-number">14.</span> <span class="nav-text">14.导航push做了哪些事情?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15-导航pop做了哪些事情"><span class="nav-number">15.</span> <span class="nav-text">15.导航pop做了哪些事情?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16-如何设置导航条的内容"><span class="nav-number">16.</span> <span class="nav-text">16.如何设置导航条的内容?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17-导航控制器pop操作有哪些"><span class="nav-number">17.</span> <span class="nav-text">17.导航控制器pop操作有哪些?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18-文本框如何拦截用户输入"><span class="nav-number">18.</span> <span class="nav-text">18.文本框如何拦截用户输入?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19-如何自定义键盘"><span class="nav-number">19.</span> <span class="nav-text">19.如何自定义键盘?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#20-导航控制器的作用"><span class="nav-number">20.</span> <span class="nav-text">20.导航控制器的作用?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#21-自动跳转与手动型跳转区别"><span class="nav-number">21.</span> <span class="nav-text">21.自动跳转与手动型跳转区别?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#22-什么时候使用代理-代理的步骤"><span class="nav-number">22.</span> <span class="nav-text">22.什么时候使用代理 ,代理的步骤?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#23-ios当中存储方式有哪些"><span class="nav-number">23.</span> <span class="nav-text">23.ios当中存储方式有哪些?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#24-tableView性能优化"><span class="nav-number">24.</span> <span class="nav-text">24.tableView性能优化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Timhbw</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"githubhuangbowei"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
